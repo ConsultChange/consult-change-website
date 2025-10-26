@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Consult Change - Legal Operations, Technology & Organizational Transformation</title>
+  <title>Consult Change — Legal Operations, Technology & Organizational Transformation</title>
   <meta name="description" content="CLM/ELM transformations, Legal Front Door on Microsoft 365/SharePoint, governance & PMO, and PROSCI change management that delivers measurable adoption.">
 
   <!-- Favicons -->
@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Consult Change - Legal Operations, Technology & Organizational Transformation">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Consult Change — Legal Operations, Technology & Organizational Transformation">
   <meta property="og:description" content="We help organizations operationalize legal strategy with CLM/ELM, Legal Front Door, PMO and PROSCI change management.">
   <meta property="og:image" content="/apple-touch-icon.png">
   <meta property="og:url" content="https://www.consultchange.pl">
@@ -22,7 +22,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Consult Change - Legal Operations, Technology & Organizational Transformation">
+  <meta name="twitter:title" content="Consult Change — Legal Operations, Technology & Organizational Transformation">
   <meta name="twitter:description" content="We help organizations operationalize legal strategy with measurable adoption.">
   <meta name="twitter:image" content="/apple-touch-icon.png">
 
@@ -39,48 +39,75 @@
   </script>
 
   <style>
-    :root{--gray:#EDEDED;--honey:#F4C362;--blue:#BFE6F2;--purple:#C985F0;--black:#0B0B0B;--white:#FFFFFF}
+    :root{
+      --gray:#EDEDED; --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --black:#0B0B0B; --white:#FFFFFF;
+    }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.6;overflow-x:hidden}
     img{max-width:100%;display:block}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* ✅ Kapitaliki dla nagłówków */
+    h1,h2,h3,h4,h5,h6,.section-title{
+      font-variant: small-caps;
+      letter-spacing:.03em;
+      text-transform:none;
+    }
+
     .section-title{font-size:2.4rem;text-align:center;margin:0 0 48px}
 
     .btn{display:inline-block;padding:12px 18px;border-radius:14px;font-weight:700;border:2px solid var(--black);background:var(--black);color:#fff;text-decoration:none;transition:transform .08s ease,background .2s ease,border-color .2s ease,color .2s ease}
     .btn:hover{transform:translateY(-1px);background:var(--honey);border-color:var(--honey);color:#000}
     .btn--outline{background:transparent;color:#000;border-color:var(--honey)}
     .btn--outline:hover{background:var(--honey)}
-    .btn--ghost{background:transparent;border-color:#d6d6d6;color:#111}
-    .btn--ghost:hover{border-color:var(--honey);background:var(--honey)}
 
-    .logo{position:fixed;left:20px;top:20px;z-index:1000;display:flex;align-items:center;justify-content:center;height:64px;min-width:64px;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10);backdrop-filter:saturate(1.2) blur(6px)}
+    /* Header chip: symbol only (pinezka) */
+    .logo{
+      position:fixed;left:20px;top:20px;z-index:1000;
+      display:flex;align-items:center;justify-content:center;
+      height:64px;min-width:64px;padding:10px;border-radius:999px;
+      background:rgba(255,255,255,.98);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);backdrop-filter:saturate(1.2) blur(6px)
+    }
     .logo img{height:44px;width:auto}
 
     .language-toggle{position:fixed;right:20px;top:20px;z-index:1000;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
     .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:#0B0B0B}
     .language-toggle button.active{background:var(--honey);color:var(--black)}
 
+    /* HERO */
     .hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;color:#fff;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%)}
     .hero-content{max-width:980px;padding:24px;animation:fadeInUp .9s ease both}
-    .hero-brand{display:inline-flex;align-items:center;justify-content:center;margin:0 auto 18px;background:rgba(255,255,255,.98);padding:12px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(0,0,0,.12)}
-    .hero-brand img{height:auto;width:clamp(210px,76vw,450px)}
+
+    .hero-brand{
+      display:inline-flex;align-items:center;justify-content:center;
+      margin:0 auto 18px;
+      background:rgba(255,255,255,.98);
+      padding:12px 18px;border-radius:16px;
+      box-shadow:0 14px 30px rgba(0,0,0,.12)
+    }
+    .hero-brand img{height:auto;width:clamp(210px, 76vw, 450px)}
+
+    /* Karuzela HERO */
+    .hero-slide{opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;position:absolute;inset:0;display:grid;place-items:center}
+    .hero-slide .inner{max-width:980px;padding:24px}
+    .hero-slide.active{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;position:relative}
+    .fade-enter{animation:fadeIn .6s ease forwards}
+    .fade-exit{animation:fadeOut .6s ease forwards}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes fadeOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(-8px) scale(.995)}}
+
     .hero h1{font-size:3rem;margin:6px 0 10px}
     .hero .tagline{font-size:1.2rem;opacity:.95;margin-bottom:12px}
-    .bullets{display:grid;gap:6px;margin:10px 0 2px;color:#111;list-style:none}
     .cta-row{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
     .scroll-indicator{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);animation:bounce 2s infinite}
     .scroll-indicator i{font-size:1.8rem;color:#111;opacity:.85}
 
-    .pill{display:inline-block;background:#fff;border:1px solid #ececec;border-radius:999px;padding:8px 12px;font-size:.95rem;margin:6px}
+    .band{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+    .pill{display:inline-block;background:#fff;border:1px solid #ececec;border-radius:999px;padding:8px 12px;font-size:.95rem;margin:6px;color:#111}
     .pill--brand{background:var(--honey);border-color:var(--honey);color:var(--black)}
     .pill--brand i{color:var(--black)}
-
-    /* Karuzela */
-    .carousel-wrap{position:relative;overflow:hidden}
-    .carousel-slide{transition:opacity .6s ease, transform .6s ease}
-    .is-enter{opacity:1;transform:translateY(0)}
-    .is-exit{opacity:0;transform:translateY(20px)}
 
     .services{padding:96px 0;background:var(--gray)}
     .services-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
@@ -88,23 +115,31 @@
     .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,.10)}
     .service-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#111;font-size:1.4rem}
 
-    .band{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
     .approach{padding:84px 0;background:#fff}
     .steps{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .step{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:18px}
+    .step h4{margin-bottom:6px}
+    .note{font-size:.95rem;color:#555}
+
     .results{padding:84px 0;background:#f8f9fa}
     .impact-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
     .num{font-size:2.2rem;font-weight:800;color:#667eea}
     .case-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:22px}
     .case{background:#fff;border:1px solid #eee;border-radius:14px;padding:18px}
+    .case h4{margin-bottom:8px}
+
     .credentials{padding:84px 0;background:#fff}
     .badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #e7e7e7;border-radius:999px;padding:10px 14px;margin:8px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+    .badge i{color:#667eea}
+
     .industries{padding:84px 0;background:#fff}
     .grid-3{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:18px}
+
     .insights{padding:84px 0;background:#f8f9fa}
     .insights-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .post{background:#fff;border:1px solid #eaeaea;border-radius:14px;padding:18px}
+    .post h4{margin-bottom:8px}
 
     .team{padding:96px 0;background:#fff}
     .team-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));margin-top:28px}
@@ -142,72 +177,102 @@
     @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(-5px)}}
 
-    @media (max-width:920px){
+    @media (max-width: 920px){
       .contact-content{grid-template-columns:1fr}
       .hero h1{font-size:2.2rem}
       .section-title{font-size:2rem}
       .logo{height:58px;min-width:58px}
       .logo img{height:38px}
-      .hero-brand img{width:clamp(260px,86vw,560px)}
+      .hero-brand img{width:clamp(260px, 86vw, 560px)}
       .brand-card img{height:66px}
     }
   </style>
 </head>
 <body>
-  <!-- Symbol -->
-  <a class="logo" href="#home" aria-label="Consult Change - home">
+  <!-- Symbol (pinezka) -->
+  <a class="logo" href="#home" aria-label="Consult Change — home">
     <img src="Consult change_sole logo_white.png" alt="Consult Change logo symbol">
   </a>
 
-  <!-- Language -->
+  <!-- Przełącznik języka -->
   <div class="language-toggle" role="tablist" aria-label="Language">
     <button onclick="switchLanguage('en')" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
     <button onclick="switchLanguage('pl')" id="btn-pl" role="tab" aria-selected="false">PL</button>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO z karuzelą -->
   <section class="hero" id="home">
     <div class="hero-content">
       <div class="hero-brand">
-        <img src="Consult change_White.png" alt="Consult Change - Legal Operations & Transformation">
+        <img src="Consult change_White.png" alt="Consult Change — Legal Operations & Transformation">
       </div>
 
-      <!-- EN -->
-      <div class="lang-content en active">
-        <div class="carousel-wrap">
-          <div id="en-slide" class="carousel-slide is-enter">
-            <h1 id="en-h1">Operationalize Legal Strategy. <br/>Deliver Adoption.</h1>
-            <p id="en-tagline" class="tagline">We translate strategy into working processes, tools and change that sticks.</p>
-            <div class="cta-row">
-              <a id="en-cta1" href="#contact" class="btn">Start Your Transformation</a>
-              <a id="en-cta2" href="why-us.html" class="btn btn--ghost">Why Us</a>
-              <a id="en-cta3" href="ai-change.html" class="btn btn--outline">AI in Change</a>
-            </div>
-            <div class="band" aria-label="proof">
-              <span id="en-b1" class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Enterprise security & compliance</span>
-              <span id="en-b2" class="pill pill--brand"><i class="fa-solid fa-gauge-high"></i> Measurable outcomes</span>
-              <span id="en-b3" class="pill pill--brand"><i class="fa-solid fa-handshake"></i> Vendor-agnostic advisory</span>
-            </div>
+      <!-- EN slide 1 -->
+      <div class="hero-slide lang-content en active" data-lang="en">
+        <div class="inner">
+          <h1>Operationalize Legal Strategy.<br/>Deliver Adoption.</h1>
+          <p class="tagline">We translate strategy into working processes, tools and change that sticks.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn">Start Your Transformation</a>
+            <a href="why-us.html" class="btn">Why Us</a>
+            <a href="ai-change.html" class="btn">AI in Change</a>
+          </div>
+          <div class="band" aria-label="proof">
+            <span class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Enterprise security & compliance</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-gauge-high"></i> Measurable outcomes</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-handshake"></i> Vendor-agnostic advisory</span>
           </div>
         </div>
       </div>
 
-      <!-- PL -->
-      <div class="lang-content pl">
-        <div class="carousel-wrap">
-          <div id="pl-slide" class="carousel-slide is-enter">
-            <h1 id="pl-h1">Urealniamy Strategię Prawną. <br/>Dowozimy Adopcję.</h1>
-            <p id="pl-tagline" class="tagline">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</p>
-            <div class="cta-row">
-              <a id="pl-cta1" href="#contact" class="btn">Porozmawiajmy</a>
-              <a id="pl-cta2" href="why-us.html" class="btn btn--ghost">Dlaczego My</a>
-              <a id="pl-cta3" href="ai-change.html" class="btn btn--outline">AI w Zmianie</a>
-            </div>
-            <div class="band" aria-label="proof">
-              <span id="pl-b1" class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Bezpieczeństwo klasy enterprise</span>
-              <span id="pl-b2" class="pill pill--brand"><i class="fa-solid fa-gauge-high"></i> Mierzalne rezultaty</span>
-              <span id="pl-b3" class="pill pill--brand"><i class="fa-solid fa-handshake"></i> Doradztwo vendor-agnostyczne</span>
-            </div>
+      <!-- EN slide 2 -->
+      <div class="hero-slide lang-content en" data-lang="en">
+        <div class="inner">
+          <h1>From Strategy to Results.<br/>We Make Change Work.</h1>
+          <p class="tagline">Specialized consultancy delivering measurable transformation across Legal Operations, Manufacturing Excellence, and Organizational Change.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn">Start Your Transformation</a>
+            <a href="why-us.html" class="btn">Why Choose Us</a>
+          </div>
+          <div class="band" aria-label="proof">
+            <span class="pill pill--brand"><i class="fa-solid fa-bolt"></i> 70% faster cycle times</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-users"></i> 90%+ adoption rates</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-layer-group"></i> Multi-industry experience</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PL slide 1 -->
+      <div class="hero-slide lang-content pl" data-lang="pl">
+        <div class="inner">
+          <h1>Urealniamy Strategię Prawną.<br/>Dowozimy Adopcję.</h1>
+          <p class="tagline">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn">Porozmawiajmy</a>
+            <a href="why-us.html" class="btn">Dlaczego My</a>
+            <a href="ai-change.html" class="btn">AI w Zmianie</a>
+          </div>
+          <div class="band" aria-label="proof">
+            <span class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Bezpieczeństwo klasy enterprise</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-gauge-high"></i> Mierzalne rezultaty</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-handshake"></i> Doradztwo vendor-agnostyczne</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PL slide 2 -->
+      <div class="hero-slide lang-content pl" data-lang="pl">
+        <div class="inner">
+          <h1>Od Strategii do Rezultatów.<br/>Sprawiamy, że Zmiany Działają.</h1>
+          <p class="tagline">Specjalistyczna firma konsultingowa dostarczająca wymierne transformacje w Legal Operations, Doskonałości Produkcyjnej i Zmianie Organizacyjnej.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn">Rozpocznij Transformację</a>
+            <a href="why-us.html" class="btn">Dlaczego My</a>
+          </div>
+          <div class="band" aria-label="proof">
+            <span class="pill pill--brand"><i class="fa-solid fa-bolt"></i> 70% krótszy czas cykli</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-users"></i> 90%+ adopcji</span>
+            <span class="pill pill--brand"><i class="fa-solid fa-layer-group"></i> Doświadczenie multi-branżowe</span>
           </div>
         </div>
       </div>
@@ -261,7 +326,7 @@
       <div class="lang-content pl">
         <h2 class="section-title">Metodologia</h2>
         <div class="steps">
-          <div class="step"><h4><i class="fa-solid fa-magnifying-glass"></i> Diagnoza & Uzgodnienie</h4><p class="note">Interesariusze, stan obecny, dane i ryzyka, business case i miary sukcesu - zapewniamy buy-in.</p></div>
+          <div class="step"><h4><i class="fa-solid fa-magnifying-glass"></i> Diagnoza & Uzgodnienie</h4><p class="note">Interesariusze, stan obecny, dane i ryzyka, business case i miary sukcesu — zapewniamy buy-in.</p></div>
           <div class="step"><h4><i class="fa-solid fa-drafting-compass"></i> Design & Governance</h4><p class="note">Docelowy operating model, procesy i role, bramy decyzyjne, architektura informacji i kontrole.</p></div>
           <div class="step"><h4><i class="fa-solid fa-rocket"></i> Budowa, Pilotaż, Rollout</h4><p class="note">Konfiguracja, integracje, playbooki, pilotaże i skalowanie z pełnym change enablement.</p></div>
           <div class="step"><h4><i class="fa-solid fa-chart-line"></i> Adopcja & Optymalizacja</h4><p class="note">Dashboardy OKR/KPI, analityka adopcji, ciągłe doskonalenie i śledzenie korzyści.</p></div>
@@ -283,9 +348,18 @@
         </div>
 
         <div class="case-grid">
-          <div class="case"><h4>Global luxury brand - Legal Ops</h4><p>CLM/ELM roadmap, standardized templates & metadata, steering cadence & OKR dashboards. Cycle time reduced by 60–75%.</p></div>
-          <div class="case"><h4>European bank - Process & Data</h4><p>End-to-end process redesign and data clean-up enabling scale & control. Less rework, clear decision rights.</p></div>
-          <div class="case"><h4>Industrial OEM supplier - RFQ</h4><p>RFQ operating model and costing framework. Faster quotes, margin control, clean hand-off across teams.</p></div>
+          <div class="case">
+            <h4>Global luxury brand — Legal Ops</h4>
+            <p>Designed CLM/ELM roadmap, standardized templates & metadata, introduced steering cadence and OKR dashboards. Cycle time reduced by 60–75% on priority flows.</p>
+          </div>
+          <div class="case">
+            <h4>European bank — Process & Data</h4>
+            <p>End-to-end process redesign and data clean-up to enable scale & control. Improved data quality, removed manual rework, and clarified decision rights.</p>
+          </div>
+          <div class="case">
+            <h4>Industrial OEM supplier — RFQ</h4>
+            <p>RFQ operating model and costing framework. Faster quotes, margin control and a clean hand-off between sales, engineering and production.</p>
+          </div>
         </div>
       </div>
 
@@ -299,9 +373,18 @@
         </div>
 
         <div class="case-grid">
-          <div class="case"><h4>Globalny brand luksusowy - Legal Ops</h4><p>Roadmapa CLM/ELM, standardy metadanych i szablonów, rytm sterujący i OKR. Skrócenie cyklu o 60–75%.</p></div>
-          <div class="case"><h4>Europejski bank - Procesy & Dane</h4><p>Redesign E2E i porządkowanie danych. Wyższa jakość, mniej poprawek, jasne prawa decyzyjne.</p></div>
-          <div class="case"><h4>Dostawca OEM - RFQ</h4><p>Model RFQ i ramy kalkulacji. Szybsze oferty, kontrola marży, czysty handoff zespołów.</p></div>
+          <div class="case">
+            <h4>Globalny brand luksusowy — Legal Ops</h4>
+            <p>Roadmapa CLM/ELM, standaryzacja szablonów i metadanych, rytm sterujący i OKR. Czas cyklu krótszy o 60–75% w kluczowych ścieżkach.</p>
+          </div>
+          <div class="case">
+            <h4>Europejski bank — Procesy & Dane</h4>
+            <p>Redesign E2E i porządkowanie danych dla skali i kontroli. Wyższa jakość danych, mniej ręcznych poprawek, jasne prawa decyzyjne.</p>
+          </div>
+          <div class="case">
+            <h4>Dostawca OEM — RFQ</h4>
+            <p>Model operacyjny RFQ i ramy kalkulacji. Szybsze oferty, kontrola marży i czysty handshake sprzedaż–inżynieria–produkcja.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -342,7 +425,7 @@
         <div class="grid-3">
           <div class="card"><h4>Legal & Compliance</h4><p>Contracting at scale, risk & retention policies, clause libraries, legal service delivery and analytics.</p></div>
           <div class="card"><h4>Procurement & Finance</h4><p>Source-to-contract, vendor management, pricing governance, approvals & controls.</p></div>
-          <div class="card"><h4>Sales & Operations</h4><p>Deal desk, OEM RFQs, costing & pricing, commercial-ops handshake, quality and delivery.</p></div>
+          <div class="card"><h4>Sales & Operations</h4><p>Deal desk, OEM RFQs, costing & pricing, commercial—ops handshake, quality and delivery.</p></div>
         </div>
       </div>
 
@@ -363,8 +446,8 @@
       <div class="lang-content en active">
         <h2 class="section-title">Insights</h2>
         <div class="insights-grid">
-          <article class="post"><h4>What “Good” Looks Like in CLM Metadata</h4><p>Practical taxonomy patterns that enable search, reporting and automation-without overwhelming users.</p></article>
-          <article class="post"><h4>Designing a Legal Front Door on M365</h4><p>From intake forms to triage and SLAs-how to make it simple for the business and robust for Legal.</p></article>
+          <article class="post"><h4>What “Good” Looks Like in CLM Metadata</h4><p>Practical taxonomy patterns that enable search, reporting and automation—without overwhelming users.</p></article>
+          <article class="post"><h4>Designing a Legal Front Door on M365</h4><p>From intake forms to triage and SLAs—how to make it simple for the business and robust for Legal.</p></article>
           <article class="post"><h4>Governance People Actually Use</h4><p>Decision gates, roles and cadence that shorten cycle times instead of adding bureaucracy.</p></article>
         </div>
       </div>
@@ -372,8 +455,8 @@
       <div class="lang-content pl">
         <h2 class="section-title">Wiedza</h2>
         <div class="insights-grid">
-          <article class="post"><h4>Metadane w CLM, które działają</h4><p>Praktyczne taksonomie ułatwiające wyszukiwanie, raportowanie i automatyzację-bez przeciążania użytkowników.</p></article>
-          <article class="post"><h4>Legal Front Door na M365</h4><p>Od formularzy do triage i SLA-jak uprościć życie biznesowi i dać Legalowi pełną kontrolę.</p></article>
+          <article class="post"><h4>Metadane w CLM, które działają</h4><p>Praktyczne taksonomie ułatwiające wyszukiwanie, raportowanie i automatyzację—bez przeciążania użytkowników.</p></article>
+          <article class="post"><h4>Legal Front Door na M365</h4><p>Od formularzy do triage i SLA—jak uprościć życie biznesowi i dać Legalowi pełną kontrolę.</p></article>
           <article class="post"><h4>Governance, z którego się korzysta</h4><p>Bramy decyzyjne, role i rytm, które skracają czas zamiast budować biurokrację.</p></article>
         </div>
       </div>
@@ -388,34 +471,30 @@
         <h2 class="section-title">Our Team</h2>
         <div class="team-grid">
           <div class="team-member">
-            <div class="member-image"><img src="your-photo.jpg" loading="lazy" alt="Patryk Markowski - Change Management & Legal Operations Expert"></div>
+            <div class="member-image"><img src="your-photo.jpg" loading="lazy" alt="Patryk Markowski — Change Management & Legal Operations Expert"></div>
             <div class="member-info">
               <h3>Change Management & Legal Operations Expert</h3>
               <div class="member-role">Founder & Lead Change & Project Management Consultant</div>
-              <div class="member-description">
-                Patryk helps leaders plan and deliver complex end-to-end change across roadmap, governance, PMO/portfolio and adoption.
-              </div>
+              <div class="member-description">Patryk helps leaders plan and deliver complex end-to-end change: from diagnosis and business case, through the roadmap, governance and PMO/portfolio, to adoption and measurable outcomes. As a freelancer, he has delivered projects for clients such as Swarovski GBS, Deloitte Legal, Nordea, AirHelp, and Arrow Electronics. He specializes in streamlining processes and initiative portfolios (OKRs/KPIs, prioritization, decision gates), operational transformations (including CLM/ELM), designing a Legal Front Door on Microsoft 365/SharePoint, and leading communications, training, and resistance management in line with PROSCI. He bridges business, legal, and IT perspectives, simplifying workflows and shortening lead times. Certifications: PROSCI CCP, DocuSign CLM Admin, SirionLabs, Icertis ICI. He works within Agile/Lean/Scrum/Kanban, consistently translating strategy into operational plans, tooling, and tangible results.</div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener">
                   <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                  LinkedIn - Patryk Markowski
+                  LinkedIn — Patryk Markowski
                 </a>
               </p>
             </div>
           </div>
 
           <div class="team-member">
-            <div class="member-image"><img src="Grzegorz-photo.jpg" loading="lazy" alt="Grzegorz Pukalski - B2B Sales & Manufacturing Specialist"></div>
+            <div class="member-image"><img src="Grzegorz-photo.jpg" loading="lazy" alt="Grzegorz Pukalski — B2B Sales & Manufacturing Specialist"></div>
             <div class="member-info">
               <h3>Grzegorz Pukalski</h3>
               <div class="member-role">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</div>
-              <div class="member-description">
-                Grzegorz bridges sales, engineering and production at Dekpol Steel - from RFQ and costing to factory hand-off.
-              </div>
+              <div class="member-description">Grzegorz is an industrial B2B sales practitioner focused on OEM clients, RFQs, and margin-aware pricing. He works at Dekpol Steel, a leading Polish manufacturer of buckets and machine attachments, where he bridges sales, engineering, and production—from specification and quotation through cost build-up to order hand-off. Dekpol Steel supplies attachments internationally (24+ countries), serving global construction equipment brands and demanding use cases.</div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener">
                   <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                  LinkedIn - Grzegorz Pukalski
+                  LinkedIn — Grzegorz Pukalski
                 </a>
               </p>
             </div>
@@ -428,34 +507,30 @@
         <h2 class="section-title">Nasz Zespół</h2>
         <div class="team-grid">
           <div class="team-member">
-            <div class="member-image"><img src="your-photo.jpg" loading="lazy" alt="Patryk Markowski - Ekspert Legal Operations i Zarządzania Zmianą"></div>
+            <div class="member-image"><img src="your-photo.jpg" loading="lazy" alt="Patryk Markowski — Ekspert Legal Operations i Zarządzania Zmianą"></div>
             <div class="member-info">
               <h3>Ekspert Zarządzania Zmianą i Legal Operations</h3>
               <div class="member-role">Założyciel i Główny Konsultant Change & Project Management</div>
-              <div class="member-description">
-                Patryk wspiera liderów od diagnozy i business case’u po governance, PMO/portfolio i adopcję.
-              </div>
+              <div class="member-description">Patryk wspiera liderów w planowaniu i dowożeniu złożonych zmian end-to-end: od diagnozy i business case’u, przez roadmapę, governance i PMO/portfolio, po adopcję i mierzalne efekty. Jako freelancer prowadził projekty dla klientów takich jak Swarovski GBS, Deloitte Legal, Nordea, AirHelp oraz Arrow Electronics. Specjalizuje się w porządkowaniu procesów i portfeli inicjatyw (OKR/KPI, priorytetyzacja, bramki decyzyjne), transformacjach operacyjnych (w tym CLM/ELM), projektowaniu Legal Front Door na Microsoft 365/SharePoint oraz w zarządzaniu komunikacją, szkoleniami i odpornością na zmianę zgodnie z PROSCI. Łączy perspektywę biznesu, prawa i IT, upraszczając workflowy i skracając lead time. Certyfikacje: PROSCI CCP, DocuSign CLM Admin, SirionLabs, Icertis ICI. Pracuje w metodykach Agile/Lean/Scrum/Kanban, konsekwentnie przekładając strategię na operacyjne plany, narzędzia i wymierne rezultaty.</div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener">
                   <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                  Profil LinkedIn - Patryk Markowski
+                  Profil LinkedIn — Patryk Markowski
                 </a>
               </p>
             </div>
           </div>
 
           <div class="team-member">
-            <div class="member-image"><img src="Grzegorz-photo.jpg" loading="lazy" alt="Grzegorz Pukalski - Specjalista Sprzedaży B2B i Produkcji"></div>
+            <div class="member-image"><img src="Grzegorz-photo.jpg" loading="lazy" alt="Grzegorz Pukalski — Specjalista Sprzedaży B2B i Produkcji"></div>
             <div class="member-info">
               <h3>Grzegorz Pukalski</h3>
               <div class="member-role">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</div>
-              <div class="member-description">
-                Grzegorz łączy sprzedaż, inżynierię i produkcję w Dekpol Steel - od RFQ i kalkulacji do wdrożenia zamówienia.
-              </div>
+              <div class="member-description">Grzegorz to praktyk sprzedaży B2B w przemyśle maszynowym. Na co dzień odpowiada za współpracę z klientami OEM, proces ofertowania oraz kalkulacje kosztów i marż w Dekpol Steel — producencie osprzętu do maszyn budowlanych (łyżki, szybkozłącza, osprzęt do rozbiórki) działającym na rynkach międzynarodowych. Łączy perspektywę sprzedaży, inżynierii i produkcji: od RFQ i doboru rozwiązania, przez wycenę i przygotowanie oferty, po wdrożenie zamówienia po stronie fabryki.</div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener">
                   <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                  Profil LinkedIn - Grzegorz Pukalski
+                  Profil LinkedIn — Grzegorz Pukalski
                 </a>
               </p>
             </div>
@@ -496,7 +571,7 @@
           </div>
         </div>
 
-        <!-- Forms -->
+        <!-- Forms (Formspree) -->
         <div>
           <form id="contactFormEN" class="form lang-content en active" action="https://formspree.io/f/xjkagvbe" method="POST">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -524,9 +599,10 @@
         </div>
       </div>
 
+      <!-- DUŻY LOGOTYP pod formularzem -->
       <div class="brand-mark" aria-hidden="true">
         <div class="brand-card">
-          <img src="Consult change_White.png" alt="Consult Change - logotype">
+          <img src="Consult change_White.png" alt="Consult Change — logotype">
         </div>
       </div>
     </div>
@@ -540,6 +616,7 @@
   </footer>
 
   <script>
+    /* Języki */
     function switchLanguage(lang){
       const en = document.querySelectorAll('.lang-content.en');
       const pl = document.querySelectorAll('.lang-content.pl');
@@ -548,9 +625,19 @@
       const toggle=(nodes,on)=>nodes.forEach(n=>n.classList.toggle('active',on));
       if(lang==='en'){toggle(en,true);toggle(pl,false);enBtn.classList.add('active');plBtn.classList.remove('active');document.documentElement.lang='en'}
       else{toggle(pl,true);toggle(en,false);plBtn.classList.add('active');enBtn.classList.remove('active');document.documentElement.lang='pl'}
+      // zrestartuj karuzelę po zmianie języka
+      restartCarousel();
     }
 
-    // in-view animacje
+    /* Smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+      })
+    });
+
+    /* Pojawianie kart przy scrollu */
     const obs=new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}
@@ -560,132 +647,59 @@
       card.style.opacity='0';card.style.transform='translateY(22px)';card.style.transition='all .6s ease';obs.observe(card)
     });
 
-    // KARUZELA HERO - 10s
-    const EN_VARIANTS = [
-      {
-        h1: 'Operationalize Legal Strategy. <br/>Deliver Adoption.',
-        tagline: 'We translate strategy into working processes, tools and change that sticks.',
-        cta2: { text: 'Why Us', href: 'why-us.html' },
-        cta3: { text: 'AI in Change', href: 'ai-change.html' },
-        bullets: [
-          'Enterprise security & compliance',
-          'Measurable outcomes',
-          'Vendor-agnostic advisory',
-        ],
-      },
-      {
-        h1: 'From Strategy to Results. <br/>We Make Change Work.',
-        tagline: 'Specialized consultancy delivering measurable transformation across Legal Operations, Manufacturing Excellence, and Organizational Change.',
-        cta2: { text: 'Why Choose Us', href: 'why-us.html' },
-        cta3: { text: 'AI in Change', href: 'ai-change.html' },
-        bullets: [
-          '70% faster cycle times',
-          '90%+ adoption rates',
-          'Multi-industry experience',
-        ],
-      },
-    ];
-
-    const PL_VARIANTS = [
-      {
-        h1: 'Urealniamy Strategię Prawną. <br/>Dowozimy Adopcję.',
-        tagline: 'Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.',
-        cta2: { text: 'Dlaczego My', href: 'why-us.html' },
-        cta3: { text: 'AI w Zmianie', href: 'ai-change.html' },
-        bullets: [
-          'Bezpieczeństwo klasy enterprise',
-          'Mierzalne rezultaty',
-          'Doradztwo vendor-agnostyczne',
-        ],
-      },
-      {
-        h1: 'Od Strategii do Rezultatów. <br/>Sprawiamy, że Zmiany Działają.',
-        tagline: 'Specjalistyczna firma konsultingowa dostarczająca wymierne transformacje w Legal Operations, Doskonałości Produkcyjnej i Zmianie Organizacyjnej.',
-        cta2: { text: 'Dlaczego My', href: 'why-us.html' },
-        cta3: { text: 'AI w Zmianie', href: 'ai-change.html' },
-        bullets: [
-          '70% krótszy czas cykli',
-          '90%+ adopcji',
-          'Doświadczenie multi-branżowe',
-        ],
-      },
-    ];
-
-    function rotateHero(lang) {
-      const isEN = lang === 'en';
-      const data = isEN ? EN_VARIANTS : PL_VARIANTS;
-      const els = isEN ? {
-        slide: document.getElementById('en-slide'),
-        h1: document.getElementById('en-h1'),
-        tagline: document.getElementById('en-tagline'),
-        cta2: document.getElementById('en-cta2'),
-        cta3: document.getElementById('en-cta3'),
-        b1: document.getElementById('en-b1'),
-        b2: document.getElementById('en-b2'),
-        b3: document.getElementById('en-b3'),
-      } : {
-        slide: document.getElementById('pl-slide'),
-        h1: document.getElementById('pl-h1'),
-        tagline: document.getElementById('pl-tagline'),
-        cta2: document.getElementById('pl-cta2'),
-        cta3: document.getElementById('pl-cta3'),
-        b1: document.getElementById('pl-b1'),
-        b2: document.getElementById('pl-b2'),
-        b3: document.getElementById('pl-b3'),
-      };
-
-      let idx = 0;
-      setInterval(()=>{
-        const next = (idx + 1) % data.length;
-        els.slide.classList.remove('is-enter');
-        els.slide.classList.add('is-exit');
-
-        setTimeout(()=>{
-          els.h1.innerHTML = data[next].h1;
-          els.tagline.textContent = data[next].tagline;
-          els.cta2.textContent = data[next].cta2.text;
-          els.cta2.href = data[next].cta2.href;
-          els.cta3.textContent = data[next].cta3.text;
-          els.cta3.href = data[next].cta3.href;
-          els.b1.innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${data[next].bullets[0]}`;
-          els.b2.innerHTML = `<i class="fa-solid fa-gauge-high"></i> ${data[next].bullets[1]}`;
-          els.b3.innerHTML = `<i class="fa-solid fa-handshake"></i> ${data[next].bullets[2]}`;
-
-          els.slide.classList.remove('is-exit');
-          void els.slide.offsetWidth;
-          els.slide.classList.add('is-enter');
-
-          idx = next;
-        }, 600);
-      }, 10000);
+    /* Karuzela HERO (10s + animacja fade/slide) */
+    const INTERVAL_MS = 10000;
+    let carouselTimer;
+    function getActiveLang(){ return document.documentElement.lang === 'pl' ? 'pl' : 'en'; }
+    function visibleSlides(){
+      const lang = getActiveLang();
+      return Array.from(document.querySelectorAll(`.hero-slide[data-lang="${lang}"]`));
     }
+    function currentIndex(slides){ return slides.findIndex(s => s.classList.contains('active')); }
 
-    rotateHero('en');
-    rotateHero('pl');
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const t=document.querySelector(a.getAttribute('href'));
-        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
-      })
-    });
-
-    // Form handlers
-    async function bindForm(formId,statusId,texts){
-      const form=document.getElementById(formId); if(!form) return;
-      const status=document.getElementById(statusId);
-      form.addEventListener('submit',async e=>{
-        e.preventDefault(); if(status) status.textContent=texts?.sending||'';
-        try{
-          const res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
-          if(res.ok){ if(status) status.textContent=texts?.success||''; form.reset(); }
-          else{ const err=await res.json().catch(()=>({})); if(status) status.textContent=(err?.errors?.[0]?.message)||texts?.error||''; }
-        }catch{ if(status) status.textContent=texts?.network||''; }
+    function showSlide(slides, nextIdx){
+      slides.forEach((s,i)=>{
+        if(i===nextIdx){
+          s.classList.add('active','fade-enter');
+          s.classList.remove('fade-exit');
+        }else if(s.classList.contains('active')){
+          s.classList.remove('fade-enter');
+          s.classList.add('fade-exit');
+          setTimeout(()=>{ s.classList.remove('active'); }, 550);
+        }else{
+          s.classList.remove('active','fade-enter','fade-exit');
+        }
       });
     }
-    bindForm('contactFormEN','statusEN',{sending:'Sending…',success:'Thanks! Your message has been sent.',error:'Something went wrong. Please try again.',network:'Connection error. Please try again.'});
-    bindForm('contactFormPL','statusPL',{sending:'Wysyłanie…',success:'Dziękujemy! Wiadomość została wysłana.',error:'Coś poszło nie tak. Spróbuj ponownie.',network:'Błąd połączenia. Spróbuj ponownie.'});
+
+    function tick(){
+      const slides = visibleSlides();
+      if(slides.length < 2) return; // nic do zmiany
+      const idx = currentIndex(slides);
+      const next = (idx + 1) % slides.length;
+      showSlide(slides, next);
+    }
+
+    function restartCarousel(){
+      if(carouselTimer) clearInterval(carouselTimer);
+      // upewnij się, że tylko pierwszy slide w danym języku jest aktywny na starcie
+      ['en','pl'].forEach(lang=>{
+        const list = Array.from(document.querySelectorAll(`.hero-slide[data-lang="${lang}"]`));
+        list.forEach((s,i)=>{
+          if(lang===getActiveLang()){
+            s.style.display = ''; // widoczne w DOM
+            if(i===0) s.classList.add('active'); else s.classList.remove('active','fade-enter','fade-exit');
+          }else{
+            s.style.display = ''; // utrzymujemy w DOM, steruje .lang-content
+            s.classList.remove('active','fade-enter','fade-exit');
+          }
+        });
+      });
+      carouselTimer = setInterval(tick, INTERVAL_MS);
+    }
+
+    // start
+    document.addEventListener('DOMContentLoaded', restartCarousel);
   </script>
 </body>
 </html>
