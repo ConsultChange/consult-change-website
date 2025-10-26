@@ -2,44 +2,31 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Consult Change — Legal Operations, Technology & Organizational Transformation</title>
   <meta name="description" content="CLM/ELM transformations, Legal Front Door on Microsoft 365/SharePoint, governance & PMO, and PROSCI change management that delivers measurable adoption.">
-  <meta name="author" content="Consult Change" />
-  <meta name="copyright" content="Consult Change © 2025" />
-
-  <!-- Open Graph / Facebook / LinkedIn -->
-  <meta property="og:title" content="Consult Change — Legal Operations, Technology & Transformation" />
-  <meta property="og:description" content="We deliver measurable change in Legal Ops, CLM/ELM, governance, and organizational transformation." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.consultchange.pl/" />
-  <meta property="og:image" content="https://www.consultchange.pl/favicons/og-image.png" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Consult Change — Legal Operations, Technology & Transformation" />
-  <meta name="twitter:description" content="We deliver measurable change in Legal Ops, CLM/ELM, governance, and organizational transformation." />
-  <meta name="twitter:image" content="https://www.consultchange.pl/favicons/og-image.png" />
 
   <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=4">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=4">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png?v=4">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192x192.png?v=4">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicons/favicon-512x512.png?v=4">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Consult Change — Legal Operations, Technology & Organizational Transformation">
+  <meta property="og:description" content="We help organizations operationalize legal strategy with CLM/ELM, Legal Front Door, PMO and PROSCI change management.">
+  <meta property="og:image" content="/apple-touch-icon.png">
+  <meta property="og:url" content="https://www.consultchange.pl">
+  <meta property="og:type" content="website">
 
-  <link rel="manifest" href="/favicons/site.webmanifest?v=6">
-  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=4" color="#F4C362">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consult Change — Legal Operations, Technology & Organizational Transformation">
+  <meta name="twitter:description" content="We help organizations operationalize legal strategy with measurable adoption.">
+  <meta name="twitter:image" content="/apple-touch-icon.png">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <!-- Google Analytics -->
@@ -80,23 +67,39 @@
     .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:#0B0B0B}
     .language-toggle button.active{background:var(--honey);color:var(--black)}
 
+    /* NAV – ustawiona pod chipami (top:84px), stała */
+    .main-nav{
+      position:fixed;top:84px;left:0;right:0;z-index:998;
+      background:rgba(255,255,255,.98);backdrop-filter:blur(10px);
+      box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0
+    }
+    .nav-container{
+      max-width:1200px;margin:0 auto;padding:0 140px;
+      display:flex;justify-content:center;align-items:center;gap:8px
+    }
+    .main-nav a{
+      display:inline-block;padding:10px 20px;color:#0B0B0B;
+      text-decoration:none;border-radius:10px;font-weight:600;font-size:.95rem;
+      transition:all .2s ease
+    }
+    .main-nav a:hover{background:var(--honey);color:#0B0B0B}
+    .main-nav a.active{background:#0F172A;color:#fff}
+
     /* HERO */
-    .hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;color:#fff;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%)}
+    .hero{
+      min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;color:#fff;
+      background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%);
+      padding-top:180px; /* miejsce na chipy + NAV */
+    }
     .hero-content{max-width:980px;padding:24px;animation:fadeInUp .9s ease both}
 
-    /* DUŻE LOGO Z NAPISEM ponad H1 — powiększone i responsywne */
+    /* Duże logo ponad H1 */
     .hero-brand{
       display:inline-flex;align-items:center;justify-content:center;
-      margin:0 auto 18px;
-      background:rgba(255,255,255,.98);
-      padding:12px 18px;border-radius:16px;
-      box-shadow:0 14px 30px rgba(0,0,0,.12)
+      margin:0 auto 18px;background:rgba(255,255,255,.98);
+      padding:12px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(0,0,0,.12)
     }
-    .hero-brand img{
-      height:auto;
-      /* szerokość dopasowana do bloku treści (dorównuje H1) */
-      width:clamp(210px, 76vw, 450px);
-    }
+    .hero-brand img{height:auto;width:clamp(210px, 76vw, 450px)}
 
     .hero h1{font-size:3rem;margin:6px 0 10px}
     .hero .tagline{font-size:1.2rem;opacity:.95;margin-bottom:12px}
@@ -107,7 +110,6 @@
     .scroll-indicator i{font-size:1.8rem;color:#111;opacity:.85}
 
     .pill{display:inline-block;background:#fff;border:1px solid #ececec;border-radius:999px;padding:8px 12px;font-size:.95rem;margin:6px}
-    /* brandowe pigułki honey (treść czarna) */
     .pill--brand{background:var(--honey);border-color:var(--honey);color:var(--black)}
     .pill--brand i{color:var(--black)}
 
@@ -151,7 +153,6 @@
     .team-member{background:#fafafa;border:1px solid #ececec;border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.08);transition:transform .18s ease,box-shadow .18s ease}
     .team-member:hover{transform:translateY(-6px);box-shadow:0 22px 54px rgba(0,0,0,.12)}
     .member-image{background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;overflow:hidden;aspect-ratio:4/5}
-    /* pełne twarze – łagodny górny kadr */
     .member-image img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
     .member-info{padding:22px}
     .member-role{font-weight:700;color:var(--purple);margin-bottom:10px}
@@ -179,7 +180,6 @@
     .form input:focus,.form textarea:focus{border-color:var(--honey);box-shadow:0 0 0 4px rgba(244,195,98,.25)}
     .submit-btn{width:100%;margin-top:10px}
 
-    /* Duży logotyp na dole, pod formularzem */
     .brand-mark{margin:30px 0 0;display:flex;justify-content:center}
     .brand-card{background:#fff;border:1px solid #ececec;border-radius:16px;padding:12px 18px;box-shadow:0 12px 28px rgba(0,0,0,.10)}
     .brand-card img{height:78px;width:auto}
@@ -200,6 +200,8 @@
       .logo img{height:38px}
       .hero-brand img{width:clamp(260px, 86vw, 560px)}
       .brand-card img{height:66px}
+      .nav-container{padding:0 20px;gap:4px}
+      .main-nav a{padding:8px 12px;font-size:.85rem}
     }
   </style>
 </head>
@@ -215,6 +217,16 @@
     <button onclick="switchLanguage('pl')" id="btn-pl" role="tab" aria-selected="false">PL</button>
   </div>
 
+  <!-- NAV (spójny z podstronami) -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#home" class="active">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="ai-change.html">AI in Change Management</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
@@ -224,11 +236,12 @@
       </div>
 
       <div class="lang-content en active">
-        <h1>Operationalize Strategy. <br/>Deliver Adoption.</h1>
+        <h1>Operationalize Legal Strategy. <br/>Deliver Adoption.</h1>
         <p class="tagline">We translate strategy into working processes, tools and change that sticks.</p>
         <div class="cta-row">
           <a href="#contact" class="btn">Start Your Transformation</a>
-          <a href="#services" class="btn">Our Expertise</a>
+          <a href="why-us.html" class="btn btn--outline">Why Us</a>
+          <a href="ai-change.html" class="btn btn--outline">AI in Change</a>
         </div>
         <div class="band" aria-label="proof">
           <span class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Enterprise security & compliance</span>
@@ -238,11 +251,12 @@
       </div>
 
       <div class="lang-content pl">
-        <h1>Urealniamy Strategię. <br/>Dowozimy Adopcję.</h1>
+        <h1>Urealniamy Strategię Prawną. <br/>Dowozimy Adopcję.</h1>
         <p class="tagline">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</p>
         <div class="cta-row">
           <a href="#contact" class="btn">Porozmawiajmy</a>
-          <a href="#services" class="btn">Nasza Ekspertyza</a>
+          <a href="why-us.html" class="btn btn--outline">Dlaczego my</a>
+          <a href="ai-change.html" class="btn btn--outline">AI w Zmianie</a>
         </div>
         <div class="band" aria-label="proof">
           <span class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Bezpieczeństwo klasy enterprise</span>
@@ -607,6 +621,7 @@
       else{toggle(pl,true);toggle(en,false);plBtn.classList.add('active');enBtn.classList.remove('active');document.documentElement.lang='pl'}
     }
 
+    // Smooth scroll dla linków z #
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const t=document.querySelector(a.getAttribute('href'));
@@ -614,6 +629,7 @@
       })
     });
 
+    // Animacje sekcji
     const obs=new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}
@@ -623,6 +639,7 @@
       card.style.opacity='0';card.style.transform='translateY(22px)';card.style.transition='all .6s ease';obs.observe(card)
     });
 
+    // Formspree: EN + PL
     async function bindForm(formId,statusId,texts){
       const form=document.getElementById(formId); if(!form) return;
       const status=document.getElementById(statusId);

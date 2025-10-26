@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI in Change Management — Consult Change</title>
+  <meta name="description" content="How we leverage AI to accelerate transformation while keeping humans at the center of change.">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --gray:#EDEDED; --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --black:#0B0B0B; --white:#FFFFFF; --deep-blue:#0F172A;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    
+    /* Navigation */
+    .main-nav{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 140px;display:flex;justify-content:center;align-items:center;gap:8px}
+    .main-nav a{display:inline-block;padding:10px 20px;color:var(--black);text-decoration:none;border-radius:10px;font-weight:600;font-size:.95rem;transition:all .2s ease}
+    .main-nav a:hover{background:var(--honey);color:var(--black)}
+    .main-nav a.active{background:var(--deep-blue);color:#fff}
+
+    .logo{position:fixed;left:20px;top:20px;z-index:1000;display:flex;align-items:center;justify-content:center;height:64px;min-width:64px;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10)}
+    .logo img{height:44px;width:auto}
+
+    .language-toggle{position:fixed;right:20px;top:20px;z-index:1000;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:#0B0B0B}
+    .language-toggle button.active{background:var(--honey);color:var(--black)}
+
+    .hero-page{margin-top:60px;padding:120px 0 80px;background:linear-gradient(135deg,var(--deep-blue) 0%,var(--purple) 100%);text-align:center;color:#fff}
+    .hero-page h1{font-size:3.5rem;margin-bottom:24px}
+    .hero-page p{font-size:1.3rem;max-width:700px;margin:0 auto;opacity:.95}
+
+    .section{padding:80px 0}
+    .section-alt{padding:80px 0;background:var(--gray)}
+    .section-title{font-size:2.4rem;text-align:center;margin:0 0 48px;color:var(--deep-blue)}
+    
+    .intro-text{max-width:800px;margin:0 auto 60px;font-size:1.2rem;line-height:1.8;color:#555;text-align:center}
+
+    .use-cases-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .use-case{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:32px;box-shadow:0 8px 28px rgba(0,0,0,.06);transition:transform .2s ease}
+    .use-case:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,.10)}
+    .use-case-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:20px;background:linear-gradient(135deg,var(--purple),var(--honey));color:#fff;font-size:1.8rem}
+    .use-case h3{color:var(--deep-blue);margin-bottom:12px;font-size:1.4rem}
+    .use-case p{color:#555;line-height:1.7;margin-bottom:16px}
+    .use-case-benefit{background:var(--gray);padding:12px;border-radius:8px;font-size:.95rem;color:var(--deep-blue);font-weight:600}
+
+    .principles{padding:80px 0;background:#fff}
+    .principles-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .principle{background:#fafafa;border-left:4px solid var(--purple);border-radius:12px;padding:24px}
+    .principle h4{color:var(--deep-blue);margin-bottom:12px;font-size:1.2rem}
+    .principle p{color:#555;line-height:1.7}
+
+    .tools-section{padding:80px 0;background:var(--gray)}
+    .tools-grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .tool-card{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:28px;text-align:center}
+    .tool-card i{font-size:3rem;color:var(--purple);margin-bottom:16px}
+    .tool-card h4{color:var(--deep-blue);margin-bottom:12px}
+    .tool-card p{color:#555;font-size:.95rem}
+
+    .human-centered{padding:80px 0;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);color:var(--deep-blue);text-align:center}
+    .human-centered h2{font-size:2.8rem;margin-bottom:24px}
+    .human-centered p{font-size:1.3rem;max-width:800px;margin:0 auto;line-height:1.8}
+
+    .cta-section{padding:80px 0;background:#fff;text-align:center}
+    .btn{display:inline-block;padding:14px 28px;border-radius:14px;font-weight:700;border:2px solid var(--deep-blue);background:var(--deep-blue);color:#fff;text-decoration:none;transition:all .2s ease}
+    .btn:hover{transform:translateY(-2px);background:var(--honey);border-color:var(--honey);color:var(--black)}
+
+    .footer{background:var(--deep-blue);color:#fff;text-align:center;padding:26px 0}
+
+    .lang-content{display:none}
+    .lang-content.active{display:block}
+
+    @media (max-width: 920px){
+      .hero-page h1{font-size:2.5rem}
+      .nav-container{padding:0 20px;gap:4px}
+      .main-nav a{padding:8px 12px;font-size:.85rem}
+    }
+  </style>
+</head>
+<body>
+  <a class="logo" href="index.html">
+    <img src="Consult change_sole logo_white.png" alt="Consult Change logo">
+  </a>
+
+  <div class="language-toggle">
+    <button onclick="switchLanguage('en')" id="btn-en" class="active">EN</button>
+    <button onclick="switchLanguage('pl')" id="btn-pl">PL</button>
+  </div>
+
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="ai-change.html" class="active">AI in Change Management</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero-page">
+    <div class="container">
+      <div class="lang-content en active">
+        <h1>AI-Augmented Change Management</h1>
+        <p>We leverage AI to accelerate transformation while keeping humans at the center of every decision.</p>
+      </div>
+      <div class="lang-content pl">
+        <h1>Zarządzanie Zmianą Wsparte AI</h1>
+        <p>Wykorzystujemy AI do przyspieszenia transformacji, utrzymując ludzi w centrum każdej decyzji.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 class="section-title">Our Philosophy: AI as Amplifier, Not Replacement</h2>
+        <p class="intro-text">
+          AI doesn't replace the art of change management—it amplifies it. We use AI to handle repetitive analysis, identify patterns humans might miss, and free our consultants to focus on what matters most: understanding your people, building trust, and navigating the human complexities of transformation.
+        </p>
+      </div>
+
+      <div class="lang-content pl">
+        <h2 class="section-title">Nasza Filozofia: AI jako Wzmacniacz, Nie Zamiennik</h2>
+        <p class="intro-text">
+          AI nie zastępuje sztuki zarządzania zmianą—wzmacnia ją. Używamy AI do obsługi powtarzalnych analiz, identyfikowania wzorców, których ludzie mogą nie dostrzec, i uwalniania naszych konsultantów, aby skupili się na tym, co najważniejsze: zrozumieniu Twoich ludzi, budowaniu zaufania i nawigowaniu ludzkimi złożonościami transformacji.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 class="section-title">How We Use AI in Transformation</h2>
+        <div class="use-cases-grid">
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Stakeholder Mapping & Analysis</h3>
+            <p>AI analyzes organizational data to identify key influencers, resistance patterns, and communication networks. We map power dynamics and sentiment trends across departments.</p>
+            <div class="use-case-benefit">Result: 60% faster stakeholder analysis</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-comments"></i></div>
+            <h3>Communication Optimization</h3>
+            <p>Natural language processing analyzes feedback, surveys, and communications to identify concerns, questions, and resistance themes in real-time.</p>
+            <div class="use-case-benefit">Result: Proactive issue resolution</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Adoption Prediction & Analytics</h3>
+            <p>Machine learning models predict adoption risks, identify at-risk user groups, and recommend targeted interventions before problems escalate.</p>
+            <div class="use-case-benefit">Result: 90%+ adoption rates</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-robot"></i></div>
+            <h3>Training Content Generation</h3>
+            <p>AI assists in creating role-specific training materials, FAQs, and knowledge base articles tailored to different user personas and skill levels.</p>
+            <div class="use-case-benefit">Result: 70% faster content creation</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-brain"></i></div>
+            <h3>Pattern Recognition in Resistance</h3>
+            <p>AI identifies hidden patterns in resistance behavior across similar transformations, helping us anticipate and address concerns before they become blockers.</p>
+            <div class="use-case-benefit">Result: Fewer surprises, smoother rollout</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <h3>Real-Time Dashboard & Reporting</h3>
+            <p>Automated KPI tracking, sentiment analysis, and adoption metrics provide instant visibility into transformation health and progress.</p>
+            <div class="use-case-benefit">Result: Data-driven decision making</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-content pl">
+        <h2 class="section-title">Jak Używamy AI w Transformacji</h2>
+        <div class="use-cases-grid">
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Mapowanie i Analiza Interesariuszy</h3>
+            <p>AI analizuje dane organizacyjne, aby zidentyfikować kluczowych influencerów, wzorce oporu i sieci komunikacji. Mapujemy dynamikę władzy i trendy sentymentu w departamentach.</p>
+            <div class="use-case-benefit">Rezultat: 60% szybsza analiza interesariuszy</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-comments"></i></div>
+            <h3>Optymalizacja Komunikacji</h3>
+            <p>Przetwarzanie języka naturalnego analizuje feedback, ankiety i komunikację, identyfikując obawy, pytania i tematy oporu w czasie rzeczywistym.</p>
+            <div class="use-case-benefit">Rezultat: Proaktywne rozwiązywanie problemów</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Predykcja Adopcji i Analityka</h3>
+            <p>Modele uczenia maszynowego przewidują ryzyko adopcji, identyfikują zagrożone grupy użytkowników i rekomendują ukierunkowane interwencje przed eskalacją problemów.</p>
+            <div class="use-case-benefit">Rezultat: 90%+ wskaźniki adopcji</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-robot"></i></div>
+            <h3>Generowanie Treści Szkoleniowych</h3>
+            <p>AI wspiera tworzenie materiałów szkoleniowych specyficznych dla roli, FAQ i artykułów bazy wiedzy dopasowanych do różnych person użytkowników i poziomów umiejętności.</p>
+            <div class="use-case-benefit">Rezultat: 70% szybsze tworzenie treści</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-brain"></i></div>
+            <h3>Rozpoznawanie Wzorców w Oporze</h3>
+            <p>AI identyfikuje ukryte wzorce w zachowaniach oporu w podobnych transformacjach, pomagając nam przewidzieć i adresować obawy zanim staną się blokerami.</p>
+            <div class="use-case-benefit">Rezultat: Mniej niespodzianek, płynniejszy rollout</div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <h3>Dashboard i Raportowanie Real-Time</h3>
+            <p>Automatyczne śledzenie KPI, analiza sentymentu i metryki adopcji zapewniają natychmiastową widoczność zdrowia i postępu transformacji.</p>
+            <div class="use-case-benefit">Rezultat: Decyzje oparte na danych</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 class="section-title">Our AI Ethics & Principles</h2>
+        <div class="principles-grid">
+          <div class="principle">
+            <h4><i class="fas fa-shield-halved"></i> Transparency First</h4>
+            <p>We always disclose when AI is being used and explain how it influences recommendations. No black boxes.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-user-shield"></i> Privacy & Security</h4>
+            <p>All data is anonymized and encrypted. We comply with GDPR, SOC 2, and enterprise security standards.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-balance-scale"></i> Human Final Say</h4>
+            <p>AI provides insights and recommendations, but humans make all final decisions. We don't automate away judgment.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-check-double"></i> Bias Monitoring</h4>
+            <p>We actively monitor and correct for algorithmic bias to ensure fair treatment across demographics and roles.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-graduation-cap"></i> Explainability</h4>
+            <p>Every AI recommendation comes with reasoning you can understand and challenge. No unexplainable "AI magic."</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-heart"></i> Empathy Cannot Be Automated</h4>
+            <p>AI handles analysis. Humans handle conversations, trust-building, and navigating emotions. That's non-negotiable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-content pl">
+        <h2 class="section-title">Nasza Etyka AI i Zasady</h2>
+        <div class="principles-grid">
+          <div class="principle">
+            <h4><i class="fas fa-shield-halved"></i> Transparentność Przede Wszystkim</h4>
+            <p>Zawsze ujawniamy kiedy AI jest używane i wyjaśniamy jak wpływa na rekomendacje. Żadnych czarnych skrzynek.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-user-shield"></i> Prywatność i Bezpieczeństwo</h4>
+            <p>Wszystkie dane są zanonimizowane i zaszyfrowane. Przestrzegamy GDPR, SOC 2 i standardów bezpieczeństwa enterprise.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-balance-scale"></i> Ostateczna Decyzja u Ludzi</h4>
+            <p>AI dostarcza insighty i rekomendacje, ale ludzie podejmują wszystkie finalne decyzje. Nie automatyzujemy oceny.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-check-double"></i> Monitorowanie Uprzedzeń</h4>
+            <p>Aktywnie monitorujemy i korygujemy uprzedzenia algorytmiczne, aby zapewnić sprawiedliwe traktowanie w demografii i rolach.</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-graduation-cap"></i> Wyjaśnialność</h4>
+            <p>Każda rekomendacja AI ma uzasadnienie, które możesz zrozumieć i zakwestionować. Żadnej niewyjaśnialnej "magii AI."</p>
+          </div>
+
+          <div class="principle">
+            <h4><i class="fas fa-heart"></i> Empatii Nie Da Się Zautomatyzować</h4>
+            <p>AI obsługuje analizę. Ludzie obsługują rozmowy, budowanie zaufania i nawigowanie emocjami. To nie podlega negocjacji.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 class="section-title">AI Tools We Leverage</h2>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <i class="fas fa-chart-network"></i>
+            <h4>Power BI + AI</h4>
+            <p>Predictive analytics and automated insights on adoption trends</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-brain"></i>
+            <h4>NLP Models</h4>
+            <p>Sentiment analysis and feedback categorization at scale</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-project-diagram"></i>
+            <h4>Network Analysis</h4>
+            <p>Organizational graph analysis to map influence and communication</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-robot"></i>
+            <h4>Gen AI Assistants</h4>
+            <p>Content generation, documentation, and knowledge management</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-content pl">
+        <h2 class="section-title">Narzędzia AI, Których Używamy</h2>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <i class="fas fa-chart-network"></i>
+            <h4>Power BI + AI</h4>
+            <p>Analityka predykcyjna i automatyczne insighty o trendach adopcji</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-brain"></i>
+            <h4>Modele NLP</h4>
+            <p>Analiza sentymentu i kategoryzacja feedbacku na skalę</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-project-diagram"></i>
+            <h4>Analiza Sieci</h4>
+            <p>Analiza grafu organizacyjnego do mapowania wpływu i komunikacji</p>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-robot"></i>
+            <h4>Asystenci Gen AI</h4>
+            <p>Generowanie treści, dokumentacja i zarządzanie wiedzą</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="human-centered">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2>The Bottom Line: AI Makes Us Better, Not Redundant</h2>
+        <p>
+          Our consultants spend 60% less time on data crunching and 60% more time with your people. That's the power of AI-augmented change management—faster insights, deeper human connection, and transformations that actually stick.
+        </p>
+      </div>
+
+      <div class="lang-content pl">
+        <h2>Konkluzja: AI Czyni Nas Lepszymi, Nie Zbędnymi</h2>
+        <p>
+          Nasi konsultanci spędzają 60% mniej czasu na przetwarzaniu danych i 60% więcej czasu z Twoimi ludźmi. To jest moc zarządzania zmianą wspartego AI—szybsze insighty, głębsze połączenie ludzkie i transformacje, które rzeczywiście się utrzymują.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 style="font-size:2.5rem;margin-bottom:20px;color:var(--deep-blue)">Ready to Experience AI-Augmented Transformation?</h2>
+        <p style="font-size:1.2rem;margin-bottom:32px;color:#555">Let's discuss how AI can accelerate your change journey.</p>
+        <a href="index.html#contact" class="btn">Start the Conversation</a>
+      </div>
+
+      <div class="lang-content pl">
+        <h2 style="font-size:2.5rem;margin-bottom:20px;color:var(--deep-blue)">Gotowy Doświadczyć Transformacji Wspartej AI?</h2>
+        <p style="font-size:1.2rem;margin-bottom:32px;color:#555">Porozmawiajmy jak AI może przyspieszyć Twoją podróż zmian.</p>
+        <a href="index.html#contact" class="btn">Rozpocznij Rozmowę</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="lang-content en active"><p>&copy; 2025 Consult Change. All rights reserved.</p></div>
+      <div class="lang-content pl"><p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    function switchLanguage(lang){
+      const en = document.querySelectorAll('.lang-content.en');
+      const pl = document.querySelectorAll('.lang-content.pl');
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      if(lang==='en'){
+        en.forEach(n=>n.classList.add('active'));
+        pl.forEach(n=>n.classList.remove('active'));
+        enBtn.classList.add('active');
+        plBtn.classList.remove('active');
+      }else{
+        pl.forEach(n=>n.classList.add('active'));
+        en.forEach(n=>n.classList.remove('active'));
+        plBtn.classList.add('active');
+        enBtn.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
