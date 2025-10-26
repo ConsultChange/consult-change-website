@@ -1,174 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Why Us - Consult Change</title>
-  <meta name="description" content="Why leading companies choose Consult Change for transformations that stick."/>
-  <link rel="canonical" href="https://www.consultchange.pl/why-us.html"/>
+  <meta name="description" content="Why choose Consult Change: measurable adoption, governance & PMO, Legal Front Door on Microsoft 365/SharePoint, CLM/ELM transformations.">
 
-  <link rel="icon" href="/favicon.ico">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Favicons (root) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Us - Consult Change">
+  <meta property="og:description" content="Operationalize strategy and deliver adoption. Learn why organizations choose Consult Change.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.consultchange.pl/why-us.html">
+  <meta property="og:image" content="/apple-touch-icon.png">
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCDZMH1RFK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-RCDZMH1RFK');
+  </script>
 
   <style>
-    :root{ --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --deep:#0F172A; --ink:#0B0B0B; --gray:#EDEDED; }
+    :root{
+      --gray:#EDEDED; 
+      --honey:#F4C362; 
+      --blue:#BFE6F2; 
+      --purple:#C985F0; 
+      --navy:#0F172A; 
+      --black:#0B0B0B; 
+      --white:#FFFFFF;
+    }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:var(--navy);line-height:1.7;overflow-x:hidden}
     img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    h1,h2,h3,h4,h5,h6,strong,.caps{font-variant:small-caps;letter-spacing:.03em}
+    a{color:inherit;text-decoration:none}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .section{padding:92px 0}
+    .section-title{font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:42px}
+    .muted{opacity:.9}
 
-    /* NAV */
-    .logo{position:fixed;left:20px;top:20px;z-index:1000;height:64px;min-width:64px;display:grid;place-items:center;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10)}
-    .logo img{height:44px;width:auto}
+    /* Buttons */
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;border:2px solid transparent;cursor:pointer;transition:.25s ease}
+    .btn--brand{background:var(--honey);color:#111}
+    .btn--brand:hover{transform:translateY(-2px);background:#ffd57f}
+    .btn--ghost{background:transparent;border-color:#fff;color:#fff}
+    .btn--ghost:hover{background:rgba(255,255,255,.15)}
+    .btn--outline{background:transparent;border-color:var(--honey);color:var(--navy)}
+    .btn--outline:hover{background:var(--honey)}
+
+    /* Floating logo pin + language */
+    .logo{
+      position:fixed;left:20px;top:20px;z-index:1000;
+      display:flex;align-items:center;justify-content:center;
+      height:62px;min-width:62px;padding:8px;border-radius:999px;
+      background:rgba(255,255,255,.98);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);backdrop-filter:saturate(1.2) blur(6px)
+    }
+    .logo img{height:40px;width:auto}
     .language-toggle{position:fixed;right:20px;top:20px;z-index:1000;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--deep)}
-    .language-toggle button.active{background:var(--honey)}
-    .main-nav{position:fixed;left:0;right:0;top:0;z-index:900;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
-    .nav-container{max-width:1200px;margin:0 auto;display:flex;gap:10px;justify-content:center;align-items:center}
-    .main-nav a{padding:8px 16px;border-radius:12px;font-weight:700;color:var(--deep)}
-    .main-nav a:hover{background:var(--honey)}
+    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:800;color:var(--navy)}
+    .language-toggle button.active{background:var(--honey);color:#111}
 
-    .hero-page{margin-top:64px;padding:110px 0 70px;text-align:center;color:#000;
-      background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 55%,var(--honey) 100%)}
-    .hero-page h1{font-size:2.6rem;margin-bottom:8px}
-    .hero-page .subtitle{font-size:1.2rem;max-width:760px;margin:0 auto 18px}
+    /* Top nav (simple) */
+    .topnav{position:fixed;left:50%;transform:translateX(-50%);top:22px;z-index:950;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border:1px solid #eee;border-radius:999px;padding:6px 12px;display:flex;gap:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .topnav a{padding:8px 12px;border-radius:999px;font-weight:700}
+    .topnav a:hover{background:#f7f7f7}
+    .topnav .current{background:#111;color:#fff}
 
-    .section{padding:80px 0}
-    .section-title{font-size:2rem;text-align:center;margin:0 0 14px;color:var(--deep)}
-    .section-subtitle{text-align:center;color:#555;max-width:760px;margin:0 auto 24px}
+    /* Hero */
+    .hero{
+      min-height:52vh;color:#fff;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;
+      background:
+        radial-gradient(1200px 520px at 50% 10%, rgba(255,255,255,.15), transparent 60%),
+        linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%);
+    }
+    .hero .content{max-width:960px;padding:120px 20px 48px}
+    .hero h1{font-size:2.6rem;font-weight:900;letter-spacing:.2px;margin-bottom:10px}
+    .hero p{font-size:1.12rem;opacity:.98}
+    .cta-row{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-    .reasons{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:26px}
-    .r{background:#fff;border:2px solid var(--honey);border-radius:16px;padding:28px;text-align:center}
-    .r .n{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--purple),var(--honey));color:#fff;font-weight:800;font-size:1.6rem}
+    /* Grids & cards */
+    .grid{display:grid;gap:24px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .card{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:22px;box-shadow:0 8px 28px rgba(0,0,0,.06);transition:transform .18s ease,box-shadow .18s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,.10)}
+    .icon-chip{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));color:#111;margin-bottom:10px}
 
-    .ps{background:var(--gray)}
-    .ps-grid{display:grid;gap:20px;grid-template-columns:1fr 1fr;margin-top:24px}
-    .ps-card{background:#fff;border-radius:16px;padding:24px;border-left:5px solid var(--deep)}
-    .ps-card.problem{border-left-color:#b00020}
-    .ps-card.solution{border-left-color:var(--purple)}
-    .ps-card h4{margin-bottom:8px;color:var(--deep)}
-    .ps-card ul{margin:10px 0 0 18px}
-    .ps-card li{margin:6px 0;color:#444}
+    /* Metrics band */
+    .metrics{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .metric{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:16px;text-align:center}
+    .metric .num{font-size:2rem;font-weight:900;color:#4f46e5}
 
-    .cta{padding:80px 0;text-align:center;background:linear-gradient(135deg,var(--deep) 0%,var(--purple) 100%);color:#fff}
-    .btn{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:14px;font-weight:800;border:2px solid #fff;background:#fff;color:var(--deep)}
-    .btn:hover{background:var(--honey);border-color:var(--honey);color:#000}
+    /* Process */
+    .step{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:18px;transition:transform .2s ease,box-shadow .2s ease}
+    .step:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
 
-    .footer{background:var(--deep);color:#fff;text-align:center;padding:26px 0}
+    /* Contact strip */
+    .contact-strip{
+      background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%);
+      color:#111;border-top:1px solid rgba(0,0,0,.06)
+    }
+    .contact-box{background:rgba(255,255,255,.92);border:1px solid #e8e8e8;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
 
+    /* Footer */
+    .footer{background:#111;color:#fff;text-align:center;padding:24px 0}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* Language visibility */
     .lang-content{display:none}
     .lang-content.active{display:block}
 
-    @media (max-width:920px){ .ps-grid{grid-template-columns:1fr} }
+    @media (max-width: 920px){
+      .hero h1{font-size:2.1rem}
+      .section-title{font-size:1.9rem}
+      .logo{height:58px;min-width:58px}
+      .logo img{height:36px}
+    }
   </style>
 </head>
 <body>
-  <a class="logo" href="index.html" aria-label="Home"><img src="Consult change_sole logo_white.png" alt="Consult Change logo"></a>
-  <div class="language-toggle">
-    <button onclick="switchLanguage('en')" id="btn-en" class="active">EN</button>
-    <button onclick="switchLanguage('pl')" id="btn-pl">PL</button>
+  <!-- Floating logo -->
+  <a class="logo" href="/index.html#home" aria-label="Consult Change - home">
+    <img src="/Consult change_sole logo_white.png" alt="Consult Change logo">
+  </a>
+
+  <!-- Language toggle -->
+  <div class="language-toggle" role="tablist" aria-label="Language">
+    <button onclick="switchLanguage('en')" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
+    <button onclick="switchLanguage('pl')" id="btn-pl" role="tab" aria-selected="false">PL</button>
   </div>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <a href="index.html" class="caps">Home</a>
-      <a href="why-us.html" class="caps">Why Us</a>
-      <a href="ai-change.html" class="caps">AI in Change</a>
-      <a href="index.html#contact" class="caps">Contact</a>
-    </div>
+
+  <!-- Simple top nav -->
+  <nav class="topnav">
+    <a href="/index.html">Home</a>
+    <a href="/why-us.html" class="current">Why Us</a>
+    <a href="/ai-change.html">AI in Change</a>
+    <a href="/index.html#contact">Contact</a>
   </nav>
 
-  <section class="hero-page">
-    <div class="container">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="content">
       <div class="lang-content en active">
-        <h1>You've Tried Change Before. It Didn't Stick.</h1>
-        <p class="subtitle">We know why - and we know how to fix it.</p>
-        <p>Most transformations fail not because of bad strategy, but due to weak execution and adoption. We deliver the missing piece: change that actually works.</p>
+        <h1>Why Organizations Choose Consult Change</h1>
+        <p class="muted">We turn strategy into working processes, tools, and measurable adoption - without bureaucracy.</p>
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--brand" href="/index.html#contact">Start Your Transformation</a>
+          <a class="btn btn--ghost" href="/ai-change.html">AI in Change</a>
+        </div>
       </div>
       <div class="lang-content pl">
-        <h1>Próbowałeś Zmian. Nie Utrzymały Się.</h1>
-        <p class="subtitle">Wiemy dlaczego - i wiemy jak to naprawić.</p>
-        <p>Większość transformacji zawodzi nie przez strategię, ale przez realizację i adopcję. Dostarczamy brakujący element: zmiany, które działają.</p>
+        <h1>Dlaczego Organizacje Wybierają Consult Change</h1>
+        <p class="muted">Przekładamy strategię na procesy, narzędzia i mierzalną adopcję - bez zbędnej biurokracji.</p>
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--brand" href="/index.html#contact">Porozmawiajmy</a>
+          <a class="btn btn--ghost" href="/ai-change.html">AI w Zmianie</a>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
+  <!-- VALUE PILLARS -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">3 Reasons Companies Choose Us</h2>
-      <p class="section-subtitle">We don't just advise - we transform alongside you until it works.</p>
-      <div class="reasons">
-        <div class="r"><div class="n">1</div><h3>We Stay Until It Works</h3><p>We stay through implementation and adoption - until your team can sustain the change without us.</p></div>
-        <div class="r"><div class="n">2</div><h3>Proven Results, Not Promises</h3><p>70% faster cycles. 90%+ adoption. 3–6 months to value. You pay for outcomes, not activity.</p></div>
-        <div class="r"><div class="n">3</div><h3>Multi-Industry Expertise</h3><p>Legal Ops, Manufacturing and Change - cross-pollinated patterns that single-industry firms miss.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section ps">
-    <div class="container">
       <div class="lang-content en active">
-        <h2 class="section-title">The Problem with Traditional Consulting</h2>
-        <div class="ps-grid">
-          <div class="ps-card problem">
-            <h4>❌ What Usually Happens</h4>
-            <ul>
-              <li>Beautiful decks, no execution support</li><li>Recommendations that gather dust</li>
-              <li>Your team left alone</li><li>Low adoption, wasted budget</li><li>Back to square one</li>
-            </ul>
+        <h2 class="section-title">What Sets Us Apart</h2>
+        <div class="grid grid-3">
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Measurable outcomes</h3>
+            <p>OKR/KPI frameworks, adoption analytics, and benefits tracking embedded into delivery - not an afterthought.</p>
           </div>
-          <div class="ps-card solution">
-            <h4>✓ How We're Different</h4>
-            <ul>
-              <li>Hands-on implementation</li><li>PROSCI-based change</li>
-              <li>We stay until adoption succeeds</li><li>Real-time dashboards</li><li>Knowledge transfer</li>
-            </ul>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-door-open"></i></div>
+            <h3>Legal Front Door on M365</h3>
+            <p>Intake, triage, SLAs, knowledge base and reporting on Microsoft 365/SharePoint with enterprise security.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-file-contract"></i></div>
+            <h3>CLM/ELM expertise</h3>
+            <p>From vendor shortlisting and TOM/design to metadata, templates, retention and change enablement.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>Governance people use</h3>
+            <p>Steering cadence, decision gates and roles that shorten cycle time instead of adding bureaucracy.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-industry"></i></div>
+            <h3>Manufacturing know-how</h3>
+            <p>OEM RFQs, costing & pricing, and a clean commercial-to-operations handshake that protects margin.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Vendor-agnostic advisory</h3>
+            <p>Independent guidance aligned to your context, constraints, and data - not a single tool.</p>
           </div>
         </div>
       </div>
 
       <div class="lang-content pl">
-        <h2 class="section-title">Problem z Tradycyjnym Consultingiem</h2>
-        <div class="ps-grid">
-          <div class="ps-card problem">
-            <h4>❌ Co Zazwyczaj Się Dzieje</h4>
-            <ul>
-              <li>Piękne slajdy, brak wsparcia wykonania</li><li>Rekomendacje na półkę</li>
-              <li>Zespół zostaje sam</li><li>Niska adopcja, strata budżetu</li><li>Powrót do punktu wyjścia</li>
-            </ul>
+        <h2 class="section-title">Co Nas Wyróżnia</h2>
+        <div class="grid grid-3">
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Mierzalne rezultaty</h3>
+            <p>OKR/KPI, analityka adopcji i śledzenie korzyści wbudowane w dostarczanie - nie „na koniec”.</p>
           </div>
-          <div class="ps-card solution">
-            <h4>✓ Jak Jesteśmy Inni</h4>
-            <ul>
-              <li>Implementacja hands-on</li><li>PROSCI Change</li>
-              <li>Zostajemy aż adopcja się uda</li><li>Dashboardy na żywo</li><li>Transfer wiedzy</li>
-            </ul>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-door-open"></i></div>
+            <h3>Legal Front Door na M365</h3>
+            <p>Intake, triage, SLA, baza wiedzy i raportowanie na Microsoft 365/SharePoint z bezpieczeństwem klasy enterprise.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-file-contract"></i></div>
+            <h3>Ekspertyza CLM/ELM</h3>
+            <p>Od shortlisty i designu/TOM po metadane, szablony, retencję i change enablement.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>Governance, z którego się korzysta</h3>
+            <p>Rytm sterujący, bramy decyzyjne i role skracające cykl zamiast tworzyć biurokrację.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-industry"></i></div>
+            <h3>Know-how produkcyjne</h3>
+            <p>RFQ OEM, kalkulacje i ceny oraz czysty handshake sprzedaż–operacje chroniący marżę.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-chip"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Doradztwo vendor-agnostyczne</h3>
+            <p>Niezależne rekomendacje dopasowane do Twojego kontekstu, ograniczeń i danych - nie do jednego narzędzia.</p>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <section class="cta">
+  <!-- METRICS -->
+  <section class="section" style="background:#f8f9fa">
     <div class="container">
-      <h2>Ready to Make Change That Sticks?</h2>
-      <a class="btn" href="index.html#contact">Book a Discovery Call</a>
+      <div class="lang-content en active">
+        <h2 class="section-title">Impact You Can Expect</h2>
+        <div class="metrics">
+          <div class="metric reveal"><div class="num">70%</div><p>Reduction in contract cycle time</p></div>
+          <div class="metric reveal"><div class="num">90%+</div><p>Adoption in target user groups</p></div>
+          <div class="metric reveal"><div class="num">50%</div><p>Faster legal intake triage</p></div>
+          <div class="metric reveal"><div class="num">3–6 mo.</div><p>Time-to-value for first BU</p></div>
+        </div>
+      </div>
+      <div class="lang-content pl">
+        <h2 class="section-title">Wyniki, Których Oczekujesz</h2>
+        <div class="metrics">
+          <div class="metric reveal"><div class="num">70%</div><p>Skrócenie cyklu kontraktów</p></div>
+          <div class="metric reveal"><div class="num">90%+</div><p>Adopcja w grupach docelowych</p></div>
+          <div class="metric reveal"><div class="num">50%</div><p>Szybszy triage zgłoszeń do Legal</p></div>
+          <div class="metric reveal"><div class="num">3–6 mies.</div><p>Time-to-value dla pierwszej jednostki</p></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="footer"><div class="container"><p>&copy; 2025 Consult Change.</p></div></footer>
+  <!-- HOW WE WORK (process) -->
+  <section class="section">
+    <div class="container">
+      <div class="lang-content en active">
+        <h2 class="section-title">How We Work</h2>
+        <div class="grid grid-4 grid-2">
+          <div class="step reveal"><h3>Assess & Align</h3><p>Stakeholders, current state, risk & data review, value case and success metrics to secure buy-in.</p></div>
+          <div class="step reveal"><h3>Design & Govern</h3><p>Target operating model, processes & roles, decision gates, information architecture and controls.</p></div>
+          <div class="step reveal"><h3>Build, Pilot, Rollout</h3><p>Configuration, integrations, playbooks, pilots and scaled deployment with change enablement.</p></div>
+          <div class="step reveal"><h3>Adopt & Optimize</h3><p>OKRs/KPIs, adoption analytics, continuous improvement and benefits tracking.</p></div>
+        </div>
+      </div>
+      <div class="lang-content pl">
+        <h2 class="section-title">Jak Pracujemy</h2>
+        <div class="grid grid-4 grid-2">
+          <div class="step reveal"><h3>Diagnoza & Uzgodnienie</h3><p>Interesariusze, stan obecny, ryzyka i dane, business case i miary sukcesu - zapewniamy buy-in.</p></div>
+          <div class="step reveal"><h3>Design & Governance</h3><p>Docelowy operating model, procesy i role, bramy decyzyjne, architektura informacji i kontrole.</p></div>
+          <div class="step reveal"><h3>Budowa, Pilotaż, Rollout</h3><p>Konfiguracja, integracje, playbooki, pilotaże i skalowanie z change enablement.</p></div>
+          <div class="step reveal"><h3>Adopcja & Optymalizacja</h3><p>OKR/KPI, analityka adopcji, ciągłe doskonalenie i śledzenie korzyści.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="section contact-strip">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="contact-box reveal">
+          <div class="lang-content en active">
+            <h2>Ready to talk?</h2>
+            <p>Call us at <strong><a href="tel:+48505172024">+48 505 172 024</a></strong> or send an email to <a href="mailto:patryk.markowski@consultchange.pl">patryk.markowski@consultchange.pl</a>.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn--outline" href="https://calendly.com/patryk-markowski-consultchange" target="_blank" rel="noopener">Book a meeting</a>
+              <a class="btn btn--brand" href="/index.html#contact">Contact form</a>
+            </div>
+          </div>
+          <div class="lang-content pl">
+            <h2>Porozmawiajmy</h2>
+            <p>Zadzwoń: <strong><a href="tel:+48505172024">+48 505 172 024</a></strong> lub napisz: <a href="mailto:patryk.markowski@consultchange.pl">patryk.markowski@consultchange.pl</a>.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn--outline" href="https://calendly.com/patryk-markowski-consultchange" target="_blank" rel="noopener">Zarezerwuj spotkanie</a>
+              <a class="btn btn--brand" href="/index.html#contact">Formularz kontaktowy</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-box reveal" style="background:#fff">
+          <div class="lang-content en active">
+            <h3>Also exploring AI in change?</h3>
+            <p class="muted">See how we use practical AI to accelerate discovery, comms and adoption.</p>
+            <a class="btn btn--brand" href="/ai-change.html">Explore AI in Change</a>
+          </div>
+          <div class="lang-content pl">
+            <h3>Myślisz o AI w zmianie?</h3>
+            <p class="muted">Zobacz, jak praktyczne AI przyspiesza discovery, komunikację i adopcję.</p>
+            <a class="btn btn--brand" href="/ai-change.html">Zobacz AI w Zmianie</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="lang-content en active"><p>&copy; 2025 Consult Change. All rights reserved.</p></div>
+      <div class="lang-content pl"><p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p></div>
+    </div>
+  </footer>
 
   <script>
+    /* Language switch */
     function switchLanguage(lang){
       const en = document.querySelectorAll('.lang-content.en');
       const pl = document.querySelectorAll('.lang-content.pl');
-      const enBtn = document.getElementById('btn-en'); const plBtn = document.getElementById('btn-pl');
-      if(lang==='en'){ en.forEach(n=>n.classList.add('active')); pl.forEach(n=>n.classList.remove('active')); enBtn.classList.add('active'); plBtn.classList.remove('active'); }
-      else{ pl.forEach(n=>n.classList.add('active')); en.forEach(n=>n.classList.remove('active')); plBtn.classList.add('active'); enBtn.classList.remove('active'); }
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      const toggle=(nodes,on)=>nodes.forEach(n=>n.classList.toggle('active',on));
+      if(lang==='en'){toggle(en,true);toggle(pl,false);enBtn.classList.add('active');plBtn.classList.remove('active');document.documentElement.lang='en'}
+      else{toggle(pl,true);toggle(en,false);plBtn.classList.add('active');enBtn.classList.remove('active');document.documentElement.lang='pl'}
     }
+
+    /* Reveal on scroll */
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target)}
+      })
+    },{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.reveal,.card,.step,.metric,.contact-box').forEach(el=>obs.observe(el));
   </script>
 </body>
 </html>
