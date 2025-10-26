@@ -6,7 +6,7 @@
   <title>Consult Change — Legal Operations, Technology & Organizational Transformation</title>
   <meta name="description" content="CLM/ELM transformations, Legal Front Door on Microsoft 365/SharePoint, governance & PMO, and PROSCI change management that delivers measurable adoption.">
 
-  <!-- Favicons (przykład – zostaw jak masz u siebie) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -39,9 +39,7 @@
   </script>
 
   <style>
-    :root{
-      --gray:#EDEDED; --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --black:#0B0B0B; --white:#FFFFFF;
-    }
+    :root{--gray:#EDEDED;--honey:#F4C362;--blue:#BFE6F2;--purple:#C985F0;--black:#0B0B0B;--white:#FFFFFF}
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.6;overflow-x:hidden}
     img{max-width:100%;display:block}
@@ -55,35 +53,17 @@
     .btn--ghost{background:transparent;border-color:#d6d6d6;color:#111}
     .btn--ghost:hover{border-color:var(--honey);background:var(--honey)}
 
-    /* Header chip: symbol only (pinezka) */
-    .logo{
-      position:fixed;left:20px;top:20px;z-index:1000;
-      display:flex;align-items:center;justify-content:center;
-      height:64px;min-width:64px;padding:10px;border-radius:999px;
-      background:rgba(255,255,255,.98);
-      box-shadow:0 10px 22px rgba(0,0,0,.10);backdrop-filter:saturate(1.2) blur(6px)
-    }
+    .logo{position:fixed;left:20px;top:20px;z-index:1000;display:flex;align-items:center;justify-content:center;height:64px;min-width:64px;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10);backdrop-filter:saturate(1.2) blur(6px)}
     .logo img{height:44px;width:auto}
 
     .language-toggle{position:fixed;right:20px;top:20px;z-index:1000;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
     .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:#0B0B0B}
     .language-toggle button.active{background:var(--honey);color:var(--black)}
 
-    /* HERO */
     .hero{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;color:#fff;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%)}
     .hero-content{max-width:980px;padding:24px;animation:fadeInUp .9s ease both}
-
-    .hero-brand{
-      display:inline-flex;align-items:center;justify-content:center;
-      margin:0 auto 18px;
-      background:rgba(255,255,255,.98);
-      padding:12px 18px;border-radius:16px;
-      box-shadow:0 14px 30px rgba(0,0,0,.12)
-    }
-    .hero-brand img{
-      height:auto;width:clamp(210px, 76vw, 450px);
-    }
-
+    .hero-brand{display:inline-flex;align-items:center;justify-content:center;margin:0 auto 18px;background:rgba(255,255,255,.98);padding:12px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(0,0,0,.12)}
+    .hero-brand img{height:auto;width:clamp(210px,76vw,450px)}
     .hero h1{font-size:3rem;margin:6px 0 10px}
     .hero .tagline{font-size:1.2rem;opacity:.95;margin-bottom:12px}
     .bullets{display:grid;gap:6px;margin:10px 0 2px;color:#111;list-style:none}
@@ -96,47 +76,35 @@
     .pill--brand{background:var(--honey);border-color:var(--honey);color:var(--black)}
     .pill--brand i{color:var(--black)}
 
-    /* ANIMACJA KARUZELI (fade + slide) */
+    /* Karuzela */
     .carousel-wrap{position:relative;overflow:hidden}
     .carousel-slide{transition:opacity .6s ease, transform .6s ease}
     .is-enter{opacity:1;transform:translateY(0)}
     .is-exit{opacity:0;transform:translateY(20px)}
-    .is-hidden{display:none}
 
     .services{padding:96px 0;background:var(--gray)}
     .services-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .service-card{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:28px;text-align:left;box-shadow:0 8px 28px rgba(0,0,0,.06);transition:transform .18s ease,box-shadow .18s ease}
     .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,.10)}
-    .service-card h3{margin-bottom:6px}
     .service-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#111;font-size:1.4rem}
 
     .band{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
-
     .approach{padding:84px 0;background:#fff}
     .steps{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .step{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:18px}
-    .step h4{margin-bottom:6px}
-    .note{font-size:.95rem;color:#555}
-
     .results{padding:84px 0;background:#f8f9fa}
     .impact-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
     .num{font-size:2.2rem;font-weight:800;color:#667eea}
     .case-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:22px}
     .case{background:#fff;border:1px solid #eee;border-radius:14px;padding:18px}
-    .case h4{margin-bottom:8px}
-
     .credentials{padding:84px 0;background:#fff}
     .badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #e7e7e7;border-radius:999px;padding:10px 14px;margin:8px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
-    .badge i{color:#667eea}
-
     .industries{padding:84px 0;background:#fff}
     .grid-3{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{background:#fafafa;border:1px solid #ececec;border-radius:14px;padding:18px}
-
     .insights{padding:84px 0;background:#f8f9fa}
     .insights-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .post{background:#fff;border:1px solid #eaeaea;border-radius:14px;padding:18px}
-    .post h4{margin-bottom:8px}
 
     .team{padding:96px 0;background:#fff}
     .team-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));margin-top:28px}
@@ -147,13 +115,6 @@
     .member-info{padding:22px}
     .member-role{font-weight:700;color:var(--purple);margin-bottom:10px}
     .member-description{color:#555;margin-bottom:16px}
-    .expertise-section{background:#fff;border:1px solid #eee;border-radius:14px;padding:18px;margin:16px 0}
-    .expertise-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .expertise-item{background:#f7f8fb;border-left:4px solid #667eea;border-radius:10px;padding:12px}
-    .member-specialties{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px}
-    .member-specialties ul{list-style:none}
-    .member-specialties li{padding-left:18px;position:relative;margin:6px 0;color:#444}
-    .member-specialties li:before{content:"→";position:absolute;left:0;color:#667eea;font-weight:800}
 
     .profile-link{margin-top:10px;text-align:center}
     .profile-link a{display:inline-flex;align-items:center;gap:8px;color:var(--black);font-weight:700;text-decoration:underline;border-bottom:2px solid transparent}
@@ -181,24 +142,24 @@
     @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(-5px)}}
 
-    @media (max-width: 920px){
+    @media (max-width:920px){
       .contact-content{grid-template-columns:1fr}
       .hero h1{font-size:2.2rem}
       .section-title{font-size:2rem}
       .logo{height:58px;min-width:58px}
       .logo img{height:38px}
-      .hero-brand img{width:clamp(260px, 86vw, 560px)}
+      .hero-brand img{width:clamp(260px,86vw,560px)}
       .brand-card img{height:66px}
     }
   </style>
 </head>
 <body>
-  <!-- Symbol (pinezka) -->
+  <!-- Symbol -->
   <a class="logo" href="#home" aria-label="Consult Change — home">
     <img src="Consult change_sole logo_white.png" alt="Consult Change logo symbol">
   </a>
 
-  <!-- Przełącznik języka -->
+  <!-- Language -->
   <div class="language-toggle" role="tablist" aria-label="Language">
     <button onclick="switchLanguage('en')" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
     <button onclick="switchLanguage('pl')" id="btn-pl" role="tab" aria-selected="false">PL</button>
@@ -219,8 +180,8 @@
             <p id="en-tagline" class="tagline">We translate strategy into working processes, tools and change that sticks.</p>
             <div class="cta-row">
               <a id="en-cta1" href="#contact" class="btn">Start Your Transformation</a>
-              <a id="en-cta2" href="why_us_page.html" class="btn btn--ghost">Why Us</a>
-              <a id="en-cta3" href="ai_change_page.html" class="btn btn--outline">AI in Change</a>
+              <a id="en-cta2" href="why-us.html" class="btn btn--ghost">Why Us</a>
+              <a id="en-cta3" href="ai-change.html" class="btn btn--outline">AI in Change</a>
             </div>
             <div class="band" aria-label="proof">
               <span id="en-b1" class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Enterprise security & compliance</span>
@@ -239,8 +200,8 @@
             <p id="pl-tagline" class="tagline">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</p>
             <div class="cta-row">
               <a id="pl-cta1" href="#contact" class="btn">Porozmawiajmy</a>
-              <a id="pl-cta2" href="why_us_page.html" class="btn btn--ghost">Dlaczego My</a>
-              <a id="pl-cta3" href="ai_change_page.html" class="btn btn--outline">AI w Zmianie</a>
+              <a id="pl-cta2" href="why-us.html" class="btn btn--ghost">Dlaczego My</a>
+              <a id="pl-cta3" href="ai-change.html" class="btn btn--outline">AI w Zmianie</a>
             </div>
             <div class="band" aria-label="proof">
               <span id="pl-b1" class="pill pill--brand"><i class="fa-solid fa-shield-halved"></i> Bezpieczeństwo klasy enterprise</span>
@@ -322,18 +283,9 @@
         </div>
 
         <div class="case-grid">
-          <div class="case">
-            <h4>Global luxury brand — Legal Ops</h4>
-            <p>Designed CLM/ELM roadmap, standardized templates & metadata, introduced steering cadence and OKR dashboards. Cycle time reduced by 60–75% on priority flows.</p>
-          </div>
-          <div class="case">
-            <h4>European bank — Process & Data</h4>
-            <p>End-to-end process redesign and data clean-up to enable scale & control. Improved data quality, removed manual rework, and clarified decision rights.</p>
-          </div>
-          <div class="case">
-            <h4>Industrial OEM supplier — RFQ</h4>
-            <p>RFQ operating model and costing framework. Faster quotes, margin control and a clean hand-off between sales, engineering and production.</p>
-          </div>
+          <div class="case"><h4>Global luxury brand — Legal Ops</h4><p>CLM/ELM roadmap, standardized templates & metadata, steering cadence & OKR dashboards. Cycle time reduced by 60–75%.</p></div>
+          <div class="case"><h4>European bank — Process & Data</h4><p>End-to-end process redesign and data clean-up enabling scale & control. Less rework, clear decision rights.</p></div>
+          <div class="case"><h4>Industrial OEM supplier — RFQ</h4><p>RFQ operating model and costing framework. Faster quotes, margin control, clean hand-off across teams.</p></div>
         </div>
       </div>
 
@@ -347,18 +299,9 @@
         </div>
 
         <div class="case-grid">
-          <div class="case">
-            <h4>Globalny brand luksusowy — Legal Ops</h4>
-            <p>Roadmapa CLM/ELM, standaryzacja szablonów i metadanych, rytm sterujący i OKR. Czas cyklu krótszy o 60–75% w kluczowych ścieżkach.</p>
-          </div>
-          <div class="case">
-            <h4>Europejski bank — Procesy & Dane</h4>
-            <p>Redesign E2E i porządkowanie danych dla skali i kontroli. Wyższa jakość danych, mniej ręcznych poprawek, jasne prawa decyzyjne.</p>
-          </div>
-          <div class="case">
-            <h4>Dostawca OEM — RFQ</h4>
-            <p>Model operacyjny RFQ i ramy kalkulacji. Szybsze oferty, kontrola marży i czysty handshake sprzedaż–inżynieria–produkcja.</p>
-          </div>
+          <div class="case"><h4>Globalny brand luksusowy — Legal Ops</h4><p>Roadmapa CLM/ELM, standardy metadanych i szablonów, rytm sterujący i OKR. Skrócenie cyklu o 60–75%.</p></div>
+          <div class="case"><h4>Europejski bank — Procesy & Dane</h4><p>Redesign E2E i porządkowanie danych. Wyższa jakość, mniej poprawek, jasne prawa decyzyjne.</p></div>
+          <div class="case"><h4>Dostawca OEM — RFQ</h4><p>Model RFQ i ramy kalkulacji. Szybsze oferty, kontrola marży, czysty handoff zespołów.</p></div>
         </div>
       </div>
     </div>
@@ -450,7 +393,7 @@
               <h3>Change Management & Legal Operations Expert</h3>
               <div class="member-role">Founder & Lead Change & Project Management Consultant</div>
               <div class="member-description">
-                Patryk helps leaders plan and deliver complex end-to-end change: from diagnosis and business case, through the roadmap, governance and PMO/portfolio, to adoption and measurable outcomes. As a freelancer, he has delivered projects for clients such as Swarovski GBS, Deloitte Legal, Nordea, AirHelp, and Arrow Electronics. He specializes in streamlining processes and initiative portfolios (OKRs/KPIs, prioritization, decision gates), operational transformations (including CLM/ELM), designing a Legal Front Door on Microsoft 365/SharePoint, and leading communications, training, and resistance management in line with PROSCI.
+                Patryk helps leaders plan and deliver complex end-to-end change across roadmap, governance, PMO/portfolio and adoption.
               </div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener">
@@ -467,7 +410,7 @@
               <h3>Grzegorz Pukalski</h3>
               <div class="member-role">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</div>
               <div class="member-description">
-                Grzegorz is an industrial B2B sales practitioner focused on OEM clients, RFQs, and margin-aware pricing. He works at Dekpol Steel, bridging sales, engineering, and production — from specification and quotation through cost build-up to order hand-off.
+                Grzegorz bridges sales, engineering and production at Dekpol Steel — from RFQ and costing to factory hand-off.
               </div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener">
@@ -490,7 +433,7 @@
               <h3>Ekspert Zarządzania Zmianą i Legal Operations</h3>
               <div class="member-role">Założyciel i Główny Konsultant Change & Project Management</div>
               <div class="member-description">
-                Patryk wspiera liderów w planowaniu i dowożeniu zmian end-to-end: diagnoza, business case, roadmapa, governance, PMO/portfolio, adopcja i mierzalne efekty.
+                Patryk wspiera liderów od diagnozy i business case’u po governance, PMO/portfolio i adopcję.
               </div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener">
@@ -507,7 +450,7 @@
               <h3>Grzegorz Pukalski</h3>
               <div class="member-role">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</div>
               <div class="member-description">
-                Grzegorz to praktyk sprzedaży B2B w przemyśle maszynowym. Odpowiada za RFQ, kalkulacje i marże w Dekpol Steel, łącząc sprzedaż, inżynierię i produkcję.
+                Grzegorz łączy sprzedaż, inżynierię i produkcję w Dekpol Steel — od RFQ i kalkulacji do wdrożenia zamówienia.
               </div>
               <p class="profile-link">
                 <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener">
@@ -553,7 +496,7 @@
           </div>
         </div>
 
-        <!-- Forms (Formspree) -->
+        <!-- Forms -->
         <div>
           <form id="contactFormEN" class="form lang-content en active" action="https://formspree.io/f/xjkagvbe" method="POST">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -607,7 +550,7 @@
       else{toggle(pl,true);toggle(en,false);plBtn.classList.add('active');enBtn.classList.remove('active');document.documentElement.lang='pl'}
     }
 
-    // InView animacje
+    // in-view animacje
     const obs=new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}
@@ -617,13 +560,13 @@
       card.style.opacity='0';card.style.transform='translateY(22px)';card.style.transition='all .6s ease';obs.observe(card)
     });
 
-    // KARUZELA HERO — 10s, fade+slide
+    // KARUZELA HERO — 10s
     const EN_VARIANTS = [
       {
         h1: 'Operationalize Legal Strategy. <br/>Deliver Adoption.',
         tagline: 'We translate strategy into working processes, tools and change that sticks.',
-        cta2: { text: 'Why Us', href: 'why_us_page.html' },
-        cta3: { text: 'AI in Change', href: 'ai_change_page.html' },
+        cta2: { text: 'Why Us', href: 'why-us.html' },
+        cta3: { text: 'AI in Change', href: 'ai-change.html' },
         bullets: [
           'Enterprise security & compliance',
           'Measurable outcomes',
@@ -633,8 +576,8 @@
       {
         h1: 'From Strategy to Results. <br/>We Make Change Work.',
         tagline: 'Specialized consultancy delivering measurable transformation across Legal Operations, Manufacturing Excellence, and Organizational Change.',
-        cta2: { text: 'Why Choose Us', href: 'why_us_page.html' },
-        cta3: { text: 'AI in Change', href: 'ai_change_page.html' },
+        cta2: { text: 'Why Choose Us', href: 'why-us.html' },
+        cta3: { text: 'AI in Change', href: 'ai-change.html' },
         bullets: [
           '70% faster cycle times',
           '90%+ adoption rates',
@@ -647,8 +590,8 @@
       {
         h1: 'Urealniamy Strategię Prawną. <br/>Dowozimy Adopcję.',
         tagline: 'Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.',
-        cta2: { text: 'Dlaczego My', href: 'why_us_page.html' },
-        cta3: { text: 'AI w Zmianie', href: 'ai_change_page.html' },
+        cta2: { text: 'Dlaczego My', href: 'why-us.html' },
+        cta3: { text: 'AI w Zmianie', href: 'ai-change.html' },
         bullets: [
           'Bezpieczeństwo klasy enterprise',
           'Mierzalne rezultaty',
@@ -658,8 +601,8 @@
       {
         h1: 'Od Strategii do Rezultatów. <br/>Sprawiamy, że Zmiany Działają.',
         tagline: 'Specjalistyczna firma konsultingowa dostarczająca wymierne transformacje w Legal Operations, Doskonałości Produkcyjnej i Zmianie Organizacyjnej.',
-        cta2: { text: 'Dlaczego My', href: 'why_us_page.html' },
-        cta3: { text: 'AI w Zmianie', href: 'ai_change_page.html' },
+        cta2: { text: 'Dlaczego My', href: 'why-us.html' },
+        cta3: { text: 'AI w Zmianie', href: 'ai-change.html' },
         bullets: [
           '70% krótszy czas cykli',
           '90%+ adopcji',
@@ -694,12 +637,9 @@
       let idx = 0;
       setInterval(()=>{
         const next = (idx + 1) % data.length;
-
-        // animacja wyjścia
         els.slide.classList.remove('is-enter');
         els.slide.classList.add('is-exit');
 
-        // po zakończeniu animacji wyjścia, podmień treści i wprowadź
         setTimeout(()=>{
           els.h1.innerHTML = data[next].h1;
           els.tagline.textContent = data[next].tagline;
@@ -712,20 +652,18 @@
           els.b3.innerHTML = `<i class="fa-solid fa-handshake"></i> ${data[next].bullets[2]}`;
 
           els.slide.classList.remove('is-exit');
-          // reset pozycji aby wejść gładko
-          void els.slide.offsetWidth; // reflow hack
+          void els.slide.offsetWidth;
           els.slide.classList.add('is-enter');
 
           idx = next;
-        }, 600); // zgodne z CSS transition .6s
-      }, 10000); // 10 sekund
+        }, 600);
+      }, 10000);
     }
 
-    // start karuzeli dla obu języków
     rotateHero('en');
     rotateHero('pl');
 
-    // Smooth scroll dla hash-linków
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const t=document.querySelector(a.getAttribute('href'));
@@ -733,7 +671,7 @@
       })
     });
 
-    // Formularze
+    // Form handlers
     async function bindForm(formId,statusId,texts){
       const form=document.getElementById(formId); if(!form) return;
       const status=document.getElementById(statusId);
