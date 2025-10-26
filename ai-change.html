@@ -1,290 +1,255 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>AI in Change - Consult Change</title>
-  <meta name="description" content="Explore how Consult Change leverages generative AI to accelerate adoption, communication, and business transformation.">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCDZMH1RFK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-RCDZMH1RFK');
-  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI in Change Management — Consult Change</title>
+  <meta name="description" content="How we use AI to accelerate adoption, decision-making and measurable outcomes in change management."/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
-    :root {
-      --gray:#EDEDED;
-      --honey:#F4C362;
-      --blue:#BFE6F2;
-      --purple:#C985F0;
-      --navy:#0F172A;
-      --black:#0B0B0B;
+    :root{
+      --gray:#F3F4F6;
+      --ink:#0B0B0B;
       --white:#FFFFFF;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: var(--navy); background: #fff; line-height: 1.7; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 92px 0; }
-    .section-title { font-size: 2.2rem; font-weight: 800; text-align: center; margin-bottom: 48px; }
-    .muted { opacity: .9; }
-
-    /* Buttons */
-    .btn { display:inline-block; padding:12px 18px; border-radius:999px; font-weight:800; border:2px solid transparent; cursor:pointer; transition:.25s ease; }
-    .btn--brand { background: var(--honey); color:#111; }
-    .btn--brand:hover { background: #ffd97a; transform: translateY(-2px); }
-    .btn--outline { background: transparent; color: var(--navy); border-color: var(--honey); }
-    .btn--outline:hover { background: var(--honey); }
-
-    /* Floating logo + language toggle */
-    .logo {
-      position: fixed; left: 20px; top: 20px; z-index: 1000;
-      display:flex; align-items:center; justify-content:center;
-      height:62px; min-width:62px; padding:8px; border-radius:999px;
-      background: rgba(255,255,255,.98);
-      box-shadow: 0 10px 22px rgba(0,0,0,.10);
-      backdrop-filter: saturate(1.2) blur(6px);
-    }
-    .logo img { height: 40px; width: auto; }
-    .language-toggle { position: fixed; right: 20px; top: 20px; z-index: 1000; padding: 6px; border-radius: 999px; background: rgba(237,237,237,.95); box-shadow: 0 6px 18px rgba(0,0,0,.06); }
-    .language-toggle button { border: 0; background: transparent; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 800; color: var(--navy); }
-    .language-toggle button.active { background: var(--honey); color: #111; }
-
-    /* Hero */
-    .hero {
-      min-height: 80vh; display:grid; place-items:center; text-align:center; color:#fff; position:relative; overflow:hidden;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 45%, var(--honey) 90%);
-    }
-    .hero-content { max-width:900px; padding:120px 20px 80px; position:relative; z-index:2; }
-    .hero h1 { font-size:2.8rem; font-weight:900; letter-spacing:.3px; margin-bottom:12px; }
-    .hero p { font-size:1.2rem; opacity:.95; margin-bottom:16px; }
-
-    /* Grids & cards */
-    .grid { display: grid; gap: 24px; }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .card { background: #fff; border: 1px solid #eaeaea; border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,.08); transition: transform .2s ease, box-shadow .2s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 18px 42px rgba(0,0,0,.10); }
-    .icon-chip { width:60px; height:60px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--purple),var(--honey)); color:#111; margin-bottom:10px; }
-
-    /* Canvas placeholder */
-    .canvas-section {
-      background: #f8f9fa;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .canvas-placeholder {
-      background: #fff;
-      border: 2px dashed var(--purple);
-      border-radius: 16px;
-      padding: 60px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.05);
-      transition: all .3s ease;
-    }
-    .canvas-placeholder:hover {
-      transform: scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,.1);
+      /* paleta rozszerzona */
+      --honey:#F4C362; 
+      --blue:#6EC8E6; 
+      --purple:#9B72F2; 
+      --teal:#10B981; 
+      --coral:#FF7A59; 
+      --indigo:#4F46E5;
+      --deep:#0F172A;
     }
 
-    /* Contact strip */
-    .contact-strip {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 58%, var(--honey) 100%);
-      color: #111;
-    }
-    .contact-box {
-      background: rgba(255,255,255,.92);
-      border: 1px solid #e8e8e8;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--deep);background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .caps, h1,h2,h3,h4,h5,h6{
+      font-variant: small-caps; letter-spacing:.03em;
     }
 
-    /* Footer */
-    .footer { background:#111; color:#fff; text-align:center; padding:24px 0; }
+    /* Nav */
+    .main-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
+    .nav-row{max-width:1200px;margin:0 auto;display:flex;gap:12px;justify-content:center;align-items:center}
+    .main-nav a{padding:10px 18px;border-radius:12px;color:var(--deep);font-weight:700}
+    .main-nav a:hover{background:var(--honey);color:#000}
 
-    /* Reveal */
-    .reveal { opacity:0; transform:translateY(18px); transition: all .6s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
+    .logo{position:fixed;left:20px;top:20px;z-index:60;height:64px;min-width:64px;display:grid;place-items:center;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10)}
+    .logo img{height:44px;width:auto}
 
-    /* Lang */
-    .lang-content { display:none; }
-    .lang-content.active { display:block; }
+    .language-toggle{position:fixed;right:20px;top:20px;z-index:60;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--deep)}
+    .language-toggle button.active{background:var(--honey);color:#000}
 
-    @media (max-width:920px){
-      .hero h1 { font-size:2.1rem; }
-      .section-title { font-size:1.9rem; }
+    /* HERO */
+    .hero{margin-top:64px;padding:110px 0 70px;background:
+      radial-gradient(1200px 400px at 10% 0%, rgba(255,122,89,.22), transparent 60%),
+      radial-gradient(1000px 500px at 90% 10%, rgba(16,185,129,.18), transparent 60%),
+      linear-gradient(135deg, #e9f7ff 0%, #f6f1ff 50%, #fff6e6 100%);
+      text-align:center}
+    .hero h1{font-size:2.8rem;margin-bottom:10px}
+    .hero p{font-size:1.15rem;max-width:860px;margin:0 auto 18px;opacity:.92}
+    .pillrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid #e5e7eb;background:#fff}
+    .accent{display:inline-block;margin:10px auto 0;padding:8px 14px;border-radius:12px;background:linear-gradient(135deg,var(--indigo),var(--purple));color:#fff;font-weight:800}
+
+    /* SEKCJE */
+    .section{padding:80px 0}
+    .section.alt{background:var(--gray)}
+    .grid-3{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:#fff;border:1px solid #eaeaea;border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .card h3{margin-bottom:8px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#111;color:#fff;font-size:.75rem}
+    .badge.teal{background:var(--teal)}
+    .badge.coral{background:var(--coral)}
+    .badge.indigo{background:var(--indigo)}
+
+    /* CANVAS / Notebook */
+    .canvas-wrap{background:#0b1020;color:#e5e7eb;border-radius:18px;overflow:hidden;border:1px solid #1f2937}
+    .canvas-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:linear-gradient(90deg,#0b1020,#171b2e)}
+    .canvas-header .title{font-weight:800}
+    .canvas-tools{display:flex;gap:8px}
+    .canvas-tools button{background:#111827;border:1px solid #30364a;color:#cbd5e1;border-radius:10px;padding:6px 10px;cursor:pointer}
+    .canvas-body{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+    .canvas-body > div{padding:16px}
+    .pane{border-top:1px solid #1f2937}
+    .pane + .pane{border-left:1px solid #1f2937}
+    .code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;background:#0d1226;border-radius:12px;padding:14px;border:1px solid #273049;overflow:auto}
+    .hint{opacity:.9;font-size:.95rem}
+
+    iframe#cc-canvas{width:100%;height:520px;border:0;background:#0d1226}
+
+    /* CTA */
+    .cta{padding:80px 0;text-align:center;background:linear-gradient(135deg,var(--teal),var(--honey))}
+    .cta h2{color:#0b0b0b;font-size:2.2rem;margin-bottom:8px}
+    .cta p{color:#0b0b0b;opacity:.9}
+    .btn{display:inline-block;margin-top:16px;padding:12px 18px;border-radius:14px;font-weight:800;border:2px solid #0b0b0b;background:#0b0b0b;color:#fff}
+    .btn:hover{background:#fff;color:#0b0b0b}
+
+    .footer{background:#111;color:#fff;text-align:center;padding:26px 0;margin-top:40px}
+
+    .lang{display:none}
+    .lang.active{display:block}
+
+    @media (max-width: 980px){
+      .canvas-body{grid-template-columns:1fr}
+      iframe#cc-canvas{height:420px}
     }
   </style>
 </head>
 <body>
-
-  <!-- Logo + language -->
-  <a class="logo" href="/index.html#home" aria-label="Consult Change - home">
-    <img src="/Consult change_sole logo_white.png" alt="Consult Change logo">
+  <a class="logo" href="index.html" aria-label="Home">
+    <img src="Consult change_sole logo_white.png" alt="Consult Change logo">
   </a>
 
-  <div class="language-toggle" role="tablist" aria-label="Language">
-    <button onclick="switchLanguage('en')" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
-    <button onclick="switchLanguage('pl')" id="btn-pl" role="tab" aria-selected="false">PL</button>
+  <div class="language-toggle">
+    <button onclick="switchLang('en')" id="btn-en" class="active">EN</button>
+    <button onclick="switchLang('pl')" id="btn-pl">PL</button>
   </div>
 
+  <nav class="main-nav">
+    <div class="nav-row">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="ai-change.html" class="caps" style="background:var(--indigo);color:#fff">AI in Change</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="lang-content en active">
-        <h1>AI in Change</h1>
-        <p>We use generative AI to accelerate discovery, communication, and adoption - without losing the human touch.</p>
-        <div class="cta-row">
-          <a class="btn btn--brand" href="/index.html#contact">Start a Conversation</a>
+  <header class="hero">
+    <div class="container">
+      <div class="lang en active">
+        <span class="accent">AI-ENABLED CHANGE</span>
+        <h1 class="caps">From Data to Adoption</h1>
+        <p>We use AI to accelerate discovery, prioritize risks, personalize training, and measure adoption — so change sticks faster and with less effort.</p>
+        <div class="pillrow">
+          <span class="pill">LLM copilots</span>
+          <span class="pill">Automation</span>
+          <span class="pill">Analytics</span>
+          <span class="pill">Assistive UX</span>
         </div>
       </div>
-      <div class="lang-content pl">
-        <h1>AI w Zmianie</h1>
-        <p>Wykorzystujemy generatywne AI, by przyspieszyć discovery, komunikację i adopcję - bez utraty ludzkiego aspektu.</p>
-        <div class="cta-row">
-          <a class="btn btn--brand" href="/index.html#contact">Porozmawiajmy</a>
+      <div class="lang pl">
+        <span class="accent">ZMIANA WSPARTA AI</span>
+        <h1 class="caps">Od Danych do Adopcji</h1>
+        <p>Wykorzystujemy AI, aby przyspieszyć diagnozę, priorytetyzować ryzyka, personalizować szkolenia i mierzyć adopcję — dzięki czemu zmiana utrzymuje się szybciej i taniej.</p>
+        <div class="pillrow">
+          <span class="pill">Copilot LLM</span>
+          <span class="pill">Automatyzacja</span>
+          <span class="pill">Analityka</span>
+          <span class="pill">Asystujące UX</span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- WHAT WE DO -->
+  <!-- VALUE PILLARS -->
   <section class="section">
     <div class="container">
-      <div class="lang-content en active">
-        <h2 class="section-title">AI in Change - What We Do</h2>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-brain"></i></div>
-            <h3>Discovery Acceleration</h3>
-            <p>AI copilots surface insights from contracts, surveys, and documents to support fast, evidence-based design.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-comments"></i></div>
-            <h3>Communication at Scale</h3>
-            <p>Multilingual summarization, email drafts, and intranet updates - crafted in your brand voice, instantly.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-bullseye"></i></div>
-            <h3>Adoption Analytics</h3>
-            <p>Measure behavioral change via metadata, adoption dashboards, and smart nudges powered by LLMs.</p>
-          </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge indigo">Diagnostics</span>
+          <h3 class="caps">Rapid Insight</h3>
+          <p>Vector search over interviews, tickets and documents to surface patterns and blockers within hours — not weeks.</p>
+        </div>
+        <div class="card">
+          <span class="badge teal">Adoption</span>
+          <h3 class="caps">Personalized Enablement</h3>
+          <p>Role-aware nudges, checklists and micro-training delivered where work happens (M365/Slack/Teams).</p>
+        </div>
+        <div class="card">
+          <span class="badge coral">Governance</span>
+          <h3 class="caps">Traceable Decisions</h3>
+          <p>LLM-assisted playbooks and decision logs that create auditable context without slowing execution.</p>
         </div>
       </div>
-      <div class="lang-content pl">
-        <h2 class="section-title">AI w Zmianie - Co Robimy</h2>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-brain"></i></div>
-            <h3>Przyspieszone Discovery</h3>
-            <p>AI analizuje kontrakty, ankiety i dokumenty, przyspieszając projektowanie oparte na danych i faktach.</p>
+    </div>
+  </section>
+
+  <!-- CANVAS / MULTIMEDIALNY NOTEBOOK -->
+  <section class="section alt" id="canvas">
+    <div class="container">
+      <div class="canvas-wrap">
+        <div class="canvas-header">
+          <div class="title caps"><i class="fa-solid fa-flask"></i> Interactive Canvas / Notebook</div>
+          <div class="canvas-tools">
+            <button onclick="loadCanvas('notebook.html')">Load local notebook</button>
+            <button onclick="loadCanvas('https://observablehq.com/@')">Load from URL…</button>
           </div>
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-comments"></i></div>
-            <h3>Komunikacja na Skalę</h3>
-            <p>Wielojęzyczne podsumowania, e-maile i aktualizacje intranetowe - w tonie Twojej marki, w kilka sekund.</p>
+        </div>
+        <div class="canvas-body">
+          <div class="pane">
+            <p class="caps" style="margin-bottom:8px">Overview</p>
+            <p class="hint">This panel will host your interactive notebook (e.g., Observable/HTML). Use the buttons above to set the source now or later.</p>
+            <div class="code" style="margin-top:12px">
+<pre>// To set a permanent source:
+loadCanvas('https://your-domain/path/to/canvas.html')
+// Or put a file named notebook.html in repo root and click “Load local notebook”.</pre>
+            </div>
           </div>
-          <div class="card reveal">
-            <div class="icon-chip"><i class="fa-solid fa-bullseye"></i></div>
-            <h3>Analityka Adopcji</h3>
-            <p>Pomiar zachowań użytkowników, dashboardy adopcji i spersonalizowane „nudges” generowane przez AI.</p>
+          <div class="pane">
+            <iframe id="cc-canvas" title="Consult Change Canvas (interactive)"></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI USE CASES -->
-  <section class="section" style="background:#f8f9fa">
+  <!-- HOW IT WORKS -->
+  <section class="section">
     <div class="container">
-      <div class="lang-content en active">
-        <h2 class="section-title">AI Applications in Legal & Change</h2>
-        <div class="grid grid-3">
-          <div class="card reveal"><h3>Contract AI</h3><p>Clause extraction, risk scoring, and auto-tagging for faster review cycles.</p></div>
-          <div class="card reveal"><h3>Knowledge Agents</h3><p>Search and retrieve institutional know-how securely across SharePoint or CLM.</p></div>
-          <div class="card reveal"><h3>Change Assistants</h3><p>Adaptive guides for employees, summarizing updates and answering “what’s new”.</p></div>
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="caps">Capture</h3>
+          <p>Ingest interviews, tickets, policy docs and telemetry. Clean and embed for semantic retrieval.</p>
         </div>
-      </div>
-      <div class="lang-content pl">
-        <h2 class="section-title">Zastosowania AI w Legal & Change</h2>
-        <div class="grid grid-3">
-          <div class="card reveal"><h3>Contract AI</h3><p>Ekstrakcja klauzul, scoring ryzyka i automatyczne tagowanie skracające cykle review.</p></div>
-          <div class="card reveal"><h3>Agenci Wiedzy</h3><p>Bezpieczne wyszukiwanie know-how organizacji w SharePoint lub CLM.</p></div>
-          <div class="card reveal"><h3>Asystenci Zmiany</h3><p>Dynamiczni asystenci pomagający pracownikom w zrozumieniu nowości i zmian.</p></div>
+        <div class="card">
+          <h3 class="caps">Coach</h3>
+          <p>Deploy copilots and just-in-time guidance. Reduce rework and resistance with targeted nudges.</p>
+        </div>
+        <div class="card">
+          <h3 class="caps">Confirm</h3>
+          <p>Dashboards show adoption, cycle-time and ROI. Iterate continuously using real usage signals.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CANVAS NOTEBOOK PLACEHOLDER -->
-  <section class="canvas-section">
+  <!-- CTA -->
+  <section class="cta">
     <div class="container">
-      <div class="lang-content en active">
-        <h2 class="section-title">Interactive Canvas / Notebook</h2>
-        <div class="canvas-placeholder reveal">
-          <p><strong>Coming soon:</strong> interactive AI canvas showcasing transformation insights and data-driven storytelling modules.</p>
-        </div>
-      </div>
-      <div class="lang-content pl">
-        <h2 class="section-title">Interaktywny Canvas / Notebook</h2>
-        <div class="canvas-placeholder reveal">
-          <p><strong>Wkrótce:</strong> interaktywny moduł AI prezentujący dane, wyniki transformacji i wizualizacje zmian.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact-strip">
-    <div class="container">
-      <div class="contact-box reveal">
-        <div class="lang-content en active">
-          <h2>Ready to explore AI with purpose?</h2>
-          <p>Call us at <a href="tel:+48505172024"><strong>+48 505 172 024</strong></a> or email <a href="mailto:patryk.markowski@consultchange.pl">patryk.markowski@consultchange.pl</a>.</p>
-          <a class="btn btn--brand" href="/index.html#contact">Get in touch</a>
-        </div>
-        <div class="lang-content pl">
-          <h2>Chcesz wdrożyć AI z sensem?</h2>
-          <p>Zadzwoń: <a href="tel:+48505172024"><strong>+48 505 172 024</strong></a> lub napisz: <a href="mailto:patryk.markowski@consultchange.pl">patryk.markowski@consultchange.pl</a>.</p>
-          <a class="btn btn--brand" href="/index.html#contact">Skontaktuj się</a>
-        </div>
-      </div>
+      <h2 class="caps">Ready to Try an AI Pilot?</h2>
+      <p>We’ll scope, build and measure a focused pilot — safely and fast.</p>
+      <a class="btn" href="index.html#contact">Book a discovery call</a>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <div class="lang-content en active"><p>&copy; 2025 Consult Change. All rights reserved.</p></div>
-      <div class="lang-content pl"><p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p></div>
+      <p>&copy; 2025 Consult Change. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    /* Language switch */
-    function switchLanguage(lang){
-      const en=document.querySelectorAll('.lang-content.en');
-      const pl=document.querySelectorAll('.lang-content.pl');
-      const enBtn=document.getElementById('btn-en');
-      const plBtn=document.getElementById('btn-pl');
-      const toggle=(nodes,on)=>nodes.forEach(n=>n.classList.toggle('active',on));
-      if(lang==='en'){toggle(en,true);toggle(pl,false);enBtn.classList.add('active');plBtn.classList.remove('active');document.documentElement.lang='en'}
-      else{toggle(pl,true);toggle(en,false);plBtn.classList.add('active');enBtn.classList.remove('active');document.documentElement.lang='pl'}
+    function switchLang(lang){
+      const en = document.querySelector('.lang.en');
+      const pl = document.querySelector('.lang.pl');
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      if(lang==='en'){ en.classList.add('active'); pl.classList.remove('active'); enBtn.classList.add('active'); plBtn.classList.remove('active'); }
+      else{ pl.classList.add('active'); en.classList.remove('active'); plBtn.classList.add('active'); enBtn.classList.remove('active'); }
     }
 
-    /* Reveal on scroll */
-    const obs=new IntersectionObserver((
+    function loadCanvas(src){
+      const f = document.getElementById('cc-canvas');
+      if(!src) return;
+      f.src = src;
+    }
+  </script>
+</body>
+</html>
