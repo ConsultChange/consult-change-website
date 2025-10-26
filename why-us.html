@@ -1,205 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Why Us - Consult Change</title>
-  <meta name="description" content="Why leading companies choose Consult Change for their transformation journey.">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta name="description" content="Why leading companies choose Consult Change for transformations that stick."/>
+  <link rel="canonical" href="https://www.consultchange.pl/why-us.html"/>
+
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
-    :root{
-      --gray:#EDEDED; --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --black:#0B0B0B; --white:#FFFFFF; --deep-blue:#0F172A;
-    }
+    :root{ --honey:#F4C362; --blue:#BFE6F2; --purple:#C985F0; --deep:#0F172A; --ink:#0B0B0B; --gray:#EDEDED; }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--black);background:#fff;line-height:1.6}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
     img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    h1,h2,h3,h4,h5,h6,strong,.caps{font-variant:small-caps;letter-spacing:.03em}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    
-    /* Navigation */
-    .main-nav{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
-    .nav-container{max-width:1200px;margin:0 auto;padding:0 140px;display:flex;justify-content:center;align-items:center;gap:8px}
-    .main-nav a{display:inline-block;padding:10px 20px;color:var(--black);text-decoration:none;border-radius:10px;font-weight:600;font-size:.95rem;transition:all .2s ease}
-    .main-nav a:hover{background:var(--honey);color:var(--black)}
-    .main-nav a.active{background:var(--deep-blue);color:#fff}
 
-    .logo{position:fixed;left:20px;top:20px;z-index:1000;display:flex;align-items:center;justify-content:center;height:64px;min-width:64px;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10)}
+    /* NAV */
+    .logo{position:fixed;left:20px;top:20px;z-index:1000;height:64px;min-width:64px;display:grid;place-items:center;padding:10px;border-radius:999px;background:rgba(255,255,255,.98);box-shadow:0 10px 22px rgba(0,0,0,.10)}
     .logo img{height:44px;width:auto}
-
     .language-toggle{position:fixed;right:20px;top:20px;z-index:1000;padding:6px;border-radius:999px;background:rgba(237,237,237,.95);box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:#0B0B0B}
-    .language-toggle button.active{background:var(--honey);color:var(--black)}
+    .language-toggle button{border:0;background:transparent;padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--deep)}
+    .language-toggle button.active{background:var(--honey)}
+    .main-nav{position:fixed;left:0;right:0;top:0;z-index:900;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
+    .nav-container{max-width:1200px;margin:0 auto;display:flex;gap:10px;justify-content:center;align-items:center}
+    .main-nav a{padding:8px 16px;border-radius:12px;font-weight:700;color:var(--deep)}
+    .main-nav a:hover{background:var(--honey)}
 
-    .hero-page{margin-top:60px;padding:100px 0 60px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 58%,var(--honey) 100%);text-align:center;color:var(--deep-blue)}
-    .hero-page h1{font-size:3rem;margin-bottom:20px;line-height:1.2}
-    .hero-page .subtitle{font-size:1.5rem;max-width:700px;margin:0 auto 30px;font-weight:600}
-    .hero-page p{font-size:1.1rem;max-width:650px;margin:0 auto;opacity:.9}
+    .hero-page{margin-top:64px;padding:110px 0 70px;text-align:center;color:#000;
+      background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 55%,var(--honey) 100%)}
+    .hero-page h1{font-size:2.6rem;margin-bottom:8px}
+    .hero-page .subtitle{font-size:1.2rem;max-width:760px;margin:0 auto 18px}
 
-    .section{padding:70px 0}
-    .section-alt{padding:70px 0;background:var(--gray)}
-    .section-title{font-size:2.2rem;text-align:center;margin:0 0 16px;color:var(--deep-blue)}
-    .section-subtitle{text-align:center;font-size:1.1rem;color:#666;max-width:700px;margin:0 auto 40px}
-    
-    /* Simple 3-reason grid */
-    .reasons-simple{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:40px}
-    .reason-simple{background:#fff;border:2px solid var(--honey);border-radius:20px;padding:40px 32px;text-align:center;transition:transform .2s ease,box-shadow .2s ease}
-    .reason-simple:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
-    .reason-number{width:70px;height:70px;margin:0 auto 20px;background:linear-gradient(135deg,var(--purple),var(--honey));border-radius:50%;display:grid;place-items:center;font-size:2rem;font-weight:800;color:#fff}
-    .reason-simple h3{color:var(--deep-blue);margin-bottom:16px;font-size:1.8rem}
-    .reason-simple p{color:#555;font-size:1.1rem;line-height:1.7}
+    .section{padding:80px 0}
+    .section-title{font-size:2rem;text-align:center;margin:0 0 14px;color:var(--deep)}
+    .section-subtitle{text-align:center;color:#555;max-width:760px;margin:0 auto 24px}
 
-    /* Stats */
-    .stats{padding:70px 0;background:#fff;text-align:center}
-    .stats-row{display:flex;justify-content:center;flex-wrap:wrap;gap:60px;margin-top:50px}
-    .stat-item{text-align:center;min-width:200px}
-    .stat-icon{font-size:3rem;color:var(--purple);margin-bottom:16px}
-    .stat-num{font-size:3.5rem;font-weight:800;color:var(--deep-blue);line-height:1}
-    .stat-label{font-size:1.1rem;color:#555;margin-top:8px}
+    .reasons{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:26px}
+    .r{background:#fff;border:2px solid var(--honey);border-radius:16px;padding:28px;text-align:center}
+    .r .n{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--purple),var(--honey));color:#fff;font-weight:800;font-size:1.6rem}
 
-    /* Problem-Solution */
-    .problem-solution{padding:70px 0;background:var(--gray)}
-    .ps-grid{display:grid;gap:24px;grid-template-columns:1fr 1fr;margin-top:40px}
-    .ps-card{background:#fff;border-radius:16px;padding:32px;border-left:5px solid var(--deep-blue)}
-    .ps-card.problem{border-left-color:#e74c3c}
+    .ps{background:var(--gray)}
+    .ps-grid{display:grid;gap:20px;grid-template-columns:1fr 1fr;margin-top:24px}
+    .ps-card{background:#fff;border-radius:16px;padding:24px;border-left:5px solid var(--deep)}
+    .ps-card.problem{border-left-color:#b00020}
     .ps-card.solution{border-left-color:var(--purple)}
-    .ps-card h4{font-size:1.3rem;margin-bottom:12px;color:var(--deep-blue)}
-    .ps-card ul{margin:12px 0;padding-left:20px}
-    .ps-card li{margin:8px 0;color:#555;line-height:1.7}
+    .ps-card h4{margin-bottom:8px;color:var(--deep)}
+    .ps-card ul{margin:10px 0 0 18px}
+    .ps-card li{margin:6px 0;color:#444}
 
-    /* Final CTA */
-    .cta-section{padding:80px 0;background:linear-gradient(135deg,var(--deep-blue) 0%,var(--purple) 100%);text-align:center;color:#fff}
-    .cta-section h2{font-size:2.8rem;margin-bottom:20px}
-    .cta-section p{font-size:1.3rem;margin-bottom:35px;opacity:.95;max-width:700px;margin-left:auto;margin-right:auto}
-    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-block;padding:16px 32px;border-radius:14px;font-weight:700;border:2px solid #fff;background:#fff;color:var(--deep-blue);text-decoration:none;transition:all .2s ease;font-size:1.1rem}
-    .btn:hover{transform:translateY(-2px);background:var(--honey);border-color:var(--honey);color:var(--black);box-shadow:0 10px 30px rgba(244,195,98,.4)}
-    .btn--outline{background:transparent;color:#fff}
-    .btn--outline:hover{background:#fff;color:var(--deep-blue)}
+    .cta{padding:80px 0;text-align:center;background:linear-gradient(135deg,var(--deep) 0%,var(--purple) 100%);color:#fff}
+    .btn{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:14px;font-weight:800;border:2px solid #fff;background:#fff;color:var(--deep)}
+    .btn:hover{background:var(--honey);border-color:var(--honey);color:#000}
 
-    .footer{background:var(--deep-blue);color:#fff;text-align:center;padding:26px 0}
+    .footer{background:var(--deep);color:#fff;text-align:center;padding:26px 0}
 
     .lang-content{display:none}
     .lang-content.active{display:block}
 
-    @media (max-width: 920px){
-      .hero-page h1{font-size:2.2rem}
-      .hero-page .subtitle{font-size:1.3rem}
-      .nav-container{padding:0 20px;gap:4px}
-      .main-nav a{padding:8px 12px;font-size:.85rem}
-      .ps-grid{grid-template-columns:1fr}
-      .stats-row{gap:40px}
-      .cta-buttons{flex-direction:column;align-items:center}
-    }
+    @media (max-width:920px){ .ps-grid{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
-  <a class="logo" href="index.html">
-    <img src="Consult change_sole logo_white.png" alt="Consult Change logo">
-  </a>
-
+  <a class="logo" href="index.html" aria-label="Home"><img src="Consult change_sole logo_white.png" alt="Consult Change logo"></a>
   <div class="language-toggle">
     <button onclick="switchLanguage('en')" id="btn-en" class="active">EN</button>
     <button onclick="switchLanguage('pl')" id="btn-pl">PL</button>
   </div>
-
   <nav class="main-nav">
     <div class="nav-container">
-      <a href="index.html">Home</a>
-      <a href="why-us.html" class="active">Why Us</a>
-      <a href="ai-change.html">AI in Change Management</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html" class="caps">Home</a>
+      <a href="why-us.html" class="caps">Why Us</a>
+      <a href="ai-change.html" class="caps">AI in Change</a>
+      <a href="index.html#contact" class="caps">Contact</a>
     </div>
   </nav>
 
   <section class="hero-page">
     <div class="container">
       <div class="lang-content en active">
-        <h1>You've Tried Change Before.<br/>It Didn't Stick.</h1>
-        <p class="subtitle">We know why — and we know how to fix it.</p>
-        <p>Most transformations fail not because of bad strategy, but because of poor execution and weak adoption. We deliver the missing piece: change that actually works.</p>
+        <h1>You've Tried Change Before. It Didn't Stick.</h1>
+        <p class="subtitle">We know why - and we know how to fix it.</p>
+        <p>Most transformations fail not because of bad strategy, but due to weak execution and adoption. We deliver the missing piece: change that actually works.</p>
       </div>
       <div class="lang-content pl">
-        <h1>Próbowałeś już zmian.<br/>Nie utrzymały się.</h1>
-        <p class="subtitle">Wiemy dlaczego — i wiemy jak to naprawić.</p>
-        <p>Większość transformacji zawodzi nie przez złą strategię, ale przez słabą realizację i niską adopcję. Dostarczamy brakujący element: zmiany, które rzeczywiście działają.</p>
+        <h1>Próbowałeś Zmian. Nie Utrzymały Się.</h1>
+        <p class="subtitle">Wiemy dlaczego - i wiemy jak to naprawić.</p>
+        <p>Większość transformacji zawodzi nie przez strategię, ale przez realizację i adopcję. Dostarczamy brakujący element: zmiany, które działają.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="lang-content en active">
-        <h2 class="section-title">3 Reasons Companies Choose Us</h2>
-        <p class="section-subtitle">We don't just advise — we transform alongside you until it works.</p>
-        <div class="reasons-simple">
-          <div class="reason-simple">
-            <div class="reason-number">1</div>
-            <h3>We Stay Until It Works</h3>
-            <p>Traditional consultants hand you a binder and leave. We stay through implementation, adoption, and beyond — until your team can sustain the change without us.</p>
-          </div>
-          <div class="reason-simple">
-            <div class="reason-number">2</div>
-            <h3>Proven Results, Not Promises</h3>
-            <p>70% faster cycle times. 90%+ adoption rates. 3–6 month time to value. These aren't goals — they're our track record. You pay for outcomes, not just activity.</p>
-          </div>
-          <div class="reason-simple">
-            <div class="reason-number">3</div>
-            <h3>Multi-Industry Expertise</h3>
-            <p>We bring insights from Legal Ops, Manufacturing, and Change Management. This cross-pollination creates unique solutions your single-industry consultants miss.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="lang-content pl">
-        <h2 class="section-title">3 Powody Wyboru Nas</h2>
-        <p class="section-subtitle">Nie tylko doradzimy — transformujemy razem z Tobą, aż zadziała.</p>
-        <div class="reasons-simple">
-          <div class="reason-simple">
-            <div class="reason-number">1</div>
-            <h3>Zostajemy Aż Zadziała</h3>
-            <p>Tradycyjni konsultanci wręczają segregator i odchodzą. My zostajemy przez implementację, adopcję i dalej — aż Twój zespół może utrzymać zmianę bez nas.</p>
-          </div>
-          <div class="reason-simple">
-            <div class="reason-number">2</div>
-            <h3>Udowodnione Wyniki, Nie Obietnice</h3>
-            <p>70% szybsze czasy cykli. 90%+ adopcji. 3–6 miesięcy time to value. To nie cele — to nasza historia. Płacisz za rezultaty, nie tylko aktywność.</p>
-          </div>
-          <div class="reason-simple">
-            <div class="reason-number">3</div>
-            <h3>Ekspertyza Multi-Branżowa</h3>
-            <p>Wnosimy insighty z Legal Ops, Produkcji i Change Management. To krzyżowanie tworzy unikalne rozwiązania, których nie widzą konsultanci z jednej branży.</p>
-          </div>
-        </div>
+      <h2 class="section-title">3 Reasons Companies Choose Us</h2>
+      <p class="section-subtitle">We don't just advise - we transform alongside you until it works.</p>
+      <div class="reasons">
+        <div class="r"><div class="n">1</div><h3>We Stay Until It Works</h3><p>We stay through implementation and adoption - until your team can sustain the change without us.</p></div>
+        <div class="r"><div class="n">2</div><h3>Proven Results, Not Promises</h3><p>70% faster cycles. 90%+ adoption. 3–6 months to value. You pay for outcomes, not activity.</p></div>
+        <div class="r"><div class="n">3</div><h3>Multi-Industry Expertise</h3><p>Legal Ops, Manufacturing and Change - cross-pollinated patterns that single-industry firms miss.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- (USUNIĘTO sekcję z opiniami klientów) -->
-
-  <section class="problem-solution">
+  <section class="section ps">
     <div class="container">
       <div class="lang-content en active">
         <h2 class="section-title">The Problem with Traditional Consulting</h2>
-        <p class="section-subtitle">Sound familiar?</p>
         <div class="ps-grid">
           <div class="ps-card problem">
             <h4>❌ What Usually Happens</h4>
             <ul>
-              <li>Beautiful PowerPoint decks, no execution support</li>
-              <li>Change “recommendations” that gather dust</li>
-              <li>Your team left to figure it out alone</li>
-              <li>Low adoption, wasted investment</li>
-              <li>Back to square one in 6 months</li>
+              <li>Beautiful decks, no execution support</li><li>Recommendations that gather dust</li>
+              <li>Your team left alone</li><li>Low adoption, wasted budget</li><li>Back to square one</li>
             </ul>
           </div>
           <div class="ps-card solution">
             <h4>✓ How We're Different</h4>
             <ul>
-              <li>Hands-on implementation alongside your team</li>
-              <li>PROSCI-certified change management</li>
-              <li>We stay until adoption succeeds</li>
-              <li>Real-time dashboards tracking progress</li>
-              <li>Knowledge transfer so you sustain it</li>
+              <li>Hands-on implementation</li><li>PROSCI-based change</li>
+              <li>We stay until adoption succeeds</li><li>Real-time dashboards</li><li>Knowledge transfer</li>
             </ul>
           </div>
         </div>
@@ -207,76 +131,43 @@
 
       <div class="lang-content pl">
         <h2 class="section-title">Problem z Tradycyjnym Consultingiem</h2>
-        <p class="section-subtitle">Brzmi znajomo?</p>
         <div class="ps-grid">
           <div class="ps-card problem">
             <h4>❌ Co Zazwyczaj Się Dzieje</h4>
             <ul>
-              <li>Piękne prezentacje PowerPoint, zero wsparcia wykonania</li>
-              <li>„Rekomendacje” zmian, które zbierają kurz</li>
-              <li>Twój zespół zostawiony sam sobie</li>
-              <li>Niska adopcja, zmarnowana inwestycja</li>
-              <li>Powrót do punktu wyjścia za 6 miesięcy</li>
+              <li>Piękne slajdy, brak wsparcia wykonania</li><li>Rekomendacje na półkę</li>
+              <li>Zespół zostaje sam</li><li>Niska adopcja, strata budżetu</li><li>Powrót do punktu wyjścia</li>
             </ul>
           </div>
           <div class="ps-card solution">
             <h4>✓ Jak Jesteśmy Inni</h4>
             <ul>
-              <li>Implementacja hands-on razem z zespołem</li>
-              <li>Certyfikowane PROSCI zarządzanie zmianą</li>
-              <li>Zostajemy aż adopcja się uda</li>
-              <li>Dashboardy real-time śledzące postęp</li>
-              <li>Transfer wiedzy, abyś utrzymał to sam</li>
+              <li>Implementacja hands-on</li><li>PROSCI Change</li>
+              <li>Zostajemy aż adopcja się uda</li><li>Dashboardy na żywo</li><li>Transfer wiedzy</li>
             </ul>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <section class="cta-section">
+  <section class="cta">
     <div class="container">
-      <div class="lang-content en active">
-        <h2>Ready to Make Change That Actually Sticks?</h2>
-        <p>Let's have a conversation about your challenges. No sales pitch — just an honest discussion about whether we can help.</p>
-        <div class="cta-buttons">
-          <a href="index.html#contact" class="btn">Book a Free Discovery Call</a>
-          <a href="index.html#team" class="btn btn--outline">Meet Our Team</a>
-        </div>
-      </div>
-      <div class="lang-content pl">
-        <h2>Gotowy na Zmianę, Która Się Utrzyma?</h2>
-        <p>Porozmawiajmy o Twoich wyzwaniach. Bez sales pitcha — tylko szczera dyskusja czy możemy pomóc.</p>
-        <div class="cta-buttons">
-          <a href="index.html#contact" class="btn">Umów Bezpłatną Rozmowę</a>
-          <a href="index.html#team" class="btn btn--outline">Poznaj Nasz Zespół</a>
-        </div>
-      </div>
+      <h2>Ready to Make Change That Sticks?</h2>
+      <a class="btn" href="index.html#contact">Book a Discovery Call</a>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="lang-content en active"><p>&copy; 2025 Consult Change. All rights reserved.</p></div>
-      <div class="lang-content pl"><p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p></div>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container"><p>&copy; 2025 Consult Change.</p></div></footer>
 
   <script>
     function switchLanguage(lang){
       const en = document.querySelectorAll('.lang-content.en');
       const pl = document.querySelectorAll('.lang-content.pl');
-      const enBtn = document.getElementById('btn-en');
-      const plBtn = document.getElementById('btn-pl');
-      if(lang==='en'){
-        en.forEach(n=>n.classList.add('active'));
-        pl.forEach(n=>n.classList.remove('active'));
-        enBtn.classList.add('active'); plBtn.classList.remove('active');
-      }else{
-        pl.forEach(n=>n.classList.add('active'));
-        en.forEach(n=>n.classList.remove('active'));
-        plBtn.classList.add('active'); enBtn.classList.remove('active');
-      }
+      const enBtn = document.getElementById('btn-en'); const plBtn = document.getElementById('btn-pl');
+      if(lang==='en'){ en.forEach(n=>n.classList.add('active')); pl.forEach(n=>n.classList.remove('active')); enBtn.classList.add('active'); plBtn.classList.remove('active'); }
+      else{ pl.forEach(n=>n.classList.add('active')); en.forEach(n=>n.classList.remove('active')); plBtn.classList.add('active'); enBtn.classList.remove('active'); }
     }
   </script>
 </body>
