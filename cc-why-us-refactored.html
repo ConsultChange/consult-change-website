@@ -31,11 +31,6 @@
         transition-duration: 0.01ms !important;
       }
     }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-variant: small-caps;
-      letter-spacing: 0.03em;
-    }
   </style>
   
   <script>
@@ -241,4 +236,81 @@
   </section>
   
   <!-- CTA Section -->
-  <section class="py-24 px-5 text-center text-white"
+  <section class="py-24 px-5 text-center text-white" style="background: linear-gradient(135deg, #0F172A 0%, #C985F0 100%);">
+    <div class="container mx-auto max-w-4xl">
+      
+      <div class="lang-content en active">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Make Change That Actually Sticks?</h2>
+        <p class="text-xl mb-10 opacity-95">Let's have a conversation about your challenges. No sales pitch – just an honest discussion about whether we can help.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="index.html#contact" class="inline-block px-8 py-4 bg-white text-deep-blue font-bold rounded-xl border-2 border-white transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Book a Free Discovery Call</a>
+          <a href="index.html#team" class="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-xl border-2 border-white transition-all hover:bg-white hover:text-deep-blue hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/50">Meet Our Team</a>
+        </div>
+      </div>
+      
+      <div class="lang-content pl">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Gotowy na Zmianę, Która Się Utrzyma?</h2>
+        <p class="text-xl mb-10 opacity-95">Porozmawiajmy o Twoich wyzwaniach. Bez sales pitcha – tylko szczera dyskusja czy możemy pomóc.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="index.html#contact" class="inline-block px-8 py-4 bg-white text-deep-blue font-bold rounded-xl border-2 border-white transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Umów Bezpłatną Rozmowę</a>
+          <a href="index.html#team" class="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-xl border-2 border-white transition-all hover:bg-white hover:text-deep-blue hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/50">Poznaj Nasz Zespół</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-deep-blue text-white text-center py-8">
+    <div class="container mx-auto px-5">
+      <div class="lang-content en active">
+        <p>&copy; 2025 Consult Change. All rights reserved.</p>
+      </div>
+      <div class="lang-content pl">
+        <p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    function switchLanguage(lang) {
+      const allLangContent = document.querySelectorAll('.lang-content');
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      
+      allLangContent.forEach(el => {
+        if (el.classList.contains(lang)) {
+          el.classList.add('active');
+          el.style.display = 'block';
+        } else {
+          el.classList.remove('active');
+          el.style.display = 'none';
+        }
+      });
+      
+      if (lang === 'en') {
+        enBtn.classList.add('bg-honey', 'text-gray-900');
+        enBtn.setAttribute('aria-selected', 'true');
+        plBtn.classList.remove('bg-honey');
+        plBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'en';
+      } else {
+        plBtn.classList.add('bg-honey', 'text-gray-900');
+        plBtn.setAttribute('aria-selected', 'true');
+        enBtn.classList.remove('bg-honey');
+        enBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'pl';
+      }
+    }
+  </script>
+  
+  <!--
+  === SOURCE LOG (INTERNAL) ===
+  All content sourced from provided why-us.html file.
+  No external web sources used.
+  Founder link added to navigation pointing to index.html#founder section.
+  -->
+  
+</body>
+</html>

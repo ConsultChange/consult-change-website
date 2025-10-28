@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Us – Consult Change</title>
+  <meta name="description" content="Meet the team behind Consult Change: experts in change management, legal operations, and industrial B2B sales.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Meet Us – Consult Change">
+  <meta property="og:description" content="Meet our team of transformation experts">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.consultchange.pl/meet-us.html">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Meet Us – Consult Change">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCDZMH1RFK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RCDZMH1RFK');
+  </script>
+  
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-900 bg-white">
+  
+  <!-- Logo (Fixed) -->
+  <a href="index.html" class="fixed left-5 top-5 z-50 flex items-center justify-center h-16 w-16 rounded-full bg-white/98 shadow-lg backdrop-blur-sm transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-honey/50" aria-label="Home">
+    <img src="Consult change_sole logo_white.png" alt="Consult Change logo" class="h-11 w-auto" width="44" height="44" loading="eager" decoding="async">
+  </a>
+  
+  <!-- Language Toggle -->
+  <div class="fixed right-5 top-5 z-50 flex gap-1 rounded-full bg-gray-200/95 p-1.5 shadow-lg" role="tablist" aria-label="Language selection">
+    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 bg-honey text-gray-900" role="tab" aria-selected="true">EN</button>
+    <button onclick="switchLanguage('pl')" id="btn-pl" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 text-gray-900" role="tab" aria-selected="false">PL</button>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-lg shadow-lg" aria-label="Main navigation">
+    <div class="container mx-auto px-5 md:px-32 py-3">
+      <ul class="flex justify-center items-center gap-2 flex-wrap">
+        <li><a href="index.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Home</a></li>
+        <li><a href="why-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Why Us</a></li>
+        <li><a href="ai-change.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">AI in Change</a></li>
+        <li><a href="meet-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold bg-deep-blue text-white transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-honey/50" aria-current="page">Meet Us</a></li>
+        <li><a href="index.html#contact" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="pt-32 pb-20 px-5 text-center" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
+    <div class="container mx-auto max-w-4xl">
+      
+      <div class="lang-content en active">
+        <h1 class="text-4xl md:text-5xl font-bold text-deep-blue mb-6 leading-tight">Meet Our Team</h1>
+        <p class="text-xl text-gray-900 opacity-90 max-w-2xl mx-auto">Experts in change management, legal operations, and industrial B2B sales working together to deliver measurable transformation.</p>
+      </div>
+      
+      <div class="lang-content pl">
+        <h1 class="text-4xl md:text-5xl font-bold text-deep-blue mb-6 leading-tight">Poznaj Nasz Zespół</h1>
+        <p class="text-xl text-gray-900 opacity-90 max-w-2xl mx-auto">Eksperci zarządzania zmianą, legal operations i sprzedaży B2B przemysłowej działający razem dla wymiernych transformacji.</p>
+      </div>
+      
+    </div>
+  </header>
+  
+  <!-- Team Members Section -->
+  <section class="py-24 px-5 bg-white">
+    <div class="container mx-auto max-w-6xl">
+      
+      <!-- EN Content -->
+      <div class="lang-content en active">
+        
+        <!-- Patryk Markowski -->
+        <div class="mb-20">
+          <div class="grid md:grid-cols-5 gap-10 items-start">
+            
+            <div class="md:col-span-2">
+              <div class="bg-gradient-to-br from-cc-blue to-cc-purple rounded-2xl p-1 border border-gray-200 shadow-xl sticky top-24">
+                <img src="your-photo.jpg" alt="Patryk Markowski - Change Management & Legal Operations Expert" class="w-full h-auto rounded-xl object-cover aspect-[4/5]" width="400" height="500" loading="eager" decoding="async">
+              </div>
+            </div>
+            
+            <div class="md:col-span-3 space-y-6">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue mb-2">Patryk Markowski</h2>
+                <p class="text-xl text-cc-purple font-bold mb-4">Founder & Lead Change & Project Management Consultant</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Patryk helps leaders plan and deliver complex end-to-end transformations from diagnosis through execution to measurable outcomes. He bridges business, legal, and IT perspectives to simplify workflows, shorten lead times, and translate strategy into operational plans, tooling, and tangible results.</p>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-lightbulb mr-2 text-honey" aria-hidden="true"></i>
+                  Core Expertise
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Operational transformations including CLM/ELM implementations</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Legal Front Door design on Microsoft 365/SharePoint</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Portfolio governance with OKRs/KPIs and decision gates</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>PROSCI-certified change management and adoption strategies</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-award mr-2 text-honey" aria-hidden="true"></i>
+                  Certifications
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">PROSCI® CCP</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">DocuSign CLM Admin</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">SirionLabs</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">Icertis ICI</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">Agile/Lean/Scrum</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-building mr-2 text-honey" aria-hidden="true"></i>
+                  Client Experience
+                </h3>
+                <p class="text-gray-700 leading-relaxed">Delivered projects for leading organizations including Swarovski GBS, Deloitte Legal, Nordea, AirHelp, and Arrow Electronics.</p>
+              </div>
+              
+              <div class="pt-4">
+                <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-deep-blue text-white font-bold rounded-xl transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
+                  <span>Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Grzegorz Pukalski -->
+        <div>
+          <div class="grid md:grid-cols-5 gap-10 items-start">
+            
+            <div class="md:col-span-2 md:order-2">
+              <div class="bg-gradient-to-br from-cc-blue to-cc-purple rounded-2xl p-1 border border-gray-200 shadow-xl sticky top-24">
+                <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski - B2B Sales & Manufacturing Specialist" class="w-full h-auto rounded-xl object-cover aspect-[4/5]" width="400" height="500" loading="lazy" decoding="async">
+              </div>
+            </div>
+            
+            <div class="md:col-span-3 md:order-1 space-y-6">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue mb-2">Grzegorz Pukalski</h2>
+                <p class="text-xl text-cc-purple font-bold mb-4">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Grzegorz is an industrial B2B sales practitioner focused on OEM clients, RFQs, and margin-aware pricing. He works at Dekpol Steel, a leading Polish manufacturer of buckets and machine attachments, where he bridges sales, engineering, and production—from specification and quotation through cost build-up to order hand-off. Dekpol Steel supplies attachments internationally (24+ countries), serving global construction equipment brands.</p>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-lightbulb mr-2 text-honey" aria-hidden="true"></i>
+                  Core Expertise
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>OEM client relationship management and key accounts</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>RFQ optimization and tendering processes</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Cost estimation and pricing strategy for manufacturing</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Commercial-operations handshake and delivery excellence</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-industry mr-2 text-honey" aria-hidden="true"></i>
+                  Industry Focus
+                </h3>
+                <p class="text-gray-700 leading-relaxed">Construction equipment attachments, heavy machinery, industrial B2B sales across 24+ international markets. Specializes in bridging technical requirements with commercial viability.</p>
+              </div>
+              
+              <div class="pt-4">
+                <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-deep-blue text-white font-bold rounded-xl transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
+                  <span>Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- PL Content -->
+      <div class="lang-content pl">
+        
+        <!-- Patryk Markowski -->
+        <div class="mb-20">
+          <div class="grid md:grid-cols-5 gap-10 items-start">
+            
+            <div class="md:col-span-2">
+              <div class="bg-gradient-to-br from-cc-blue to-cc-purple rounded-2xl p-1 border border-gray-200 shadow-xl sticky top-24">
+                <img src="your-photo.jpg" alt="Patryk Markowski - Ekspert Zarządzania Zmianą i Legal Operations" class="w-full h-auto rounded-xl object-cover aspect-[4/5]" width="400" height="500" loading="eager" decoding="async">
+              </div>
+            </div>
+            
+            <div class="md:col-span-3 space-y-6">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue mb-2">Patryk Markowski</h2>
+                <p class="text-xl text-cc-purple font-bold mb-4">Założyciel i Główny Konsultant Change & Project Management</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Patryk wspiera liderów w planowaniu i dowozie złożonych transformacji end-to-end od diagnozy przez wykonanie do mierzalnych efektów. Łączy perspektywę biznesu, prawa i IT, aby upraszczać workflow, skracać lead time i przekładać strategię na operacyjne plany, narzędzia i wymierne rezultaty.</p>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-lightbulb mr-2 text-honey" aria-hidden="true"></i>
+                  Główne Kompetencje
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Transformacje operacyjne w tym implementacje CLM/ELM</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Projektowanie Legal Front Door na Microsoft 365/SharePoint</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Governance portfolio z OKR/KPI i bramami decyzyjnymi</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Certyfikowane PROSCI zarządzanie zmianą i strategie adopcji</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-award mr-2 text-honey" aria-hidden="true"></i>
+                  Certyfikacje
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">PROSCI® CCP</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">DocuSign CLM Admin</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">SirionLabs</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">Icertis ICI</span>
+                  <span class="px-3 py-1.5 bg-gray-100 border border-gray-300 rounded-full text-sm font-medium">Agile/Lean/Scrum</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-building mr-2 text-honey" aria-hidden="true"></i>
+                  Doświadczenie Klienckie
+                </h3>
+                <p class="text-gray-700 leading-relaxed">Prowadził projekty dla wiodących organizacji w tym Swarovski GBS, Deloitte Legal, Nordea, AirHelp oraz Arrow Electronics.</p>
+              </div>
+              
+              <div class="pt-4">
+                <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-deep-blue text-white font-bold rounded-xl transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
+                  <span>Połącz się na LinkedIn</span>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Grzegorz Pukalski -->
+        <div>
+          <div class="grid md:grid-cols-5 gap-10 items-start">
+            
+            <div class="md:col-span-2 md:order-2">
+              <div class="bg-gradient-to-br from-cc-blue to-cc-purple rounded-2xl p-1 border border-gray-200 shadow-xl sticky top-24">
+                <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski - Specjalista Sprzedaży B2B i Produkcji" class="w-full h-auto rounded-xl object-cover aspect-[4/5]" width="400" height="500" loading="lazy" decoding="async">
+              </div>
+            </div>
+            
+            <div class="md:col-span-3 md:order-1 space-y-6">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue mb-2">Grzegorz Pukalski</h2>
+                <p class="text-xl text-cc-purple font-bold mb-4">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Grzegorz to praktyk sprzedaży B2B w przemyśle maszynowym. Na co dzień odpowiada za współpracę z klientami OEM, proces ofertowania oraz kalkulacje kosztów i marż w Dekpol Steel – producencie osprzętu do maszyn budowlanych (łyżki, szybkozłącza, osprzęt do rozbiórki) działającym na rynkach międzynarodowych (24+ krajów), obsługującym globalne marki maszyn budowlanych.</p>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-lightbulb mr-2 text-honey" aria-hidden="true"></i>
+                  Główne Kompetencje
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Zarządzanie relacjami z klientami OEM i key accounts</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Optymalizacja RFQ i procesów przetargowych</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Kalkulacje kosztów i strategie cenowe dla produkcji</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa-solid fa-check-circle mr-2 text-cc-purple mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <span>Handshake handlowy-operacyjny i doskonałość dostaw</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-deep-blue mb-3 flex items-center">
+                  <i class="fa-solid fa-industry mr-2 text-honey" aria-hidden="true"></i>
+                  Fokus Branżowy
+                </h3>
+                <p class="text-gray-700 leading-relaxed">Osprzęt do maszyn budowlanych, ciężki sprzęt, sprzedaż B2B przemysłowa na 24+ rynkach międzynarodowych. Specjalizacja w łączeniu wymagań technicznych z opłacalnością komercyjną.</p>
+              </div>
+              
+              <div class="pt-4">
+                <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-deep-blue text-white font-bold rounded-xl transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
+                  <span>Połącz się na LinkedIn</span>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-24 px-5 text-center" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
+    <div class="container mx-auto max-w-4xl">
+      
+      <div class="lang-content en active">
+        <h2 class="text-4xl font-bold text-deep-blue mb-4">Ready to Work with Us?</h2>
+        <p class="text-xl text-gray-900 opacity-90 mb-8">Let's discuss how we can help transform your organization.</p>
+        <a href="index.html#contact" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Skontaktuj się</a>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-deep-blue text-white text-center py-8">
+    <div class="container mx-auto px-5">
+      <div class="lang-content en active">
+        <p>&copy; 2025 Consult Change. All rights reserved.</p>
+      </div>
+      <div class="lang-content pl">
+        <p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    function switchLanguage(lang) {
+      const allLangContent = document.querySelectorAll('.lang-content');
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      
+      allLangContent.forEach(el => {
+        if (el.classList.contains(lang)) {
+          el.classList.add('active');
+          el.style.display = 'block';
+        } else {
+          el.classList.remove('active');
+          el.style.display = 'none';
+        }
+      });
+      
+      if (lang === 'en') {
+        enBtn.classList.add('bg-honey', 'text-gray-900');
+        enBtn.setAttribute('aria-selected', 'true');
+        plBtn.classList.remove('bg-honey');
+        plBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'en';
+      } else {
+        plBtn.classList.add('bg-honey', 'text-gray-900');
+        plBtn.setAttribute('aria-selected', 'true');
+        enBtn.classList.remove('bg-honey');
+        enBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'pl';
+      }
+    }
+  </script>
+  
+  <!--
+  === SOURCE LOG (INTERNAL) ===
+  Team member information sourced from provided index.html team section.
+  No external sources used.
+  -->
+  
+</body>
+</html>/50">Get in Touch</a>
+      </div>
+      
+      <div class="lang-content pl">
+        <h2 class="text-4xl font-bold text-deep-blue mb-4">Gotowy do Współpracy?</h2>
+        <p class="text-xl text-gray-900 opacity-90 mb-8">Porozmawiajmy o tym, jak możemy pomóc w transformacji Twojej organizacji.</p>
+        <a href="index.html#contact" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey
