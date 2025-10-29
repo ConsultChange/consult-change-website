@@ -39,6 +39,14 @@
         transition-duration: 0.01ms !important;
       }
     }
+    
+    .lang-content {
+      display: none;
+    }
+    
+    .lang-content.active {
+      display: block;
+    }
   </style>
   
   <script>
@@ -432,18 +440,28 @@
       
       if (lang === 'en') {
         enBtn.classList.add('bg-honey', 'text-gray-900');
+        enBtn.classList.remove('text-gray-900');
         enBtn.setAttribute('aria-selected', 'true');
-        plBtn.classList.remove('bg-honey');
+        plBtn.classList.remove('bg-honey', 'text-gray-900');
         plBtn.setAttribute('aria-selected', 'false');
         document.documentElement.lang = 'en';
       } else {
         plBtn.classList.add('bg-honey', 'text-gray-900');
+        plBtn.classList.remove('text-gray-900');
         plBtn.setAttribute('aria-selected', 'true');
-        enBtn.classList.remove('bg-honey');
+        enBtn.classList.remove('bg-honey', 'text-gray-900');
         enBtn.setAttribute('aria-selected', 'false');
         document.documentElement.lang = 'pl';
       }
     }
+    
+    // Initialize - make sure only active language is visible
+    document.addEventListener('DOMContentLoaded', function() {
+      const plContent = document.querySelectorAll('.lang-content.pl');
+      plContent.forEach(el => {
+        el.style.display = 'none';
+      });
+    });
   </script>
   
   <!--

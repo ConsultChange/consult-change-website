@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Consult Change – Legal Operations & Transformation">
   <meta property="og:description" content="We help organizations operationalize legal strategy with CLM/ELM, Legal Front Door, PMO and PROSCI change management.">
   <meta property="og:image" content="/apple-touch-icon.png">
@@ -48,18 +48,11 @@
     "url": "https://www.consultchange.pl",
     "logo": "https://www.consultchange.pl/apple-touch-icon.png",
     "description": "Specialized consultancy delivering measurable transformation across Legal Operations, Manufacturing Excellence, and Organizational Change.",
-    "foundingDate": "2024",
     "founder": {
       "@type": "Person",
       "name": "Patryk Markowski",
       "jobTitle": "Founder & Lead Change & Project Management Consultant",
       "sameAs": "https://www.linkedin.com/in/patrykmarkowski/"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Koszalin",
-      "addressRegion": "West Pomerania",
-      "addressCountry": "PL"
     }
   }
   </script>
@@ -71,11 +64,6 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-variant: small-caps;
-      letter-spacing: 0.03em;
     }
     
     @keyframes fadeInUp {
@@ -99,12 +87,14 @@
       to { opacity: 0; transform: translateY(-8px) scale(0.995); }
     }
     
-    .animate-fade-in-up {
-      animation: fadeInUp 0.9s ease both;
+    .hero-slide {
+      display: none;
+      opacity: 0;
     }
     
-    .animate-bounce {
-      animation: bounce 2s infinite;
+    .hero-slide.active {
+      display: block;
+      opacity: 1;
     }
     
     .fade-enter {
@@ -113,6 +103,14 @@
     
     .fade-exit {
       animation: fadeOut 0.6s ease forwards;
+    }
+    
+    .lang-content {
+      display: none;
+    }
+    
+    .lang-content.active {
+      display: block;
     }
   </style>
   
@@ -140,13 +138,13 @@
   
   <!-- Language Toggle -->
   <div class="fixed right-5 top-5 z-50 flex gap-1 rounded-full bg-gray-200/95 p-1.5 shadow-lg" role="tablist" aria-label="Language selection">
-    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 bg-honey text-gray-900" role="tab" aria-selected="true" aria-controls="content-en">EN</button>
-    <button onclick="switchLanguage('pl')" id="btn-pl" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 text-gray-900" role="tab" aria-selected="false" aria-controls="content-pl">PL</button>
+    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 bg-honey text-gray-900" role="tab" aria-selected="true">EN</button>
+    <button onclick="switchLanguage('pl')" id="btn-pl" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 text-gray-900" role="tab" aria-selected="false">PL</button>
   </div>
   
   <!-- HERO SECTION -->
   <section id="home" class="relative min-h-screen flex items-center justify-center text-white overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
-    <div class="container mx-auto px-5 py-24 text-center animate-fade-in-up">
+    <div class="container mx-auto px-5 py-24 text-center">
       
       <!-- Logo Brand -->
       <div class="inline-flex items-center justify-center mb-4 bg-white/98 px-4 py-3 rounded-2xl shadow-xl">
@@ -154,74 +152,78 @@
       </div>
       
       <!-- Carousel Container -->
-      <div id="carousel" class="relative">
+      <div id="carousel" class="relative min-h-[400px]">
         
         <!-- EN Slide 1 -->
-        <div class="hero-slide lang-content en active" data-lang="en">
+        <div class="hero-slide lang-content en active" data-lang="en" data-slide="0">
           <h1 class="text-4xl md:text-5xl font-bold mb-3 leading-tight">Operationalize.<br>Deliver.<br>Adopt.</h1>
           <p class="text-lg md:text-xl opacity-95 mb-4 max-w-3xl mx-auto">We translate strategy into working processes, tools and change that sticks.</p>
           <div class="flex flex-wrap gap-3 justify-center mt-4">
             <a href="#contact" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Start Your Transformation</a>
             <a href="why-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Why Us</a>
             <a href="ai-change.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">AI in Change</a>
+            <a href="meet-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Meet Us</a>
           </div>
-          <div class="flex flex-wrap gap-2 justify-center mt-4" aria-label="Key features">
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-shield-halved mr-1" aria-hidden="true"></i> Enterprise security & compliance</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-gauge-high mr-1" aria-hidden="true"></i> Measurable outcomes</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-handshake mr-1" aria-hidden="true"></i> Vendor-agnostic advisory</span>
+          <div class="flex flex-wrap gap-2 justify-center mt-4">
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-shield-halved mr-1"></i> Enterprise security & compliance</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-gauge-high mr-1"></i> Measurable outcomes</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-handshake mr-1"></i> Vendor-agnostic advisory</span>
           </div>
         </div>
         
         <!-- EN Slide 2 -->
-        <div class="hero-slide lang-content en" data-lang="en">
+        <div class="hero-slide lang-content en" data-lang="en" data-slide="1">
           <h1 class="text-4xl md:text-5xl font-bold mb-3 leading-tight">From Strategy to Results.<br>We Make Change Work.</h1>
           <p class="text-lg md:text-xl opacity-95 mb-4 max-w-3xl mx-auto">Specialized consultancy delivering measurable transformation across Legal Operations, Manufacturing Excellence, and Organizational Change.</p>
           <div class="flex flex-wrap gap-3 justify-center mt-4">
             <a href="#contact" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Start Your Transformation</a>
             <a href="why-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Why Choose Us</a>
+            <a href="meet-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Meet Us</a>
           </div>
-          <div class="flex flex-wrap gap-2 justify-center mt-4" aria-label="Key metrics">
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-bolt mr-1" aria-hidden="true"></i> 70% faster cycle times</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i> 90%+ adoption rates</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-layer-group mr-1" aria-hidden="true"></i> Multi-industry experience</span>
+          <div class="flex flex-wrap gap-2 justify-center mt-4">
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-bolt mr-1"></i> 70% faster cycle times</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-users mr-1"></i> 90%+ adoption rates</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-layer-group mr-1"></i> Multi-industry experience</span>
           </div>
         </div>
         
         <!-- PL Slide 1 -->
-        <div class="hero-slide lang-content pl" data-lang="pl">
+        <div class="hero-slide lang-content pl" data-lang="pl" data-slide="0">
           <h1 class="text-4xl md:text-5xl font-bold mb-3 leading-tight">Urealniamy.<br>Dowozimy.<br>Osiągamy Adopcję.</h1>
           <p class="text-lg md:text-xl opacity-95 mb-4 max-w-3xl mx-auto">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</p>
           <div class="flex flex-wrap gap-3 justify-center mt-4">
             <a href="#contact" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Porozmawiajmy</a>
             <a href="why-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Dlaczego My</a>
             <a href="ai-change.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">AI w Zmianie</a>
+            <a href="meet-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Poznaj Nas</a>
           </div>
-          <div class="flex flex-wrap gap-2 justify-center mt-4" aria-label="Kluczowe cechy">
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-shield-halved mr-1" aria-hidden="true"></i> Bezpieczeństwo klasy enterprise</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-gauge-high mr-1" aria-hidden="true"></i> Mierzalne rezultaty</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-handshake mr-1" aria-hidden="true"></i> Doradztwo vendor-agnostyczne</span>
+          <div class="flex flex-wrap gap-2 justify-center mt-4">
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-shield-halved mr-1"></i> Bezpieczeństwo klasy enterprise</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-gauge-high mr-1"></i> Mierzalne rezultaty</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-handshake mr-1"></i> Doradztwo vendor-agnostyczne</span>
           </div>
         </div>
         
         <!-- PL Slide 2 -->
-        <div class="hero-slide lang-content pl" data-lang="pl">
+        <div class="hero-slide lang-content pl" data-lang="pl" data-slide="1">
           <h1 class="text-4xl md:text-5xl font-bold mb-3 leading-tight">Od Strategii do Rezultatów.<br>Sprawiamy, że Zmiany Działają.</h1>
           <p class="text-lg md:text-xl opacity-95 mb-4 max-w-3xl mx-auto">Specjalistyczna firma konsultingowa dostarczająca wymierne transformacje w Legal Operations, Doskonałości Produkcyjnej i Zmianie Organizacyjnej.</p>
           <div class="flex flex-wrap gap-3 justify-center mt-4">
             <a href="#contact" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Rozpocznij Transformację</a>
             <a href="why-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Dlaczego My</a>
+            <a href="meet-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-honey/50">Poznaj Nas</a>
           </div>
-          <div class="flex flex-wrap gap-2 justify-center mt-4" aria-label="Kluczowe wskaźniki">
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-bolt mr-1" aria-hidden="true"></i> 70% krótszy czas cykli</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i> 90%+ adopcji</span>
-            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-layer-group mr-1" aria-hidden="true"></i> Doświadczenie multi-branżowe</span>
+          <div class="flex flex-wrap gap-2 justify-center mt-4">
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-bolt mr-1"></i> 70% krótszy czas cykli</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-users mr-1"></i> 90%+ adopcji</span>
+            <span class="inline-block bg-honey text-gray-900 rounded-full px-3 py-2 text-sm font-medium border border-honey"><i class="fa-solid fa-layer-group mr-1"></i> Doświadczenie multi-branżowe</span>
           </div>
         </div>
         
       </div>
     </div>
     
-    <div class="absolute left-1/2 bottom-6 -translate-x-1/2 animate-bounce" aria-hidden="true">
+    <div class="absolute left-1/2 bottom-6 -translate-x-1/2" style="animation: bounce 2s infinite;" aria-hidden="true">
       <i class="fas fa-chevron-down text-3xl text-gray-900 opacity-85"></i>
     </div>
   </section>
@@ -236,7 +238,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-file-contract" aria-hidden="true"></i>
+              <i class="fas fa-file-contract"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">CLM/ELM Transformation</h3>
             <p class="text-gray-600">Vendor shortlisting, solution design, metadata/taxonomy, templates & playbooks, security & retention, rollout and adoption.</p>
@@ -244,7 +246,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-door-open" aria-hidden="true"></i>
+              <i class="fas fa-door-open"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Legal Front Door</h3>
             <p class="text-gray-600">Intake & triage, SLAs, service catalog, knowledge base, Power BI reporting on Microsoft 365/SharePoint.</p>
@@ -252,7 +254,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              <i class="fas fa-project-diagram"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Governance & PMO</h3>
             <p class="text-gray-600">Decision gates, steering cadence, portfolio & OKR/KPI frameworks, benefits tracking and roadmaps.</p>
@@ -260,7 +262,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-users-cog" aria-hidden="true"></i>
+              <i class="fas fa-users-cog"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">PROSCI Change Management</h3>
             <p class="text-gray-600">Sponsor roadmap, stakeholder mapping, comms & training, resistance management, adoption measurement.</p>
@@ -268,7 +270,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              <i class="fas fa-chart-bar"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Process & Data Excellence</h3>
             <p class="text-gray-600">E2E mapping, RACI & controls, master data quality, document/metadata standards, auditability.</p>
@@ -276,7 +278,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-industry" aria-hidden="true"></i>
+              <i class="fas fa-industry"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Manufacturing & B2B Sales</h3>
             <p class="text-gray-600">OEM/key accounts, RFQ optimization, costing & pricing, commercial-operations handshake.</p>
@@ -291,7 +293,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-file-contract" aria-hidden="true"></i>
+              <i class="fas fa-file-contract"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Transformacja CLM/ELM</h3>
             <p class="text-gray-600">Shortlist dostawców, design rozwiązania, metadane/taksonomie, szablony i playbooki, bezpieczeństwo & retencja, rollout i adopcja.</p>
@@ -299,7 +301,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-door-open" aria-hidden="true"></i>
+              <i class="fas fa-door-open"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Legal Front Door</h3>
             <p class="text-gray-600">Intake/triage, SLA, katalog usług, baza wiedzy, raportowanie Power BI na Microsoft 365/SharePoint.</p>
@@ -307,7 +309,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              <i class="fas fa-project-diagram"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Governance i PMO</h3>
             <p class="text-gray-600">Bramy decyzyjne, rytm sterujący, portfolio i OKR/KPI, śledzenie korzyści, roadmaps.</p>
@@ -315,7 +317,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-users-cog" aria-hidden="true"></i>
+              <i class="fas fa-users-cog"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">PROSCI Change Management</h3>
             <p class="text-gray-600">Plan sponsora, mapowanie interesariuszy, komunikacja i szkolenia, zarządzanie oporem, pomiar adopcji.</p>
@@ -323,7 +325,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              <i class="fas fa-chart-bar"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Doskonałość Procesów i Danych</h3>
             <p class="text-gray-600">Mapowanie E2E, RACI i kontrole, jakość danych master, standardy dokumentów/metadanych, audytowalność.</p>
@@ -331,7 +333,7 @@
           
           <div class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
-              <i class="fas fa-industry" aria-hidden="true"></i>
+              <i class="fas fa-industry"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Produkcja i B2B</h3>
             <p class="text-gray-600">OEM/key accounts, RFQ, kalkulacje & ceny, handshake sprzedaż-operacje.</p>
@@ -352,22 +354,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-magnifying-glass mr-2 text-cc-purple" aria-hidden="true"></i>Assess & Align</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-magnifying-glass mr-2 text-cc-purple"></i>Assess & Align</h4>
             <p class="text-sm text-gray-600">Stakeholders, current state, data & risk review, value case and success metrics that secure buy-in.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-drafting-compass mr-2 text-cc-purple" aria-hidden="true"></i>Design & Govern</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-drafting-compass mr-2 text-cc-purple"></i>Design & Govern</h4>
             <p class="text-sm text-gray-600">Target operating model, processes & roles, decision gates, information architecture and controls.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-rocket mr-2 text-cc-purple" aria-hidden="true"></i>Build, Pilot, Rollout</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-rocket mr-2 text-cc-purple"></i>Build, Pilot, Rollout</h4>
             <p class="text-sm text-gray-600">Configuration, integrations, playbooks, pilots and scaled deployment with change enablement.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-chart-line mr-2 text-cc-purple" aria-hidden="true"></i>Adopt & Optimize</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-chart-line mr-2 text-cc-purple"></i>Adopt & Optimize</h4>
             <p class="text-sm text-gray-600">OKR/KPI dashboards, adoption analytics, continuous improvement and benefits tracking.</p>
           </div>
           
@@ -379,22 +381,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-magnifying-glass mr-2 text-cc-purple" aria-hidden="true"></i>Diagnoza & Uzgodnienie</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-magnifying-glass mr-2 text-cc-purple"></i>Diagnoza & Uzgodnienie</h4>
             <p class="text-sm text-gray-600">Interesariusze, stan obecny, dane i ryzyka, business case i miary sukcesu – zapewniamy buy-in.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-drafting-compass mr-2 text-cc-purple" aria-hidden="true"></i>Design & Governance</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-drafting-compass mr-2 text-cc-purple"></i>Design & Governance</h4>
             <p class="text-sm text-gray-600">Docelowy operating model, procesy i role, bramy decyzyjne, architektura informacji i kontrole.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-rocket mr-2 text-cc-purple" aria-hidden="true"></i>Budowa, Pilotaż, Rollout</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-rocket mr-2 text-cc-purple"></i>Budowa, Pilotaż, Rollout</h4>
             <p class="text-sm text-gray-600">Konfiguracja, integracje, playbooki, pilotaże i skalowanie z pełnym change enablement.</p>
           </div>
           
           <div class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200">
-            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-chart-line mr-2 text-cc-purple" aria-hidden="true"></i>Adopcja & Optymalizacja</h4>
+            <h4 class="text-lg font-bold mb-2"><i class="fa-solid fa-chart-line mr-2 text-cc-purple"></i>Adopcja & Optymalizacja</h4>
             <p class="text-sm text-gray-600">Dashboardy OKR/KPI, analityka adopcji, ciągłe doskonalenie i śledzenie korzyści.</p>
           </div>
           
@@ -487,78 +489,481 @@
     </div>
   </section>
   
-  <!-- FOUNDER SPOTLIGHT SECTION -->
-  <section id="founder" class="py-24 bg-gradient-to-br from-deep-blue via-indigo-900 to-cc-purple text-white">
+  <!-- CREDENTIALS SECTION -->
+  <section id="credentials" class="py-24 bg-white">
     <div class="container mx-auto px-5">
       
       <div class="lang-content en active">
-        <div class="text-center mb-12">
-          <span class="inline-block px-4 py-2 bg-honey text-gray-900 rounded-full text-sm font-bold mb-4">Meet the Founder</span>
-          <h2 class="text-4xl font-bold mb-4">Patryk Markowski</h2>
-          <p class="text-xl opacity-90">Change Management & Legal Operations Expert</p>
+        <h2 class="text-4xl font-bold text-center mb-12">Credentials</h2>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">PROSCI® Change Management Practitioner (CCP)</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">DocuSign CLM Administrator</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">SirionLabs & Icertis ICI</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-diagram-project text-indigo-600"></i>
+            <span class="font-medium">Agile/Lean/Scrum/Kanban</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-chart-column text-indigo-600"></i>
+            <span class="font-medium">Power BI, Jira, Microsoft 365</span>
+          </span>
         </div>
+      </div>
+      
+      <div class="lang-content pl">
+        <h2 class="text-4xl font-bold text-center mb-12">Certyfikacje</h2>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">PROSCI® Change Management Practitioner (CCP)</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">DocuSign CLM Administrator</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-certificate text-indigo-600"></i>
+            <span class="font-medium">SirionLabs & Icertis ICI</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-diagram-project text-indigo-600"></i>
+            <span class="font-medium">Agile/Lean/Scrum/Kanban</span>
+          </span>
+          <span class="inline-flex items-center gap-2 bg-white border-2 border-gray-200 rounded-full px-4 py-2.5 shadow-md">
+            <i class="fa-solid fa-chart-column text-indigo-600"></i>
+            <span class="font-medium">Power BI, Jira, Microsoft 365</span>
+          </span>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- TEAM SECTION -->
+  <section id="team" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-5">
+      
+      <div class="lang-content en active">
+        <h2 class="text-4xl font-bold text-center mb-4">Our Team</h2>
+        <p class="text-center text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Meet the experts behind Consult Change</p>
         
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="md:col-span-1">
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-1 border border-white/20">
-                <img src="your-photo.jpg" alt="Patryk Markowski - Founder of Consult Change" class="w-full h-auto rounded-xl object-cover aspect-[4/5]" width="400" height="500" loading="lazy" decoding="async">
-              </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          
+          <div class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl">
+            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
+              <img src="your-photo.jpg" alt="Patryk Markowski - Change Management & Legal Operations Expert" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
             </div>
-            
-            <div class="md:col-span-2 space-y-6">
-              <div>
-                <h3 class="text-2xl font-bold mb-3 flex items-center"><i class="fa-solid fa-briefcase mr-3 text-honey" aria-hidden="true"></i>Role & Expertise</h3>
-                <p class="text-lg opacity-90 leading-relaxed">As Founder and Lead Change & Project Management Consultant, Patryk helps leaders plan and deliver complex end-to-end transformations from diagnosis through execution to measurable outcomes.</p>
-              </div>
-              
-              <div>
-                <h3 class="text-2xl font-bold mb-3 flex items-center"><i class="fa-solid fa-lightbulb mr-3 text-honey" aria-hidden="true"></i>Specializations</h3>
-                <ul class="space-y-2 text-lg opacity-90">
-                  <li class="flex items-start"><i class="fa-solid fa-check-circle mr-2 text-honey mt-1 flex-shrink-0" aria-hidden="true"></i><span>Operational transformations including CLM/ELM implementations</span></li>
-                  <li class="flex items-start"><i class="fa-solid fa-check-circle mr-2 text-honey mt-1 flex-shrink-0" aria-hidden="true"></i><span>Legal Front Door design on Microsoft 365/SharePoint</span></li>
-                  <li class="flex items-start"><i class="fa-solid fa-check-circle mr-2 text-honey mt-1 flex-shrink-0" aria-hidden="true"></i><span>Portfolio governance with OKRs/KPIs and decision gates</span></li>
-                  <li class="flex items-start"><i class="fa-solid fa-check-circle mr-2 text-honey mt-1 flex-shrink-0" aria-hidden="true"></i><span>PROSCI-certified change management and adoption strategies</span></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 class="text-2xl font-bold mb-3 flex items-center"><i class="fa-solid fa-award mr-3 text-honey" aria-hidden="true"></i>Certifications & Methods</h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1.5 bg-white/20 rounded-full text-sm font-medium border border-white/30">PROSCI® CCP</span>
-                  <span class="px-3 py-1.5 bg-white/20 rounded-full text-sm font-medium border border-white/30">DocuSign CLM Admin</span>
-                  <span class="px-3 py-1.5 bg-white/20 rounded-full text-sm font-medium border border-white/30">SirionLabs</span>
-                  <span class="px-3 py-1.5 bg-white/20 rounded-full text-sm font-medium border border-white/30">Icertis ICI</span>
-                  <span class="px-3 py-1.5 bg-white/20 rounded-full text-sm font-medium border border-white/30">Agile/Lean/Scrum</span>
-                </div>
-              </div>
-              
-              <div>
-                <h3 class="text-2xl font-bold mb-3 flex items-center"><i class="fa-solid fa-building mr-3 text-honey" aria-hidden="true"></i>Client Experience</h3>
-                <p class="text-lg opacity-90 leading-relaxed">Delivered projects for leading organizations including Swarovski GBS, Deloitte Legal, Nordea, AirHelp, and Arrow Electronics.</p>
-              </div>
-              
-              <div class="pt-4">
-                <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-honey text-gray-900 font-bold rounded-xl transition-all hover:bg-white hover:scale-105 focus:outline-none focus:ring-4 focus:ring-honey/50">
-                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
-                  <span>Connect on LinkedIn</span>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Patryk Markowski</h3>
+              <div class="text-cc-purple font-bold mb-3">Founder & Lead Consultant</div>
+              <p class="text-gray-600 text-sm mb-4">Change management & legal operations expert. Delivered projects for Swarovski GBS, Deloitte Legal, Nordea, AirHelp, and Arrow Electronics.</p>
+              <div class="text-center mt-4">
+                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus:outline-none focus:ring-2 focus:ring-honey/50 focus:rounded">
+                  <span>View Full Profile</span>
+                  <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
           </div>
           
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <p class="text-lg opacity-90 leading-relaxed italic">"I bridge business, legal, and IT perspectives to simplify workflows, shorten lead times, and translate strategy into operational plans, tooling, and tangible results. My approach combines technical implementation expertise with human-centered change management to ensure transformations actually stick."</p>
+          <div class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl">
+            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
+              <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski - B2B Sales & Manufacturing Specialist" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Grzegorz Pukalski</h3>
+              <div class="text-cc-purple font-bold mb-3">Sales Manager OEM</div>
+              <p class="text-gray-600 text-sm mb-4">Industrial B2B sales expert focused on OEM clients, RFQs, and margin-aware pricing at Dekpol Steel.</p>
+              <div class="text-center mt-4">
+                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus:outline-none focus:ring-2 focus:ring-honey/50 focus:rounded">
+                  <span>View Full Profile</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
           </div>
+          
+        </div>
+        
+        <div class="text-center mt-10">
+          <a href="meet-us.html" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Meet Our Full Team</a>
         </div>
       </div>
       
       <div class="lang-content pl">
-        <div class="text-center mb-12">
-          <span class="inline-block px-4 py-2 bg-honey text-gray-900 rounded-full text-sm font-bold mb-4">Poznaj Założyciela</span>
-          <h2 class="text-4xl font-bold mb-4">Patryk Markowski</h2>
-          <p class="text-xl opacity-90">Ekspert Zarządzania Zmianą i Legal Operations</p>
+        <h2 class="text-4xl font-bold text-center mb-4">Nasz Zespół</h2>
+        <p class="text-center text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Poznaj ekspertów Consult Change</p>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          
+          <div class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl">
+            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
+              <img src="your-photo.jpg" alt="Patryk Markowski - Ekspert Zarządzania Zmianą i Legal Operations" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Patryk Markowski</h3>
+              <div class="text-cc-purple font-bold mb-3">Założyciel i Główny Konsultant</div>
+              <p class="text-gray-600 text-sm mb-4">Ekspert zarządzania zmianą i legal operations. Projekty dla Swarovski GBS, Deloitte Legal, Nordea, AirHelp oraz Arrow Electronics.</p>
+              <div class="text-center mt-4">
+                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus:outline-none focus:ring-2 focus:ring-honey/50 focus:rounded">
+                  <span>Zobacz Pełny Profil</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl">
+            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2, #C985F0);">
+              <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski - Specjalista Sprzedaży B2B i Produkcji" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Grzegorz Pukalski</h3>
+              <div class="text-cc-purple font-bold mb-3">Sales Manager OEM</div>
+              <p class="text-gray-600 text-sm mb-4">Ekspert sprzedaży B2B w przemyśle, specjalista klientów OEM, RFQ i cen świadomych marży w Dekpol Steel.</p>
+              <div class="text-center mt-4">
+                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus:outline-none focus:ring-2 focus:ring-honey/50 focus:rounded">
+                  <span>Zobacz Pełny Profil</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
         </div>
         
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-
+        <div class="text-center mt-10">
+          <a href="meet-us.html" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Poznaj Pełny Zespół</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
+    <div class="container mx-auto px-5">
+      
+      <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        
+        <div class="lang-content en active">
+          <div class="mb-8">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">Ready to Transform Your Business?</h2>
+            <p class="text-lg text-gray-900 opacity-90">Book a 30-minute discovery call or send us a note.</p>
+          </div>
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 mb-6">
+            <h3 class="text-xl font-bold mb-2 flex items-center">
+              <i class="fas fa-calendar-alt mr-2 text-cc-purple"></i>
+              Schedule a Consultation
+            </h3>
+            <p class="text-gray-600 mb-4">Pick a time that works for you.</p>
+            <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank" rel="noopener" class="inline-block w-full text-center px-6 py-3 bg-transparent border-2 border-honey text-gray-900 font-bold rounded-xl transition-all hover:bg-honey focus:outline-none focus:ring-4 focus:ring-honey/50">
+              Book Meeting
+            </a>
+          </div>
+        </div>
+        
+        <div class="lang-content pl">
+          <div class="mb-8">
+            <h2 class="text-4xl font-bold mb-4 text-gray-900">Gotowy na Transformację?</h2>
+            <p class="text-lg text-gray-900 opacity-90">Umów 30-minutową rozmowę lub wyślij wiadomość.</p>
+          </div>
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 mb-6">
+            <h3 class="text-xl font-bold mb-2 flex items-center">
+              <i class="fas fa-calendar-alt mr-2 text-cc-purple"></i>
+              Umów Konsultację
+            </h3>
+            <p class="text-gray-600 mb-4">Wybierz dogodny termin.</p>
+            <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank" rel="noopener" class="inline-block w-full text-center px-6 py-3 bg-transparent border-2 border-honey text-gray-900 font-bold rounded-xl transition-all hover:bg-honey focus:outline-none focus:ring-4 focus:ring-honey/50">
+              Zarezerwuj spotkanie
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <form id="contactFormEN" class="lang-content en active bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200" action="https://formspree.io/f/xjkagvbe" method="POST">
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Message from consultchange.pl">
+            
+            <div class="mb-4">
+              <label for="name" class="block font-bold mb-2">Name *</label>
+              <input id="name" name="name" type="text" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="email" class="block font-bold mb-2">Email *</label>
+              <input id="email" name="email" type="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="company" class="block font-bold mb-2">Company</label>
+              <input id="company" name="company" type="text" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="message" class="block font-bold mb-2">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your challenges..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white min-h-[120px] resize-vertical focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+              <i class="fas fa-paper-plane mr-2"></i>Send Message
+            </button>
+            
+            <p id="statusEN" role="status" aria-live="polite" class="mt-3 text-center"></p>
+            <p class="text-sm text-gray-600 mt-3 text-center">Or email: <a href="mailto:patryk.markowski@consultchange.pl" class="font-bold hover:text-cc-purple">patryk.markowski@consultchange.pl</a></p>
+          </form>
+          
+          <form id="contactFormPL" class="lang-content pl bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200" action="https://formspree.io/f/xjkagvbe" method="POST">
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Wiadomość z consultchange.pl">
+            
+            <div class="mb-4">
+              <label for="namePL" class="block font-bold mb-2">Imię i nazwisko *</label>
+              <input id="namePL" name="name" type="text" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="emailPL" class="block font-bold mb-2">Email *</label>
+              <input id="emailPL" name="email" type="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="companyPL" class="block font-bold mb-2">Firma</label>
+              <input id="companyPL" name="company" type="text" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all">
+            </div>
+            
+            <div class="mb-4">
+              <label for="messagePL" class="block font-bold mb-2">Wiadomość *</label>
+              <textarea id="messagePL" name="message" required placeholder="Opowiedz o wyzwaniach..." class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white min-h-[120px] resize-vertical focus:border-honey focus:ring-4 focus:ring-honey/25 outline-none transition-all"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition-all hover:bg-honey hover:border-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
+              <i class="fas fa-paper-plane mr-2"></i>Wyślij wiadomość
+            </button>
+            
+            <p id="statusPL" role="status" aria-live="polite" class="mt-3 text-center"></p>
+            <p class="text-sm text-gray-600 mt-3 text-center">Lub napisz: <a href="mailto:patryk.markowski@consultchange.pl" class="font-bold hover:text-cc-purple">patryk.markowski@consultchange.pl</a></p>
+          </form>
+        </div>
+        
+      </div>
+      
+      <!-- Brand Mark -->
+      <div class="flex justify-center mt-12">
+        <div class="bg-white rounded-2xl p-4 border border-gray-200 shadow-xl">
+          <img src="Consult change_White.png" alt="Consult Change logotype" class="h-20 w-auto" width="auto" height="80" loading="lazy" decoding="async">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-8">
+    <div class="container mx-auto px-5">
+      <div class="lang-content en active">
+        <p>&copy; 2025 Consult Change. All rights reserved.</p>
+      </div>
+      <div class="lang-content pl">
+        <p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Language switching
+    let currentLang = 'en';
+    
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const allLangContent = document.querySelectorAll('.lang-content');
+      const enBtn = document.getElementById('btn-en');
+      const plBtn = document.getElementById('btn-pl');
+      
+      allLangContent.forEach(el => {
+        if (el.classList.contains(lang)) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+      
+      if (lang === 'en') {
+        enBtn.classList.add('bg-honey', 'text-gray-900');
+        enBtn.setAttribute('aria-selected', 'true');
+        plBtn.classList.remove('bg-honey', 'text-gray-900');
+        plBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'en';
+      } else {
+        plBtn.classList.add('bg-honey', 'text-gray-900');
+        plBtn.setAttribute('aria-selected', 'true');
+        enBtn.classList.remove('bg-honey', 'text-gray-900');
+        enBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'pl';
+      }
+      
+      restartCarousel();
+    }
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.service-card, .step-card, .case-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(22px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+    
+    // Hero Carousel
+    const INTERVAL_MS = 10000;
+    let carouselTimer;
+    let currentSlideIndex = 0;
+    
+    function getVisibleSlides() {
+      return Array.from(document.querySelectorAll(`.hero-slide[data-lang="${currentLang}"]`));
+    }
+    
+    function showSlide(slides, index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active', 'fade-enter');
+          slide.classList.remove('fade-exit');
+        } else if (slide.classList.contains('active')) {
+          slide.classList.remove('fade-enter');
+          slide.classList.add('fade-exit');
+          setTimeout(() => {
+            slide.classList.remove('active', 'fade-exit');
+          }, 600);
+        }
+      });
+    }
+    
+    function nextSlide() {
+      const slides = getVisibleSlides();
+      if (slides.length < 2) return;
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(slides, currentSlideIndex);
+    }
+    
+    function restartCarousel() {
+      if (carouselTimer) clearInterval(carouselTimer);
+      
+      currentSlideIndex = 0;
+      const slides = getVisibleSlides();
+      
+      // Hide all slides first
+      document.querySelectorAll('.hero-slide').forEach(slide => {
+        slide.classList.remove('active', 'fade-enter', 'fade-exit');
+      });
+      
+      // Show first slide of current language
+      if (slides.length > 0) {
+        showSlide(slides, 0);
+      }
+      
+      // Start timer only if there are multiple slides
+      if (slides.length > 1) {
+        carouselTimer = setInterval(nextSlide, INTERVAL_MS);
+      }
+    }
+    
+    // Initialize carousel on page load
+    document.addEventListener('DOMContentLoaded', restartCarousel);
+    
+    // Form handling
+    const formsEN = document.getElementById('contactFormEN');
+    const formsPL = document.getElementById('contactFormPL');
+    
+    if (formsEN) {
+      formsEN.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const status = document.getElementById('statusEN');
+        const formData = new FormData(this);
+        
+        try {
+          const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          
+          if (response.ok) {
+            status.textContent = 'Thank you! Your message has been sent.';
+            status.className = 'mt-3 text-center text-green-700 font-bold';
+            this.reset();
+          } else {
+            status.textContent = 'Oops! There was a problem. Please try again.';
+            status.className = 'mt-3 text-center text-red-700 font-bold';
+          }
+        } catch (error) {
+          status.textContent = 'Oops! There was a problem. Please try again.';
+          status.className = 'mt-3 text-center text-red-700 font-bold';
+        }
+      });
+    }
+    
+    if (formsPL) {
+      formsPL.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const status = document.getElementById('statusPL');
+        const formData = new FormData(this);
+        
+        try {
+          const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          
+          if (response.ok) {
+            status.textContent = 'Dziękujemy! Twoja wiadomość została wysłana.';
+            status.className = 'mt-3 text-center text-green-700 font-bold';
+            this.reset();
+          } else {
+            status.textContent = 'Ups! Wystąpił problem. Spróbuj ponownie.';
+            status.className = 'mt-3 text-center text-red-700 font-bold';
+          }
+        } catch (error) {
+          status.textContent = 'Ups! Wystąpił problem. Spróbuj ponownie.';
+          status.className = 'mt-3 text-center text-red-700 font-bold';
+        }
+      });
+    }
+  </script>
+  
+</body>
+</html>
