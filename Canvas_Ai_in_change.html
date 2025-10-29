@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ai in Change — Consult Change Canvas</title>
+  <meta name="description" content="Zakładka \"Ai in Change\": skondensowany canvas dla klientów Consult Change — jak startujemy z AI w zmianie organizacyjnej (PROSCI/ADKAR), governance, ryzyka, KPI, roadmapa." />
+  <link rel="canonical" href="https://consultchange.pl/ai-in-change" />
+
+  <!-- Favicons (podmień ścieżki na własne pliki) -->
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicons/site.webmanifest" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ai in Change — Consult Change Canvas" />
+  <meta property="og:description" content="Skondensowany canvas wdrożeniowy AI + Zmiana: PROSCI/ADKAR, governance, KPI, roadmapa, compliance." />
+  <meta property="og:url" content="https://consultchange.pl/ai-in-change" />
+  <meta property="og:image" content="https://consultchange.pl/og/ai-in-change.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cc_gold: '#F4C362',
+            cc_sky: '#BFE6F2',
+            cc_purple: '#C985F0',
+            cc_black: '#0B0B0B',
+            cc_slate: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    :root{
+      --cc-gold:#F4C362; --cc-sky:#BFE6F2; --cc-purple:#C985F0; --cc-black:#0B0B0B; --cc-slate:#0F172A;
+    }
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--cc-slate);}
+    .tab-button.active{background:var(--cc-purple); color:#fff; box-shadow:0 6px 20px -4px rgba(201,133,240,.45)}
+    .tab-button:not(.active):hover{background:rgba(201,133,240,.15); color:#fff}
+    .card{backdrop-filter:saturate(120%) blur(4px)}
+    .sticky-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .sticky-note{transform:rotate(calc(var(--rotation)*1deg));transition:transform .2s;box-shadow:0 12px 18px -6px rgba(0,0,0,.35)}
+    .accordion-content{transition:max-height .3s ease-out,padding .3s ease-out;max-height:0;overflow:hidden}
+    .accordion-content.active{max-height:700px;padding-top:.5rem}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+    /* Druk */
+    @media print{
+      body{background:#fff!important}
+      .no-print{display:none!important}
+      .tab-content{display:block!important;visibility:visible!important;opacity:1!important;page-break-inside:avoid}
+      .card,.sticky-note{background:#f7f7f7!important;color:#000!important;box-shadow:none!important;border:1px solid #ddd}
+      h1,h2,h3{color:#5b3a6e!important;page-break-after:avoid}
+    }
+    /* Widoczny focus */
+    :focus-visible{outline:3px solid var(--cc-gold); outline-offset:2px; border-radius:.5rem}
+  </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 text-slate-200">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header z logo -->
+    <header class="mb-8 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="/assets/consult-change-logo.svg" alt="Consult Change — logo" class="h-10 w-auto select-none" />
+        <span class="text-sm text-slate-300 hidden sm:inline" aria-hidden="true">Ai in Change</span>
+      </div>
+      <a href="#print" onclick="window.print()" class="no-print inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--cc-purple)] text-white font-medium shadow hover:opacity-90 focus-visible:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 9V2h12v7M6 13H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2m-2 0H8v7h8v-7Z"/></svg>
+        <span>Drukuj / PDF</span>
+      </a>
+    </header>
+
+    <!-- Ramka / tytuł -->
+    <div class="card rounded-2xl border border-white/10 bg-cc_black/20 p-6 sm:p-10 shadow-2xl">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--cc-purple)]">Ai in Change — Client Canvas</h1>
+      <p class="mt-3 text-slate-300 max-w-3xl">Co dostarczyć na start, jak pracujemy (PROSCI/ADKAR + Agile), jak bezpiecznie uruchomić AI/agentów, oraz jak mierzymy sukces i skalujemy.</p>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-[280px,1fr]">
+        <!-- Sidebar: Zakładki -->
+        <aside class="rounded-2xl bg-cc_black/40 p-5 border border-white/10">
+          <h2 class="text-lg font-semibold text-slate-200 pb-2 mb-3 border-b border-[var(--cc-purple)]">Sekcje</h2>
+          <nav class="flex flex-col space-y-2" role="tablist" aria-label="Ai in Change">
+            <button type="button" class="tab-button active p-3 rounded-xl text-left" data-tab="intro" role="tab" aria-selected="true" aria-controls="panel-intro" id="tab-intro">
+              <span class="font-semibold">1. Jak pracujemy</span>
+              <span class="block text-sm opacity-70">PROSCI/ADKAR + Agile</span>
+            </button>
+            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="ai" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai">
+              <span class="font-semibold">2. AI w zmianie</span>
+              <span class="block text-sm opacity-70">Repozytoria, modele, compliance</span>
+            </button>
+            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="governance" role="tab" aria-selected="false" aria-controls="panel-governance" id="tab-governance">
+              <span class="font-semibold">3. Governance & Sponsorzy</span>
+              <span class="block text-sm opacity-70">Koalicja, decyzje, eskalacje</span>
+            </button>
+            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="roadmap" role="tab" aria-selected="false" aria-controls="panel-roadmap" id="tab-roadmap">
+              <span class="font-semibold">4. Roadmapa & KPI</span>
+              <span class="block text-sm opacity-70">Pilot → rollout → utrzymanie</span>
+            </button>
+            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="notes" role="tab" aria-selected="false" aria-controls="panel-notes" id="tab-notes">
+              <span class="font-semibold">5. Sticky Notes</span>
+              <span class="block text-sm opacity-70">Skrót konsultanta</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="min-h-[70vh]">
+          <div class="rounded-2xl bg-cc_black/30 p-6 sm:p-8 border border-white/10">
+
+            <!-- 1. INTRO -->
+            <section id="intro" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-intro">
+              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">1. Jak pracuje Consult Change</h2>
+              <div class="grid md:grid-cols-2 gap-6 text-slate-200">
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Metody i zasady</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky">
+                    <li>PROSCI/ADKAR dla adopcji; <strong>4P</strong> dla klarownego komunikatu zmiany.</li>
+                    <li>Agile Delivery (Scrum/Kanban): krótkie iteracje, WSJF/RICE do priorytetyzacji.</li>
+                    <li>Jedno źródło prawdy: RAID + Decision Log (transparentność decyzji).</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Co przynosicie na start</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky">
+                    <li>Problem/Opportunity (1–3 zdania) + oczekiwane korzyści.</li>
+                    <li>Ownerzy: Executive Sponsor, Product Owner, kluczowe role.</li>
+                    <li>Mapa procesów "as‑is" (jeśli istnieje) + ograniczenia/regulacje.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. AI -->
+            <section id="ai" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-ai">
+              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">2. AI w zmianie — co dostarczyć i jak startujemy</h2>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Fundamenty (mini‑wiedza)</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li>GenAI tworzy treści z promptów; to podzbiór ML.</li>
+                    <li>Temperatura: 0.2–0.5 analityka/kod; 0.6+ kreatywność.</li>
+                    <li>Modele <strong>mini</strong> pokrywają większość przypadków przy niższym koszcie.</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Wejścia od Klienta</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li><strong>Repozytoria i dane</strong>: bazy wiedzy, pliki, systemy (z ograniczeniami PII/NDA).</li>
+                    <li><strong>Dostępy/API</strong>, polityki bezpieczeństwa i prywatności.</li>
+                    <li><strong>Use cases</strong> (3–5) + KPI (np. czas odpowiedzi, jakość).</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Modele, koszt, jakość</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li>Preferencja: mini vs full; budżet na tokeny / ewentualny FT / RAG.</li>
+                    <li>QA: testy scenariuszowe, ewaluacja odpowiedzi, feedback loop.</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Compliance i ryzyka</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li>Bias/halucynacje redukujemy przez grounding i przeglądy SME.</li>
+                    <li>Zgodność: polityki danych, dostępów i retencji + audyt ścieżki.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                <h3 class="text-lg font-semibold text-cc_sky mb-2">Starter Roadmap (90 dni)</h3>
+                <ol class="list-decimal pl-5 space-y-1 text-slate-200">
+                  <li>Warsztat use cases + priorytetyzacja (WSJF/RICE).</li>
+                  <li>Pilot 1–2 przypadków z kryteriami sukcesu.</li>
+                  <li>Udoskonalenie → rollout → utrzymanie i pomiar.</li>
+                </ol>
+              </div>
+            </section>
+
+            <!-- 3. Governance & Sponsorzy -->
+            <section id="governance" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-governance">
+              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">3. Governance i Sponsorzy</h2>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">4P komunikatu zmiany (PROSCI)</h3>
+                  <ul class="list-disc pl-5 space-y-1 marker:text-cc_sky text-slate-200">
+                    <li><strong>Purpose</strong> — dlaczego zmieniamy?</li>
+                    <li><strong>Picture</strong> — jak wygląda pożądana przyszłość?</li>
+                    <li><strong>Plan</strong> — jak tam dotrzemy?</li>
+                    <li><strong>Part</strong> — jaka jest rola menedżera/pracownika?</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Sponsor & Koalicja</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li>Wskaż Executive Sponsora i zastępcę (realny zasięg wpływu).</li>
+                    <li>Zbuduj <strong>Koalicję Sponsorów</strong> (lista, poziom wsparcia).</li>
+                    <li>Dostępność: SteerCo, town hall, 1:1 + ścieżka decyzji/eskalacji.</li>
+                    <li>RACI/DACI oraz jawny Decision Log.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- 4. Roadmap & KPI -->
+            <section id="roadmap" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-roadmap">
+              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">4. Roadmapa i KPI</h2>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">KPI / Metryki</h3>
+                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
+                    <li>AI: jakość odpowiedzi, czas, koszt/1k tokenów, satysfakcja użytk.</li>
+                    <li>Zmiana: adopcja (ADKAR), użycie, czas cyklu, SLA, NPS.</li>
+                    <li>Ryzyka: incydenty danych, odchylenia jakości, debt backlog.</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
+                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Plan wdrożenia</h3>
+                  <ol class="list-decimal pl-5 space-y-1 text-slate-200">
+                    <li>Kickoff + definicja sukcesu i guardrails.</li>
+                    <li>Pilot (MVP) → walidacja KPI → decyzja o skali.</li>
+                    <li>Rollout falami + komunikacja 4P + szkolenia/onboarding.</li>
+                    <li>Utrzymanie: monitoring jakości, retrening, continuous improvement.</li>
+                  </ol>
+                </div>
+              </div>
+            </section>
+
+            <!-- 5. Sticky Notes -->
+            <section id="notes" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-notes">
+              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">5. Sticky Notes — skrót konsultanta</h2>
+              <div class="sticky-grid">
+                <div class="sticky-note p-5 rounded-lg bg-cc_sky text-cc_black" style="--rotation:-2;">
+                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">Start od 4P</h4>
+                  <p class="text-sm">Zanim plan: zablokuj Purpose, Picture, Plan, Part.</p>
+                </div>
+                <div class="sticky-note p-5 rounded-lg bg-cc_gold text-cc_black" style="--rotation:1;">
+                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">Sponsor ≠ tytuł</h4>
+                  <p class="text-sm">Liczy się realna władza i obecność, nie stanowisko.</p>
+                </div>
+                <div class="sticky-note p-5 rounded-lg bg-cc_purple text-cc_black" style="--rotation:2;">
+                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">AI potrzebuje danych</h4>
+                  <p class="text-sm">Bez repozytoriów i zasad nie ma jakości ani compliance.</p>
+                </div>
+                <div class="sticky-note p-5 rounded-lg bg-white text-cc_black" style="--rotation:-1;">
+                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">CLM od MVP</h4>
+                  <p class="text-sm">OneNDA + klauzule → szybkie korzyści i nauka.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Stopka akcji -->
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+              <div class="text-sm text-slate-400">Tip: klawisze ← → zmieniają sekcje. Home/End: pierwsza/ostatnia sekcja.</div>
+              <button onclick="window.print()" class="no-print px-5 py-2 rounded-xl bg-[var(--cc-purple)] text-white font-semibold shadow hover:opacity-90">Pobierz jako PDF</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script defer>
+    function switchTab(tabName){
+      document.querySelectorAll('.tab-content').forEach(p=>p.classList.add('hidden'));
+      const panel=document.querySelector('#'+tabName);
+      if(panel) panel.classList.remove('hidden');
+      document.querySelectorAll('.tab-button').forEach(btn=>{
+        const active=btn.getAttribute('data-tab')===tabName;
+        btn.classList.toggle('active',active);
+        btn.classList.toggle('text-slate-300',!active);
+        btn.setAttribute('aria-selected',String(active));
+      });
+    }
+    function toggleAccordion(header){
+      const content=header.nextElementSibling;
+      const expanded=header.getAttribute('aria-expanded')==='true';
+      header.setAttribute('aria-expanded',String(!expanded));
+      content.classList.toggle('active',!expanded);
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Obsługa zakładek i skrótów klawiszowych
+      const tabs=[...document.querySelectorAll('.tab-button')];
+      tabs.forEach(btn=>{
+        btn.addEventListener('click',()=>switchTab(btn.getAttribute('data-tab')));
+        btn.addEventListener('keydown',e=>{
+          const i=tabs.indexOf(btn);
+          if(e.key==='ArrowRight'){e.preventDefault();tabs[(i+1)%tabs.length].focus();tabs[(i+1)%tabs.length].click();}
+          if(e.key==='ArrowLeft'){e.preventDefault();tabs[(i-1+tabs.length)%tabs.length].focus();tabs[(i-1+tabs.length)%tabs.length].click();}
+          if(e.key==='Home'){e.preventDefault();tabs[0].focus();tabs[0].click();}
+          if(e.key==='End'){e.preventDefault();tabs[tabs.length-1].focus();tabs[tabs.length-1].click();}
+        });
+      });
+      // Start
+      switchTab('intro');
+      // Losowe nachylenie karteczek
+      document.querySelectorAll('.sticky-note').forEach(n=>n.style.setProperty('--rotation',(Math.random()*6)-3));
+      // Opcjonalne akordeony (dodaj .accordion-header + .accordion-content)
+      document.querySelectorAll('.accordion-header').forEach(h=>{
+        h.setAttribute('aria-expanded','false');
+        h.addEventListener('click',()=>toggleAccordion(h));
+        h.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleAccordion(h);} });
+      });
+    });
+  </script>
+</body>
+</html>
