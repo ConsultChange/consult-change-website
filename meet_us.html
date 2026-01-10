@@ -3,33 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meet Us – Consult Change</title>
+  <title>Meet Us — Consult Change | Expert Team</title>
   <meta name="description" content="Meet the team behind Consult Change: experts in change management, legal operations, and industrial B2B sales.">
+  <link rel="canonical" href="https://www.consultchange.pl/meet-us.html">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Meet Us – Consult Change">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <meta property="og:title" content="Meet Us — Consult Change">
   <meta property="og:description" content="Meet our team of transformation experts">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.consultchange.pl/meet-us.html">
+  <meta property="og:image" content="https://www.consultchange.pl/apple-touch-icon.png">
   
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Meet Us – Consult Change">
+  <meta name="twitter:title" content="Meet Us — Consult Change">
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCDZMH1RFK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RCDZMH1RFK');
-  </script>
   
   <style>
     @media (prefers-reduced-motion: reduce) {
@@ -39,14 +31,11 @@
         transition-duration: 0.01ms !important;
       }
     }
-    
-    .lang-content {
-      display: none;
-    }
-    
-    .lang-content.active {
-      display: block;
-    }
+    .lang-content {display: none;}
+    .lang-content.active {display: block;}
+    :focus-visible{outline:none;box-shadow:0 0 0 4px rgba(244,195,98,.5);border-radius:.75rem;}
+    .mobile-menu{transform:translateX(100%);transition:transform .3s ease-in-out;}
+    .mobile-menu.active{transform:translateX(0);}
   </style>
   
   <script>
@@ -66,31 +55,54 @@
 </head>
 <body class="font-sans text-gray-900 bg-white">
   
-  <!-- Logo (Fixed) -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-honey focus:text-near-black focus:px-4 focus:py-2 rounded-lg z-[60]">Skip to content</a>
+
   <a href="index.html" class="fixed left-5 top-5 z-50 flex items-center justify-center h-16 w-16 rounded-full bg-white/98 shadow-lg backdrop-blur-sm transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-honey/50" aria-label="Home">
     <img src="Consult change_sole logo_white.png" alt="Consult Change logo" class="h-11 w-auto" width="44" height="44" loading="eager" decoding="async">
   </a>
   
-  <!-- Language Toggle -->
   <div class="fixed right-5 top-5 z-50 flex gap-1 rounded-full bg-gray-200/95 p-1.5 shadow-lg" role="tablist" aria-label="Language selection">
-    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 bg-honey text-gray-900" role="tab" aria-selected="true">EN</button>
-    <button onclick="switchLanguage('pl')" id="btn-pl" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 text-gray-900" role="tab" aria-selected="false">PL</button>
+    <button onclick="switchLanguage('en')" id="btn-en" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 bg-honey text-gray-900 flex items-center gap-1.5" role="tab" aria-selected="true">
+      <span class="text-lg">🇬🇧</span><span class="hidden sm:inline">EN</span>
+    </button>
+    <button onclick="switchLanguage('pl')" id="btn-pl" class="lang-btn rounded-full px-3.5 py-2 font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-honey/50 text-gray-900 flex items-center gap-1.5" role="tab" aria-selected="false">
+      <span class="text-lg">🇵🇱</span><span class="hidden sm:inline">PL</span>
+    </button>
   </div>
+
+  <button id="mobileMenuToggle" class="fixed right-5 top-20 z-50 md:hidden flex items-center justify-center h-12 w-12 rounded-full bg-white shadow-lg" aria-label="Menu" aria-expanded="false">
+    <i class="fas fa-bars text-xl"></i>
+  </button>
   
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-lg shadow-lg" aria-label="Main navigation">
+  <nav class="hidden md:block fixed top-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-lg shadow-lg" aria-label="Main navigation">
     <div class="container mx-auto px-5 md:px-32 py-3">
       <ul class="flex justify-center items-center gap-2 flex-wrap">
         <li><a href="index.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Home</a></li>
         <li><a href="why-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Why Us</a></li>
         <li><a href="ai-change.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">AI in Change</a></li>
+        <li><a href="coaching.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Coaching</a></li>
         <li><a href="meet-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold bg-deep-blue text-white transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-honey/50" aria-current="page">Meet Us</a></li>
-        <li><a href="index.html#contact" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition-all hover:bg-honey focus:outline-none focus:ring-2 focus:ring-honey/50">Contact</a></li>
+        <li><a href="index.html#contact" class="inline-block px-5 py-2.5 rounded-xl font-semibold bg-cc-purple text-white transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-honey/50">Contact</a></li>
       </ul>
     </div>
   </nav>
+
+  <nav id="mobileMenu" class="mobile-menu md:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[60] overflow-y-auto">
+    <div class="p-6">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-2xl text-gray-600 hover:text-gray-900" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="mt-12 space-y-3">
+        <a href="index.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Home</a>
+        <a href="why-us.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Why Us</a>
+        <a href="ai-change.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">AI in Change</a>
+        <a href="coaching.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Coaching</a>
+        <a href="meet-us.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 bg-honey">Meet Us</a>
+        <a href="index.html#contact" class="block px-4 py-3 rounded-xl font-semibold text-white bg-cc-purple">Contact</a>
+      </div>
+    </div>
+  </nav>
   
-  <!-- Hero Section -->
   <header class="pt-32 pb-20 px-5 text-center" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
     <div class="container mx-auto max-w-4xl">
       
@@ -107,14 +119,11 @@
     </div>
   </header>
   
-  <!-- Team Members Section -->
-  <section class="py-24 px-5 bg-white">
+  <section id="main" class="py-24 px-5 bg-white">
     <div class="container mx-auto max-w-6xl">
       
-      <!-- EN Content -->
       <div class="lang-content en active">
         
-        <!-- Patryk Markowski -->
         <div class="mb-20">
           <div class="grid md:grid-cols-5 gap-10 items-start">
             
@@ -189,7 +198,6 @@
           </div>
         </div>
         
-        <!-- Grzegorz Pukalski -->
         <div>
           <div class="grid md:grid-cols-5 gap-10 items-start">
             
@@ -252,10 +260,8 @@
         
       </div>
       
-      <!-- PL Content -->
       <div class="lang-content pl">
         
-        <!-- Patryk Markowski -->
         <div class="mb-20">
           <div class="grid md:grid-cols-5 gap-10 items-start">
             
@@ -330,7 +336,6 @@
           </div>
         </div>
         
-        <!-- Grzegorz Pukalski -->
         <div>
           <div class="grid md:grid-cols-5 gap-10 items-start">
             
@@ -344,7 +349,7 @@
               <div>
                 <h2 class="text-3xl font-bold text-deep-blue mb-2">Grzegorz Pukalski</h2>
                 <p class="text-xl text-cc-purple font-bold mb-4">Sales Manager OEM | Cost Estimation & Tendering | Industrial B2B</p>
-                <p class="text-lg text-gray-700 leading-relaxed">Grzegorz to praktyk sprzedaży B2B w przemyśle maszynowym. Na co dzień odpowiada za współpracę z klientami OEM, proces ofertowania oraz kalkulacje kosztów i marż w Dekpol Steel – producencie osprzętu do maszyn budowlanych (łyżki, szybkozłącza, osprzęt do rozbiórki) działającym na rynkach międzynarodowych (24+ krajów), obsługującym globalne marki maszyn budowlanych.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Grzegorz to praktyk sprzedaży B2B w przemyśle maszynowym. Na co dzień odpowiada za współpracę z klientami OEM, proces ofertowania oraz kalkulacje kosztów i marży w Dekpol Steel — producencie osprzętu do maszyn budowlanych (łyżki, szybkozłącza, osprzęt do rozbiórki) działającym na rynkach międzynarodowych (24+ krajów), obsługującym globalne marki maszyn budowlanych.</p>
               </div>
               
               <div>
@@ -377,104 +382,4 @@
                   <i class="fa-solid fa-industry mr-2 text-honey" aria-hidden="true"></i>
                   Fokus Branżowy
                 </h3>
-                <p class="text-gray-700 leading-relaxed">Osprzęt do maszyn budowlanych, ciężki sprzęt, sprzedaż B2B przemysłowa na 24+ rynkach międzynarodowych. Specjalizacja w łączeniu wymagań technicznych z opłacalnością komercyjną.</p>
-              </div>
-              
-              <div class="pt-4">
-                <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-deep-blue text-white font-bold rounded-xl transition-all hover:bg-honey hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-honey/50">
-                  <i class="fa-brands fa-linkedin text-xl" aria-hidden="true"></i>
-                  <span>Połącz się na LinkedIn</span>
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- CTA Section -->
-  <section class="py-24 px-5 text-center" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
-    <div class="container mx-auto max-w-4xl">
-      
-      <div class="lang-content en active">
-        <h2 class="text-4xl font-bold text-deep-blue mb-4">Ready to Work with Us?</h2>
-        <p class="text-xl text-gray-900 opacity-90 mb-8">Let's discuss how we can help transform your organization.</p>
-        <a href="index.html#contact" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey/50">Skontaktuj się</a>
-      </div>
-      
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer class="bg-deep-blue text-white text-center py-8">
-    <div class="container mx-auto px-5">
-      <div class="lang-content en active">
-        <p>&copy; 2025 Consult Change. All rights reserved.</p>
-      </div>
-      <div class="lang-content pl">
-        <p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- JavaScript -->
-  <script>
-    function switchLanguage(lang) {
-      const allLangContent = document.querySelectorAll('.lang-content');
-      const enBtn = document.getElementById('btn-en');
-      const plBtn = document.getElementById('btn-pl');
-      
-      allLangContent.forEach(el => {
-        if (el.classList.contains(lang)) {
-          el.classList.add('active');
-          el.style.display = 'block';
-        } else {
-          el.classList.remove('active');
-          el.style.display = 'none';
-        }
-      });
-      
-      if (lang === 'en') {
-        enBtn.classList.add('bg-honey', 'text-gray-900');
-        enBtn.classList.remove('text-gray-900');
-        enBtn.setAttribute('aria-selected', 'true');
-        plBtn.classList.remove('bg-honey', 'text-gray-900');
-        plBtn.setAttribute('aria-selected', 'false');
-        document.documentElement.lang = 'en';
-      } else {
-        plBtn.classList.add('bg-honey', 'text-gray-900');
-        plBtn.classList.remove('text-gray-900');
-        plBtn.setAttribute('aria-selected', 'true');
-        enBtn.classList.remove('bg-honey', 'text-gray-900');
-        enBtn.setAttribute('aria-selected', 'false');
-        document.documentElement.lang = 'pl';
-      }
-    }
-    
-    // Initialize - make sure only active language is visible
-    document.addEventListener('DOMContentLoaded', function() {
-      const plContent = document.querySelectorAll('.lang-content.pl');
-      plContent.forEach(el => {
-        el.style.display = 'none';
-      });
-    });
-  </script>
-  
-  <!--
-  === SOURCE LOG (INTERNAL) ===
-  Team member information sourced from provided index.html team section.
-  No external sources used.
-  -->
-  
-</body>
-</html>/50">Get in Touch</a>
-      </div>
-      
-      <div class="lang-content pl">
-        <h2 class="text-4xl font-bold text-deep-blue mb-4">Gotowy do Współpracy?</h2>
-        <p class="text-xl text-gray-900 opacity-90 mb-8">Porozmawiajmy o tym, jak możemy pomóc w transformacji Twojej organizacji.</p>
-        <a href="index.html#contact" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition-all hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-honey
+                <p class="text-gray-700 leading-relaxed">Osprzęt do maszyn budowlanych, ciężki sprzęt, sprzedaż B2B przemysłowa na 24+ rynkach międzynarodowych. Specjalizacja w łączeniu wymagań techn

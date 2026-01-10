@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Consult Change — Legal Operations, Technology & Organizational Transformation</title>
-  <meta name="description" content="Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje. CLM/ELM, Legal Front Door, PMO i PROSCI — dowozimy adopcję.">
+  <title>Consult Change — Change That Sticks | 70% Faster, 90%+ Adoption</title>
+  <meta name="description" content="Stop failed transformations. We deliver CLM/ELM, Legal Front Door, and organizational change that actually sticks. 70% faster cycles, 90%+ adoption. PROSCI-certified.">
   <link rel="canonical" href="https://www.consultchange.pl/">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 
@@ -13,31 +13,32 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.consultchange.pl/">
-  <meta property="og:title" content="Consult Change — Legal Operations & Transformation">
-  <meta property="og:description" content="CLM/ELM, Legal Front Door, PMO i PROSCI. Zmiana, która się utrzymuje.">
-  <meta property="og:image" content="https://www.consultchange.pl/apple-touch-icon.png">
+  <meta property="og:title" content="Consult Change — Change That Sticks">
+  <meta property="og:description" content="70% faster cycles. 90%+ adoption. Real change management and transformation delivery.">
+  <meta property="og:image" content="https://www.consultchange.pl/og-image.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Consult Change — Legal Operations & Transformation">
-  <meta name="twitter:description" content="Mierzalna adopcja, krótsze lead time’y, end-to-end dowożenie.">
-  <meta name="twitter:image" content="https://www.consultchange.pl/apple-touch-icon.png">
+  <meta name="twitter:title" content="Consult Change — Change That Sticks">
+  <meta name="twitter:description" content="Stop failed transformations. PROSCI-certified change delivery.">
+  <meta name="twitter:image" content="https://www.consultchange.pl/og-image.png">
 
   <!-- Performance hints -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://calendly.com">
   <link rel="preload" as="image" href="Consult change_White.png" imagesrcset="Consult change_White.png 2x" fetchpriority="high">
 
-  <!-- Tailwind (CDN) -->
+  <!-- Tailwind (CDN - consider self-hosting for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Icons (Font Awesome; deferred) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Tailwind theme -->
   <script>
@@ -51,7 +52,15 @@
             'deep-blue': '#0F172A',
             'near-black': '#0B0B0B'
           },
-          boxShadow: { focus: '0 0 0 4px rgba(244,195,98,.5)' }
+          boxShadow: { focus: '0 0 0 4px rgba(244,195,98,.5)' },
+          keyframes: {
+            'count-up': { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } }
+          },
+          animation: {
+            'count-up': 'count-up 0.6s ease-out',
+            'fade-in': 'fade-in 0.8s ease-out'
+          }
         }
       }
     }
@@ -64,15 +73,129 @@
     .lang-content{display:none}
     .lang-content.active{display:block}
     :focus-visible{outline:none;box-shadow:0 0 0 4px rgba(244,195,98,.5)!important;border-radius:.75rem;}
+    
+    /* Counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #C985F0, #F4C362);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Trust bar animation */
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .logo-scroll {
+      animation: scroll-logos 30s linear infinite;
+    }
+    
+    .logo-scroll:hover {
+      animation-play-state: paused;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    
+    /* Sticky CTA bar (mobile) */
+    .sticky-cta-mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 45;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .sticky-cta-mobile.visible {
+      transform: translateY(0);
+    }
+    
+    /* Cookie consent */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .cookie-banner.visible {
+      transform: translateY(0);
+    }
   </style>
 
-  <!-- JSON-LD Organization -->
+  <!-- JSON-LD Organization & WebSite -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Consult Change","url":"https://www.consultchange.pl/","logo":"https://www.consultchange.pl/apple-touch-icon.png","sameAs":["https://www.linkedin.com/in/patrykmarkowski/"],"founder":{"@type":"Person","name":"Patryk Markowski"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Consult Change",
+    "url": "https://www.consultchange.pl/",
+    "logo": "https://www.consultchange.pl/apple-touch-icon.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/patrykmarkowski/"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Patryk Markowski",
+      "jobTitle": "Founder & Lead Change Management Consultant",
+      "url": "https://www.linkedin.com/in/patrykmarkowski/"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Business Inquiries",
+      "email": "patryk.markowski@consultchange.pl",
+      "availableLanguage": ["Polish", "English"]
+    }
+  }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Consult Change",
+    "url": "https://www.consultchange.pl/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.consultchange.pl/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Google Tag Manager (replace with your GTM ID) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 </head>
 <body class="font-sans text-gray-900 bg-white">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-honey focus:text-near-black focus:px-4 focus:py-2 rounded-lg z-[60]">Przejdź do treści</a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-honey focus:text-near-black focus:px-4 focus:py-2 rounded-lg z-[70]">Przejdź do treści</a>
 
   <!-- Floating Logo -->
   <a href="#home" class="fixed left-5 top-5 z-50 flex items-center justify-center h-16 w-16 rounded-full bg-white/95 shadow-lg backdrop-blur-sm transition hover:scale-105 focus-visible:shadow-focus" aria-label="Consult Change — start">
@@ -81,37 +204,109 @@
 
   <!-- Language Toggle (global) -->
   <div class="fixed right-5 top-5 z-50 flex gap-1 rounded-full bg-gray-200/95 p-1.5 shadow-lg" role="tablist" aria-label="Wybór języka">
-    <button type="button" id="langPL" class="rounded-full px-3.5 py-2 font-bold text-sm" role="tab" aria-selected="true" aria-controls="lang-pl">PL</button>
-    <button type="button" id="langEN" class="rounded-full px-3.5 py-2 font-bold text-sm" role="tab" aria-selected="false" aria-controls="lang-en">EN</button>
+    <button type="button" id="langPL" class="rounded-full px-3.5 py-2 font-bold text-sm flex items-center gap-1.5" role="tab" aria-selected="true" aria-controls="lang-pl">
+      <span class="text-lg" aria-hidden="true">🇵🇱</span>
+      <span class="hidden sm:inline">PL</span>
+    </button>
+    <button type="button" id="langEN" class="rounded-full px-3.5 py-2 font-bold text-sm flex items-center gap-1.5" role="tab" aria-selected="false" aria-controls="lang-en">
+      <span class="text-lg" aria-hidden="true">🇬🇧</span>
+      <span class="hidden sm:inline">EN</span>
+    </button>
   </div>
 
+  <!-- Mobile Menu Toggle (visible < 768px) -->
+  <button id="mobileMenuToggle" class="fixed right-5 top-20 z-50 md:hidden flex items-center justify-center h-12 w-12 rounded-full bg-white shadow-lg" aria-label="Toggle menu" aria-expanded="false">
+    <i class="fas fa-bars text-xl"></i>
+  </button>
+
+  <!-- Desktop Navigation (hidden on mobile) -->
+  <nav class="hidden md:block fixed top-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-lg shadow-lg" aria-label="Główna nawigacja">
+    <div class="container mx-auto px-5 md:px-32 py-3">
+      <ul class="flex justify-center items-center gap-2 flex-wrap">
+        <li><a href="index.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition hover:bg-honey focus-visible:shadow-focus" aria-current="page">Home</a></li>
+        <li><a href="why-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition hover:bg-honey focus-visible:shadow-focus">Why Us</a></li>
+        <li><a href="ai-change.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition hover:bg-honey focus-visible:shadow-focus">AI in Change</a></li>
+        <li><a href="coaching.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition hover:bg-honey focus-visible:shadow-focus">Coaching</a></li>
+        <li><a href="meet-us.html" class="inline-block px-5 py-2.5 rounded-xl font-semibold text-gray-900 transition hover:bg-honey focus-visible:shadow-focus">Meet Us</a></li>
+        <li><a href="#contact" class="inline-block px-5 py-2.5 rounded-xl font-semibold bg-cc-purple text-white transition hover:bg-honey hover:text-gray-900 focus-visible:shadow-focus">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation (slide-in) -->
+  <nav id="mobileMenu" class="mobile-menu md:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[60] overflow-y-auto" aria-label="Mobile navigation">
+    <div class="p-6">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-2xl text-gray-600 hover:text-gray-900" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="mt-12 space-y-3">
+        <a href="index.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 bg-honey">Home</a>
+        <a href="why-us.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Why Us</a>
+        <a href="ai-change.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">AI in Change</a>
+        <a href="coaching.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Coaching</a>
+        <a href="meet-us.html" class="block px-4 py-3 rounded-xl font-semibold text-gray-900 hover:bg-gray-100">Meet Us</a>
+        <a href="#contact" class="block px-4 py-3 rounded-xl font-semibold text-white bg-cc-purple hover:bg-opacity-90">Contact</a>
+      </div>
+      
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank" rel="noopener" class="block w-full px-4 py-3 text-center rounded-xl font-bold bg-deep-blue text-white hover:bg-honey hover:text-gray-900">
+          <i class="fas fa-calendar-alt mr-2"></i>Book Discovery Call
+        </a>
+      </div>
+    </div>
+  </nav>
+
   <!-- HERO -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center text-white overflow-hidden" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
+  <section id="home" class="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-20 md:pt-0" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
     <div class="container mx-auto px-5 py-24 text-center">
       <div class="inline-flex items-center justify-center mb-4 bg-white/98 px-4 py-3 rounded-2xl shadow-xl">
         <img src="Consult change_White.png" alt="Consult Change wordmark" class="w-auto" style="height: clamp(105px, 40vw, 210px);" width="420" height="auto" decoding="async" fetchpriority="high">
       </div>
 
-      <!-- Single H1 with language spans -->
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-3 leading-tight">
-        <span class="lang-content pl active">Urealniamy. Dowozimy. Osiągamy adopcję.</span>
-        <span class="lang-content en">Operationalize. Deliver. Adopt.</span>
+      <!-- Tier 1: Emotional Hook -->
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-3 leading-tight">
+        <span class="lang-content pl active">Zmiana, Która Się Utrzymuje</span>
+        <span class="lang-content en">Change That Sticks</span>
       </h1>
 
-      <!-- Subtext -->
-      <p class="text-lg md:text-xl opacity-95 mb-4 max-w-3xl mx-auto">
-        <span class="lang-content pl active">Przekładamy strategię na procesy, narzędzia i zmianę, która się utrzymuje.</span>
-        <span class="lang-content en">We translate strategy into working processes, tools and change that sticks.</span>
+      <!-- Tier 2: Proof -->
+      <p class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+        <span class="lang-content pl active">70% szybciej. 90%+ adopcji.</span>
+        <span class="lang-content en">70% Faster. 90%+ Adoption.</span>
       </p>
 
+      <!-- Tier 3: Subtext -->
+      <p class="text-lg md:text-xl opacity-95 mb-6 max-w-3xl mx-auto">
+        <span class="lang-content pl active">Przekładamy strategię na procesy, narzędzia i wyniki — nie slajdy, które zbierają kurz.</span>
+        <span class="lang-content en">We translate strategy into working processes, tools, and results — not slide decks that collect dust.</span>
+      </p>
+
+      <!-- Trust Bar -->
+      <div class="mb-8">
+        <p class="text-sm opacity-80 mb-3">
+          <span class="lang-content pl active">Zaufali nam:</span>
+          <span class="lang-content en">Trusted by:</span>
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-6 opacity-70">
+          <span class="text-lg font-bold">Swarovski</span>
+          <span class="text-lg font-bold">Deloitte</span>
+          <span class="text-lg font-bold">Nordea</span>
+          <span class="text-lg font-bold">AirHelp</span>
+          <span class="text-lg font-bold">Arrow Electronics</span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
       <div class="flex flex-wrap gap-3 justify-center mt-4">
-        <a href="#contact" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus" data-keep-lang>
-          <span class="lang-content pl active">Porozmawiajmy</span><span class="lang-content en">Start Your Transformation</span>
+        <a href="#contact" class="inline-block px-8 py-4 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 hover:-translate-y-1 hover:shadow-xl focus-visible:shadow-focus" data-keep-lang>
+          <i class="fas fa-calendar-check mr-2"></i>
+          <span class="lang-content pl active">Umów Bezpłatną Rozmowę (30 min)</span>
+          <span class="lang-content en">Book Free Discovery Call (30 min)</span>
         </a>
-        <a href="why-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus">Why Us</a>
-        <a href="ai-change.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus">AI in Change</a>
-        <a href="meet-us.html" class="inline-block px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus">
-          <span class="lang-content pl active">Poznaj nas</span><span class="lang-content en">Meet Us</span>
+        <a href="#results" class="inline-block px-8 py-4 bg-transparent text-gray-900 font-bold rounded-xl border-2 border-gray-900 transition hover:bg-gray-900 hover:text-white hover:-translate-y-1 hover:shadow-xl focus-visible:shadow-focus">
+          <span class="lang-content pl active">Zobacz Rezultaty</span>
+          <span class="lang-content en">See Results</span>
         </a>
       </div>
     </div>
@@ -121,382 +316,290 @@
   </section>
 
   <main id="main">
-    <!-- SERVICES -->
+    <!-- PROBLEM-AGITATE-SOLUTION -->
+    <section class="py-16 px-5 bg-gray-50 border-b-4 border-cc-purple">
+      <div class="container mx-auto max-w-5xl">
+        <div class="lang-content pl active">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Próbowałeś Już Transformacji. Nie Wyszło.</h2>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">90-dniowe piloty, które nigdy nie skalują</p>
+              <p class="text-sm text-gray-600">PowerPointy, które nikt nie wdraża</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">Narzędzia wdrożone, nikt ich nie używa</p>
+              <p class="text-sm text-gray-600">CLM za €200K zbiera kurz</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">Konsultanci znikają po "rekomendacjach"</p>
+              <p class="text-sm text-gray-600">Zostajecie sami z problemem</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-bold text-cc-purple mb-4">My Zostajemy Do Skutku</p>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Hands-on wdrożenie, zmierzona adopcja, transfer wiedzy — aż zespół sam utrzyma zmianę.</p>
+          </div>
+        </div>
+
+        <div class="lang-content en">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">You've Tried Transformation. It Didn't Work.</h2>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">90-day pilots that never scale</p>
+              <p class="text-sm text-gray-600">PowerPoints nobody implements</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">Tools deployed, nobody uses them</p>
+              <p class="text-sm text-gray-600">€200K CLM gathering dust</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border-l-4 border-red-500">
+              <div class="text-3xl mb-3">❌</div>
+              <p class="font-bold mb-2">Consultants vanish after "recommendations"</p>
+              <p class="text-sm text-gray-600">You're left alone with the problem</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-bold text-cc-purple mb-4">We Stay Until It Works</p>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Hands-on implementation, measured adoption, knowledge transfer — until your team sustains the change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT JOURNEY TIMELINE -->
+    <section class="py-24 px-5 bg-white">
+      <div class="container mx-auto max-w-6xl">
+        <div class="lang-content pl active">
+          <h2 class="text-4xl font-bold text-center mb-4">Jak Wygląda Współpraca</h2>
+          <p class="text-xl text-center text-gray-600 mb-12">Od diagnozy do wymiernych rezultatów — krok po kroku</p>
+        </div>
+        <div class="lang-content en">
+          <h2 class="text-4xl font-bold text-center mb-4">How We Work Together</h2>
+          <p class="text-xl text-center text-gray-600 mb-12">From discovery to measurable results — step by step</p>
+        </div>
+
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-cc-purple hidden md:block" aria-hidden="true"></div>
+          
+          <div class="space-y-12">
+            <!-- Phase 1 -->
+            <div class="relative grid md:grid-cols-2 gap-8 items-center">
+              <div class="md:text-right">
+                <div class="inline-block px-4 py-2 bg-cc-purple text-white rounded-full font-bold mb-3">
+                  <span class="lang-content pl active">Tydzień 1-2</span>
+                  <span class="lang-content en">Week 1-2</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">
+                  <span class="lang-content pl active">Discovery & Alignment</span>
+                  <span class="lang-content en">Discovery & Alignment</span>
+                </h3>
+                <p class="text-gray-600 lang-content pl active">Stakeholders, current state, cele i metryki sukcesu. Budujemy wspólne rozumienie problemu.</p>
+                <p class="text-gray-600 lang-content en">Stakeholders, current state, goals and success metrics. We build shared understanding of the problem.</p>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <p class="text-sm text-gray-600 lang-content pl active"><strong>Przykład:</strong> "Tydzień 8: zespół osiąga 85% adopcji, pierwszy KPI (czas cyklu) spada o 45%."</p>
+                <p class="text-sm text-gray-600 lang-content en"><strong>Example:</strong> "Week 8: team hits 85% adoption, first KPI (cycle time) drops 45%."</p>
+              </div>
+              <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-cc-purple border-4 border-white hidden md:block" aria-hidden="true"></div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="relative grid md:grid-cols-2 gap-8 items-center">
+              <div class="md:order-2">
+                <div class="inline-block px-4 py-2 bg-honey text-gray-900 rounded-full font-bold mb-3">
+                  <span class="lang-content pl active">Miesiąc 4+</span>
+                  <span class="lang-content en">Month 4+</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">
+                  <span class="lang-content pl active">Scale & Sustain</span>
+                  <span class="lang-content en">Scale & Sustain</span>
+                </h3>
+                <p class="text-gray-600 lang-content pl active">Rollout do pozostałych jednostek, monitoring jakości, continuous improvement. Zespół przejmuje pełną kontrolę.</p>
+                <p class="text-gray-600 lang-content en">Rollout to remaining units, quality monitoring, continuous improvement. Team takes full ownership.</p>
+              </div>
+              <div class="md:order-1 bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <p class="text-sm text-gray-600 lang-content pl active"><strong>Przykład:</strong> "Miesiąc 6: 90%+ adopcja we wszystkich jednostkach, wewnętrzni champions prowadzą szkolenia."</p>
+                <p class="text-sm text-gray-600 lang-content en"><strong>Example:</strong> "Month 6: 90%+ adoption across all units, internal champions run training."</p>
+              </div>
+              <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-honey border-4 border-white hidden md:block" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES with improved icons -->
     <section id="services" class="py-24 bg-gray-100">
       <div class="container mx-auto px-5">
         <h2 class="text-4xl font-bold text-center mb-12">Capabilities / Kompetencje</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-blue to-cc-purple" aria-hidden="true">
               <i class="fas fa-file-contract"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">CLM/ELM Transformation</h3>
-            <p class="text-gray-600">Vendor shortlisting, solution design, metadata/taxonomy, templates & playbooks, security & retention, rollout and adoption.</p>
+            <p class="text-gray-600 mb-4">Vendor shortlisting, solution design, metadata/taxonomy, templates & playbooks, security & retention, rollout and adoption.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">🎯 Strategy</span>
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">⚡ Speed</span>
+            </div>
           </article>
 
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-blue to-cc-purple" aria-hidden="true">
               <i class="fas fa-door-open"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Legal Front Door</h3>
-            <p class="text-gray-600">Intake & triage, SLAs, service catalog, knowledge base, Power BI reporting on Microsoft 365/SharePoint.</p>
+            <p class="text-gray-600 mb-4">Intake & triage, SLAs, service catalog, knowledge base, Power BI reporting on Microsoft 365/SharePoint.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">📊 Analytics</span>
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">⚡ Speed</span>
+            </div>
           </article>
 
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-blue to-cc-purple" aria-hidden="true">
               <i class="fas fa-project-diagram"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Governance & PMO</h3>
-            <p class="text-gray-600">Decision gates, steering cadence, portfolio & OKR/KPI frameworks, benefits tracking and roadmaps.</p>
+            <p class="text-gray-600 mb-4">Decision gates, steering cadence, portfolio & OKR/KPI frameworks, benefits tracking and roadmaps.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">🎯 Strategy</span>
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">🛡️ Security</span>
+            </div>
           </article>
 
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-blue to-cc-purple" aria-hidden="true">
               <i class="fas fa-users-cog"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2">PROSCI Change Management</h3>
-            <p class="text-gray-600">Sponsor roadmap, stakeholder mapping, comms & training, resistance management, adoption measurement.</p>
+            <h3 class="text-xl font-bold mb-2">PROSCI® Change Management</h3>
+            <p class="text-gray-600 mb-4">Sponsor roadmap, stakeholder mapping, comms & training, resistance management, adoption measurement.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">📊 Analytics</span>
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">⚡ Speed</span>
+            </div>
           </article>
 
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-blue to-cc-purple" aria-hidden="true">
               <i class="fas fa-chart-bar"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Process & Data Excellence</h3>
-            <p class="text-gray-600">E2E mapping, RACI & controls, master data quality, document/metadata standards, auditability.</p>
+            <p class="text-gray-600 mb-4">E2E mapping, RACI & controls, master data quality, document/metadata standards, auditability.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">🛡️ Security</span>
+              <span class="text-xs px-2 py-1 bg-gray-100 rounded-full">📊 Analytics</span>
+            </div>
           </article>
 
           <article class="service-card bg-white rounded-2xl p-7 border border-gray-200 shadow-lg transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl" tabindex="0">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-gray-900" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);" aria-hidden="true">
-              <i class="fas fa-industry"></i>
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4 text-2xl text-white bg-gradient-to-br from-cc-purple to-honey" aria-hidden="true">
+              <i class="fas fa-user-tie"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2">Manufacturing & B2B Sales</h3>
-            <p class="text-gray-600">OEM/key accounts, RFQ optimization, costing & pricing, commercial-operations handshake.</p>
+            <h3 class="text-xl font-bold mb-2">Executive Coaching</h3>
+            <p class="text-gray-600 mb-4">Evidence-based coaching for leaders navigating transformation. Build resilience, clarity, and execution capability when stakes are highest.</p>
+            <a href="coaching.html" class="inline-flex items-center gap-2 text-cc-purple font-bold hover:underline">
+              Learn more <i class="fas fa-arrow-right text-sm"></i>
+            </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- APPROACH -->
-    <section id="approach" class="py-24 bg-white">
+    <!-- RESULTS with animated counters -->
+    <section id="results" class="py-24 bg-white">
       <div class="container mx-auto px-5">
-        <h2 class="text-4xl font-bold text-center mb-12">Approach / Metodologia</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          <article class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200" tabindex="0">
-            <h3 class="text-lg font-bold mb-2"><i class="fa-solid fa-magnifying-glass mr-2 text-cc-purple"></i>Assess & Align</h3>
-            <p class="text-sm text-gray-600">Stakeholders, current state, data & risk review, value case i metryki sukcesu zapewniające buy-in.</p>
-          </article>
-          <article class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200" tabindex="0">
-            <h3 class="text-lg font-bold mb-2"><i class="fa-solid fa-drafting-compass mr-2 text-cc-purple"></i>Design & Govern</h3>
-            <p class="text-sm text-gray-600">Target operating model, procesy i role, decision gates, IA i kontrola.</p>
-          </article>
-          <article class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200" tabindex="0">
-            <h3 class="text-lg font-bold mb-2"><i class="fa-solid fa-rocket mr-2 text-cc-purple"></i>Build, Pilot, Rollout</h3>
-            <p class="text-sm text-gray-600">Konfiguracja, integracje, playbooki, pilotaże i skalowanie z enablementem zmiany.</p>
-          </article>
-          <article class="step-card bg-gray-50 rounded-xl p-5 border border-gray-200" tabindex="0">
-            <h3 class="text-lg font-bold mb-2"><i class="fa-solid fa-chart-line mr-2 text-cc-purple"></i>Adopt & Optimize</h3>
-            <p class="text-sm text-gray-600">OKR/KPI, analityka adopcji, doskonalenie ciągłe i pomiar korzyści.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <h2 class="text-4xl font-bold text-center mb-4">Results / Wyniki</h2>
+        <p class="text-xl text-center text-gray-600 mb-12">
+          <span class="lang-content pl active">Mierzone, udokumentowane, powtarzalne</span>
+          <span class="lang-content en">Measured, documented, repeatable</span>
+        </p>
 
-    <!-- RESULTS -->
-    <section id="results" class="py-24 bg-gray-50">
-      <div class="container mx-auto px-5">
-        <h2 class="text-4xl font-bold text-center mb-12">Results / Wyniki</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" aria-label="Kluczowe metryki">
-          <div class="text-center"><div class="text-5xl font-extrabold text-cc-purple mb-2">70%</div><p class="text-gray-600">Średnie skrócenie cyklu umowy</p></div>
-          <div class="text-center"><div class="text-5xl font-extrabold text-cc-purple mb-2">90%+</div><p class="text-gray-600">Adopcja w grupach docelowych</p></div>
-          <div class="text-center"><div class="text-5xl font-extrabold text-cc-purple mb-2">50%</div><p class="text-gray-600">Szybszy triage zgłoszeń</p></div>
-          <div class="text-center"><div class="text-5xl font-extrabold text-cc-purple mb-2">3–6 mies.</div><p class="text-gray-600">Time-to-value dla 1. jednostki</p></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <article class="case-card bg-white rounded-xl p-5 border border-gray-200">
-            <h3 class="text-lg font-bold mb-2">Global luxury brand — Legal Ops</h3>
-            <p class="text-sm text-gray-600">Roadmap CLM/ELM, ujednolicone szablony i metadane, rytm sterujący i OKR. Skrócenie cyklu o 60–75% na priorytetowych ścieżkach.</p>
-          </article>
-          <article class="case-card bg-white rounded-xl p-5 border border-gray-200">
-            <h3 class="text-lg font-bold mb-2">European bank — Process & Data</h3>
-            <p class="text-sm text-gray-600">E2E redesign i porządkowanie danych umożliwiające skalę i kontrolę. Mniej poprawek, jasne prawa decyzyjne.</p>
-          </article>
-          <article class="case-card bg-white rounded-xl p-5 border border-gray-200">
-            <h3 class="text-lg font-bold mb-2">Industrial OEM supplier — RFQ</h3>
-            <p class="text-sm text-gray-600">Model operacyjny RFQ i framework kosztowy. Szybsze oferty, kontrola marży, czysty handoff.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM teaser -->
-    <section id="team" class="py-24 bg-gray-50">
-      <div class="container mx-auto px-5">
-        <h2 class="text-4xl font-bold text-center mb-4">Nasz Zespół / Our Team</h2>
-        <p class="text-center text-xl text-gray-600 mb-12 max-w-2xl mx-auto">Poznaj ekspertów stojących za Consult Change</p>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <article class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl">
-            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);">
-              <img src="your-photo.jpg" alt="Patryk Markowski — Change Management & Legal Operations Expert (portret)" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Patryk Markowski</h3>
-              <p class="text-cc-purple font-bold mb-3">Founder & Lead Consultant</p>
-              <p class="text-gray-600 text-sm mb-4">Zmiana i Legal Ops. Projekty m.in. dla Swarovski GBS, Deloitte Legal, Nordea, AirHelp, Arrow Electronics.</p>
-              <div class="text-center mt-4">
-                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus-visible:shadow-focus rounded">Profil <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="team-member bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-xl transition motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-2xl">
-            <div class="aspect-[4/5] overflow-hidden" style="background: linear-gradient(135deg,#BFE6F2,#C985F0);">
-              <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski — B2B Sales & Manufacturing Specialist (portret)" class="w-full h-full object-cover object-top" width="400" height="500" loading="lazy" decoding="async">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Grzegorz Pukalski</h3>
-              <p class="text-cc-purple font-bold mb-3">Sales Manager OEM</p>
-              <p class="text-gray-600 text-sm mb-4">B2B przemysł — OEM, RFQ, cena i marża w produkcji. Dekpol Steel.</p>
-              <div class="text-center mt-4">
-                <a href="meet-us.html" class="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-cc-purple transition-colors focus-visible:shadow-focus rounded">Profil <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="text-center mt-10">
-          <a href="meet-us.html" class="inline-block px-8 py-4 bg-deep-blue text-white font-bold rounded-xl border-2 border-deep-blue transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus">Poznaj cały zespół</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-24" style="background: linear-gradient(135deg, #BFE6F2 0%, #C985F0 58%, #F4C362 100%);">
-      <div class="container mx-auto px-5">
-        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          <div>
-            <h2 class="text-4xl font-bold mb-4 text-gray-900"><span class="lang-content pl active">Gotowy na zmianę?</span><span class="lang-content en">Ready to Transform Your Business?</span></h2>
-            <p class="text-lg text-gray-900/90"><span class="lang-content pl active">Umów 30-minutową rozmowę lub wyślij wiadomość.</span><span class="lang-content en">Book a 30-minute discovery call or send us a note.</span></p>
-            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 my-6" role="region" aria-label="Rezerwacja">
-              <h3 class="text-xl font-bold mb-2 flex items-center"><i class="fas fa-calendar-alt mr-2 text-cc-purple" aria-hidden="true"></i><span class="lang-content pl active">Umów konsultację</span><span class="lang-content en">Schedule a Consultation</span></h3>
-              <p class="text-gray-600 mb-4"><span class="lang-content pl active">Wybierz dogodny termin.</span><span class="lang-content en">Pick a time that works for you.</span></p>
-              <a href="https://calendly.com/patryk-markowski-consultchange" class="inline-block w-full text-center px-6 py-3 border-2 border-honey font-bold rounded-xl transition hover:bg-honey focus-visible:shadow-focus" target="_blank" rel="noopener">
-                <span class="lang-content pl active">Zarezerwuj spotkanie</span><span class="lang-content en">Book Meeting</span>
-              </a>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" aria-label="Kluczowe metryki">
+          <div class="text-center p-6 bg-gray-50 rounded-2xl border border-gray-200">
+            <div class="text-5xl font-extrabold text-cc-purple mb-2 counter" data-target="70">0</div>
+            <p class="text-sm text-gray-600">
+              <span class="lang-content pl active">% średnie skrócenie cyklu umowy</span>
+              <span class="lang-content en">% average contract cycle reduction</span>
+            </p>
           </div>
-
-          <div>
-            <form id="contactForm" class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200" action="https://formspree.io/f/xjkagvbe" method="POST" novalidate>
-              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input type="hidden" name="_subject" value="Message from consultchange.pl">
-
-              <div class="mb-4">
-                <label for="name" class="block font-bold mb-2">Imię i nazwisko <span aria-hidden="true">*</span></label>
-                <input id="name" name="name" type="text" required autocomplete="name" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 transition">
-              </div>
-
-              <div class="mb-4">
-                <label for="email" class="block font-bold mb-2">Email <span aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 transition">
-              </div>
-
-              <div class="mb-4">
-                <label for="company" class="block font-bold mb-2">Firma</label>
-                <input id="company" name="company" type="text" autocomplete="organization" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white focus:border-honey focus:ring-4 focus:ring-honey/25 transition">
-              </div>
-
-              <div class="mb-4">
-                <label for="message" class="block font-bold mb-2">Wiadomość <span aria-hidden="true">*</span></label>
-                <textarea id="message" name="message" required placeholder="Opisz wyzwanie…" class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 bg-white min-h-[120px] resize-y focus:border-honey focus:ring-4 focus:ring-honey/25 transition"></textarea>
-              </div>
-
-              <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white font-bold rounded-xl border-2 border-gray-900 transition hover:bg-honey hover:border-honey hover:text-gray-900 focus-visible:shadow-focus">
-                <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i><span>Wyślij</span>
-              </button>
-
-              <p id="status" role="status" aria-live="polite" class="mt-3 text-center"></p>
-              <p class="text-sm text-gray-700 mt-3 text-center">Lub napisz: <a href="mailto:patryk.markowski@consultchange.pl" class="font-bold hover:text-cc-purple">patryk.markowski@consultchange.pl</a></p>
-            </form>
+          <div class="text-center p-6 bg-gray-50 rounded-2xl border border-gray-200">
+            <div class="text-5xl font-extrabold text-cc-purple mb-2 counter" data-target="90">0</div>
+            <p class="text-sm text-gray-600">
+              <span class="lang-content pl active">%+ adopcja w grupach docelowych</span>
+              <span class="lang-content en">%+ adoption in target groups</span>
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-2xl border border-gray-200">
+            <div class="text-5xl font-extrabold text-cc-purple mb-2 counter" data-target="50">0</div>
+            <p class="text-sm text-gray-600">
+              <span class="lang-content pl active">% szybszy triage zgłoszeń</span>
+              <span class="lang-content en">% faster request triage</span>
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-2xl border border-gray-200">
+            <div class="text-5xl font-extrabold text-cc-purple mb-2">3–6</div>
+            <p class="text-sm text-gray-600">
+              <span class="lang-content pl active">miesięcy time-to-value</span>
+              <span class="lang-content en">months time-to-value</span>
+            </p>
           </div>
         </div>
 
-        <div class="flex justify-center mt-12">
-          <div class="bg-white rounded-2xl p-4 border border-gray-200 shadow-xl">
-            <img src="Consult change_White.png" alt="Consult Change logotyp" class="h-20 w-auto" height="80" decoding="async" loading="lazy">
+        <!-- Before/After Visualization -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <div class="lang-content pl active">
+            <h3 class="text-2xl font-bold text-center mb-6">Przed → Po</h3>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
+          <div class="lang-content en">
+            <h-gray-50 rounded-xl p-6 border border-gray-200">
+                <p class="text-sm text-gray-600 lang-content pl active"><strong>Przykład:</strong> "Do końca tygodnia 2 mamy zmapowanych 12 kluczowych stakeholderów i zdefiniowane 3 core use cases."</p>
+                <p class="text-sm text-gray-600 lang-content en"><strong>Example:</strong> "By end of week 2 we have 12 key stakeholders mapped and 3 core use cases defined."</p>
+              </div>
+              <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-cc-purple border-4 border-white hidden md:block" aria-hidden="true"></div>
+            </div>
 
-  <footer class="bg-gray-900 text-white text-center py-8">
-    <div class="container mx-auto px-5">
-      <p>&copy; 2025 Consult Change. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </footer>
+            <!-- Phase 2 -->
+            <div class="relative grid md:grid-cols-2 gap-8 items-center">
+              <div class="md:order-2">
+                <div class="inline-block px-4 py-2 bg-cc-purple text-white rounded-full font-bold mb-3">
+                  <span class="lang-content pl active">Tydzień 3-6</span>
+                  <span class="lang-content en">Week 3-6</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">
+                  <span class="lang-content pl active">Pilot Design & Build</span>
+                  <span class="lang-content en">Pilot Design & Build</span>
+                </h3>
+                <p class="text-gray-600 lang-content pl active">Projektujemy rozwiązanie, konfigurujemy narzędzia, budujemy playbooki. Hands-on praca z zespołem.</p>
+                <p class="text-gray-600 lang-content en">We design solution, configure tools, build playbooks. Hands-on work with your team.</p>
+              </div>
+              <div class="md:order-1 bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <p class="text-sm text-gray-600 lang-content pl active"><strong>Przykład:</strong> "Tydzień 5: pierwsze szablony w CLM, 5 power userów przeszkolonych, pilot startuje."</p>
+                <p class="text-sm text-gray-600 lang-content en"><strong>Example:</strong> "Week 5: first templates in CLM, 5 power users trained, pilot launches."</p>
+              </div>
+              <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-cc-purple border-4 border-white hidden md:block" aria-hidden="true"></div>
+            </div>
 
-  <!-- === GLOBAL LANGUAGE CONTROLLER (synchronizes all pages & Canvas) === -->
-  <script>
-    const CC_LANG_KEY = 'cc_lang';
-
-    function getLangFromURL() {
-      const p = new URLSearchParams(location.search);
-      const v = (p.get('lang') || '').toLowerCase();
-      return v === 'pl' || v === 'en' ? v : null;
-    }
-
-    function setLanguage(lang, opts={pushState:true}) {
-      if (lang !== 'pl' && lang !== 'en') lang = 'pl';
-
-      // Save + set <html lang>
-      try { localStorage.setItem(CC_LANG_KEY, lang); } catch(e) {}
-      document.documentElement.lang = lang;
-
-      // Toggle all bilingual chunks
-      document.querySelectorAll('.lang-content').forEach(el=>{
-        const isLang = el.classList.contains(lang);
-        el.classList.toggle('active', isLang);
-      });
-
-      // Toggle button states (if present)
-      const plBtn = document.getElementById('langPL');
-      const enBtn = document.getElementById('langEN');
-      if (plBtn && enBtn) {
-        const active = 'bg-[color:var(--honey,#F4C362)] bg-honey text-gray-900';
-        const remove = (btn) => btn.classList.remove('bg-honey','text-gray-900');
-        const add    = (btn) => btn.classList.add('bg-honey','text-gray-900');
-        if (lang === 'pl') { add(plBtn); remove(enBtn); plBtn.setAttribute('aria-selected','true'); enBtn.setAttribute('aria-selected','false'); }
-        else { add(enBtn); remove(plBtn); enBtn.setAttribute('aria-selected','true'); plBtn.setAttribute('aria-selected','false'); }
-      }
-
-      // Update URL ?lang= (no reload)
-      if (opts.pushState) {
-        const url = new URL(location.href);
-        url.searchParams.set('lang', lang);
-        history.replaceState({}, '', url);
-      }
-
-      // Propagate to other widgets/pages (e.g., Canvas)
-      window.dispatchEvent(new CustomEvent('consultchange:set-lang', { detail: { lang } }));
-
-      // Re-apply lang to nav links so navigation carries preference across pages
-      applyLangToLinks(lang);
-    }
-
-    function applyLangToLinks(lang){
-      document.querySelectorAll('a[href][data-keep-lang], nav a[href], .container a[href]').forEach(a=>{
-        const href = a.getAttribute('href');
-        // Ignore external links and pure hash
-        if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-        try {
-          const u = new URL(href, location.origin);
-          if (u.pathname) u.searchParams.set('lang', lang);
-          a.setAttribute('href', u.pathname + u.search + u.hash);
-        } catch(e) { /* ignore */ }
-      });
-    }
-
-    function initLanguage(){
-      const fromURL = getLangFromURL();
-      const saved   = (()=>{ try { return localStorage.getItem(CC_LANG_KEY); } catch(e){ return null; } })();
-      const browser = (navigator.language || 'pl').toLowerCase().startsWith('pl') ? 'pl' : 'en';
-      const lang = fromURL || saved || browser;
-      setLanguage(lang, { pushState: !!fromURL });
-    }
-
-    // Attach to header toggle
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const pl = document.getElementById('langPL');
-      const en = document.getElementById('langEN');
-      if (pl) pl.addEventListener('click', ()=>setLanguage('pl'));
-      if (en) en.addEventListener('click', ()=>setLanguage('en'));
-
-      initLanguage();
-    });
-  </script>
-
-  <!-- Smooth scroll -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const target = document.querySelector(id);
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-      });
-    });
-  </script>
-
-  <!-- Reveal on view -->
-  <script>
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.style.opacity='1';
-          entry.target.style.transform='translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    },{threshold:0.15, rootMargin:'0px 0px -10% 0px'});
-
-    document.querySelectorAll('.service-card,.step-card,.case-card,.team-member').forEach(el=>{
-      el.style.opacity='0'; el.style.transform='translateY(18px)';
-      el.style.transition='opacity .6s ease, transform .6s ease'; observer.observe(el);
-    });
-  </script>
-
-  <!-- Contact form progressive enhancement -->
-  <script>
-    const form = document.getElementById('contactForm');
-    if(form){
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const status = document.getElementById('status');
-        const data = new FormData(form);
-        try{
-          const res = await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
-          if(res.ok){ status.textContent='Dziękujemy! Wiadomość wysłana.'; status.className='mt-3 text-center text-green-700 font-bold'; form.reset(); }
-          else throw new Error('Bad response');
-        }catch(err){
-          status.textContent='Ups! Wystąpił problem. Spróbuj ponownie.';
-          status.className='mt-3 text-center text-red-700 font-bold';
-        }
-      });
-    }
-  </script>
-
-  <!-- === CHANGELOG ===
-  - Dodano GLOBAL LANGUAGE CONTROLLER (localStorage + ?lang + CustomEvent).
-  - Auto-dopisywanie ?lang do linków (nawigacja przenosi preferencję między stronami).
-  - Usunięto stary skrypt przełączania języka (zastąpiony kontrolerem globalnym).
-  - Zachowano IA, dostępność, mikrointerakcje i wydajność.
-  -->
-
-  <!-- === QA CHECKLISTS ===
-  ACCESSIBILITY (WCAG 2.2 AA)
-  [x] Jedno <h1> na stronę (spany językowe)
-  [x] Widoczny focus na wszystkich kontrolkach
-  [x] Skip link działa
-  [x] Kontrast ≥4.5:1 (paleta sprawdzona)
-  [x] prefers-reduced-motion honorowany
-  [x] Formularz: etykiety, aria-live, wymagane
-
-  SEO & BEST PRACTICES
-  [x] Canonical + robots
-  [x] Tytuł i meta description opisowe
-  [x] JSON-LD Organization
-  [x] OG/Twitter obrazy i opisy
-  [x] Alt teksty i semantyka
-
-  PERFORMANCE
-  [x] Deferred ikony (Font Awesome)
-  [x] Preconnect CDNs, preload hero
-  [x] Lazy dla obrazów poza foldem
-  [x] Minimalny JS, brak blokad
-  -->
-</body>
-</html>
+            <!-- Phase 3 -->
+            <div class="relative grid md:grid-cols-2 gap-8 items-center">
+              <div class="md:text-right">
+                <div class="inline-block px-4 py-2 bg-cc-purple text-white rounded-full font-bold mb-3">
+                  <span class="lang-content pl active">Tydzień 7-12</span>
+                  <span class="lang-content en">Week 7-12</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">
+                  <span class="lang-content pl active">Rollout Wave 1</span>
+                  <span class="lang-content en">Rollout Wave 1</span>
+                </h3>
+                <p class="text-gray-600 lang-content pl active">Skalujemy do pierwszej grupy, mierzymy adopcję, reagujemy na opór. PROSCI change management w akcji.</p>
+                <p class="text-gray-600 lang-content en">We scale to first group, measure adoption, address resistance. PROSCI change management in action.</p>
+              </div>
+              <div class="bg
