@@ -1,321 +1,376 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ai in Change — Consult Change Canvas</title>
-  <meta name="description" content="Zakładka \"Ai in Change\": skondensowany canvas dla klientów Consult Change — jak startujemy z AI w zmianie organizacyjnej (PROSCI/ADKAR), governance, ryzyka, KPI, roadmapa." />
-  <link rel="canonical" href="https://consultchange.pl/ai-in-change" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transformation Canvas — Consult Change Tool</title>
+  <meta name="description" content="Interaktywny Canvas wdrożeniowy: AI + Zmiana Organizacyjna. PROSCI, Dane, Governance i Roadmapa.">
+  <link rel="canonical" href="https://www.consultchange.pl/ai-canvas.html">
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Favicons (podmień ścieżki na własne pliki) -->
-  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="/favicons/site.webmanifest" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ai in Change — Consult Change Canvas" />
-  <meta property="og:description" content="Skondensowany canvas wdrożeniowy AI + Zmiana: PROSCI/ADKAR, governance, KPI, roadmapa, compliance." />
-  <meta property="og:url" content="https://consultchange.pl/ai-in-change" />
-  <meta property="og:image" content="https://consultchange.pl/og/ai-in-change.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            cc_gold: '#F4C362',
-            cc_sky: '#BFE6F2',
-            cc_purple: '#C985F0',
-            cc_black: '#0B0B0B',
-            cc_slate: '#0F172A'
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+            'near-black': '#0B0B0B'
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          boxShadow: {
+            'paper': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            'lifted': '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
           }
         }
       }
     }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-    :root{
-      --cc-gold:#F4C362; --cc-sky:#BFE6F2; --cc-purple:#C985F0; --cc-black:#0B0B0B; --cc-slate:#0F172A;
+    body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+    
+    /* Tab Transitions */
+    .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
+    .tab-content.active { display: block; opacity: 1; }
+    
+    /* Tab Button Active State */
+    .tab-btn.active { 
+      background-color: #0F172A; 
+      color: white; 
+      border-left: 4px solid #F4C362;
     }
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--cc-slate);}
-    .tab-button.active{background:var(--cc-purple); color:#fff; box-shadow:0 6px 20px -4px rgba(201,133,240,.45)}
-    .tab-button:not(.active):hover{background:rgba(201,133,240,.15); color:#fff}
-    .card{backdrop-filter:saturate(120%) blur(4px)}
-    .sticky-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-    .sticky-note{transform:rotate(calc(var(--rotation)*1deg));transition:transform .2s;box-shadow:0 12px 18px -6px rgba(0,0,0,.35)}
-    .accordion-content{transition:max-height .3s ease-out,padding .3s ease-out;max-height:0;overflow:hidden}
-    .accordion-content.active{max-height:700px;padding-top:.5rem}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-    /* Druk */
-    @media print{
-      body{background:#fff!important}
-      .no-print{display:none!important}
-      .tab-content{display:block!important;visibility:visible!important;opacity:1!important;page-break-inside:avoid}
-      .card,.sticky-note{background:#f7f7f7!important;color:#000!important;box-shadow:none!important;border:1px solid #ddd}
-      h1,h2,h3{color:#5b3a6e!important;page-break-after:avoid}
+
+    /* Sticky Note Rotation */
+    .rotate-1 { transform: rotate(1deg); }
+    .rotate-neg-1 { transform: rotate(-1deg); }
+    .rotate-2 { transform: rotate(2deg); }
+    .rotate-neg-2 { transform: rotate(-2deg); }
+
+    /* Print Optimization */
+    @media print {
+      nav, footer, .no-print { display: none !important; }
+      body { background-color: white; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+      .shadow-2xl, .shadow-paper { box-shadow: none !important; border: 1px solid #ccc; }
+      .tab-content { display: block !important; opacity: 1 !important; margin-bottom: 2rem; page-break-inside: avoid; }
+      .sidebar { display: none; } /* Hide sidebar in print, assume standardized layout */
+      .main-content { width: 100% !important; }
+      h1 { font-size: 24pt; color: #0F172A !important; }
+      h3 { font-size: 18pt; border-bottom: 2px solid #000; }
     }
-    /* Widoczny focus */
-    :focus-visible{outline:3px solid var(--cc-gold); outline-offset:2px; border-radius:.5rem}
   </style>
 </head>
-<body class="min-h-screen p-4 sm:p-8 text-slate-200">
-  <div class="max-w-7xl mx-auto">
-    <!-- Header z logo -->
-    <header class="mb-8 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <img src="/assets/consult-change-logo.svg" alt="Consult Change — logo" class="h-10 w-auto select-none" />
-        <span class="text-sm text-slate-300 hidden sm:inline" aria-hidden="true">Ai in Change</span>
-      </div>
-      <a href="#print" onclick="window.print()" class="no-print inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--cc-purple)] text-white font-medium shadow hover:opacity-90 focus-visible:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 9V2h12v7M6 13H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2m-2 0H8v7h8v-7Z"/></svg>
-        <span>Drukuj / PDF</span>
+<body class="text-near-black antialiased">
+
+  <nav class="bg-white/95 backdrop-blur fixed w-full z-50 border-b border-gray-100 no-print">
+    <div class="container mx-auto px-5 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="Consult change_sole logo_white.png" alt="Logo" class="h-9 w-auto bg-deep-blue rounded-full p-1 group-hover:rotate-12 transition">
+        <span class="font-bold text-xl tracking-tight text-deep-blue">Consult Change</span>
       </a>
-    </header>
+      <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-gray-600">
+        <a href="index.html" class="hover:text-cc-purple transition">Home</a>
+        <a href="ai-change.html" class="hover:text-cc-purple transition">AI Landing</a>
+        <a href="meet-us.html" class="hover:text-cc-purple transition">Zespół</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="window.print()" class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-deep-blue rounded-lg text-sm font-bold hover:bg-gray-200 transition">
+          <i class="fa-solid fa-print"></i> PDF / Print
+        </button>
+        <a href="index.html#contact" class="px-5 py-2 bg-deep-blue text-white rounded-lg text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-md">
+          Kontakt
+        </a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Ramka / tytuł -->
-    <div class="card rounded-2xl border border-white/10 bg-cc_black/20 p-6 sm:p-10 shadow-2xl">
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--cc-purple)]">Ai in Change — Client Canvas</h1>
-      <p class="mt-3 text-slate-300 max-w-3xl">Co dostarczyć na start, jak pracujemy (PROSCI/ADKAR + Agile), jak bezpiecznie uruchomić AI/agentów, oraz jak mierzymy sukces i skalujemy.</p>
+  <header class="pt-28 pb-10 px-5 text-center bg-white border-b border-gray-200">
+    <div class="container mx-auto max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-cc-purple text-xs font-bold mb-4 uppercase tracking-wider border border-purple-100">
+        Internal Tool / Workshop Material
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-deep-blue mb-4">
+        AI Transformation <span class="text-transparent bg-clip-text bg-gradient-to-r from-cc-purple to-honey">Canvas</span>
+      </h1>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+        Mapa drogowa Twojej zmiany. Od PROSCI i ADKAR, przez governance danych, aż po techniczne wdrożenie. Użyj tego narzędzia do planowania.
+      </p>
+    </div>
+  </header>
 
-      <div class="mt-8 grid gap-8 lg:grid-cols-[280px,1fr]">
-        <!-- Sidebar: Zakładki -->
-        <aside class="rounded-2xl bg-cc_black/40 p-5 border border-white/10">
-          <h2 class="text-lg font-semibold text-slate-200 pb-2 mb-3 border-b border-[var(--cc-purple)]">Sekcje</h2>
-          <nav class="flex flex-col space-y-2" role="tablist" aria-label="Ai in Change">
-            <button type="button" class="tab-button active p-3 rounded-xl text-left" data-tab="intro" role="tab" aria-selected="true" aria-controls="panel-intro" id="tab-intro">
-              <span class="font-semibold">1. Jak pracujemy</span>
-              <span class="block text-sm opacity-70">PROSCI/ADKAR + Agile</span>
+  <main class="py-12 px-5">
+    <div class="container mx-auto max-w-7xl">
+      <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col lg:flex-row min-h-[700px]">
+        
+        <aside class="sidebar w-full lg:w-1/4 bg-gray-50 border-r border-gray-200 p-6">
+          <h3 class="text-gray-400 font-bold uppercase text-xs tracking-widest mb-6">Etapy Projektu</h3>
+          <nav class="space-y-2">
+            <button onclick="openTab('t1')" class="tab-btn active w-full text-left p-4 rounded-xl hover:bg-white hover:shadow-sm transition border border-transparent font-semibold text-gray-700 flex justify-between items-center group">
+              <span>1. Metodologia</span>
+              <i class="fa-solid fa-chevron-right opacity-0 group-hover:opacity-100 transition text-honey"></i>
             </button>
-            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="ai" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai">
-              <span class="font-semibold">2. AI w zmianie</span>
-              <span class="block text-sm opacity-70">Repozytoria, modele, compliance</span>
+            <button onclick="openTab('t2')" class="tab-btn w-full text-left p-4 rounded-xl hover:bg-white hover:shadow-sm transition border border-transparent font-semibold text-gray-700 flex justify-between items-center group">
+              <span>2. Dane & Bezpieczeństwo</span>
+              <i class="fa-solid fa-chevron-right opacity-0 group-hover:opacity-100 transition text-honey"></i>
             </button>
-            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="governance" role="tab" aria-selected="false" aria-controls="panel-governance" id="tab-governance">
-              <span class="font-semibold">3. Governance & Sponsorzy</span>
-              <span class="block text-sm opacity-70">Koalicja, decyzje, eskalacje</span>
+            <button onclick="openTab('t3')" class="tab-btn w-full text-left p-4 rounded-xl hover:bg-white hover:shadow-sm transition border border-transparent font-semibold text-gray-700 flex justify-between items-center group">
+              <span>3. Governance</span>
+              <i class="fa-solid fa-chevron-right opacity-0 group-hover:opacity-100 transition text-honey"></i>
             </button>
-            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="roadmap" role="tab" aria-selected="false" aria-controls="panel-roadmap" id="tab-roadmap">
-              <span class="font-semibold">4. Roadmapa & KPI</span>
-              <span class="block text-sm opacity-70">Pilot → rollout → utrzymanie</span>
+            <button onclick="openTab('t4')" class="tab-btn w-full text-left p-4 rounded-xl hover:bg-white hover:shadow-sm transition border border-transparent font-semibold text-gray-700 flex justify-between items-center group">
+              <span>4. Roadmapa & KPI</span>
+              <i class="fa-solid fa-chevron-right opacity-0 group-hover:opacity-100 transition text-honey"></i>
             </button>
-            <button type="button" class="tab-button p-3 rounded-xl text-left text-slate-300" data-tab="notes" role="tab" aria-selected="false" aria-controls="panel-notes" id="tab-notes">
-              <span class="font-semibold">5. Sticky Notes</span>
-              <span class="block text-sm opacity-70">Skrót konsultanta</span>
-            </button>
+            <div class="pt-6 mt-6 border-t border-gray-200">
+              <button onclick="openTab('t5')" class="tab-btn w-full text-left p-4 rounded-xl bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 font-bold text-yellow-800 shadow-sm">
+                <i class="fa-solid fa-note-sticky mr-2"></i> Sticky Notes
+              </button>
+            </div>
           </nav>
         </aside>
 
-        <!-- Main content -->
-        <main class="min-h-[70vh]">
-          <div class="rounded-2xl bg-cc_black/30 p-6 sm:p-8 border border-white/10">
-
-            <!-- 1. INTRO -->
-            <section id="intro" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-intro">
-              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">1. Jak pracuje Consult Change</h2>
-              <div class="grid md:grid-cols-2 gap-6 text-slate-200">
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Metody i zasady</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky">
-                    <li>PROSCI/ADKAR dla adopcji; <strong>4P</strong> dla klarownego komunikatu zmiany.</li>
-                    <li>Agile Delivery (Scrum/Kanban): krótkie iteracje, WSJF/RICE do priorytetyzacji.</li>
-                    <li>Jedno źródło prawdy: RAID + Decision Log (transparentność decyzji).</li>
-                  </ul>
-                </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Co przynosicie na start</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky">
-                    <li>Problem/Opportunity (1–3 zdania) + oczekiwane korzyści.</li>
-                    <li>Ownerzy: Executive Sponsor, Product Owner, kluczowe role.</li>
-                    <li>Mapa procesów "as‑is" (jeśli istnieje) + ograniczenia/regulacje.</li>
-                  </ul>
-                </div>
+        <div class="main-content w-full lg:w-3/4 p-8 lg:p-12 bg-white relative">
+          
+          <div id="t1" class="tab-content active">
+            <div class="flex justify-between items-start mb-8 border-b border-gray-100 pb-4">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue">Jak pracujemy?</h2>
+                <p class="text-gray-500 mt-1">Foundations & Principles</p>
               </div>
-            </section>
+              <div class="text-4xl text-gray-100 font-black">01</div>
+            </div>
 
-            <!-- 2. AI -->
-            <section id="ai" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-ai">
-              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">2. AI w zmianie — co dostarczyć i jak startujemy</h2>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Fundamenty (mini‑wiedza)</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li>GenAI tworzy treści z promptów; to podzbiór ML.</li>
-                    <li>Temperatura: 0.2–0.5 analityka/kod; 0.6+ kreatywność.</li>
-                    <li>Modele <strong>mini</strong> pokrywają większość przypadków przy niższym koszcie.</li>
-                  </ul>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-cc-purple text-white rounded-lg flex items-center justify-center"><i class="fa-solid fa-people-group"></i></div>
+                  <h3 class="font-bold text-lg text-deep-blue">PROSCI / ADKAR</h3>
                 </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Wejścia od Klienta</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li><strong>Repozytoria i dane</strong>: bazy wiedzy, pliki, systemy (z ograniczeniami PII/NDA).</li>
-                    <li><strong>Dostępy/API</strong>, polityki bezpieczeństwa i prywatności.</li>
-                    <li><strong>Use cases</strong> (3–5) + KPI (np. czas odpowiedzi, jakość).</li>
-                  </ul>
-                </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Modele, koszt, jakość</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li>Preferencja: mini vs full; budżet na tokeny / ewentualny FT / RAG.</li>
-                    <li>QA: testy scenariuszowe, ewaluacja odpowiedzi, feedback loop.</li>
-                  </ul>
-                </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Compliance i ryzyka</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li>Bias/halucynacje redukujemy przez grounding i przeglądy SME.</li>
-                    <li>Zgodność: polityki danych, dostępów i retencji + audyt ścieżki.</li>
-                  </ul>
-                </div>
+                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                  Technologia to tylko narzędzie. Skupiamy się na "People Side of Change".
+                </p>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <strong>Awareness:</strong> Dlaczego zmieniamy?</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <strong>Desire:</strong> Co ja z tego będę miał?</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> <strong>Knowledge:</strong> Jak to robić?</li>
+                </ul>
               </div>
 
-              <div class="mt-6 p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                <h3 class="text-lg font-semibold text-cc_sky mb-2">Starter Roadmap (90 dni)</h3>
-                <ol class="list-decimal pl-5 space-y-1 text-slate-200">
-                  <li>Warsztat use cases + priorytetyzacja (WSJF/RICE).</li>
-                  <li>Pilot 1–2 przypadków z kryteriami sukcesu.</li>
-                  <li>Udoskonalenie → rollout → utrzymanie i pomiar.</li>
-                </ol>
+              <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 bg-honey text-deep-blue rounded-lg flex items-center justify-center"><i class="fa-solid fa-rotate"></i></div>
+                  <h3 class="font-bold text-lg text-deep-blue">Agile Delivery</h3>
+                </div>
+                <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                  Nie wdrażamy "Wielkiego Wybuchu". Pracujemy w iteracjach.
+                </p>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-play text-honey"></i> Pilot (MVP) na małej grupie.</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-play text-honey"></i> Feedback Loop (zbieranie danych).</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-play text-honey"></i> Skalowanie tego, co działa.</li>
+                </ul>
               </div>
-            </section>
-
-            <!-- 3. Governance & Sponsorzy -->
-            <section id="governance" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-governance">
-              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">3. Governance i Sponsorzy</h2>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">4P komunikatu zmiany (PROSCI)</h3>
-                  <ul class="list-disc pl-5 space-y-1 marker:text-cc_sky text-slate-200">
-                    <li><strong>Purpose</strong> — dlaczego zmieniamy?</li>
-                    <li><strong>Picture</strong> — jak wygląda pożądana przyszłość?</li>
-                    <li><strong>Plan</strong> — jak tam dotrzemy?</li>
-                    <li><strong>Part</strong> — jaka jest rola menedżera/pracownika?</li>
-                  </ul>
-                </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Sponsor & Koalicja</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li>Wskaż Executive Sponsora i zastępcę (realny zasięg wpływu).</li>
-                    <li>Zbuduj <strong>Koalicję Sponsorów</strong> (lista, poziom wsparcia).</li>
-                    <li>Dostępność: SteerCo, town hall, 1:1 + ścieżka decyzji/eskalacji.</li>
-                    <li>RACI/DACI oraz jawny Decision Log.</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <!-- 4. Roadmap & KPI -->
-            <section id="roadmap" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-roadmap">
-              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">4. Roadmapa i KPI</h2>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">KPI / Metryki</h3>
-                  <ul class="list-disc pl-5 space-y-2 marker:text-cc_sky text-slate-200">
-                    <li>AI: jakość odpowiedzi, czas, koszt/1k tokenów, satysfakcja użytk.</li>
-                    <li>Zmiana: adopcja (ADKAR), użycie, czas cyklu, SLA, NPS.</li>
-                    <li>Ryzyka: incydenty danych, odchylenia jakości, debt backlog.</li>
-                  </ul>
-                </div>
-                <div class="p-4 rounded-xl bg-cc_black/40 border border-white/10">
-                  <h3 class="text-lg font-semibold text-cc_sky mb-2">Plan wdrożenia</h3>
-                  <ol class="list-decimal pl-5 space-y-1 text-slate-200">
-                    <li>Kickoff + definicja sukcesu i guardrails.</li>
-                    <li>Pilot (MVP) → walidacja KPI → decyzja o skali.</li>
-                    <li>Rollout falami + komunikacja 4P + szkolenia/onboarding.</li>
-                    <li>Utrzymanie: monitoring jakości, retrening, continuous improvement.</li>
-                  </ol>
-                </div>
-              </div>
-            </section>
-
-            <!-- 5. Sticky Notes -->
-            <section id="notes" class="tab-content hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-notes">
-              <h2 class="text-2xl sm:text-3xl font-bold text-[var(--cc-purple)] mb-5 border-b border-[var(--cc-purple)]/60 pb-3">5. Sticky Notes — skrót konsultanta</h2>
-              <div class="sticky-grid">
-                <div class="sticky-note p-5 rounded-lg bg-cc_sky text-cc_black" style="--rotation:-2;">
-                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">Start od 4P</h4>
-                  <p class="text-sm">Zanim plan: zablokuj Purpose, Picture, Plan, Part.</p>
-                </div>
-                <div class="sticky-note p-5 rounded-lg bg-cc_gold text-cc_black" style="--rotation:1;">
-                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">Sponsor ≠ tytuł</h4>
-                  <p class="text-sm">Liczy się realna władza i obecność, nie stanowisko.</p>
-                </div>
-                <div class="sticky-note p-5 rounded-lg bg-cc_purple text-cc_black" style="--rotation:2;">
-                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">AI potrzebuje danych</h4>
-                  <p class="text-sm">Bez repozytoriów i zasad nie ma jakości ani compliance.</p>
-                </div>
-                <div class="sticky-note p-5 rounded-lg bg-white text-cc_black" style="--rotation:-1;">
-                  <h4 class="font-bold text-lg mb-1 border-b border-cc_black/20 pb-1 text-cc_black">CLM od MVP</h4>
-                  <p class="text-sm">OneNDA + klauzule → szybkie korzyści i nauka.</p>
-                </div>
-              </div>
-            </section>
-
-            <!-- Stopka akcji -->
-            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-              <div class="text-sm text-slate-400">Tip: klawisze ← → zmieniają sekcje. Home/End: pierwsza/ostatnia sekcja.</div>
-              <button onclick="window.print()" class="no-print px-5 py-2 rounded-xl bg-[var(--cc-purple)] text-white font-semibold shadow hover:opacity-90">Pobierz jako PDF</button>
             </div>
           </div>
-        </main>
+
+          <div id="t2" class="tab-content">
+            <div class="flex justify-between items-start mb-8 border-b border-gray-100 pb-4">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue">Dane i Bezpieczeństwo</h2>
+                <p class="text-gray-500 mt-1">Fuel & Guardrails</p>
+              </div>
+              <div class="text-4xl text-gray-100 font-black">02</div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                <h3 class="font-bold text-deep-blue mb-2 flex items-center gap-2"><i class="fa-solid fa-database text-blue-600"></i> Repozytoria (Knowledge Base)</h3>
+                <p class="text-sm text-gray-700 mb-4">AI jest tak dobre, jak Twoje dane. Co podłączamy?</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-white rounded-md border border-gray-200 text-xs font-bold text-gray-600">SharePoint / OneDrive</span>
+                  <span class="px-3 py-1 bg-white rounded-md border border-gray-200 text-xs font-bold text-gray-600">Jira / Confluence</span>
+                  <span class="px-3 py-1 bg-white rounded-md border border-gray-200 text-xs font-bold text-gray-600">Baza Umów (CLM)</span>
+                  <span class="px-3 py-1 bg-white rounded-md border border-gray-200 text-xs font-bold text-gray-600">PDF Policy Docs</span>
+                </div>
+              </div>
+
+              <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+                <h3 class="font-bold text-deep-blue mb-2 flex items-center gap-2"><i class="fa-solid fa-shield-halved text-red-600"></i> Compliance Checklist</h3>
+                <ul class="grid md:grid-cols-2 gap-4 text-sm">
+                  <li class="flex items-start gap-2"><i class="fa-regular fa-square-check mt-1 text-red-400"></i> <strong>PII Redaction:</strong> Czy anonimizujemy dane osobowe?</li>
+                  <li class="flex items-start gap-2"><i class="fa-regular fa-square-check mt-1 text-red-400"></i> <strong>Zero Training:</strong> Potwierdzenie, że model nie uczy się na danych.</li>
+                  <li class="flex items-start gap-2"><i class="fa-regular fa-square-check mt-1 text-red-400"></i> <strong>Access Control:</strong> Czy AI respektuje uprawnienia użytkownika?</li>
+                  <li class="flex items-start gap-2"><i class="fa-regular fa-square-check mt-1 text-red-400"></i> <strong>Human in the Loop:</strong> Kto zatwierdza output?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="t3" class="tab-content">
+            <div class="flex justify-between items-start mb-8 border-b border-gray-100 pb-4">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue">Governance</h2>
+                <p class="text-gray-500 mt-1">Decision Making & Structure</p>
+              </div>
+              <div class="text-4xl text-gray-100 font-black">03</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white border-l-4 border-honey p-6 shadow-paper rounded-r-xl">
+                <h4 class="text-xl font-bold text-deep-blue mb-1">Executive Sponsor</h4>
+                <p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Kluczowa Rola</p>
+                <p class="text-gray-600 text-sm mb-4">
+                  Transformacja bez aktywnego sponsora ma <strong>30% szans</strong> na sukces (wg PROSCI). Potrzebujemy kogoś z budżetem i autorytetem.
+                </p>
+                <div class="bg-gray-50 p-3 rounded text-sm text-gray-500">
+                  <strong>Zadania:</strong> Rozwiązywanie konfliktów, komunikacja wizji, zatwierdzanie budżetu.
+                </div>
+              </div>
+
+              <div class="bg-white border-l-4 border-cc-purple p-6 shadow-paper rounded-r-xl">
+                <h4 class="text-xl font-bold text-deep-blue mb-1">Guiding Coalition</h4>
+                <p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Grupa Operacyjna</p>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li class="flex justify-between border-b border-gray-100 pb-1"><span>Product Owner (Biznes):</span> <span class="text-gray-400 font-mono">[Nazwisko]</span></li>
+                  <li class="flex justify-between border-b border-gray-100 pb-1"><span>Tech Lead (IT):</span> <span class="text-gray-400 font-mono">[Nazwisko]</span></li>
+                  <li class="flex justify-between border-b border-gray-100 pb-1"><span>Legal/Compliance:</span> <span class="text-gray-400 font-mono">[Nazwisko]</span></li>
+                  <li class="flex justify-between border-b border-gray-100 pb-1"><span>Change Manager:</span> <span class="text-cc-purple font-bold">Consult Change</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="t4" class="tab-content">
+            <div class="flex justify-between items-start mb-8 border-b border-gray-100 pb-4">
+              <div>
+                <h2 class="text-3xl font-bold text-deep-blue">Roadmapa & KPI</h2>
+                <p class="text-gray-500 mt-1">Timeline & Success Metrics</p>
+              </div>
+              <div class="text-4xl text-gray-100 font-black">04</div>
+            </div>
+
+            <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+              
+              <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-cc-blue group-[.is-active]:bg-deep-blue text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                  1
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 bg-white shadow-sm">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-deep-blue">Tydzień 1-4: Discovery</span>
+                    <span class="text-xs font-bold text-honey">START</span>
+                  </div>
+                  <p class="text-xs text-gray-500">Analiza procesów, wybór use-cases, konfiguracja środowiska.</p>
+                </div>
+              </div>
+
+              <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-200 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                  2
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 bg-white shadow-sm">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-deep-blue">Tydzień 5-8: Pilot (MVP)</span>
+                  </div>
+                  <p class="text-xs text-gray-500">Uruchomienie dla grupy "Friendly Users". Testy na żywo. Zbieranie feedbacku.</p>
+                </div>
+              </div>
+
+              <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-200 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                  3
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 bg-white shadow-sm">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-deep-blue">Tydzień 9+: Rollout & Adoption</span>
+                  </div>
+                  <p class="text-xs text-gray-500">Szkolenia, kampania informacyjna, skalowanie na całą organizację. Pomiar ADKAR.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="t5" class="tab-content">
+            <h2 class="text-3xl font-bold text-deep-blue mb-8">Consultant's Cheat Sheet</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-gray-100 rounded-2xl border border-gray-200 inner-shadow">
+              
+              <div class="bg-[#FEF3C7] p-6 shadow-lifted rotate-1 transform transition hover:scale-105 hover:z-10">
+                <div class="flex justify-between items-center border-b border-yellow-200/50 pb-2 mb-2">
+                  <span class="font-bold text-yellow-900">4P Framework</span>
+                  <i class="fa-solid fa-thumbtack text-yellow-600/30"></i>
+                </div>
+                <p class="text-sm text-yellow-900 leading-snug">
+                  Zanim zaczniesz planować, zablokuj komunikat:<br>
+                  1. <strong>Project:</strong> Co robimy?<br>
+                  2. <strong>Purpose:</strong> Dlaczego?<br>
+                  3. <strong>Particulars:</strong> Jak to wpłynie na mnie?<br>
+                  4. <strong>People:</strong> Kto pomoże?
+                </p>
+              </div>
+
+              <div class="bg-[#DBEAFE] p-6 shadow-lifted rotate-neg-1 transform transition hover:scale-105 hover:z-10">
+                <div class="flex justify-between items-center border-b border-blue-200/50 pb-2 mb-2">
+                  <span class="font-bold text-blue-900">Sponsor ≠ Tytuł</span>
+                  <i class="fa-solid fa-thumbtack text-blue-600/30"></i>
+                </div>
+                <p class="text-sm text-blue-900 leading-snug">
+                  Najwyższe stanowisko nie zawsze oznacza najlepszego sponsora. Szukaj kogoś, kto ma realny <strong>wpływ</strong> i będzie obecny na spotkaniach, a nie tylko podpisze fakturę.
+                </p>
+              </div>
+
+              <div class="bg-[#F3E8FF] p-6 shadow-lifted rotate-2 transform transition hover:scale-105 hover:z-10">
+                <div class="flex justify-between items-center border-b border-purple-200/50 pb-2 mb-2">
+                  <span class="font-bold text-purple-900">CLM Quick Win</span>
+                  <i class="fa-solid fa-thumbtack text-purple-600/30"></i>
+                </div>
+                <p class="text-sm text-purple-900 leading-snug">
+                  Nie zaczynaj od najtrudniejszych umów. Zacznij od <strong>NDA</strong> lub prostych Zleceń. Sukces w 4 tygodnie buduje zaufanie na resztę roku.
+                </p>
+              </div>
+
+              <div class="bg-white p-6 shadow-lifted rotate-neg-2 transform transition hover:scale-105 hover:z-10">
+                <div class="flex justify-between items-center border-b border-gray-100 pb-2 mb-2">
+                  <span class="font-bold text-gray-900">AI Reality Check</span>
+                  <i class="fa-solid fa-thumbtack text-gray-400"></i>
+                </div>
+                <p class="text-sm text-gray-800 leading-snug">
+                  AI bez dobrych danych to tylko generator halucynacji. Najpierw posprzątaj foldery (Data Hygiene), potem wdrażaj Copilota.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <script defer>
-    function switchTab(tabName){
-      document.querySelectorAll('.tab-content').forEach(p=>p.classList.add('hidden'));
-      const panel=document.querySelector('#'+tabName);
-      if(panel) panel.classList.remove('hidden');
-      document.querySelectorAll('.tab-button').forEach(btn=>{
-        const active=btn.getAttribute('data-tab')===tabName;
-        btn.classList.toggle('active',active);
-        btn.classList.toggle('text-slate-300',!active);
-        btn.setAttribute('aria-selected',String(active));
-      });
+  <footer class="bg-white py-8 border-t border-gray-100 text-center text-sm text-gray-400 no-print">
+    &copy; 2026 Consult Change.
+  </footer>
+
+  <script>
+    function openTab(id) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      // Deactivate all buttons
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      // Activate selected
+      document.getElementById(id).classList.add('active');
+      event.currentTarget.classList.add('active');
     }
-    function toggleAccordion(header){
-      const content=header.nextElementSibling;
-      const expanded=header.getAttribute('aria-expanded')==='true';
-      header.setAttribute('aria-expanded',String(!expanded));
-      content.classList.toggle('active',!expanded);
-    }
-    document.addEventListener('DOMContentLoaded',()=>{
-      // Obsługa zakładek i skrótów klawiszowych
-      const tabs=[...document.querySelectorAll('.tab-button')];
-      tabs.forEach(btn=>{
-        btn.addEventListener('click',()=>switchTab(btn.getAttribute('data-tab')));
-        btn.addEventListener('keydown',e=>{
-          const i=tabs.indexOf(btn);
-          if(e.key==='ArrowRight'){e.preventDefault();tabs[(i+1)%tabs.length].focus();tabs[(i+1)%tabs.length].click();}
-          if(e.key==='ArrowLeft'){e.preventDefault();tabs[(i-1+tabs.length)%tabs.length].focus();tabs[(i-1+tabs.length)%tabs.length].click();}
-          if(e.key==='Home'){e.preventDefault();tabs[0].focus();tabs[0].click();}
-          if(e.key==='End'){e.preventDefault();tabs[tabs.length-1].focus();tabs[tabs.length-1].click();}
-        });
-      });
-      // Start
-      switchTab('intro');
-      // Losowe nachylenie karteczek
-      document.querySelectorAll('.sticky-note').forEach(n=>n.style.setProperty('--rotation',(Math.random()*6)-3));
-      // Opcjonalne akordeony (dodaj .accordion-header + .accordion-content)
-      document.querySelectorAll('.accordion-header').forEach(h=>{
-        h.setAttribute('aria-expanded','false');
-        h.addEventListener('click',()=>toggleAccordion(h));
-        h.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleAccordion(h);} });
-      });
-    });
   </script>
 </body>
 </html>

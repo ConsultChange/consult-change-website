@@ -1,239 +1,67 @@
 <!DOCTYPE html>
-<html lang="pl" class="scroll-smooth">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Executive Coaching — Consult Change</title>
-  <meta name="description" content="Evidence-based coaching dla liderów transformacji. Budujemy odporność, klarowność i zdolność do egzekucji pod presją.">
-  <link rel="canonical" href="https://www.consultchange.pl/coaching.html">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            honey: '#F4C362',
-            'cc-blue': '#BFE6F2',
-            'cc-purple': '#C985F0',
-            'deep-blue': '#0F172A',
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
-        }
-      }
-    }
+    tailwind.config = { theme: { extend: { colors: { honey:'#F4C362', 'deep-blue':'#0F172A', 'cc-purple':'#C985F0' } } } }
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .lang-content { display: none; }
-    .lang-content.active { display: block; animation: fadeIn 0.5s ease; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="text-gray-900 bg-white antialiased">
+<body class="font-sans text-gray-900 bg-white">
 
-  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-    <div class="container mx-auto px-5 md:px-10 py-4 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="Consult change_sole logo_white.png" alt="Logo" class="h-10 w-auto bg-deep-blue rounded-full p-1">
-        <span class="font-bold text-xl text-deep-blue hidden sm:block">Consult Change</span>
+  <nav class="bg-white/95 backdrop-blur fixed w-full z-50 border-b border-gray-100">
+    <div class="container mx-auto px-5 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <img src="Consult change_sole logo_white.png" class="h-8 bg-deep-blue rounded-full p-1" alt="Logo">
+        <span class="font-bold text-deep-blue">Consult Change</span>
       </a>
-      <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-gray-600">
-        <a href="index.html#services" class="hover:text-cc-purple transition">Services</a>
-        <a href="ai-change.html" class="hover:text-cc-purple transition">AI</a>
-        <a href="index.html#team" class="hover:text-cc-purple transition">Team</a>
-        <a href="coaching.html" class="text-cc-purple transition">Coaching</a>
-      </div>
-      <div class="flex items-center gap-4">
-        <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
-          <button onclick="setLang('pl')" id="btn-pl" class="px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
-          <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
-        </div>
+      <div class="hidden md:flex gap-6 text-sm font-semibold text-gray-600">
+        <a href="index.html" class="hover:text-cc-purple">Home</a>
+        <a href="meet-us.html" class="hover:text-cc-purple">Zespół</a>
+        <a href="index.html#contact" class="px-4 py-2 bg-deep-blue text-white rounded-lg hover:bg-honey hover:text-deep-blue transition">Kontakt</a>
       </div>
     </div>
   </nav>
 
-  <header class="pt-32 pb-20 bg-gray-50 border-b border-gray-200">
-    <div class="container mx-auto px-5 text-center max-w-4xl">
-      <div class="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold mb-6 tracking-wider">
-        EXECUTIVE & CHANGE LEADERS
-      </div>
-      <h1 class="text-4xl md:text-6xl font-bold text-deep-blue mb-6 leading-tight">
-        <span class="lang-content pl active">Liderzy potrzebują więcej niż <span class="text-cc-purple">dobrych rad</span>.</span>
-        <span class="lang-content en">Leaders need more than <span class="text-cc-purple">good advice</span>.</span>
-      </h1>
-      <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-        <span class="lang-content pl active">Evidence-based coaching. Budujemy odporność, klarowność i zdolność do egzekucji – gdy stawka jest najwyższa.</span>
-        <span class="lang-content en">Evidence-based coaching. We build resilience, clarity, and execution capability – when the stakes are highest.</span>
-      </p>
-      <div class="flex justify-center gap-4">
-        <a href="https://calendly.com/patryk-markowski-consultchange" class="px-8 py-4 bg-deep-blue text-white rounded-xl font-bold hover:bg-honey hover:text-deep-blue transition shadow-lg">
-          <span class="lang-content pl active">Umów Sesję Discovery (Free)</span>
-          <span class="lang-content en">Book Discovery (Free)</span>
-        </a>
-      </div>
+  <header class="pt-32 pb-20 text-center bg-gray-50 border-b border-gray-100">
+    <div class="container mx-auto px-5">
+      <span class="text-cc-purple font-bold tracking-wider text-xs uppercase mb-4 block">Executive Coaching</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-deep-blue mb-6">Liderzy potrzebują sparingpartnera</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Prowadzisz transformację? Presja rośnie? Pomogę Ci zbudować odporność, klarowność i strategię egzekucji.</p>
+      <a href="https://calendly.com/patryk-markowski-consultchange" class="inline-block px-8 py-4 bg-deep-blue text-white rounded-xl font-bold hover:shadow-lg transition">Umów Sesję Discovery</a>
     </div>
   </header>
 
-  <section class="py-20">
-    <div class="container mx-auto px-5 max-w-6xl">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-deep-blue mb-6">
-            <span class="lang-content pl active">To nie jest terapia. To strategia.</span>
-            <span class="lang-content en">It's not therapy. It's strategy.</span>
-          </h2>
-          <div class="lang-content pl active space-y-4 text-gray-600 text-lg">
-            <p>Prowadzisz transformację. Masz sponsorów, zespół i budżet. Ale presja rośnie, a polityka firmy gęstnieje.</p>
-            <p>Nie potrzebujesz "cheerleadera". Potrzebujesz partnera, który rzuci Ci wyzwanie (challenge), pomoże poukładać myśli i przygotuje Cię do trudnych rozmów.</p>
-            <ul class="space-y-3 mt-6">
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Oparte na neuronauce i psychologii</li>
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> 100% Poufności (zero raportów do HR)</li>
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Skupione na wyniku (Goal-Focused)</li>
-            </ul>
-          </div>
-          <div class="lang-content en space-y-4 text-gray-600 text-lg">
-            <p>You're leading a transformation. You have sponsors, a team, and a budget. But the pressure is mounting, and corporate politics are thickening.</p>
-            <p>You don't need a cheerleader. You need a partner to challenge you, help structure your thinking, and prepare you for tough conversations.</p>
-             <ul class="space-y-3 mt-6">
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Based on Neuroscience & Psychology</li>
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> 100% Confidential (Zero HR reporting)</li>
-              <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Goal-Focused Execution</li>
-            </ul>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-gray-50 p-6 rounded-2xl">
-            <i class="fa-solid fa-brain text-3xl text-cc-purple mb-3"></i>
-            <h4 class="font-bold text-deep-blue">Decision Fatigue</h4>
-            <p class="text-sm text-gray-500">Redukujemy szum informacyjny, byś decydował szybciej.</p>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-2xl">
-            <i class="fa-solid fa-shield-halved text-3xl text-honey mb-3"></i>
-            <h4 class="font-bold text-deep-blue">Resilience</h4>
-            <p class="text-sm text-gray-500">Zarządzanie energią własną w długim maratonie zmian.</p>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-2xl">
-            <i class="fa-solid fa-chess text-3xl text-cc-blue mb-3"></i>
-            <h4 class="font-bold text-deep-blue">Influence</h4>
-            <p class="text-sm text-gray-500">Mapowanie interesariuszy i budowanie koalicji.</p>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-2xl">
-            <i class="fa-solid fa-eye text-3xl text-gray-800 mb-3"></i>
-            <h4 class="font-bold text-deep-blue">Blind Spots</h4>
-            <p class="text-sm text-gray-500">Identyfikacja nawyków, które sabotują Twój sukces.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gray-900 text-white">
-    <div class="container mx-auto px-5 max-w-6xl">
-      <h2 class="text-3xl font-bold text-center mb-12">Format & Inwestycja</h2>
-      
+  <section class="py-20 px-5">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h2 class="text-3xl font-bold text-deep-blue mb-12">Dla kogo?</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700">
-          <h3 class="text-xl font-bold text-honey mb-2">Discovery</h3>
-          <div class="text-3xl font-bold mb-4">Free</div>
-          <p class="text-gray-400 text-sm mb-6 h-10">Sprawdźmy chemię i zdefiniujmy cele. Bez zobowiązań.</p>
-          <ul class="text-sm space-y-3 mb-8 text-gray-300">
-            <li class="flex gap-2"><i class="fa-solid fa-check text-honey"></i> 90 minut sesji</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-honey"></i> Analiza kontekstu</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-honey"></i> Wstępny plan</li>
-          </ul>
-          <a href="https://calendly.com/patryk-markowski-consultchange" class="block w-full py-3 border border-gray-600 rounded-xl text-center hover:bg-white hover:text-gray-900 transition font-bold">Book Discovery</a>
+        <div class="p-6 border rounded-2xl hover:shadow-lg transition">
+          <div class="text-4xl mb-4">👑</div>
+          <h3 class="font-bold mb-2">C-Level & VP</h3>
+          <p class="text-sm text-gray-600">Masz wizję, ale utknąłeś w polityce firmy i bieżączce.</p>
         </div>
-
-        <div class="bg-white text-gray-900 rounded-3xl p-8 border-4 border-cc-purple relative transform md:-translate-y-4">
-          <div class="absolute top-0 right-0 bg-cc-purple text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
-          <h3 class="text-xl font-bold text-cc-purple mb-2">Sprint</h3>
-          <div class="text-3xl font-bold mb-4">€3,600</div>
-          <p class="text-gray-500 text-sm mb-6 h-10">Intensywny proces na przełamanie impasu lub start projektu.</p>
-          <ul class="text-sm space-y-3 mb-8 text-gray-600">
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-purple"></i> <strong>3 miesiące</strong> (12 sesji)</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-purple"></i> Wsparcie e-mail/Signal</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-purple"></i> Narzędzia i szablony</li>
-          </ul>
-          <a href="index.html#contact" class="block w-full py-3 bg-cc-purple text-white rounded-xl text-center hover:bg-honey hover:text-gray-900 transition font-bold">Start Sprint</a>
+        <div class="p-6 border rounded-2xl hover:shadow-lg transition">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="font-bold mb-2">Change Leaders</h3>
+          <p class="text-sm text-gray-600">Wdrażasz duży projekt (ERP, CLM) i czujesz opór organizacji.</p>
         </div>
-
-        <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700">
-          <h3 class="text-xl font-bold text-cc-blue mb-2">Marathon</h3>
-          <div class="text-3xl font-bold mb-4">€6,600</div>
-          <p class="text-gray-400 text-sm mb-6 h-10">Długofalowe wsparcie przy dużej transformacji.</p>
-          <ul class="text-sm space-y-3 mb-8 text-gray-300">
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-blue"></i> <strong>6 miesięcy</strong> (24 sesje)</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-blue"></i> Analiza 360 Feedback</li>
-            <li class="flex gap-2"><i class="fa-solid fa-check text-cc-blue"></i> Stakeholder Workshops</li>
-          </ul>
-          <a href="index.html#contact" class="block w-full py-3 border border-gray-600 rounded-xl text-center hover:bg-white hover:text-gray-900 transition font-bold">Start Marathon</a>
+        <div class="p-6 border rounded-2xl hover:shadow-lg transition">
+          <div class="text-4xl mb-4">🌱</div>
+          <h3 class="font-bold mb-2">Founders</h3>
+          <p class="text-sm text-gray-600">Skalujesz firmę i musisz zmienić styl zarządzania z mikro na makro.</p>
         </div>
-      </div>
-      
-      <p class="text-center text-gray-500 text-sm mt-8">
-        <span class="lang-content pl active">Możliwa płatność ratalna lub faktura na firmę (Usługi szkoleniowe/doradcze).</span>
-        <span class="lang-content en">Installments available. VAT Invoice provided (Training/Consulting Services).</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="py-20">
-    <div class="container mx-auto px-5 max-w-3xl">
-      <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">FAQ</h2>
-      <div class="space-y-4">
-        <details class="bg-gray-50 p-6 rounded-xl cursor-pointer group">
-          <summary class="font-bold text-lg flex justify-between items-center text-gray-800">
-            <span class="lang-content pl active">Czy to jest poufne?</span>
-            <span class="lang-content en">Is this confidential?</span>
-            <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-            <span class="lang-content pl active">Tak, absolutnie. Nie raportuję treści sesji do HR ani zarządu, chyba że Ty o to poprosisz w ramach feedback loop. To Twoja bezpieczna przestrzeń.</span>
-            <span class="lang-content en">Yes, absolutely. I do not report session content to HR or the Board unless you explicitly request a feedback loop. This is your safe space.</span>
-          </p>
-        </details>
-
-         <details class="bg-gray-50 p-6 rounded-xl cursor-pointer group">
-          <summary class="font-bold text-lg flex justify-between items-center text-gray-800">
-            <span class="lang-content pl active">Jak odbywają się sesje?</span>
-            <span class="lang-content en">How are sessions conducted?</span>
-            <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-4 text-gray-600 text-sm leading-relaxed">
-            <span class="lang-content pl active">Zazwyczaj online (Google Meet/Teams). Jeśli jesteś w Warszawie lub Rzeszowie, możliwe są sesje osobiste.</span>
-            <span class="lang-content en">Usually online (Google Meet/Teams). If you are based in Warsaw or Rzeszow, in-person sessions are possible.</span>
-          </p>
-        </details>
       </div>
     </div>
   </section>
 
-  <footer class="bg-deep-blue text-white py-10 border-t border-gray-800 text-center text-sm">
-    <div class="container mx-auto px-5">
-      <p>&copy; 2026 Consult Change. All rights reserved.</p>
-    </div>
+  <footer class="bg-deep-blue text-white py-8 text-center text-sm">
+    &copy; 2026 Consult Change.
   </footer>
-
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('.lang-content').forEach(el => {
-        el.classList.remove('active');
-        if (el.classList.contains(lang)) el.classList.add('active');
-      });
-      const btnPl = document.getElementById('btn-pl');
-      const btnEn = document.getElementById('btn-en');
-      if (lang === 'pl') {
-        btnPl.classList.add('bg-deep-blue', 'text-white'); btnEn.classList.remove('bg-deep-blue', 'text-white');
-      } else {
-        btnEn.classList.add('bg-deep-blue', 'text-white'); btnPl.classList.remove('bg-deep-blue', 'text-white');
-      }
-    }
-    document.addEventListener('DOMContentLoaded', () => setLang('pl'));
-  </script>
 </body>
 </html>
