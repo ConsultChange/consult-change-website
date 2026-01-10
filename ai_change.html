@@ -23,12 +23,13 @@
   <nav class="bg-white/95 backdrop-blur fixed w-full z-50 border-b border-gray-100">
     <div class="container mx-auto px-5 py-3 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-2 group">
-        <img src="Consult change_sole logo_white.png" class="h-8 bg-deep-blue rounded-full p-1" alt="Logo">
-        <span class="font-bold text-deep-blue">Consult Change</span>
+        <img src="Consult change_sole logo_white.png" alt="Consult Change Icon" class="h-10 w-auto transition-transform group-hover:scale-105">
+        <img src="Logo napis.png" alt="Consult Change" class="h-6 w-auto hidden sm:block filter brightness-0 opacity-90"> 
       </a>
       <div class="hidden md:flex gap-6 text-sm font-semibold text-gray-600">
-        <a href="index.html" class="hover:text-cc-purple">Home</a>
-        <a href="meet-us.html" class="hover:text-cc-purple">Zespół</a>
+        <a href="index.html" class="hover:text-cc-purple">Oferta</a>
+        <a href="meet_us.html" class="hover:text-cc-purple">Zespół</a>
+        <a href="coaching.html" class="hover:text-cc-purple">Coaching</a>
         <a href="index.html#contact" class="px-4 py-2 bg-deep-blue text-white rounded-lg hover:bg-honey hover:text-deep-blue transition">Kontakt</a>
       </div>
     </div>
@@ -92,4 +93,8 @@
       document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      event
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
