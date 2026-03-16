@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consult Change — Operational Excellence & Transformation</title>
+  <meta name="description" content="Łączymy Legal Ops, Sales Ops i Psychologię Zmiany. Transformujemy działy prawne i handlowe (B2B/Industrial).">
+  <link rel="canonical" href="https://www.consultchange.pl/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+            'near-black': '#0B0B0B'
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    .lang-content { display: none; }
+    .lang-content.active { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .text-gradient { background: linear-gradient(135deg, #C985F0, #F4C362); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body class="text-near-black bg-white antialiased font-sans">
+
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2 group">
+        <img src="Consult change_sole logo_white.png" alt="Consult Change Icon" class="h-10 w-auto transition-transform group-hover:scale-105">
+        <img src="Logo napis.png" alt="Consult Change" class="h-6 w-auto hidden sm:block filter brightness-0 opacity-90"> 
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-gray-600">
+        <a href="#services" class="hover:text-cc-purple transition">Oferta</a>
+        <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1"><i class="fa-solid fa-sparkles text-honey"></i> AI</a>
+        <a href="meet_us.html" class="hover:text-cc-purple transition">Zespół</a>
+        <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+          <button onclick="setLang('pl')" id="btn-pl" class="px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue">PL</button>
+          <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500 hover:text-deep-blue">EN</button>
+        </div>
+        <a href="#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-lg">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-deep-blue text-white">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+    <div class="absolute top-10 right-10 opacity-5 w-96"><img src="Consult_change_White_2x_sharp_clean.png" alt="Watermark"></div>
+
+    <div class="container mx-auto px-5 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-honey text-xs font-bold mb-8 uppercase tracking-wider">
+        Legal Ops • Industrial Sales • Change Mgmt
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+        <span class="lang-content pl active">Transformacja, która <span class="text-gradient">działa</span>.</span>
+        <span class="lang-content en">Transformation That <span class="text-gradient">Sticks</span>.</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+        <span class="lang-content pl active">Łączymy światy Prawa, Sprzedaży Przemysłowej i Technologii. Przekładamy strategię na procesy, które ludzie faktycznie stosują.</span>
+        <span class="lang-content en">We bridge Law, Industrial Sales, and Tech. We translate strategy into processes that people actually use.</span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="px-8 py-4 bg-honey text-deep-blue rounded-xl font-bold text-lg hover:bg-white transition border-2 border-honey">
+          <span class="lang-content pl active">Rozpocznij Transformację</span>
+          <span class="lang-content en">Start Transformation</span>
+        </a>
+        <a href="meet_us.html" class="px-8 py-4 bg-transparent text-white rounded-xl font-bold text-lg border-2 border-white hover:bg-white hover:text-deep-blue transition">
+          <span class="lang-content pl active">Poznaj Ekspertów</span>
+          <span class="lang-content en">Meet the Experts</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-5">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-deep-blue mb-4">Interdyscyplinarne Podejście</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Nie jesteśmy tylko firmą IT. Nie jesteśmy tylko kancelarią. Jesteśmy praktykami operacyjnymi.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-cc-blue/20 text-deep-blue rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-file-contract"></i></div>
+          <h3 class="text-xl font-bold text-deep-blue mb-3">Legal Operations & CLM</h3>
+          <p class="text-gray-600 text-sm mb-4">Wdrożenia DocuSign CLM, Sirion, Icertis. Legal Front Door na M365. Porządkujemy chaos w umowach.</p>
+          <div class="text-xs font-bold text-gray-400 uppercase">Patryk Markowski</div>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-honey/20 text-deep-blue rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-industry"></i></div>
+          <h3 class="text-xl font-bold text-deep-blue mb-3">Industrial B2B & RFQ</h3>
+          <p class="text-gray-600 text-sm mb-4">Optymalizacja procesów ofertowania (RFQ) i kalkulacji kosztów w produkcji. Relacje z klientami OEM.</p>
+          <div class="text-xs font-bold text-gray-400 uppercase">Grzegorz Pukalski</div>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-cc-purple/20 text-deep-blue rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-users-gear"></i></div>
+          <h3 class="text-xl font-bold text-deep-blue mb-3">Change Management</h3>
+          <p class="text-gray-600 text-sm mb-4">Metodologia PROSCI®. Zarządzanie oporem i budowanie nawyków. Adopcja to nasz główny KPI.</p>
+          <div class="text-xs font-bold text-gray-400 uppercase">Joint Expertise</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="py-24 bg-white">
+    <div class="container mx-auto px-5 max-w-5xl">
+      <h2 class="text-3xl font-bold text-deep-blue text-center mb-12">Liderzy Consult Change</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="flex gap-6 items-start">
+          <img src="your-photo.jpg" alt="Patryk Markowski" class="w-24 h-24 rounded-2xl object-cover shadow-md">
+          <div>
+            <h3 class="text-xl font-bold text-deep-blue">Patryk Markowski</h3>
+            <p class="text-cc-purple font-bold text-xs uppercase mb-2">Founder & Change Consultant</p>
+            <p class="text-sm text-gray-600 mb-3">Specjalista od Legal Ops, automatyzacji i psychologii zmiany (PROSCI). Łączy IT z biznesem.</p>
+            <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-deep-blue hover:text-honey text-sm font-bold"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <img src="Grzegorz-photo.jpg" alt="Grzegorz Pukalski" class="w-24 h-24 rounded-2xl object-cover shadow-md">
+          <div>
+            <h3 class="text-xl font-bold text-deep-blue">Grzegorz Pukalski</h3>
+            <p class="text-cc-purple font-bold text-xs uppercase mb-2">Sales Manager OEM & Industrial</p>
+            <p class="text-sm text-gray-600 mb-3">Praktyk sprzedaży B2B w przemyśle ciężkim. Ekspert od RFQ, negocjacji i kalkulacji technicznych.</p>
+            <a href="https://www.linkedin.com/in/grzegorz-pukalski-584b89100/" target="_blank" class="text-deep-blue hover:text-honey text-sm font-bold"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="meet_us.html" class="text-deep-blue font-bold border-b-2 border-honey hover:text-honey transition">Więcej o zespole →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-deep-blue text-white py-12 border-t border-white/10">
+    <div class="container mx-auto px-5 text-center">
+      <div class="mb-6 opacity-50 w-32 mx-auto"><img src="Consult_change_White_2x_sharp_clean.png" alt="Logo Footer"></div>
+      <p class="text-gray-400 text-sm mb-6">&copy; 2026 Consult Change. Wszelkie prawa zastrzeżone.</p>
+      <div class="flex justify-center gap-6 text-2xl text-gray-500">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => {
+        el.classList.remove('active');
+        if(el.classList.contains(lang)) el.classList.add('active');
+      });
+      const btnPl = document.getElementById('btn-pl');
+      const btnEn = document.getElementById('btn-en');
+      if (lang === 'pl') {
+        btnPl.classList.add('bg-deep-blue', 'text-white'); btnEn.classList.remove('bg-deep-blue', 'text-white');
+      } else {
+        btnEn.classList.add('bg-deep-blue', 'text-white'); btnPl.classList.remove('bg-deep-blue', 'text-white');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => setLang('pl'));
+  </script>
+</body>
+</html>
