@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Consult Change | Change Management, AI, Transformacja</title>
+  <meta name="description" content="Artykuły o zarządzaniu zmianą, AI w biznesie, transformacji cyfrowej i przywództwie. Articles on change management, AI in business, and digital transformation.">
+  <link rel="canonical" href="https://www.consultchange.pl/blog.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    /* ── Article cards ── */
+    .article-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .article-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px -12px rgba(15,23,42,.13); }
+    .article-card:hover .card-title { color: #C985F0; }
+    .article-card img { transition: transform .4s ease; }
+    .article-card:hover img { transform: scale(1.04); }
+
+    /* ── Featured card ── */
+    .featured-card { transition: box-shadow .3s ease; }
+    .featured-card:hover { box-shadow: 0 32px 64px -16px rgba(15,23,42,.2); }
+
+    /* ── Category pills ── */
+    .cat-btn { transition: all .2s ease; }
+    .cat-btn.active { background-color: #0F172A; color: white; border-color: #0F172A; }
+    .cat-btn:not(.active):hover { border-color: #C985F0; color: #C985F0; }
+
+    /* ── Hide/show by category ── */
+    .article-item { transition: opacity .3s ease, transform .3s ease; }
+    .article-item.hidden-cat { display: none; }
+
+    /* ── Animations ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .a1 { animation: fadeUp .6s .05s ease both; }
+    .a2 { animation: fadeUp .6s .2s ease both; }
+    .a3 { animation: fadeUp .6s .35s ease both; }
+
+    /* ── Category color map ── */
+    .tag-change { background: #ede9fe; color: #6d28d9; }
+    .tag-ai { background: #fef3c7; color: #92400e; }
+    .tag-transformation { background: #e0f2fe; color: #0369a1; }
+    .tag-leadership { background: #fce7f3; color: #9d174d; }
+    .tag-sales { background: #dcfce7; color: #166534; }
+
+    /* ── Reading time dot ── */
+    .dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: currentColor; margin: 0 6px; vertical-align: middle; opacity: .5; }
+
+    /* ── Newsletter input ── */
+    .nl-input:focus { outline: none; border-color: #F4C362; }
+
+    /* ── Blob ── */
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .1; pointer-events: none; }
+  </style>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="text-deep-blue font-extrabold border-b-2 border-honey">Blog</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="relative pt-32 pb-16 bg-deep-blue text-white overflow-hidden">
+  <div class="blob w-96 h-96 bg-cc-purple -top-20 right-0"></div>
+  <div class="blob w-64 h-64 bg-honey bottom-0 left-0"></div>
+  <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+  <div class="container mx-auto px-5 max-w-5xl relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div>
+        <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded-full text-honey text-xs font-bold uppercase tracking-widest mb-5 a1">
+          <span class="lang-pl">Wiedza i Perspektywy</span><span class="lang-en">Knowledge & Perspectives</span>
+        </span>
+        <h1 class="text-5xl md:text-7xl font-display font-bold mb-4 leading-none a2">
+          <span class="lang-pl">Insights</span><span class="lang-en">Insights</span>
+        </h1>
+        <p class="text-gray-300 text-lg max-w-xl a3">
+          <span class="lang-pl">Praktyczna wiedza o zarządzaniu zmianą, AI w biznesie i transformacji cyfrowej — bez teorii, z przykładami z życia.</span>
+          <span class="lang-en">Practical knowledge on change management, AI in business, and digital transformation — no theory, real-life examples.</span>
+        </p>
+      </div>
+      <div class="shrink-0 a3">
+        <div class="flex gap-6 text-center">
+          <div>
+            <div class="text-3xl font-display font-bold text-honey">6</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">
+              <span class="lang-pl">Artykułów</span><span class="lang-en">Articles</span>
+            </div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <div class="text-3xl font-display font-bold text-honey">4</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">
+              <span class="lang-pl">Tematy</span><span class="lang-en">Topics</span>
+            </div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <div class="text-3xl font-display font-bold text-honey">2</div>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">
+              <span class="lang-pl">Autorzy</span><span class="lang-en">Authors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-10">
+      <path d="M0 50 L0 25 Q360 0 720 25 Q1080 50 1440 25 L1440 50 Z" fill="white"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ══════════ FEATURED ARTICLE ══════════ -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-1 h-6 bg-honey rounded-full"></div>
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-400">
+        <span class="lang-pl">Najnowszy artykuł</span><span class="lang-en">Latest article</span>
+      </span>
+    </div>
+
+    <!-- Featured card -->
+    <a href="article_template.html" class="featured-card group block bg-deep-blue rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+      <div class="flex flex-col lg:flex-row">
+        <!-- Text side -->
+        <div class="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-center order-2 lg:order-1">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="tag-change px-3 py-1 rounded-full text-xs font-bold">Change Management</span>
+            <span class="text-gray-400 text-xs">
+              <span class="dot"></span>
+              <span class="lang-pl">8 min czytania</span><span class="lang-en">8 min read</span>
+            </span>
+          </div>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-honey transition">
+            <span class="lang-pl">Dlaczego 70% transformacji cyfrowych kończy się niepowodzeniem — i co z tym zrobić</span>
+            <span class="lang-en">Why 70% of Digital Transformations Fail — and What to Do About It</span>
+          </h2>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            <span class="lang-pl">McKinsey podaje, że 70% dużych programów zmian nie osiąga zakładanych celów. Nie dlatego, że technologia jest zła. Dlatego, że ludzie jej nie adoptują. Oto jak to zmienić.</span>
+            <span class="lang-en">McKinsey reports that 70% of large-scale change programs fail to achieve their goals. Not because the technology is bad. Because people don't adopt it. Here's how to change that.</span>
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="your-photo.jpg" alt="Patryk Markowski" class="w-10 h-10 rounded-full object-cover border-2 border-white/20">
+            <div>
+              <div class="text-white text-sm font-semibold">Patryk Markowski</div>
+              <div class="text-gray-400 text-xs">
+                <span class="lang-pl">12 marca 2026</span><span class="lang-en">March 12, 2026</span>
+              </div>
+            </div>
+            <div class="ml-auto flex items-center gap-2 text-honey text-sm font-bold group-hover:gap-3 transition-all">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Visual side -->
+        <div class="lg:w-1/2 bg-gradient-to-br from-cc-purple/20 to-honey/10 order-1 lg:order-2 min-h-64 lg:min-h-0 flex items-center justify-center p-12 relative overflow-hidden">
+          <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
+          <!-- Visual stat -->
+          <div class="relative z-10 text-center">
+            <div class="text-8xl font-display font-bold text-honey opacity-90">70<span class="text-5xl">%</span></div>
+            <div class="text-white/60 text-sm mt-2 max-w-xs">
+              <span class="lang-pl">transformacji nie osiąga celów — McKinsey</span>
+              <span class="lang-en">of transformations fail to meet goals — McKinsey</span>
+            </div>
+            <!-- Decorative circles -->
+            <div class="absolute -top-8 -left-8 w-32 h-32 border-2 border-white/10 rounded-full"></div>
+            <div class="absolute -bottom-4 -right-4 w-20 h-20 border border-honey/20 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ FILTER + GRID ══════════ -->
+<section class="py-6 pb-24 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+
+    <!-- Category filter -->
+    <div class="flex items-center gap-3 mb-10 flex-wrap">
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mr-2 lang-pl">Filtruj:</span>
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mr-2 lang-en">Filter:</span>
+      <button onclick="filterCat('all')" class="cat-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="all">
+        <span class="lang-pl">Wszystkie</span><span class="lang-en">All</span>
+      </button>
+      <button onclick="filterCat('change')" class="cat-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="change">
+        Change Management
+      </button>
+      <button onclick="filterCat('ai')" class="cat-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="ai">
+        AI w Biznesie
+      </button>
+      <button onclick="filterCat('transformation')" class="cat-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="transformation">
+        Transformacja
+      </button>
+      <button onclick="filterCat('leadership')" class="cat-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="leadership">
+        <span class="lang-pl">Przywództwo</span><span class="lang-en">Leadership</span>
+      </button>
+      <button onclick="filterCat('sales')" class="cat-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-700" data-cat="sales">
+        <span class="lang-pl">Sprzedaż B2B</span><span class="lang-en">B2B Sales</span>
+      </button>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+
+      <!-- Article 1 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="change">
+        <div class="h-48 bg-gradient-to-br from-violet-50 to-purple-100 flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')]"></div>
+          <div class="relative text-center px-6">
+            <div class="text-5xl font-display font-bold text-cc-purple/40">ADKAR</div>
+            <div class="text-xs text-purple-400 mt-1 font-semibold uppercase tracking-widest">Model</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-change px-2.5 py-1 rounded-full text-xs font-bold">Change Management</span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">6 min</span><span class="lang-en">6 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">ADKAR w praktyce: jak przeprowadzić zespół przez opór przed zmianą</span>
+            <span class="lang-en">ADKAR in Practice: How to Lead Your Team Through Change Resistance</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Model ADKAR to nie teoria — to konkretna mapa tego, gdzie utknął Twój pracownik i co z tym zrobić. Pokazujemy na przykładach z wdrożeń CLM.</span>
+            <span class="lang-en">The ADKAR model isn't theory — it's a concrete map of where your employee is stuck and what to do about it. We show real CLM implementation examples.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="your-photo.jpg" alt="Patryk" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Patryk Markowski <span class="dot"></span> <span class="lang-pl">5 marca 2026</span><span class="lang-en">March 5, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="ai">
+        <div class="h-48 bg-gradient-to-br from-amber-50 to-yellow-100 flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
+          <div class="relative text-center px-6">
+            <i class="fa-solid fa-brain text-6xl text-honey/50"></i>
+            <div class="text-xs text-amber-500 mt-2 font-semibold uppercase tracking-widest">AI × Change</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-ai px-2.5 py-1 rounded-full text-xs font-bold">AI w Biznesie</span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">7 min</span><span class="lang-en">7 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">AI w zarządzaniu zmianą: asystent czy zagrożenie dla Change Managera?</span>
+            <span class="lang-en">AI in Change Management: Assistant or Threat to the Change Manager?</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Modele językowe potrafią analizować dane o adopcji, tworzyć plany komunikacji i personalizować szkolenia. Ale czy zastąpią Change Managera? Odpowiedź jest bardziej skomplikowana niż myślisz.</span>
+            <span class="lang-en">Language models can analyze adoption data, create communication plans, and personalize training. But will they replace the Change Manager? The answer is more complex than you think.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="your-photo.jpg" alt="Patryk" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Patryk Markowski <span class="dot"></span> <span class="lang-pl">26 lut 2026</span><span class="lang-en">Feb 26, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="transformation">
+        <div class="h-48 bg-gradient-to-br from-sky-50 to-blue-100 flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')]"></div>
+          <div class="relative text-center px-6">
+            <i class="fa-solid fa-file-contract text-6xl text-blue-300/60"></i>
+            <div class="text-xs text-blue-400 mt-2 font-semibold uppercase tracking-widest">Legal Ops</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold">Transformacja</span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">9 min</span><span class="lang-en">9 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">Legal Ops Revolution: jak technologia zmienia działy prawne — i dlaczego prawnicy opierają się zmianom</span>
+            <span class="lang-en">Legal Ops Revolution: How Technology Is Transforming Legal Departments — and Why Lawyers Resist</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Wdrożenie CLM to tylko 20% projektu. Pozostałe 80% to przekonanie prawników, że nowe narzędzie jest dla nich, a nie przeciwko nim.</span>
+            <span class="lang-en">CLM implementation is only 20% of the project. The remaining 80% is convincing lawyers that the new tool is for them, not against them.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="your-photo.jpg" alt="Patryk" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Patryk Markowski <span class="dot"></span> <span class="lang-pl">18 lut 2026</span><span class="lang-en">Feb 18, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="leadership">
+        <div class="h-48 bg-gradient-to-br from-rose-50 to-pink-100 flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/black-felt.png')]"></div>
+          <div class="relative text-center px-6">
+            <div class="text-5xl font-display font-bold text-pink-300/50 italic">"alone"</div>
+            <div class="text-xs text-pink-400 mt-2 font-semibold uppercase tracking-widest">Leadership</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-leadership px-2.5 py-1 rounded-full text-xs font-bold">
+              <span class="lang-pl">Przywództwo</span><span class="lang-en">Leadership</span>
+            </span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">5 min</span><span class="lang-en">5 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">Samotność lidera podczas transformacji: jak nie zgubić się między zarządem a zespołem</span>
+            <span class="lang-en">Leadership Loneliness During Transformation: How Not to Get Lost Between the Board and the Team</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Zarząd oczekuje wyników. Zespół oczekuje ochrony. A Ty jesteś pośrodku z coraz mniejszą ilością snu. Jak to przetrwać bez utraty siebie i projektu.</span>
+            <span class="lang-en">The board expects results. The team expects protection. And you're caught in the middle with less and less sleep. How to survive without losing yourself or the project.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="your-photo.jpg" alt="Patryk" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Patryk Markowski <span class="dot"></span> <span class="lang-pl">10 lut 2026</span><span class="lang-en">Feb 10, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="sales">
+        <div class="h-48 bg-gradient-to-br from-emerald-50 to-green-100 flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')]"></div>
+          <div class="relative text-center px-6">
+            <i class="fa-solid fa-industry text-6xl text-green-300/60"></i>
+            <div class="text-xs text-green-600 mt-2 font-semibold uppercase tracking-widest">B2B · RFQ · OEM</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-sales px-2.5 py-1 rounded-full text-xs font-bold">
+              <span class="lang-pl">Sprzedaż B2B</span><span class="lang-en">B2B Sales</span>
+            </span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">7 min</span><span class="lang-en">7 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">RFQ w epoce AI: czy automatyzacja procesu ofertowego w produkcji jest możliwa — i sensowna?</span>
+            <span class="lang-en">RFQ in the AI Era: Is Automating the Quoting Process in Manufacturing Possible — and Worthwhile?</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Klienci OEM wymagają coraz szybszych odpowiedzi na zapytania. AI może skrócić czas przygotowania oferty z 3 dni do 3 godzin. Ale jest haczyk.</span>
+            <span class="lang-en">OEM customers demand faster responses to inquiries. AI can reduce quote preparation time from 3 days to 3 hours. But there's a catch.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="Grzegorz-photo.jpg" alt="Grzegorz" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Grzegorz Pukalski <span class="dot"></span> <span class="lang-pl">3 lut 2026</span><span class="lang-en">Feb 3, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="article-item article-card group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm flex flex-col" data-cat="ai">
+        <div class="h-48 bg-gradient-to-br from-slate-800 to-deep-blue flex items-center justify-center overflow-hidden relative">
+          <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
+          <div class="relative text-center px-6">
+            <div class="text-4xl font-display font-bold text-cc-purple/70">Prompt</div>
+            <div class="text-4xl font-display font-bold text-honey/60">→ Change</div>
+          </div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="tag-ai px-2.5 py-1 rounded-full text-xs font-bold">AI w Biznesie</span>
+            <span class="text-gray-400 text-xs"><span class="dot"></span><span class="lang-pl">10 min</span><span class="lang-en">10 min</span></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-deep-blue mb-3 leading-tight card-title transition">
+            <span class="lang-pl">5 sposobów, w jakie Change Manager może użyć AI już dziś — bez wiedzy technicznej</span>
+            <span class="lang-en">5 Ways a Change Manager Can Use AI Today — Without Technical Knowledge</span>
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            <span class="lang-pl">Nie potrzebujesz wiedzieć jak działa model językowy, żeby używać AI efektywnie. Oto 5 konkretnych promptów i zastosowań dla Change Managera — z przykładami wyjść.</span>
+            <span class="lang-en">You don't need to know how a language model works to use AI effectively. Here are 5 specific prompts and use cases for Change Managers — with example outputs.</span>
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-2">
+              <img src="your-photo.jpg" alt="Patryk" class="w-7 h-7 rounded-full object-cover">
+              <span class="text-xs text-gray-500">Patryk Markowski <span class="dot"></span> <span class="lang-pl">27 sty 2026</span><span class="lang-en">Jan 27, 2026</span></span>
+            </div>
+            <a href="article_template.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition flex items-center gap-1">
+              <span class="lang-pl">Czytaj</span><span class="lang-en">Read</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /articles-grid -->
+
+    <!-- Empty state (when filter finds nothing) -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <i class="fa-regular fa-newspaper text-5xl text-gray-200 mb-4"></i>
+      <p class="text-gray-400 font-semibold lang-pl">Brak artykułów w tej kategorii — wróć wkrótce.</p>
+      <p class="text-gray-400 font-semibold lang-en">No articles in this category — check back soon.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ NEWSLETTER ══════════ -->
+<section class="py-20 bg-gray-50 border-t border-gray-100">
+  <div class="container mx-auto px-5 max-w-2xl text-center">
+    <span class="inline-block px-3 py-1 bg-honey/20 text-deep-blue text-xs font-bold uppercase tracking-widest rounded-full mb-5">Newsletter</span>
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-deep-blue mb-4">
+      <span class="lang-pl">Nowe artykuły prosto na skrzynkę</span>
+      <span class="lang-en">New articles straight to your inbox</span>
+    </h2>
+    <p class="text-gray-500 mb-8">
+      <span class="lang-pl">Raz na miesiąc. Zero spamu. Tylko praktyczna wiedza o zmianie, AI i transformacji.</span>
+      <span class="lang-en">Once a month. Zero spam. Only practical knowledge on change, AI, and transformation.</span>
+    </p>
+    <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" required placeholder="twój@email.pl" id="nl-email"
+        class="nl-input flex-1 px-5 py-3.5 border-2 border-gray-200 rounded-xl text-sm focus:border-honey outline-none transition">
+      <button type="submit" class="px-6 py-3.5 bg-deep-blue text-white rounded-xl font-bold text-sm hover:bg-cc-purple transition whitespace-nowrap">
+        <span class="lang-pl">Zapisz się</span><span class="lang-en">Subscribe</span>
+      </button>
+    </form>
+    <div id="nl-success" class="hidden mt-4 text-cc-purple font-bold text-sm">
+      <i class="fa-solid fa-circle-check mr-2"></i>
+      <span class="lang-pl">Gotowe! Sprawdź skrzynkę.</span><span class="lang-en">Done! Check your inbox.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+        <a href="meet_us.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+        </a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Language ──
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  // ── Category filter ──
+  function filterCat(cat) {
+    // Update active button
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`[data-cat="${cat}"]`).classList.add('active');
+
+    const items = document.querySelectorAll('.article-item');
+    let visible = 0;
+    items.forEach(item => {
+      const match = cat === 'all' || item.dataset.cat === cat;
+      item.classList.toggle('hidden-cat', !match);
+      if (match) visible++;
+    });
+    document.getElementById('empty-state').classList.toggle('hidden', visible > 0);
+  }
+
+  // ── Newsletter ──
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const email = document.getElementById('nl-email').value;
+    window.location.href = `mailto:patryk.markowski@consultchange.pl?subject=Newsletter subscription&body=Please add me to the newsletter: ${email}`;
+    document.getElementById('nl-success').classList.remove('hidden');
+  }
+
+  // ── Nav scroll ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>
