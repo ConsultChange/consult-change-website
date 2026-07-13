@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transformation Canvas — Consult Change</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { honey:'#F4C362', 'cc-blue':'#BFE6F2', 'cc-purple':'#C985F0', 'deep-blue':'#0F172A' },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background-color: #F8FAFC; }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+    .tab-btn { border-left: 4px solid transparent; transition: all 0.2s ease; }
+    .tab-btn.active { background-color: #0F172A; color: white; border-left-color: #F4C362; }
+    .tab-btn:not(.active):hover { background-color: rgba(15,23,42,0.05); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+
+    @media print {
+      nav, .no-print { display: none !important; }
+      body { background-color: white; }
+      .print-section { page-break-inside: avoid; }
+    }
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    .progress-bar { height: 6px; border-radius: 3px; background: #e5e7eb; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #C985F0, #F4C362); transition: width 0.5s ease; }
+  </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+<!-- NAV -->
+<nav class="bg-white/95 backdrop-blur fixed w-full z-50 border-b border-gray-100 no-print transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-gray-600">
+      <a href="index.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+      </a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI Landing
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <button onclick="window.print()" class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-deep-blue rounded-xl text-sm font-bold hover:bg-gray-200 transition no-print">
+        <i class="fa-solid fa-print"></i>
+        <span class="lang-pl">Drukuj / PDF</span><span class="lang-en">Print / PDF</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="pt-28 pb-10 px-5 text-center bg-white border-b border-gray-200">
+  <div class="container mx-auto max-w-4xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-cc-purple text-xs font-bold mb-4 uppercase tracking-widest">
+      <span class="lang-pl">Narzędzie Wewnętrzne</span><span class="lang-en">Internal Tool</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-deep-blue mb-4">AI Transformation Canvas</h1>
+    <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-6">
+      <span class="lang-pl">Mapa drogowa Twojej zmiany. Kompletne narzędzie do planowania warsztatów i transformacji AI-enabled.</span>
+      <span class="lang-en">Your transformation roadmap. A complete tool for planning AI-enabled workshops and transformations.</span>
+    </p>
+    <!-- Tab progress indicator -->
+    <div class="flex justify-center gap-2 items-center" id="tab-indicator">
+      <div class="flex items-center gap-2">
+        <span class="w-7 h-7 rounded-full bg-deep-blue text-white text-xs font-bold flex items-center justify-center tab-dot-1">1</span>
+        <div class="w-8 h-0.5 bg-gray-200"></div>
+        <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 text-xs font-bold flex items-center justify-center tab-dot-2">2</span>
+        <div class="w-8 h-0.5 bg-gray-200"></div>
+        <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 text-xs font-bold flex items-center justify-center tab-dot-3">3</span>
+        <div class="w-8 h-0.5 bg-gray-200"></div>
+        <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 text-xs font-bold flex items-center justify-center tab-dot-4">4</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CANVAS -->
+<main class="py-10 px-5">
+  <div class="container mx-auto max-w-7xl">
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col lg:flex-row min-h-[700px]">
+
+      <!-- Sidebar -->
+      <aside class="w-full lg:w-1/4 bg-gray-50 border-r border-gray-200 p-6 flex flex-col">
+        <h3 class="text-gray-400 font-extrabold uppercase text-xs tracking-widest mb-6">
+          <span class="lang-pl">Etapy Canvasu</span><span class="lang-en">Canvas Steps</span>
+        </h3>
+        <nav class="space-y-2 flex-1">
+          <button onclick="openTab('t1', 1)" class="tab-btn active w-full text-left p-4 rounded-xl font-semibold text-gray-700 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-honey text-deep-blue text-xs font-extrabold flex items-center justify-center shrink-0">1</span>
+              <span class="lang-pl">Metodologia</span><span class="lang-en">Methodology</span>
+            </div>
+          </button>
+          <button onclick="openTab('t2', 2)" class="tab-btn w-full text-left p-4 rounded-xl font-semibold text-gray-700 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gray-200 text-gray-500 text-xs font-extrabold flex items-center justify-center shrink-0">2</span>
+              <span class="lang-pl">Dane & Bezpieczeństwo</span><span class="lang-en">Data & Security</span>
+            </div>
+          </button>
+          <button onclick="openTab('t3', 3)" class="tab-btn w-full text-left p-4 rounded-xl font-semibold text-gray-700 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gray-200 text-gray-500 text-xs font-extrabold flex items-center justify-center shrink-0">3</span>
+              Governance
+            </div>
+          </button>
+          <button onclick="openTab('t4', 4)" class="tab-btn w-full text-left p-4 rounded-xl font-semibold text-gray-700 text-sm">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gray-200 text-gray-500 text-xs font-extrabold flex items-center justify-center shrink-0">4</span>
+              <span class="lang-pl">Roadmapa & KPI</span><span class="lang-en">Roadmap & KPI</span>
+            </div>
+          </button>
+        </nav>
+
+        <div class="mt-6 p-4 bg-white border border-gray-200 rounded-2xl">
+          <p class="text-xs text-gray-400 mb-2">
+            <span class="lang-pl">Wskazówka</span><span class="lang-en">Tip</span>
+          </p>
+          <p class="text-xs text-gray-500">
+            <span class="lang-pl">Wypełnij wszystkie 4 etapy przed warsztatem z klientem. Kliknij "Drukuj/PDF" aby zapisać.</span>
+            <span class="lang-en">Complete all 4 steps before a client workshop. Click "Print/PDF" to save.</span>
+          </p>
+        </div>
+      </aside>
+
+      <!-- Content area -->
+      <div class="w-full lg:w-3/4 p-8 lg:p-12 bg-white overflow-y-auto">
+
+        <!-- TAB 1: Metodologia -->
+        <div id="t1" class="tab-content active print-section">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-honey/20 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-people-arrows text-deep-blue"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                <span class="lang-pl">Etap 1 z 4</span><span class="lang-en">Step 1 of 4</span>
+              </p>
+              <h2 class="text-2xl font-extrabold text-deep-blue">
+                <span class="lang-pl">Metodologia</span><span class="lang-en">Methodology</span>
+              </h2>
+            </div>
+          </div>
+
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            <span class="lang-pl">Fundament każdego projektu. Bez solidnej metodologii nawet najlepsza technologia nie dowiezie adopcji.</span>
+            <span class="lang-en">The foundation of every project. Without solid methodology, even the best technology won't deliver adoption.</span>
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-5 mb-8">
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+              <h4 class="font-bold text-cc-purple mb-2">PROSCI® / ADKAR</h4>
+              <p class="text-sm text-gray-500 leading-relaxed">
+                <span class="lang-pl">Skupiamy się na "People Side of Change". Budujemy Awareness i Desire zanim wdrożymy narzędzie. Model ADKAR: Awareness → Desire → Knowledge → Ability → Reinforcement.</span>
+                <span class="lang-en">We focus on the "People Side of Change". We build Awareness and Desire before deploying a tool. ADKAR model: Awareness → Desire → Knowledge → Ability → Reinforcement.</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+              <h4 class="font-bold text-cc-purple mb-2">Agile Delivery</h4>
+              <p class="text-sm text-gray-500 leading-relaxed">
+                <span class="lang-pl">Sprinty 2-tygodniowe. MVP → Pilot → Scale. Każdy sprint kończy się retrospektywą i dostosowaniem planu do rzeczywistości.</span>
+                <span class="lang-en">2-week sprints. MVP → Pilot → Scale. Each sprint ends with a retrospective and plan adjustment to reality.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-deep-blue/5 border border-deep-blue/10 rounded-2xl p-6 mb-6">
+            <h4 class="font-bold text-deep-blue mb-3">
+              <span class="lang-pl">Checklist: Gotowość do projektu</span>
+              <span class="lang-en">Checklist: Project readiness</span>
+            </h4>
+            <div class="space-y-2">
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-4 h-4 rounded accent-honey">
+                <span class="text-sm text-gray-600 group-hover:text-gray-800">
+                  <span class="lang-pl">Sponsor wykonawczy zidentyfikowany i zaangażowany</span>
+                  <span class="lang-en">Executive sponsor identified and engaged</span>
+                </span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-4 h-4 rounded accent-honey">
+                <span class="text-sm text-gray-600 group-hover:text-gray-800">
+                  <span class="lang-pl">Cel transformacji jasno zdefiniowany (SMART)</span>
+                  <span class="lang-en">Transformation goal clearly defined (SMART)</span>
+                </span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-4 h-4 rounded accent-honey">
+                <span class="text-sm text-gray-600 group-hover:text-gray-800">
+                  <span class="lang-pl">Kluczowi interesariusze zmapowani</span>
+                  <span class="lang-en">Key stakeholders mapped</span>
+                </span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-4 h-4 rounded accent-honey">
+                <span class="text-sm text-gray-600 group-hover:text-gray-800">
+                  <span class="lang-pl">Budżet i timeline zatwierdzone</span>
+                  <span class="lang-en">Budget and timeline approved</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button onclick="openTab('t2', 2)" class="flex items-center gap-2 px-6 py-3 bg-deep-blue text-white rounded-xl font-bold text-sm hover:bg-cc-purple transition">
+              <span class="lang-pl">Następny etap</span><span class="lang-en">Next step</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: Dane & Bezpieczeństwo -->
+        <div id="t2" class="tab-content print-section">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-cc-purple/15 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-shield-halved text-cc-purple"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                <span class="lang-pl">Etap 2 z 4</span><span class="lang-en">Step 2 of 4</span>
+              </p>
+              <h2 class="text-2xl font-extrabold text-deep-blue">
+                <span class="lang-pl">Dane & Bezpieczeństwo</span><span class="lang-en">Data & Security</span>
+              </h2>
+            </div>
+          </div>
+
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            <span class="lang-pl">AI potrzebuje paliwa (danych) i zasad (guardrails). Zdefiniuj architekturę danych i zasady bezpieczeństwa przed startem projektu.</span>
+            <span class="lang-en">AI needs fuel (data) and guardrails (principles). Define the data architecture and security principles before the project starts.</span>
+          </p>
+
+          <div class="space-y-5 mb-8">
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <h4 class="font-bold text-deep-blue mb-3">
+                <span class="lang-pl">Mapa źródeł danych</span><span class="lang-en">Data source map</span>
+              </h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-3 text-center text-sm text-gray-400 hover:border-cc-purple hover:text-cc-purple transition cursor-pointer">
+                  <i class="fa-brands fa-microsoft block text-xl mb-1"></i> SharePoint
+                </div>
+                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-3 text-center text-sm text-gray-400 hover:border-cc-purple hover:text-cc-purple transition cursor-pointer">
+                  <i class="fa-brands fa-atlassian block text-xl mb-1"></i> Jira
+                </div>
+                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-3 text-center text-sm text-gray-400 hover:border-cc-purple hover:text-cc-purple transition cursor-pointer">
+                  <i class="fa-solid fa-database block text-xl mb-1"></i> CRM/ERP
+                </div>
+                <div class="bg-white border-2 border-dashed border-gray-200 rounded-xl p-3 text-center text-sm text-gray-400 hover:border-cc-purple hover:text-cc-purple transition cursor-pointer">
+                  <i class="fa-solid fa-plus block text-xl mb-1"></i>
+                  <span class="lang-pl">Dodaj</span><span class="lang-en">Add</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <h4 class="font-bold text-deep-blue mb-3">
+                <span class="lang-pl">Zasady bezpieczeństwa (guardrails)</span>
+                <span class="lang-en">Security principles (guardrails)</span>
+              </h4>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-honey" checked>
+                  <span class="text-sm text-gray-600">
+                    <span class="lang-pl">Zero treningu na danych klienta — prywatne instancje tylko</span>
+                    <span class="lang-en">Zero training on client data — private instances only</span>
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-honey" checked>
+                  <span class="text-sm text-gray-600">
+                    <span class="lang-pl">Zgodność z RODO/GDPR zweryfikowana przez DPO</span>
+                    <span class="lang-en">GDPR compliance verified by DPO</span>
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-honey">
+                  <span class="text-sm text-gray-600">
+                    <span class="lang-pl">Umowa DPA podpisana z dostawcą AI</span>
+                    <span class="lang-en">DPA agreement signed with AI provider</span>
+                  </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-honey">
+                  <span class="text-sm text-gray-600">
+                    <span class="lang-pl">Audyt bezpieczeństwa zaplanowany (Q2)</span>
+                    <span class="lang-en">Security audit planned (Q2)</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="openTab('t1', 1)" class="flex items-center gap-2 px-5 py-3 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-sm hover:border-gray-400 transition">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span class="lang-pl">Wstecz</span><span class="lang-en">Back</span>
+            </button>
+            <button onclick="openTab('t3', 3)" class="flex items-center gap-2 px-6 py-3 bg-deep-blue text-white rounded-xl font-bold text-sm hover:bg-cc-purple transition">
+              <span class="lang-pl">Następny etap</span><span class="lang-en">Next step</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 3: Governance -->
+        <div id="t3" class="tab-content print-section">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-honey/20 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-sitemap text-deep-blue"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                <span class="lang-pl">Etap 3 z 4</span><span class="lang-en">Step 3 of 4</span>
+              </p>
+              <h2 class="text-2xl font-extrabold text-deep-blue">Governance</h2>
+            </div>
+          </div>
+
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            <span class="lang-pl">Bez jasnej struktury decyzyjnej projekt się rozsypie — niezależnie od technologii. Kto decyduje? Kto blokuje? Kto niesie zmianę?</span>
+            <span class="lang-en">Without a clear decision structure, a project falls apart — regardless of technology. Who decides? Who blocks? Who carries the change?</span>
+          </p>
+
+          <div class="space-y-5 mb-8">
+            <div class="bg-white border-l-4 border-honey p-5 rounded-2xl shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-bold text-deep-blue mb-1">
+                    <span class="lang-pl">Sponsor Wykonawczy</span><span class="lang-en">Executive Sponsor</span>
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    <span class="lang-pl">Aktywny sponsor na poziomie zarządu. Nie "figurant" — aktywnie blokuje opór i odblokuje zasoby.</span>
+                    <span class="lang-en">Active board-level sponsor. Not a figurehead — actively blocks resistance and unlocks resources.</span>
+                  </p>
+                </div>
+                <input type="text" placeholder="Imię / Name" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-honey shrink-0 w-36">
+              </div>
+            </div>
+
+            <div class="bg-white border-l-4 border-cc-purple p-5 rounded-2xl shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-bold text-deep-blue mb-1">Change Manager</h4>
+                  <p class="text-sm text-gray-500">
+                    <span class="lang-pl">Codzienny "owner" projektu zmiany. Koordynuje Change Network, raportuje do Sponsora.</span>
+                    <span class="lang-en">Daily "owner" of the change project. Coordinates the Change Network, reports to the Sponsor.</span>
+                  </p>
+                </div>
+                <input type="text" placeholder="Imię / Name" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-cc-purple shrink-0 w-36">
+              </div>
+            </div>
+
+            <div class="bg-white border-l-4 border-cc-blue p-5 rounded-2xl shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-bold text-deep-blue mb-1">
+                    <span class="lang-pl">Change Network (Ambasadorzy)</span>
+                    <span class="lang-en">Change Network (Ambassadors)</span>
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    <span class="lang-pl">Sieć wewnętrznych ambasadorów niosących zmianę na poziomie operacyjnym. Zbierają feedback i zgłaszają bariery.</span>
+                    <span class="lang-en">Network of internal ambassadors carrying change at the operational level. Gathering feedback and reporting barriers.</span>
+                  </p>
+                </div>
+                <input type="number" placeholder="Liczba" min="1" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:border-cc-blue shrink-0 w-24" value="5">
+              </div>
+            </div>
+
+            <div class="bg-white border-l-4 border-gray-200 p-5 rounded-2xl shadow-sm">
+              <h4 class="font-bold text-deep-blue mb-1">Steering Committee</h4>
+              <p class="text-sm text-gray-500 mb-3">
+                <span class="lang-pl">Miesięczne przeglądy postępów. Częstotliwość spotkań:</span>
+                <span class="lang-en">Monthly progress reviews. Meeting frequency:</span>
+              </p>
+              <div class="flex gap-2">
+                <button class="px-3 py-1.5 text-xs font-bold bg-deep-blue text-white rounded-lg">
+                  <span class="lang-pl">Miesięcznie</span><span class="lang-en">Monthly</span>
+                </button>
+                <button class="px-3 py-1.5 text-xs font-bold border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50">
+                  <span class="lang-pl">Dwutygodniowo</span><span class="lang-en">Bi-weekly</span>
+                </button>
+                <button class="px-3 py-1.5 text-xs font-bold border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50">
+                  <span class="lang-pl">Kwartalnie</span><span class="lang-en">Quarterly</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="openTab('t2', 2)" class="flex items-center gap-2 px-5 py-3 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-sm hover:border-gray-400 transition">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span class="lang-pl">Wstecz</span><span class="lang-en">Back</span>
+            </button>
+            <button onclick="openTab('t4', 4)" class="flex items-center gap-2 px-6 py-3 bg-deep-blue text-white rounded-xl font-bold text-sm hover:bg-cc-purple transition">
+              <span class="lang-pl">Następny etap</span><span class="lang-en">Next step</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 4: Roadmapa & KPI -->
+        <div id="t4" class="tab-content print-section">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-cc-blue/30 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-chart-gantt text-deep-blue"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                <span class="lang-pl">Etap 4 z 4</span><span class="lang-en">Step 4 of 4</span>
+              </p>
+              <h2 class="text-2xl font-extrabold text-deep-blue">
+                <span class="lang-pl">Roadmapa & KPI</span><span class="lang-en">Roadmap & KPI</span>
+              </h2>
+            </div>
+          </div>
+
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            <span class="lang-pl">Plan działania i wskaźniki sukcesu. Co mierzymy? Kiedy? Jak wiemy, że zmiana się udała?</span>
+            <span class="lang-en">Action plan and success metrics. What do we measure? When? How do we know the change succeeded?</span>
+          </p>
+
+          <!-- Phase timeline -->
+          <div class="mb-8">
+            <h4 class="font-bold text-deep-blue mb-4">
+              <span class="lang-pl">Fazy projektu</span><span class="lang-en">Project phases</span>
+            </h4>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-2xl p-5 border-2 border-honey relative">
+                <div class="absolute -top-3 left-4 bg-honey text-deep-blue text-xs font-extrabold px-3 py-1 rounded-full">
+                  <span class="lang-pl">Faza 1 · Miesiąc 1-2</span><span class="lang-en">Phase 1 · Month 1-2</span>
+                </div>
+                <h5 class="font-bold text-deep-blue mt-2 mb-2">
+                  <span class="lang-pl">Diagnoza & Fundament</span><span class="lang-en">Diagnosis & Foundation</span>
+                </h5>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• <span class="lang-pl">Analiza stakeholderów</span><span class="lang-en">Stakeholder analysis</span></li>
+                  <li>• <span class="lang-pl">ADKAR Assessment (baseline)</span><span class="lang-en">ADKAR Assessment (baseline)</span></li>
+                  <li>• <span class="lang-pl">Architektura danych AI</span><span class="lang-en">AI data architecture</span></li>
+                  <li>• <span class="lang-pl">Plan komunikacji</span><span class="lang-en">Communication plan</span></li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 rounded-2xl p-5 border-2 border-cc-purple relative">
+                <div class="absolute -top-3 left-4 bg-cc-purple text-white text-xs font-extrabold px-3 py-1 rounded-full">
+                  <span class="lang-pl">Faza 2 · Miesiąc 3-5</span><span class="lang-en">Phase 2 · Month 3-5</span>
+                </div>
+                <h5 class="font-bold text-deep-blue mt-2 mb-2">
+                  <span class="lang-pl">Pilot & Iteracja</span><span class="lang-en">Pilot & Iteration</span>
+                </h5>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• <span class="lang-pl">MVP z grupą pilotażową</span><span class="lang-en">MVP with pilot group</span></li>
+                  <li>• <span class="lang-pl">Szkolenia (AI-personalizowane)</span><span class="lang-en">Training (AI-personalized)</span></li>
+                  <li>• <span class="lang-pl">Zbieranie feedbacku</span><span class="lang-en">Feedback collection</span></li>
+                  <li>• <span class="lang-pl">Iteracje na podstawie danych</span><span class="lang-en">Data-driven iterations</span></li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 rounded-2xl p-5 border-2 border-cc-blue relative">
+                <div class="absolute -top-3 left-4 bg-cc-blue text-deep-blue text-xs font-extrabold px-3 py-1 rounded-full">
+                  <span class="lang-pl">Faza 3 · Miesiąc 6+</span><span class="lang-en">Phase 3 · Month 6+</span>
+                </div>
+                <h5 class="font-bold text-deep-blue mt-2 mb-2">
+                  <span class="lang-pl">Skalowanie & Utrwalenie</span><span class="lang-en">Scale & Reinforce</span>
+                </h5>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• <span class="lang-pl">Rollout na całą organizację</span><span class="lang-en">Full org rollout</span></li>
+                  <li>• <span class="lang-pl">Pętle wzmacniające (Reinforcement)</span><span class="lang-en">Reinforcement loops</span></li>
+                  <li>• <span class="lang-pl">Pomiar końcowy ADKAR</span><span class="lang-en">Final ADKAR measurement</span></li>
+                  <li>• <span class="lang-pl">Raport ROI</span><span class="lang-en">ROI report</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPIs -->
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8">
+            <h4 class="font-bold text-deep-blue mb-4">
+              <span class="lang-pl">Kluczowe wskaźniki adopcji (KPI)</span>
+              <span class="lang-en">Key adoption indicators (KPI)</span>
+            </h4>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="font-medium text-gray-700">
+                    <span class="lang-pl">Wskaźnik adopcji systemu</span><span class="lang-en">System adoption rate</span>
+                  </span>
+                  <span class="text-cc-purple font-bold">
+                    <span class="lang-pl">Cel: 85%</span><span class="lang-en">Target: 85%</span>
+                  </span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%" id="kpi1"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="font-medium text-gray-700">
+                    <span class="lang-pl">Ocena szkoleń (NPS)</span><span class="lang-en">Training score (NPS)</span>
+                  </span>
+                  <span class="text-honey font-bold">
+                    <span class="lang-pl">Cel: 40+</span><span class="lang-en">Target: 40+</span>
+                  </span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%" id="kpi2"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="font-medium text-gray-700">
+                    <span class="lang-pl">Redukcja oporu (ADKAR Desire)</span>
+                    <span class="lang-en">Resistance reduction (ADKAR Desire)</span>
+                  </span>
+                  <span class="text-cc-blue font-bold">
+                    <span class="lang-pl">Cel: &lt;15% opornych</span><span class="lang-en">Target: &lt;15% resistant</span>
+                  </span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%" id="kpi3"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Completion -->
+          <div class="bg-deep-blue text-white rounded-2xl p-6 text-center mb-6">
+            <i class="fa-solid fa-circle-check text-honey text-3xl mb-3"></i>
+            <h4 class="font-extrabold text-xl mb-2">
+              <span class="lang-pl">Canvas gotowy!</span><span class="lang-en">Canvas complete!</span>
+            </h4>
+            <p class="text-gray-300 text-sm mb-4">
+              <span class="lang-pl">Wszystkie 4 etapy ukończone. Wydrukuj lub zapisz jako PDF do użycia na warsztacie.</span>
+              <span class="lang-en">All 4 steps complete. Print or save as PDF for use in the workshop.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <button onclick="window.print()" class="px-6 py-3 bg-honey text-deep-blue rounded-xl font-bold text-sm hover:bg-white transition">
+                <i class="fa-solid fa-print mr-2"></i>
+                <span class="lang-pl">Zapisz jako PDF</span><span class="lang-en">Save as PDF</span>
+              </button>
+              <a href="index.html#contact" class="px-6 py-3 border-2 border-white text-white rounded-xl font-bold text-sm hover:bg-white hover:text-deep-blue transition">
+                <span class="lang-pl">Porozmawiaj z ekspertem</span><span class="lang-en">Talk to an expert</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex justify-start">
+            <button onclick="openTab('t3', 3)" class="flex items-center gap-2 px-5 py-3 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-sm hover:border-gray-400 transition">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span class="lang-pl">Wstecz</span><span class="lang-en">Back</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5 no-print">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI Landing</a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openTab(id, num) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+    // Update progress dots
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.querySelector('.tab-dot-' + i);
+      if (dot) {
+        dot.className = dot.className.replace(/bg-\S+|text-\S+/g, '').trim();
+        if (i <= num) {
+          dot.classList.add('bg-deep-blue', 'text-white');
+        } else {
+          dot.classList.add('bg-gray-200', 'text-gray-500');
+        }
+      }
+    }
+
+    // Animate KPI bars on tab 4
+    if (id === 't4') {
+      setTimeout(() => {
+        document.getElementById('kpi1').style.width = '62%';
+        document.getElementById('kpi2').style.width = '75%';
+        document.getElementById('kpi3').style.width = '48%';
+      }, 200);
+    }
+  }
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>
