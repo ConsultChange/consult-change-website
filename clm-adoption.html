@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wdrożenia CLM nie umierają na technologii. Umierają na adopcji. — Consult Change</title>
+  <meta name="description" content="O sukcesie wdrożenia CLM nie decyduje funkcjonalność systemu, tylko to, czy prawnicy i biznes zaczną w nim naprawdę pracować. Cztery powody porażek i plan, który działa.">
+  <link rel="canonical" href="https://www.consultchange.pl/clm-adoption.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 100;
+      height: 3px; width: 0%; background: linear-gradient(90deg, #C985F0, #F4C362);
+      transition: width .1s linear;
+    }
+
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    .article-body { line-height: 1.85; color: #374151; font-size: 1.0625rem; }
+    .article-body h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: #0F172A; margin: 2.5rem 0 1rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid #f3f4f6;
+    }
+    .article-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: #0F172A; margin: 2rem 0 0.75rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body strong { color: #0F172A; font-weight: 600; }
+    .article-body ul { margin: 0 0 1.5rem 1.5rem; list-style: disc; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 4px solid #F4C362;
+      background: #fffbeb;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 1rem 1rem 0;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #0F172A;
+    }
+    .article-body .callout {
+      background: #f8f4ff; border: 1px solid #e9d5ff;
+      border-radius: 1rem; padding: 1.25rem 1.5rem; margin: 2rem 0;
+    }
+    .article-body .callout-title { font-weight: 700; color: #7c3aed; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .05em; }
+    .article-body a { color: #C985F0; text-decoration: underline; text-decoration-color: rgba(201,133,240,.3); }
+    .article-body a:hover { color: #0F172A; }
+
+    .toc-item { transition: all .2s ease; padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+    .toc-item:hover, .toc-item.active { border-left-color: #F4C362; color: #0F172A; }
+    .toc-item.active { font-weight: 600; }
+
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .1; pointer-events: none; }
+
+    .share-btn { transition: all .2s ease; }
+    .share-btn:hover { transform: translateY(-2px); }
+
+    .related-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,23,42,.1); }
+
+    .tag-transformation { background: #e0f2fe; color: #0369a1; }
+
+    .dot { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin: 0 6px; vertical-align: middle; opacity: .5; }
+  </style>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<div id="progress-bar"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Case studies</span><span class="lang-en">Case studies</span>
+      </a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="text-deep-blue font-extrabold border-b-2 border-honey">Blog</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ ARTICLE HEADER ══════════ -->
+<header class="pt-28 pb-0 bg-white">
+  <div class="container mx-auto px-5 max-w-4xl">
+
+    <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <a href="index.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+      </a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <a href="blog.html" class="hover:text-cc-purple transition">Blog</a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <span class="text-gray-600">CLM &amp; Legal Ops</span>
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="tag-transformation px-3 py-1 rounded-full text-xs font-bold">CLM &amp; Legal Operations</span>
+      <span class="text-gray-400 text-sm">
+        <span class="dot"></span>
+        <span class="lang-pl">5 min czytania</span><span class="lang-en">5 min read</span>
+        <span class="dot"></span>
+        <span class="lang-pl">8 lipca 2026</span><span class="lang-en">July 8, 2026</span>
+      </span>
+    </div>
+
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight">
+      <span class="lang-pl">Wdrożenia CLM nie umierają na technologii. Umierają na adopcji.</span>
+      <span class="lang-en">CLM Rollouts Don't Fail on Technology. They Fail on Adoption.</span>
+    </h1>
+
+    <p class="text-xl text-gray-500 leading-relaxed mb-10 font-light max-w-3xl">
+      <span class="lang-pl">O sukcesie wdrożenia nie decyduje funkcjonalność systemu, tylko to, czy prawnicy i biznes zaczną w nim naprawdę pracować. System kontraktowy, w którym ląduje 30% umów, nie jest „częściowym sukcesem" — jest podwójnym kosztem.</span>
+      <span class="lang-en">A rollout's success isn't decided by the system's features, but by whether lawyers and the business actually start working in it. A contract system that captures 30% of contracts isn't a "partial success" — it's a double cost.</span>
+    </p>
+
+    <div class="flex items-center justify-between gap-4 py-6 border-t border-b border-gray-100 mb-0">
+      <div class="flex items-center gap-4">
+        <img src="your-photo.jpg" alt="Patryk Markowski" class="w-12 h-12 rounded-full object-cover shadow-sm">
+        <div>
+          <div class="font-semibold text-deep-blue text-sm">Patryk Markowski</div>
+          <div class="text-gray-400 text-xs">
+            Founder &amp; Lead Transformation Consultant <span class="dot"></span> PROSCI® CCP
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-400 hidden sm:block lang-pl">Udostępnij:</span>
+        <span class="text-xs text-gray-400 hidden sm:block lang-en">Share:</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/clm-adoption.html" target="_blank"
+          class="share-btn w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm hover:bg-blue-700 hover:text-white transition">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <button onclick="copyLink()" class="share-btn w-8 h-8 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center text-sm hover:bg-gray-700 hover:text-white transition" title="Copy link">
+          <i class="fa-solid fa-link"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO VISUAL ══════════ -->
+<div class="bg-deep-blue py-16 relative overflow-hidden">
+  <div class="blob w-80 h-80 bg-cc-purple top-0 right-1/4"></div>
+  <div class="container mx-auto px-5 max-w-4xl relative z-10">
+    <div class="grid grid-cols-3 gap-6 text-center">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-honey">30<span class="text-3xl">%</span></div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">umów w systemie = podwójny koszt</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">of contracts in-system = double cost</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-cc-purple">4</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">powody, dla których CLM zostaje pusty</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">reasons a CLM stays empty</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-cc-blue">6–8</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">tygodni hypercare decyduje o nawykach</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">weeks of hypercare set the habits</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ARTICLE BODY + SIDEBAR ══════════ -->
+<div class="py-16 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+    <div class="flex gap-14 items-start">
+
+      <article class="flex-1 min-w-0 article-body" id="article-content">
+
+        <div class="lang-pl">
+          <p>Przez kilka lat pracowałem przy wdrożeniach systemów CLM dla globalnych organizacji — od selekcji vendora, przez konfigurację, po go-live. Widziałem platformy każdej klasy: DocuSign, Icertis, Sirion, Agiloft, Conga. I widziałem jedną prawidłowość, która nie zależy od logo na licencji: <strong>o sukcesie wdrożenia nie decyduje funkcjonalność systemu, tylko to, czy prawnicy i biznes zaczną w nim naprawdę pracować.</strong></p>
+          <p>System kontraktowy, w którym ląduje 30% umów, nie jest „częściowym sukcesem". Jest podwójnym kosztem: płacisz za licencje i utrzymujesz stary, równoległy obieg — maile, dyski sieciowe, wersje „final_final_v3".</p>
+
+          <h2 id="s1">Cztery powody, dla których CLM zostaje pusty</h2>
+
+          <h3>1. CLM jest traktowany jak projekt IT</h3>
+          <p>Harmonogram kończy się na go-live, budżet na hypercare wynosi zero, a zespół projektowy rozchodzi się tydzień po starcie. Tymczasem z perspektywy użytkownika wdrożenie dopiero wtedy się zaczyna: pierwsze prawdziwe umowy, pierwsze wyjątki, pierwsza frustracja.</p>
+
+          <h3>2. Prawnicy nie są early adopters — i mają rację</h3>
+          <p>Dział prawny zawodowo zarządza ryzykiem. Nowe narzędzie to dla niego nowe ryzyko: „czy klauzula z szablonu na pewno jest aktualna?", „kto odpowiada, jeśli workflow przepuści umowę bez akceptacji?". Komunikacja, która ignoruje tę perspektywę i sprzedaje „wygodę", trafia w próżnię. Działa co innego: pokazanie, jak system <em>zdejmuje</em> ryzyko, którym prawnik i tak dziś zarządza ręcznie.</p>
+
+          <h3>3. Nikt nie jest właścicielem procesu po starcie</h3>
+          <p>Vendor odpowiada za platformę, IT za integracje, kancelaria za szablony — a za to, żeby proces kontraktowy <em>żył</em>, nie odpowiada nikt. Bez właściciela każda pierwsza przeszkoda staje się pretekstem do powrotu do maila.</p>
+
+          <h3>4. Szkolenie mylone jest z enablementem</h3>
+          <p>Dwugodzinny webinar na dwa tygodnie przed startem to nie przygotowanie ludzi do pracy — to odhaczenie punktu w planie. Wiedza z takiego szkolenia ma trwałość jogurtu. Enablement to co innego: materiały samoobsługowe dostępne w momencie potrzeby, podpowiedzi w samej aplikacji (digital adoption, np. WalkMe), krótkie drop-iny po starcie i FAQ, które odpowiada na pytania zadane naprawdę, a nie przewidziane na slajdzie.</p>
+
+          <div class="callout">
+            <div class="callout-title">🔑 Kluczowy insight</div>
+            <p style="margin: 0">Technologię CLM można dziś kupić w kilka miesięcy. Nawyków organizacji nie da się kupić wcale — trzeba je zbudować.</p>
+          </div>
+
+          <h2 id="s2">Co robić inaczej — plan, który działa</h2>
+
+          <h3>Zacznij od mapy interesariuszy, nie od konfiguracji</h3>
+          <p>Radca, który negocjuje umowy ramowe, zakupowiec, sprzedawca podpinający NDA i asystentka zarządu mają cztery różne definicje „sukcesu". Każda z tych grup potrzebuje własnej ścieżki: innego komunikatu, innego szkolenia, innego wsparcia.</p>
+
+          <h3>Pilotuj na prawdziwych rynkach</h3>
+          <p>Pilot to nie demo dla przychylnych. Wybierz 2–3 rynki lub zespoły o różnej dojrzałości, przepuść przez system prawdziwe umowy i zbierz opór, zanim skaluje się na całą organizację. Każdy problem znaleziony w pilocie jest dziesięć razy tańszy niż ten sam problem po globalnym starcie.</p>
+
+          <h3>Mierz adopcję, nie wdrożenie</h3>
+          <p>„System uruchomiony w terminie" to metryka projektu. Metryki zmiany są inne: odsetek umów procesowanych w systemie, czas cyklu od draftu do podpisu, liczba obejść procesu, wyniki pulse checków. Jeśli tych liczb nikt nie ogląda co tydzień przez pierwsze miesiące — nikt nie zarządza adopcją.</p>
+
+          <h3>Zaplanuj hypercare jako etap projektu, nie gest dobrej woli</h3>
+          <p>Pierwsze 6–8 tygodni po starcie decyduje o nawykach na lata. To wtedy potrzebne są dyżury, szybkie poprawki w workflow i widoczna reakcja na feedback — bo nic nie buduje zaufania do zmiany tak, jak naprawiony w trzy dni problem zgłoszony przez użytkownika.</p>
+
+          <h2 id="s3">Sedno</h2>
+          <p>Technologię CLM można dziś kupić w kilka miesięcy. Nawyków organizacji nie da się kupić wcale — trzeba je zbudować. Dlatego przy planowaniu wdrożenia warto zadać jedno pytanie wcześniej niż „który system?": <strong>kto i jak przeprowadzi przez tę zmianę ludzi?</strong></p>
+
+          <blockquote>
+            Planujesz wdrożenie CLM albo ratujesz takie, które utknęło? Umów bezpłatne discovery — 30 minut, konkretne wnioski, zero zobowiązań.
+          </blockquote>
+        </div><!-- end lang-pl -->
+
+        <div class="lang-en">
+          <p>For several years I worked on CLM implementations for global organizations — from vendor selection, through configuration, to go-live. I saw platforms of every class: DocuSign, Icertis, Sirion, Agiloft, Conga. And I saw one pattern that doesn't depend on the logo on the license: <strong>a rollout's success isn't decided by the system's functionality, but by whether lawyers and the business actually start working in it.</strong></p>
+          <p>A contract system that captures 30% of contracts isn't a "partial success." It's a double cost: you pay for licenses and you maintain the old, parallel process — emails, network drives, "final_final_v3" versions.</p>
+
+          <h2 id="s1e">Four reasons a CLM stays empty</h2>
+
+          <h3>1. CLM is treated as an IT project</h3>
+          <p>The schedule ends at go-live, the hypercare budget is zero, and the project team disperses a week after launch. Yet from the user's perspective, the rollout only starts then: the first real contracts, the first exceptions, the first frustration.</p>
+
+          <h3>2. Lawyers aren't early adopters — and they're right</h3>
+          <p>A legal department manages risk for a living. A new tool is a new risk to them: "is the template clause definitely current?", "who is liable if the workflow lets a contract through without approval?". Communication that ignores this perspective and sells "convenience" lands in a vacuum. Something else works: showing how the system <em>removes</em> risk that the lawyer is already managing by hand today.</p>
+
+          <h3>3. Nobody owns the process after launch</h3>
+          <p>The vendor owns the platform, IT owns integrations, the law firm owns templates — but nobody owns keeping the contract process <em>alive</em>. Without an owner, every first obstacle becomes an excuse to go back to email.</p>
+
+          <h3>4. Training is confused with enablement</h3>
+          <p>A two-hour webinar two weeks before launch isn't preparing people to work — it's ticking a box in the plan. Knowledge from such training has the shelf life of yogurt. Enablement is different: self-service materials available at the moment of need, in-app guidance (digital adoption, e.g. WalkMe), short drop-ins after launch, and an FAQ that answers questions people actually asked, not ones anticipated on a slide.</p>
+
+          <div class="callout">
+            <div class="callout-title">🔑 Key insight</div>
+            <p style="margin: 0">CLM technology can be bought in a few months. An organization's habits can't be bought at all — they have to be built.</p>
+          </div>
+
+          <h2 id="s2e">What to do differently — a plan that works</h2>
+
+          <h3>Start with a stakeholder map, not with configuration</h3>
+          <p>The counsel negotiating framework agreements, the procurement buyer, the salesperson attaching an NDA and the executive assistant have four different definitions of "success." Each of these groups needs its own path: a different message, a different training, a different kind of support.</p>
+
+          <h3>Pilot on real markets</h3>
+          <p>A pilot isn't a demo for the friendly. Pick 2–3 markets or teams of varying maturity, run real contracts through the system and collect resistance before you scale to the whole organization. Every problem found in a pilot is ten times cheaper than the same problem after a global launch.</p>
+
+          <h3>Measure adoption, not deployment</h3>
+          <p>"System live on time" is a project metric. Change metrics are different: the share of contracts processed in the system, cycle time from draft to signature, the number of process workarounds, pulse-check results. If no one looks at these numbers every week during the first months — no one is managing adoption.</p>
+
+          <h3>Plan hypercare as a project phase, not a goodwill gesture</h3>
+          <p>The first 6–8 weeks after launch decide habits for years. That's when you need staffed support, quick workflow fixes and a visible response to feedback — because nothing builds trust in change like a user-reported problem fixed in three days.</p>
+
+          <h2 id="s3e">The bottom line</h2>
+          <p>CLM technology can be bought in a few months. An organization's habits can't be bought at all — they have to be built. That's why, when planning a rollout, it's worth asking one question earlier than "which system?": <strong>who will lead the people through this change, and how?</strong></p>
+
+          <blockquote>
+            Planning a CLM rollout, or rescuing one that's stuck? Book a free discovery — 30 minutes, concrete takeaways, zero commitment.
+          </blockquote>
+        </div><!-- end lang-en -->
+
+        <!-- Article footer -->
+        <div class="mt-12 pt-8 border-t-2 border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <img src="your-photo.jpg" alt="Patryk Markowski" class="w-14 h-14 rounded-2xl object-cover shadow-md">
+            <div>
+              <div class="font-bold text-deep-blue">Patryk Markowski</div>
+              <div class="text-gray-400 text-xs">Founder &amp; Lead Transformation Consultant</div>
+              <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition">
+                <span class="lang-pl">Umów bezpłatne discovery →</span>
+                <span class="lang-en">Book a free discovery →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 lang-pl">Udostępnij artykuł:</span>
+            <span class="text-xs text-gray-400 lang-en">Share this article:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/clm-adoption.html" target="_blank"
+              class="share-btn w-9 h-9 bg-[#0077b5] text-white rounded-xl flex items-center justify-center hover:opacity-80 transition">
+              <i class="fa-brands fa-linkedin text-sm"></i>
+            </a>
+            <button onclick="copyLink()" id="copy-btn"
+              class="share-btn w-9 h-9 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center hover:bg-gray-700 hover:text-white transition">
+              <i class="fa-solid fa-link text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sticky Sidebar ── -->
+      <aside class="hidden lg:block w-72 shrink-0 sticky top-24">
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-6">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
+            <span class="lang-pl">Spis treści</span><span class="lang-en">Contents</span>
+          </h4>
+          <nav class="space-y-1 text-sm text-gray-500" id="toc">
+            <a href="#s1" class="toc-item block lang-pl">1. Cztery powody, dla których CLM zostaje pusty</a>
+            <a href="#s1e" class="toc-item block lang-en">1. Four reasons a CLM stays empty</a>
+            <a href="#s2" class="toc-item block lang-pl">2. Plan, który działa</a>
+            <a href="#s2e" class="toc-item block lang-en">2. A plan that works</a>
+            <a href="#s3" class="toc-item block lang-pl">3. Sedno</a>
+            <a href="#s3e" class="toc-item block lang-en">3. The bottom line</a>
+          </nav>
+        </div>
+
+        <div class="bg-deep-blue text-white rounded-2xl p-6 mb-6">
+          <div class="text-honey text-2xl mb-3">🎯</div>
+          <h4 class="font-display font-bold text-lg mb-2">
+            <span class="lang-pl">Wdrażasz albo ratujesz CLM?</span>
+            <span class="lang-en">Implementing or rescuing a CLM?</span>
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            <span class="lang-pl">30 minut, konkretne wnioski, zero zobowiązań. Porozmawiajmy o gotowości Twojej organizacji.</span>
+            <span class="lang-en">30 minutes, concrete takeaways, zero commitment. Let's talk about your organization's readiness.</span>
+          </p>
+          <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank"
+            class="block w-full py-3 bg-honey text-deep-blue rounded-xl text-center text-sm font-bold hover:bg-white transition">
+            Discovery (Free)
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-gray-100">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Tags</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#CLM</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#legalops</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#adoption</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#DocuSign</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#Icertis</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ RELATED ARTICLES ══════════ -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <h2 class="font-display text-2xl font-bold text-deep-blue mb-8">
+      <span class="lang-pl">Przeczytaj też</span><span class="lang-en">You might also like</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <a href="case-study-legal-ops.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">Case study</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Legal Operations od zera — jak dział prawny odzyskał kontrolę</span>
+          <span class="lang-en">Legal Operations From Scratch — How a Legal Team Regained Control</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> <span class="lang-pl">6 min</span><span class="lang-en">6 min</span>
+        </div>
+      </a>
+
+      <a href="case-study-global-rollout.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">Case study</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">3 000 użytkowników, jedna platforma — globalny rollout bez chaosu</span>
+          <span class="lang-en">3,000 Users, One Platform — a Global Rollout Without Chaos</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> <span class="lang-pl">6 min</span><span class="lang-en">6 min</span>
+        </div>
+      </a>
+
+      <a href="coaching.html" class="related-card bg-deep-blue rounded-2xl p-6 shadow-sm flex flex-col group">
+        <span class="px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start bg-honey text-deep-blue">Coaching</span>
+        <h3 class="font-display text-lg font-bold text-white group-hover:text-honey transition mb-2 leading-snug">
+          <span class="lang-pl">Samotność lidera: jak nie zgubić się między zarządem a zespołem</span>
+          <span class="lang-en">Leadership Loneliness: How Not to Get Lost Between Board and Team</span>
+        </h3>
+        <p class="text-gray-400 text-xs mt-2 mb-4 lang-pl">Sprawdź ofertę executive coachingu →</p>
+        <p class="text-gray-400 text-xs mt-2 mb-4 lang-en">Explore executive coaching →</p>
+        <div class="text-xs text-gray-500 mt-auto pt-4 border-t border-white/10">
+          Patryk Markowski <span class="dot"></span> <span class="lang-pl">5 min</span><span class="lang-en">5 min</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="text-center mt-10">
+      <a href="blog.html" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-deep-blue text-deep-blue rounded-xl font-bold text-sm hover:bg-deep-blue hover:text-white transition">
+        <span class="lang-pl">Wszystkie artykuły</span><span class="lang-en">All articles</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="blog.html" class="text-gray-500 hover:text-white text-sm transition">Blog</a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const article = document.getElementById('article-content');
+    const bar = document.getElementById('progress-bar');
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const total = article.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, (scrolled / (total - window.innerHeight + 200)) * 100);
+    bar.style.width = pct + '%';
+  });
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
+    btn.classList.add('bg-green-500', 'text-white');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>';
+      btn.classList.remove('bg-green-500', 'text-white');
+    }, 2000);
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case study: 3 000 użytkowników, jedna platforma — globalny rollout bez chaosu — Consult Change</title>
+  <meta name="description" content="Globalny koncern FMCG standaryzował content i workflow dla ok. 3 000 użytkowników. Strategia zmiany, mapa interesariuszy, trzy piloty rynkowe i hypercare z WalkMe.">
+  <link rel="canonical" href="https://www.consultchange.pl/case-study-global-rollout.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 100;
+      height: 3px; width: 0%; background: linear-gradient(90deg, #C985F0, #F4C362);
+      transition: width .1s linear;
+    }
+
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    .article-body { line-height: 1.85; color: #374151; font-size: 1.0625rem; }
+    .article-body h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: #0F172A; margin: 2.5rem 0 1rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid #f3f4f6;
+    }
+    .article-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: #0F172A; margin: 2rem 0 0.75rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body strong { color: #0F172A; font-weight: 600; }
+    .article-body ul { margin: 0 0 1.5rem 1.5rem; list-style: disc; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body ol { margin: 0 0 1.5rem 1.5rem; list-style: decimal; }
+    .article-body blockquote {
+      border-left: 4px solid #F4C362;
+      background: #fffbeb;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 1rem 1rem 0;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #0F172A;
+    }
+    .article-body .callout {
+      background: #f8f4ff; border: 1px solid #e9d5ff;
+      border-radius: 1rem; padding: 1.25rem 1.5rem; margin: 2rem 0;
+    }
+    .article-body .callout-title { font-weight: 700; color: #7c3aed; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .05em; }
+    .article-body a { color: #C985F0; text-decoration: underline; text-decoration-color: rgba(201,133,240,.3); }
+    .article-body a:hover { color: #0F172A; }
+
+    .toc-item { transition: all .2s ease; padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+    .toc-item:hover, .toc-item.active { border-left-color: #F4C362; color: #0F172A; }
+    .toc-item.active { font-weight: 600; }
+
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .1; pointer-events: none; }
+
+    .share-btn { transition: all .2s ease; }
+    .share-btn:hover { transform: translateY(-2px); }
+
+    .related-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,23,42,.1); }
+
+    .tag-transformation { background: #e0f2fe; color: #0369a1; }
+
+    .dot { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin: 0 6px; vertical-align: middle; opacity: .5; }
+  </style>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<div id="progress-bar"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Case studies</span><span class="lang-en">Case studies</span>
+      </a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-pen-nib text-cc-purple text-xs"></i> Blog
+      </a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ ARTICLE HEADER ══════════ -->
+<header class="pt-28 pb-0 bg-white">
+  <div class="container mx-auto px-5 max-w-4xl">
+
+    <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <a href="index.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+      </a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">Case studies</a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <span class="text-gray-600">Global rollout</span>
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="tag-transformation px-3 py-1 rounded-full text-xs font-bold">Case study · Change Management</span>
+      <span class="text-gray-400 text-sm">
+        <span class="dot"></span>
+        <span class="lang-pl">FMCG · organizacja globalna · 2025–2026</span>
+        <span class="lang-en">FMCG · global organization · 2025–2026</span>
+      </span>
+    </div>
+
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight">
+      <span class="lang-pl">3 000 użytkowników, jedna platforma contentowa — globalny rollout bez chaosu</span>
+      <span class="lang-en">3,000 Users, One Content Platform — a Global Rollout Without Chaos</span>
+    </h1>
+
+    <p class="text-xl text-gray-500 leading-relaxed mb-10 font-light max-w-3xl">
+      <span class="lang-pl">Globalny koncern FMCG standaryzował sposób, w jaki marki na całym świecie zamawiają, produkują i odnajdują content. Zmiana dotykała ok. 3 000 osób. Skala była największym ryzykiem — a „wysłaliśmy maila i zrobiliśmy webinar" gwarantuje jedno: pustą platformę.</span>
+      <span class="lang-en">A global FMCG group standardized how brands worldwide order, produce and find content. The change touched around 3,000 people. Scale was the biggest risk — and "we sent an email and ran a webinar" guarantees one thing: an empty platform.</span>
+    </p>
+
+    <div class="flex items-center justify-between gap-4 py-6 border-t border-b border-gray-100 mb-0">
+      <div class="flex items-center gap-4">
+        <img src="your-photo.jpg" alt="Patryk Markowski" class="w-12 h-12 rounded-full object-cover shadow-sm">
+        <div>
+          <div class="font-semibold text-deep-blue text-sm">Patryk Markowski</div>
+          <div class="text-gray-400 text-xs">
+            <span class="lang-pl">Rola: Change Manager (strategia, komunikacja, enablement, adopcja)</span>
+            <span class="lang-en">Role: Change Manager (strategy, communication, enablement, adoption)</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-400 hidden sm:block lang-pl">Udostępnij:</span>
+        <span class="text-xs text-gray-400 hidden sm:block lang-en">Share:</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/case-study-global-rollout.html" target="_blank"
+          class="share-btn w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm hover:bg-blue-700 hover:text-white transition">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <button onclick="copyLink()" class="share-btn w-8 h-8 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center text-sm hover:bg-gray-700 hover:text-white transition" title="Copy link">
+          <i class="fa-solid fa-link"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO VISUAL ══════════ -->
+<div class="bg-deep-blue py-16 relative overflow-hidden">
+  <div class="blob w-80 h-80 bg-cc-purple top-0 right-1/4"></div>
+  <div class="container mx-auto px-5 max-w-4xl relative z-10">
+    <div class="grid grid-cols-3 gap-6 text-center">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-honey">3 000</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">użytkowników objętych rolloutem</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">users in the rollout</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-cc-purple">3</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">piloty rynkowe przed skalowaniem</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">market pilots before scaling</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-5xl font-display font-bold text-cc-blue">VP</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">strategia zatwierdzona przez komitet sterujący</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">strategy approved by the steering committee</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ARTICLE BODY + SIDEBAR ══════════ -->
+<div class="py-16 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+    <div class="flex gap-14 items-start">
+
+      <article class="flex-1 min-w-0 article-body" id="article-content">
+
+        <div class="lang-pl">
+          <h2 id="s1">Kontekst</h2>
+          <p>Globalny koncern FMCG standaryzował sposób, w jaki marki na całym świecie zamawiają, produkują i odnajdują content: jedna centralna platforma (DAM + workflow), ujednolicone briefy dla agencji i lokalnych adaptacji, cyfrowe playbooki zamiast plików rozproszonych po dyskach. Zmiana dotykała ok. <strong>3 000 osób</strong> — od globalnych zespołów brandowych, przez huby omnichannel i liderów rynkowych, po agencje zewnętrzne.</p>
+          <p>Skala była największym ryzykiem: przy tylu grupach interesariuszy „wysłaliśmy maila i zrobiliśmy webinar" gwarantuje jedno — że platforma będzie pusta, a stare obiegi przeżyją.</p>
+
+          <h2 id="s2">Wyzwanie</h2>
+          <ul>
+            <li>Kilkanaście odrębnych grup odbiorców o sprzecznych priorytetach (centrala vs rynki vs agencje).</li>
+            <li>Zmiana codziennych nawyków pracy, nie tylko narzędzia: nowy sposób briefowania, wyszukiwania assetów i akceptacji.</li>
+            <li>Konieczność pokazania zarządowi programu mierzalnych postępów adopcji, nie tylko statusu wdrożenia.</li>
+          </ul>
+
+          <h2 id="s3">Co zrobiliśmy</h2>
+          <p><strong>Strategia zmiany end-to-end.</strong> Kompletna strategia rolloutu przełożona na model wykonawczy: fazy, kamienie milowe, produkty i działania gotowościowe. Strategia zaprezentowana komitetowi sterującemu z udziałem liderów szczebla VP — i przyjęta z bardzo pozytywnym feedbackiem jako podstawa całego programu.</p>
+          <p><strong>Mapa i aktywacja interesariuszy.</strong> Zmapowaliśmy wszystkie grupy — właścicieli narzędzi, huby, liderów rynków, SPOC-ów, menedżerów i użytkowników końcowych — i dla każdej zaprojektowaliśmy osobną ścieżkę aktywacji: co, od kogo i kiedy słyszy oraz co ma z tym zrobić.</p>
+          <p><strong>Komunikacja, która nie wygląda jak korpo-spam.</strong> Jedna spójna narracja rdzeniowa, a na niej: plan komunikacji, scenariusz globalnego wideo promocyjnego, komunikaty wideo z awatarem lidera, onboarding, FAQ, glosariusz i samoobsługowy hub wiedzy w SharePoint.</p>
+          <p><strong>Piloty zamiast wielkiego wybuchu.</strong> Trzy piloty rynkowe przed skalowaniem: prawdziwe zadania, prawdziwi użytkownicy, systematyczny zbiór oporu i blokerów. Wnioski z pilotów zasiliły plan mitygacji ryzyk adopcji przed startem globalnym.</p>
+          <p><strong>Gotowość i pomiar wg ADKAR.</strong> Pulse checki i badanie satysfakcji użytkowników w kluczowych momentach rolloutu; wyniki raportowane do programu jako metryki zmiany — obok metryk projektu.</p>
+          <p><strong>Hypercare i digital adoption.</strong> Podpowiedzi kontekstowe w aplikacji (WalkMe), logika wsparcia drop-in po starcie, baza wiedzy self-service i pętle feedbacku, dzięki którym zgłoszenia użytkowników wracały do nich jako widoczne poprawki.</p>
+
+          <h2 id="s4">Rezultaty</h2>
+          <ul>
+            <li>Strategia rolloutu zatwierdzona przez komitet sterujący (VP-level) i zrealizowana zgodnie z modelem wykonawczym.</li>
+            <li>Trzy piloty rynkowe zakończone przed skalowaniem; zidentyfikowane blokery zaadresowane przed startem globalnym.</li>
+            <li>Pomiar adopcji wpięty w raportowanie programu — decyzje oparte na metrykach zmiany, nie na wrażeniach.</li>
+            <li>Działający model hypercare i digital adoption, w którym feedback użytkowników zamieniał się w widoczne poprawki.</li>
+          </ul>
+
+          <h2 id="s5">Trzy wnioski do zabrania</h2>
+          <ol>
+            <li><strong>Przy 3 000 użytkowników nie ma jednej komunikacji.</strong> Jest kilkanaście — po jednej na grupę interesariuszy. Wysiłek włożony w mapę odbiorców zwraca się szybciej niż jakikolwiek inny element programu.</li>
+            <li><strong>Piloty to najtańsze miejsce na porażkę.</strong> Każdy opór wykryty na trzech rynkach to problem rozwiązany raz, a nie trzydzieści razy po go-live.</li>
+            <li><strong>Hypercare buduje zaufanie szybciej niż kampania.</strong> Naprawiony w kilka dni bloker zgłoszony przez użytkownika robi dla adopcji więcej niż najlepszy plakat.</li>
+          </ol>
+
+          <blockquote>
+            Stoisz przed rolloutem na setki lub tysiące użytkowników? Porozmawiajmy o gotowości Twojej organizacji — pierwsze 30 minut bezpłatnie.
+          </blockquote>
+        </div><!-- end lang-pl -->
+
+        <div class="lang-en">
+          <h2 id="s1e">Context</h2>
+          <p>A global FMCG group standardized how brands worldwide order, produce and find content: one central platform (DAM + workflow), unified briefs for agencies and local adaptations, digital playbooks instead of files scattered across drives. The change touched around <strong>3,000 people</strong> — from global brand teams, through omnichannel hubs and market leaders, to external agencies.</p>
+          <p>Scale was the biggest risk: with so many stakeholder groups, "we sent an email and ran a webinar" guarantees one thing — that the platform stays empty and the old processes survive.</p>
+
+          <h2 id="s2e">The challenge</h2>
+          <ul>
+            <li>A dozen-plus distinct audiences with conflicting priorities (headquarters vs markets vs agencies).</li>
+            <li>Changing daily work habits, not just the tool: a new way of briefing, searching for assets and approving.</li>
+            <li>The need to show the program board measurable adoption progress, not just implementation status.</li>
+          </ul>
+
+          <h2 id="s3e">What we did</h2>
+          <p><strong>End-to-end change strategy.</strong> A complete rollout strategy translated into an executable model: phases, milestones, deliverables and readiness activities. The strategy was presented to the steering committee including VP-level leaders — and adopted with very positive feedback as the foundation of the whole program.</p>
+          <p><strong>Stakeholder mapping and activation.</strong> We mapped every group — tool owners, hubs, market leaders, SPOCs, managers and end users — and designed a separate activation path for each: what they hear, from whom and when, and what they're expected to do with it.</p>
+          <p><strong>Communication that doesn't look like corporate spam.</strong> One consistent core narrative, and on top of it: a communication plan, a script for a global promo video, video messages with a leader avatar, onboarding, an FAQ, a glossary and a self-service knowledge hub in SharePoint.</p>
+          <p><strong>Pilots instead of a big bang.</strong> Three market pilots before scaling: real tasks, real users, a systematic collection of resistance and blockers. Pilot findings fed the adoption-risk mitigation plan before the global launch.</p>
+          <p><strong>Readiness and measurement with ADKAR.</strong> Pulse checks and user satisfaction surveys at key rollout moments; results reported to the program as change metrics — alongside project metrics.</p>
+          <p><strong>Hypercare and digital adoption.</strong> In-app contextual guidance (WalkMe), drop-in support logic after launch, a self-service knowledge base and feedback loops that turned user reports back into visible fixes.</p>
+
+          <h2 id="s4e">Results</h2>
+          <ul>
+            <li>Rollout strategy approved by the steering committee (VP-level) and delivered according to the executable model.</li>
+            <li>Three market pilots completed before scaling; identified blockers addressed before the global launch.</li>
+            <li>Adoption measurement wired into program reporting — decisions based on change metrics, not impressions.</li>
+            <li>A working hypercare and digital-adoption model in which user feedback turned into visible fixes.</li>
+          </ul>
+
+          <h2 id="s5e">Three takeaways</h2>
+          <ol>
+            <li><strong>At 3,000 users there is no single communication.</strong> There are a dozen — one per stakeholder group. The effort put into the audience map pays back faster than any other part of the program.</li>
+            <li><strong>Pilots are the cheapest place to fail.</strong> Every piece of resistance caught in three markets is a problem solved once, not thirty times after go-live.</li>
+            <li><strong>Hypercare builds trust faster than a campaign.</strong> A user-reported blocker fixed in a few days does more for adoption than the best poster.</li>
+          </ol>
+
+          <blockquote>
+            Facing a rollout for hundreds or thousands of users? Let's talk about your organization's readiness — the first 30 minutes are free.
+          </blockquote>
+        </div><!-- end lang-en -->
+
+        <!-- Article footer -->
+        <div class="mt-12 pt-8 border-t-2 border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <img src="your-photo.jpg" alt="Patryk Markowski" class="w-14 h-14 rounded-2xl object-cover shadow-md">
+            <div>
+              <div class="font-bold text-deep-blue">Patryk Markowski</div>
+              <div class="text-gray-400 text-xs">Founder &amp; Lead Transformation Consultant</div>
+              <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition">
+                <span class="lang-pl">Umów bezpłatne discovery →</span>
+                <span class="lang-en">Book a free discovery →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 lang-pl">Udostępnij:</span>
+            <span class="text-xs text-gray-400 lang-en">Share:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/case-study-global-rollout.html" target="_blank"
+              class="share-btn w-9 h-9 bg-[#0077b5] text-white rounded-xl flex items-center justify-center hover:opacity-80 transition">
+              <i class="fa-brands fa-linkedin text-sm"></i>
+            </a>
+            <button onclick="copyLink()" id="copy-btn"
+              class="share-btn w-9 h-9 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center hover:bg-gray-700 hover:text-white transition">
+              <i class="fa-solid fa-link text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sticky Sidebar ── -->
+      <aside class="hidden lg:block w-72 shrink-0 sticky top-24">
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-6">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
+            <span class="lang-pl">Spis treści</span><span class="lang-en">Contents</span>
+          </h4>
+          <nav class="space-y-1 text-sm text-gray-500" id="toc">
+            <a href="#s1" class="toc-item block lang-pl">1. Kontekst</a>
+            <a href="#s1e" class="toc-item block lang-en">1. Context</a>
+            <a href="#s2" class="toc-item block lang-pl">2. Wyzwanie</a>
+            <a href="#s2e" class="toc-item block lang-en">2. The challenge</a>
+            <a href="#s3" class="toc-item block lang-pl">3. Co zrobiliśmy</a>
+            <a href="#s3e" class="toc-item block lang-en">3. What we did</a>
+            <a href="#s4" class="toc-item block lang-pl">4. Rezultaty</a>
+            <a href="#s4e" class="toc-item block lang-en">4. Results</a>
+            <a href="#s5" class="toc-item block lang-pl">5. Trzy wnioski</a>
+            <a href="#s5e" class="toc-item block lang-en">5. Three takeaways</a>
+          </nav>
+        </div>
+
+        <div class="bg-deep-blue text-white rounded-2xl p-6 mb-6">
+          <div class="text-honey text-2xl mb-3">🎯</div>
+          <h4 class="font-display font-bold text-lg mb-2">
+            <span class="lang-pl">Rollout na tysiące osób?</span>
+            <span class="lang-en">A rollout for thousands?</span>
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            <span class="lang-pl">Porozmawiajmy o gotowości Twojej organizacji. Pierwsze 30 minut bezpłatnie.</span>
+            <span class="lang-en">Let's talk about your organization's readiness. First 30 minutes free.</span>
+          </p>
+          <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank"
+            class="block w-full py-3 bg-honey text-deep-blue rounded-xl text-center text-sm font-bold hover:bg-white transition">
+            Discovery (Free)
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-gray-100">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Tags</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#changemanagement</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#rollout</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#adoption</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#WalkMe</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#ADKAR</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ RELATED ══════════ -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <h2 class="font-display text-2xl font-bold text-deep-blue mb-8">
+      <span class="lang-pl">Przeczytaj też</span><span class="lang-en">You might also like</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <a href="case-study-legal-ops.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">Case study</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Legal Operations od zera — jak dział prawny odzyskał kontrolę</span>
+          <span class="lang-en">Legal Operations From Scratch — How a Legal Team Regained Control</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> <span class="lang-pl">6 min</span><span class="lang-en">6 min</span>
+        </div>
+      </a>
+
+      <a href="clm-adoption.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">CLM &amp; Legal Ops</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Wdrożenia CLM nie umierają na technologii. Umierają na adopcji.</span>
+          <span class="lang-en">CLM Rollouts Don't Fail on Technology. They Fail on Adoption.</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> <span class="lang-pl">5 min</span><span class="lang-en">5 min</span>
+        </div>
+      </a>
+
+      <a href="coaching.html" class="related-card bg-deep-blue rounded-2xl p-6 shadow-sm flex flex-col group">
+        <span class="px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start bg-honey text-deep-blue">Coaching</span>
+        <h3 class="font-display text-lg font-bold text-white group-hover:text-honey transition mb-2 leading-snug">
+          <span class="lang-pl">Executive coaching dla liderów transformacji</span>
+          <span class="lang-en">Executive Coaching for Transformation Leaders</span>
+        </h3>
+        <p class="text-gray-400 text-xs mt-2 mb-4 lang-pl">Sprawdź ofertę coachingu →</p>
+        <p class="text-gray-400 text-xs mt-2 mb-4 lang-en">Explore coaching →</p>
+        <div class="text-xs text-gray-500 mt-auto pt-4 border-t border-white/10">
+          Consult Change <span class="dot"></span> 1:1
+        </div>
+      </a>
+
+    </div>
+    <div class="text-center mt-10">
+      <a href="index.html#case-studies" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-deep-blue text-deep-blue rounded-xl font-bold text-sm hover:bg-deep-blue hover:text-white transition">
+        <span class="lang-pl">Wszystkie case studies</span><span class="lang-en">All case studies</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="blog.html" class="text-gray-500 hover:text-white text-sm transition">Blog</a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const article = document.getElementById('article-content');
+    const bar = document.getElementById('progress-bar');
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const total = article.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, (scrolled / (total - window.innerHeight + 200)) * 100);
+    bar.style.width = pct + '%';
+  });
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
+    btn.classList.add('bg-green-500', 'text-white');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>';
+      btn.classList.remove('bg-green-500', 'text-white');
+    }, 2000);
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>
