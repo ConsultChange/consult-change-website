@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak zmienia się dział prawny w dobie narzędzi AI — Consult Change Blog</title>
+  <meta name="description" content="AI nie zastępuje prawników — zmienia definicję pracy prawnej. Od gatekeepera do projektanta usług: nowy stos technologiczny, nowe kompetencje i to, co się nie zmienia.">
+  <link rel="canonical" href="https://www.consultchange.pl/artykul-dzial-prawny-w-dobie-ai.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Jak zmienia się dział prawny w dobie narzędzi AI">
+  <meta property="og:description" content="AI nie zastępuje prawników — zmienia definicję pracy prawnej. Od gatekeepera do projektanta usług: nowy stos technologiczny, nowe kompetencje i to, co się nie zmienia.">
+  <meta property="og:url" content="https://www.consultchange.pl/artykul-dzial-prawny-w-dobie-ai.html">
+  <meta property="og:image" content="https://www.consultchange.pl/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.consultchange.pl/artykul-dzial-prawny-w-dobie-ai.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          },
+          typography: {}
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    /* ── Reading progress bar ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 100;
+      height: 3px; width: 0%; background: linear-gradient(90deg, #C985F0, #F4C362);
+      transition: width .1s linear;
+    }
+
+    /* ── Nav ── */
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    /* ── Article typography ── */
+    .article-body { line-height: 1.85; color: #374151; font-size: 1.0625rem; }
+    .article-body h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: #0F172A; margin: 2.5rem 0 1rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid #f3f4f6;
+    }
+    .article-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: #0F172A; margin: 2rem 0 0.75rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body strong { color: #0F172A; font-weight: 600; }
+    .article-body ul { margin: 0 0 1.5rem 1.5rem; list-style: disc; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 4px solid #F4C362;
+      background: #fffbeb;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 1rem 1rem 0;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #0F172A;
+    }
+    .article-body .callout {
+      background: #f8f4ff; border: 1px solid #e9d5ff;
+      border-radius: 1rem; padding: 1.25rem 1.5rem; margin: 2rem 0;
+    }
+    .article-body .callout-title { font-weight: 700; color: #7c3aed; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .05em; }
+    .article-body a { color: #C985F0; text-decoration: underline; text-decoration-color: rgba(201,133,240,.3); }
+    .article-body a:hover { color: #0F172A; }
+
+    /* ── TOC ── */
+    .toc-item { transition: all .2s ease; padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+    .toc-item:hover, .toc-item.active { border-left-color: #F4C362; color: #0F172A; }
+    .toc-item.active { font-weight: 600; }
+
+    /* ── Blob ── */
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .1; pointer-events: none; }
+
+    /* ── Share buttons ── */
+    .share-btn { transition: all .2s ease; }
+    .share-btn:hover { transform: translateY(-2px); }
+
+    /* ── Related cards ── */
+    .related-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,23,42,.1); }
+
+    /* ── Tag ── */
+    .tag-change { background: #ede9fe; color: #6d28d9; }
+
+    /* ── Dot ── */
+    .dot { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin: 0 6px; vertical-align: middle; opacity: .5; }
+  </style>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<!-- Reading progress bar -->
+<div id="progress-bar"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">Case studies</a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="text-deep-blue font-extrabold border-b-2 border-honey">Blog</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ ARTICLE HEADER ══════════ -->
+<header class="pt-28 pb-0 bg-white">
+  <div class="container mx-auto px-5 max-w-4xl">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <a href="index.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+      </a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <a href="blog.html" class="hover:text-cc-purple transition">Blog</a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <span class="text-gray-600 lang-pl">AI w Biznesie</span>
+      <span class="text-gray-600 lang-en">AI in Business</span>
+    </nav>
+
+    <!-- Category + meta -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="tag-ai px-3 py-1 rounded-full text-xs font-bold">AI w Biznesie</span>
+      <span class="text-gray-400 text-sm">
+        <span class="dot"></span>
+        <span class="lang-pl">6 min czytania</span><span class="lang-en">6 min read</span>
+        <span class="dot"></span>
+        <span class="lang-pl">14 lipca 2026</span><span class="lang-en">July 14, 2026</span>
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight">
+      <span class="lang-pl">Jak zmienia się dział prawny w dobie narzędzi AI</span>
+      <span class="lang-en">How Legal Departments Are Changing in the Age of AI Tools</span>
+    </h1>
+
+    <!-- Intro / lead -->
+    <p class="text-xl text-gray-500 leading-relaxed mb-10 font-light max-w-3xl">
+      <span class="lang-pl">AI nie zastępuje prawników. Zmienia coś głębszego: definicję pracy prawnej. Dział prawny, który przez lata był gatekeeperem i wąskim gardłem, staje się projektantem usług — a rutyna, na której opierała się połowa etatów, przenosi się do maszyn. Oto mapa tej zmiany z perspektywy praktyka legal operations.</span>
+      <span class="lang-en">AI does not replace lawyers. It changes something deeper: the definition of legal work. The legal department that spent years as gatekeeper and bottleneck is becoming a service designer — while the routine that half the headcount was built on moves to machines. A practitioner's map of that shift.</span>
+    </p>
+
+    <!-- Author row -->
+    <div class="flex items-center justify-between gap-4 py-6 border-t border-b border-gray-100 mb-0">
+      <div class="flex items-center gap-4">
+        <img src="your-photo.jpg" alt="Patryk Markowski" class="w-12 h-12 rounded-full object-cover shadow-sm">
+        <div>
+          <div class="font-semibold text-deep-blue text-sm">Patryk Markowski</div>
+          <div class="text-gray-400 text-xs">
+            Founder & Lead Transformation Consultant <span class="dot"></span> PROSCI® CCP
+          </div>
+        </div>
+      </div>
+      <!-- Share -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-400 hidden sm:block lang-pl">Udostępnij:</span>
+        <span class="text-xs text-gray-400 hidden sm:block lang-en">Share:</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/artykul-dzial-prawny-w-dobie-ai.html" target="_blank"
+          class="share-btn w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm hover:bg-blue-700 hover:text-white transition">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <button onclick="copyLink()" class="share-btn w-8 h-8 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center text-sm hover:bg-gray-700 hover:text-white transition" title="Copy link">
+          <i class="fa-solid fa-link"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO VISUAL ══════════ -->
+<div class="bg-deep-blue py-16 relative overflow-hidden">
+  <div class="blob w-80 h-80 bg-cc-purple top-0 right-1/4"></div>
+  <div class="container mx-auto px-5 max-w-4xl relative z-10">
+    <div class="grid grid-cols-3 gap-6 text-center">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-honey">1</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">front door do działu prawnego zamiast N skrzynek</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">front door to legal instead of N inboxes</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-cc-purple">0</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">treningu modeli na danych klienta — warunek zaufania</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">model training on client data — the trust condition</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-cc-blue">AI</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">przejmuje rutynę; osąd i odpowiedzialność zostają</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">takes the routine; judgment and accountability stay</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ARTICLE BODY + SIDEBAR ══════════ -->
+<div class="py-16 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+    <div class="flex gap-14 items-start">
+
+      <!-- ── Main content ── -->
+      <article class="flex-1 min-w-0 article-body" id="article-content">
+
+        <div class="lang-pl">
+
+          <h2 id="s1">Od opinii do infrastruktury</h2>
+          <p>Klasyczny model działu prawnego opiera się na dostępie do eksperta: każda sprawa czeka na prawnika, a prawnik jest wąskim gardłem z definicji. Narzędzia AI podważają ten model w najbardziej rutynowej warstwie — pierwszej wersji NDA, przeglądzie standardowych umów, ekstrakcji klauzul, researchu orzecznictwa. To nie jest science fiction, to funkcje dostępne dziś w systemach CLM i asystentach prawnych.</p>
+          <p>Konsekwencja jest strukturalna: praca prawnika przesuwa się z produkcji na nadzór i wyjątki. A dział prawny przestaje być zbiorem skrzynek mailowych, a staje się infrastrukturą: intake, katalog usług, workflow, baza wiedzy.</p>
+
+          <h2 id="s2">Nowy stos technologiczny działu prawnego</h2>
+          <p>Dojrzewający stos wygląda podobnie w wielu organizacjach: jeden punkt wejścia (Legal Front Door), CLM z warstwą AI do analizy klauzul i ryzyk, asystent do researchu i pierwszych draftów, automatyzacja dokumentów powtarzalnych, dashboard obciążenia zespołu. Kolejność wdrażania ma znaczenie — i tu ważna lekcja z praktyki: <strong>technologia bez katalogu usług to automatyzacja chaosu</strong>. Najpierw trzeba ustalić, co dział robi, dla kogo i na jakich zasadach. Potem wybierać narzędzia.</p>
+
+          <h2 id="s3">Nowe kompetencje: prawnik jako nadzorca AI</h2>
+          <p>Zmienia się profil kompetencji. Legal operations przestaje być egzotyką, a staje się zawodem. Do tego dochodzi umiejętność pracy z modelami: precyzyjne instrukcje, weryfikacja wyników, świadomość halucynacji i granic odpowiedzialności. Oraz twarde warunki zaufania: poufność danych i zasada zerowego treningu modeli na materiałach klienta — bez tego żaden dział prawny nie powinien wpuszczać AI do umów.</p>
+
+          <h2 id="s4">Co się nie zmienia</h2>
+          <p>Osąd. Negocjacje. Etyka. Odpowiedzialność za decyzję — bo pod opinią nadal podpisuje się człowiek, nie model. Zmienia się natomiast miara sukcesu działu: z „ile spraw obsłużyliśmy" na „jak szybko i przewidywalnie biznes dostaje odpowiedź". Działy, które mają dane o własnej pracy, przejdą tę zmianę z pozycji siły. Te, które nadal żyją w skrzynkach mailowych, dowiedzą się o niej ostatnie.</p>
+          <p><strong>Dział prawny jutra mniej pisze, a więcej projektuje: procesy, standardy i nadzór nad maszynami, które piszą za niego.</strong></p>
+
+        </div><!-- end lang-pl -->
+
+        <div class="lang-en">
+
+          <h2 id="s1e">From opinions to infrastructure</h2>
+          <p>The classic legal model is built on access to an expert: every matter waits for a lawyer, and the lawyer is a bottleneck by design. AI tools undermine the most routine layer — first-draft NDAs, standard contract review, clause extraction, research. The consequence is structural: legal work shifts from production to supervision and exceptions, and the department shifts from a set of inboxes to infrastructure: intake, service catalogue, workflow, knowledge base.</p>
+
+          <h2 id="s2e">The new legal tech stack</h2>
+          <p>A maturing stack looks similar across organizations: a Legal Front Door, CLM with an AI layer for clauses and risk, a research and drafting assistant, document automation, a workload dashboard. Order matters — and practice teaches one lesson: <strong>technology without a service catalogue is automated chaos.</strong> Define what the team does and on what terms first; pick tools second.</p>
+
+          <h2 id="s3e">New competencies: the lawyer as AI supervisor</h2>
+          <p>Legal operations stops being exotic and becomes a profession. Add model literacy: precise instructions, output verification, awareness of hallucinations — and the hard trust conditions: confidentiality and zero model training on client data.</p>
+
+          <h2 id="s4e">What does not change</h2>
+          <p>Judgment. Negotiation. Ethics. Accountability — a human, not a model, signs the opinion. What changes is the success metric: from "matters handled" to "how fast and predictably the business gets an answer". <strong>Tomorrow's legal department writes less and designs more: processes, standards and supervision of the machines that write for it.</strong></p>
+
+        </div><!-- end lang-en -->
+
+        <!-- Article footer -->
+        <div class="mt-12 pt-8 border-t-2 border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <img src="your-photo.jpg" alt="Patryk Markowski" class="w-14 h-14 rounded-2xl object-cover shadow-md">
+            <div>
+              <div class="font-bold text-deep-blue">Patryk Markowski</div>
+              <div class="text-gray-400 text-xs">Founder & Lead Transformation Consultant</div>
+              <a href="coaching.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition">
+                <span class="lang-pl">Zarezerwuj Discovery Session →</span>
+                <span class="lang-en">Book a Discovery Session →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 lang-pl">Udostępnij artykuł:</span>
+            <span class="text-xs text-gray-400 lang-en">Share this article:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/artykul-dzial-prawny-w-dobie-ai.html" target="_blank"
+              class="share-btn w-9 h-9 bg-[#0077b5] text-white rounded-xl flex items-center justify-center hover:opacity-80 transition">
+              <i class="fa-brands fa-linkedin text-sm"></i>
+            </a>
+            <button onclick="copyLink()" id="copy-btn"
+              class="share-btn w-9 h-9 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center hover:bg-gray-700 hover:text-white transition">
+              <i class="fa-solid fa-link text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sticky Sidebar ── -->
+      <aside class="hidden lg:block w-72 shrink-0 sticky top-24">
+
+        <!-- TOC -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-6">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
+            <span class="lang-pl">Spis treści</span><span class="lang-en">Contents</span>
+          </h4>
+          <nav class="space-y-1 text-sm text-gray-500" id="toc">
+            <a href="#s1" class="toc-item block lang-pl">1. Od opinii do infrastruktury</a>
+            <a href="#s1e" class="toc-item block lang-en">1. From opinions to infrastructure</a>
+            <a href="#s2" class="toc-item block lang-pl">2. Nowy stos technologiczny</a>
+            <a href="#s2e" class="toc-item block lang-en">2. The new tech stack</a>
+            <a href="#s3" class="toc-item block lang-pl">3. Prawnik jako nadzorca AI</a>
+            <a href="#s3e" class="toc-item block lang-en">3. The lawyer as AI supervisor</a>
+            <a href="#s4" class="toc-item block lang-pl">4. Co się nie zmienia</a>
+            <a href="#s4e" class="toc-item block lang-en">4. What does not change</a>
+          </nav>
+        </div>
+
+        <!-- CTA box -->
+        <div class="bg-deep-blue text-white rounded-2xl p-6 mb-6">
+          <div class="text-honey text-2xl mb-3">🎯</div>
+          <h4 class="font-display font-bold text-lg mb-2">
+            <span class="lang-pl">Prowadzisz transformację?</span>
+            <span class="lang-en">Leading a transformation?</span>
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            <span class="lang-pl">Umów bezpłatną sesję diagnostyczną. 90 minut, które mogą zmienić kierunek projektu.</span>
+            <span class="lang-en">Schedule a free diagnostic session. 90 minutes that can change your project's direction.</span>
+          </p>
+          <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank"
+            class="block w-full py-3 bg-honey text-deep-blue rounded-xl text-center text-sm font-bold hover:bg-white transition">
+            Discovery Session (Free)
+          </a>
+        </div>
+
+        <!-- Tags -->
+        <div class="bg-white rounded-2xl p-5 border border-gray-100">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Tags</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#legaltech</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#AI</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#legalops</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#CLM</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#transformacja</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ RELATED ARTICLES ══════════ -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <h2 class="font-display text-2xl font-bold text-deep-blue mb-8">
+      <span class="lang-pl">Przeczytaj też</span><span class="lang-en">You might also like</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="artykul-cm-wspierany-przez-ai.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-ai px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">AI w Biznesie</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Change management wspierany przez AI: co automatyzować, a czego nie dotykać</span>
+          <span class="lang-en">AI-Augmented Change Management: What to Automate and What Not to Touch</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 6 min
+        </div>
+      </a>
+
+      <a href="artykul-czy-agent-ai-zastapi-change-managera.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-ai px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">AI w Biznesie</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Czy change managera zastąpi agent AI? Złe pytanie — oto lepsze</span>
+          <span class="lang-en">Will an AI Agent Replace the Change Manager? Wrong Question — Here Is a Better One</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 6 min
+        </div>
+      </a>
+
+      <a href="artykul-adopcja-po-go-live.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-change px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">Change Management</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Adopcja nie kończy się w dniu go-live. Wtedy dopiero się zaczyna</span>
+          <span class="lang-en">Adoption Doesn't End on Go-Live Day</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 6 min
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-10">
+      <a href="blog.html" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-deep-blue text-deep-blue rounded-xl font-bold text-sm hover:bg-deep-blue hover:text-white transition">
+        <span class="lang-pl">Wszystkie artykuły</span><span class="lang-en">All articles</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="blog.html" class="text-gray-500 hover:text-white text-sm transition">Blog</a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Reading progress bar ──
+  window.addEventListener('scroll', () => {
+    const article = document.getElementById('article-content');
+    const bar = document.getElementById('progress-bar');
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const total = article.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, (scrolled / (total - window.innerHeight + 200)) * 100);
+    bar.style.width = pct + '%';
+  });
+
+  // ── Language ──
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  // ── Copy link ──
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
+    btn.classList.add('bg-green-500', 'text-white');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>';
+      btn.classList.remove('bg-green-500', 'text-white');
+    }, 2000);
+  }
+
+  // ── Nav scroll shadow ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>

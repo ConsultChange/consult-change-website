@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lokalne adaptacje kampanii: czy agenci AI zastąpią sieć agencji? — Consult Change Blog</title>
+  <meta name="description" content="Globalne marki płacą za dostosowanie kampanii do języka, kultury i prawa każdego rynku. Agenci AI obiecują centralizację. Co da się scentralizować, a gdzie automat się kończy.">
+  <link rel="canonical" href="https://www.consultchange.pl/artykul-outsourcing-adaptacji-marketingowych.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Lokalne adaptacje kampanii: czy agenci AI zastąpią sieć agencji?">
+  <meta property="og:description" content="Globalne marki płacą za dostosowanie kampanii do języka, kultury i prawa każdego rynku. Agenci AI obiecują centralizację. Co da się scentralizować, a gdzie automat się kończy.">
+  <meta property="og:url" content="https://www.consultchange.pl/artykul-outsourcing-adaptacji-marketingowych.html">
+  <meta property="og:image" content="https://www.consultchange.pl/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.consultchange.pl/artykul-outsourcing-adaptacji-marketingowych.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            honey: '#F4C362',
+            'cc-blue': '#BFE6F2',
+            'cc-purple': '#C985F0',
+            'deep-blue': '#0F172A',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          },
+          typography: {}
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+
+    /* ── Reading progress bar ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 100;
+      height: 3px; width: 0%; background: linear-gradient(90deg, #C985F0, #F4C362);
+      transition: width .1s linear;
+    }
+
+    /* ── Nav ── */
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+
+    /* ── Article typography ── */
+    .article-body { line-height: 1.85; color: #374151; font-size: 1.0625rem; }
+    .article-body h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: #0F172A; margin: 2.5rem 0 1rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid #f3f4f6;
+    }
+    .article-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: #0F172A; margin: 2rem 0 0.75rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body strong { color: #0F172A; font-weight: 600; }
+    .article-body ul { margin: 0 0 1.5rem 1.5rem; list-style: disc; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 4px solid #F4C362;
+      background: #fffbeb;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 1rem 1rem 0;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #0F172A;
+    }
+    .article-body .callout {
+      background: #f8f4ff; border: 1px solid #e9d5ff;
+      border-radius: 1rem; padding: 1.25rem 1.5rem; margin: 2rem 0;
+    }
+    .article-body .callout-title { font-weight: 700; color: #7c3aed; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .05em; }
+    .article-body a { color: #C985F0; text-decoration: underline; text-decoration-color: rgba(201,133,240,.3); }
+    .article-body a:hover { color: #0F172A; }
+
+    /* ── TOC ── */
+    .toc-item { transition: all .2s ease; padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+    .toc-item:hover, .toc-item.active { border-left-color: #F4C362; color: #0F172A; }
+    .toc-item.active { font-weight: 600; }
+
+    /* ── Blob ── */
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .1; pointer-events: none; }
+
+    /* ── Share buttons ── */
+    .share-btn { transition: all .2s ease; }
+    .share-btn:hover { transform: translateY(-2px); }
+
+    /* ── Related cards ── */
+    .related-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,23,42,.1); }
+
+    /* ── Tag ── */
+    .tag-change { background: #ede9fe; color: #6d28d9; }
+
+    /* ── Dot ── */
+    .dot { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin: 0 6px; vertical-align: middle; opacity: .5; }
+  </style>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<!-- Reading progress bar -->
+<div id="progress-bar"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">Case studies</a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="text-deep-blue font-extrabold border-b-2 border-honey">Blog</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ ARTICLE HEADER ══════════ -->
+<header class="pt-28 pb-0 bg-white">
+  <div class="container mx-auto px-5 max-w-4xl">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <a href="index.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+      </a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <a href="blog.html" class="hover:text-cc-purple transition">Blog</a>
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+      <span class="text-gray-600 lang-pl">Transformacja</span>
+      <span class="text-gray-600 lang-en">Transformation</span>
+    </nav>
+
+    <!-- Category + meta -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="tag-transformation px-3 py-1 rounded-full text-xs font-bold"><span class="lang-pl">Transformacja</span><span class="lang-en">Transformation</span></span>
+      <span class="text-gray-400 text-sm">
+        <span class="dot"></span>
+        <span class="lang-pl">7 min czytania</span><span class="lang-en">7 min read</span>
+        <span class="dot"></span>
+        <span class="lang-pl">14 lipca 2026</span><span class="lang-en">July 14, 2026</span>
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight">
+      <span class="lang-pl">Lokalne adaptacje kampanii: czy agenci AI zastąpią sieć agencji?</span>
+      <span class="lang-en">Local Campaign Adaptation: Will AI Agents Replace the Agency Network?</span>
+    </h1>
+
+    <!-- Intro / lead -->
+    <p class="text-xl text-gray-500 leading-relaxed mb-10 font-light max-w-3xl">
+      <span class="lang-pl">Globalne marki od lat płacą sieciom agencji i lokalnym partnerom za dostosowanie kampanii do języka, kultury i wymogów prawnych każdego rynku. Agenci AI obiecują scentralizować tę pracę w jednym hubie. Obietnica jest częściowo prawdziwa — a granica przebiega dokładnie tam, gdzie zaczyna się ryzyko prawne.</span>
+      <span class="lang-en">Global brands have long paid agency networks and local partners to adapt campaigns to each market's language, culture and legal requirements. AI agents promise to centralize that work in one hub. The promise is partly true — and the boundary runs exactly where legal risk begins.</span>
+    </p>
+
+    <!-- Author row -->
+    <div class="flex items-center justify-between gap-4 py-6 border-t border-b border-gray-100 mb-0">
+      <div class="flex items-center gap-4">
+        <img src="your-photo.jpg" alt="Patryk Markowski" class="w-12 h-12 rounded-full object-cover shadow-sm">
+        <div>
+          <div class="font-semibold text-deep-blue text-sm">Patryk Markowski</div>
+          <div class="text-gray-400 text-xs">
+            Founder & Lead Transformation Consultant <span class="dot"></span> PROSCI® CCP
+          </div>
+        </div>
+      </div>
+      <!-- Share -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-400 hidden sm:block lang-pl">Udostępnij:</span>
+        <span class="text-xs text-gray-400 hidden sm:block lang-en">Share:</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/artykul-outsourcing-adaptacji-marketingowych.html" target="_blank"
+          class="share-btn w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-sm hover:bg-blue-700 hover:text-white transition">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <button onclick="copyLink()" class="share-btn w-8 h-8 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center text-sm hover:bg-gray-700 hover:text-white transition" title="Copy link">
+          <i class="fa-solid fa-link"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO VISUAL ══════════ -->
+<div class="bg-deep-blue py-16 relative overflow-hidden">
+  <div class="blob w-80 h-80 bg-cc-purple top-0 right-1/4"></div>
+  <div class="container mx-auto px-5 max-w-4xl relative z-10">
+    <div class="grid grid-cols-3 gap-6 text-center">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-honey">hub</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">centralny + cienka warstwa lokalnej weryfikacji</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">central hub + a thin layer of local verification</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-cc-purple">koszt</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">to koordynacja i iteracje, nie sama produkcja</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">is coordination and iterations, not production itself</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-display font-bold text-cc-blue">1</div>
+        <div class="text-gray-400 text-xs mt-2 lang-pl">wpadka regulacyjna kosztuje więcej niż rok weryfikacji</div>
+        <div class="text-gray-400 text-xs mt-2 lang-en">regulatory misstep costs more than a year of review</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ARTICLE BODY + SIDEBAR ══════════ -->
+<div class="py-16 bg-white">
+  <div class="container mx-auto px-5 max-w-6xl">
+    <div class="flex gap-14 items-start">
+
+      <!-- ── Main content ── -->
+      <article class="flex-1 min-w-0 article-body" id="article-content">
+
+        <div class="lang-pl">
+
+          <h2 id="s1">Anatomia kosztu adaptacji</h2>
+          <p>Na co naprawdę idą pieniądze przy adaptacji kampanii na rynek? Tłumaczenie i lokalizacja to najmniejsza pozycja. Realny koszt siedzi gdzie indziej: w zgodności z lokalnym prawem reklamy i wymogami kategorii, w dziesiątkach wariantów formatów pod kanały, a przede wszystkim — w koordynacji i iteracjach między centralą, lokalnym zespołem i partnerami. Każda pętla uzgodnień to dni i budżet.</p>
+
+          <h2 id="s2">Co centralizuje się już dziś</h2>
+          <p>Warianty językowe w kontrolowanej jakości, automatyczne wersjonowanie formatów, pilnowanie spójności brandowej, wstępny compliance-check według skodyfikowanych reguł rynku, dystrybucja i wersjonowanie assetów z jednej platformy. Centralny hub z warstwą agentów potrafi obsłużyć więcej rynków mniejszym zespołem — to nie teoria, to kierunek, w którym idą działy operacji marketingowych dużych organizacji.</p>
+
+          <h2 id="s3">Gdzie automat się kończy</h2>
+          <p>Na niuansie kulturowym, którego nie ma w wytycznych. Na interpretacji przepisów, które lokalny regulator stosuje inaczej, niż brzmią. Na kategoriach regulowanych — finanse, zdrowie, alkohol — gdzie odpowiedzialność za naruszenie jest osobista i dotkliwa. I na relacjach: z lokalnymi mediami, platformami, organami. Tu lokalny ekspert nie jest kosztem do wycięcia; jest polisą. Jedna wpadka regulacyjna na jednym rynku potrafi kosztować więcej niż rok jego pracy.</p>
+
+          <h2 id="s4">Model docelowy i kryteria decyzji</h2>
+          <p>Wyłania się model hybrydowy: centralny hub produkcyjno-agentowy plus cienka, ale obowiązkowa warstwa lokalnej weryfikacji człowieka tam, gdzie ryzyko tego wymaga. Zamiast pełnych zespołów per rynek — punktowa ekspertyza w pętli. Kryteria decyzji dla organizacji: liczba obsługiwanych rynków, udział kategorii regulowanych, koszt dotychczasowych iteracji, apetyt na ryzyko. <strong>Pytanie nie brzmi „czy outsourcing", tylko „ile lokalności naprawdę wymaga Twoja kategoria — i w którym punkcie procesu".</strong></p>
+
+        </div><!-- end lang-pl -->
+
+        <div class="lang-en">
+
+          <h2 id="s1e">The anatomy of adaptation cost</h2>
+          <p>Where does the money really go? Translation and localization are the smallest line. The real cost sits elsewhere: compliance with local advertising law and category requirements, dozens of format variants per channel, and above all — coordination and iterations between HQ, local teams and partners. Every approval loop is days and budget.</p>
+
+          <h2 id="s2e">What centralizes today</h2>
+          <p>Language variants at controlled quality, automatic format versioning, brand-consistency checks, preliminary compliance screening against codified market rules, asset distribution from one platform. A central hub with an agent layer can serve more markets with a smaller team — this is the direction marketing operations in large organizations are already taking.</p>
+
+          <h2 id="s3e">Where automation ends</h2>
+          <p>At cultural nuance absent from the guidelines. At regulation the local authority applies differently than it reads. At regulated categories — finance, health, alcohol — where liability is personal and painful. And at relationships with local media, platforms and authorities. Here the local expert is not a cost to cut; they are an insurance policy. One regulatory misstep on one market can cost more than a year of their work.</p>
+
+          <h2 id="s4e">The target model and decision criteria</h2>
+          <p>A hybrid emerges: a central production-and-agents hub plus a thin but mandatory layer of local human verification where risk requires it. Instead of full teams per market — point expertise in the loop. Decision criteria: number of markets, share of regulated categories, cost of current iteration loops, risk appetite. <strong>The question is not "outsourcing or not" but "how much locality does your category truly require — and at which point of the process".</strong></p>
+
+        </div><!-- end lang-en -->
+
+        <!-- Article footer -->
+        <div class="mt-12 pt-8 border-t-2 border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <img src="your-photo.jpg" alt="Patryk Markowski" class="w-14 h-14 rounded-2xl object-cover shadow-md">
+            <div>
+              <div class="font-bold text-deep-blue">Patryk Markowski</div>
+              <div class="text-gray-400 text-xs">Founder & Lead Transformation Consultant</div>
+              <a href="coaching.html" class="text-cc-purple text-xs font-bold hover:text-deep-blue transition">
+                <span class="lang-pl">Zarezerwuj Discovery Session →</span>
+                <span class="lang-en">Book a Discovery Session →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 lang-pl">Udostępnij artykuł:</span>
+            <span class="text-xs text-gray-400 lang-en">Share this article:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.consultchange.pl/artykul-outsourcing-adaptacji-marketingowych.html" target="_blank"
+              class="share-btn w-9 h-9 bg-[#0077b5] text-white rounded-xl flex items-center justify-center hover:opacity-80 transition">
+              <i class="fa-brands fa-linkedin text-sm"></i>
+            </a>
+            <button onclick="copyLink()" id="copy-btn"
+              class="share-btn w-9 h-9 bg-gray-100 text-gray-600 rounded-xl flex items-center justify-center hover:bg-gray-700 hover:text-white transition">
+              <i class="fa-solid fa-link text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sticky Sidebar ── -->
+      <aside class="hidden lg:block w-72 shrink-0 sticky top-24">
+
+        <!-- TOC -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-6">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
+            <span class="lang-pl">Spis treści</span><span class="lang-en">Contents</span>
+          </h4>
+          <nav class="space-y-1 text-sm text-gray-500" id="toc">
+            <a href="#s1" class="toc-item block lang-pl">1. Anatomia kosztu</a>
+            <a href="#s1e" class="toc-item block lang-en">1. Anatomy of the cost</a>
+            <a href="#s2" class="toc-item block lang-pl">2. Co się centralizuje</a>
+            <a href="#s2e" class="toc-item block lang-en">2. What centralizes</a>
+            <a href="#s3" class="toc-item block lang-pl">3. Gdzie automat się kończy</a>
+            <a href="#s3e" class="toc-item block lang-en">3. Where automation ends</a>
+            <a href="#s4" class="toc-item block lang-pl">4. Model docelowy</a>
+            <a href="#s4e" class="toc-item block lang-en">4. The target model</a>
+          </nav>
+        </div>
+
+        <!-- CTA box -->
+        <div class="bg-deep-blue text-white rounded-2xl p-6 mb-6">
+          <div class="text-honey text-2xl mb-3">🎯</div>
+          <h4 class="font-display font-bold text-lg mb-2">
+            <span class="lang-pl">Prowadzisz transformację?</span>
+            <span class="lang-en">Leading a transformation?</span>
+          </h4>
+          <p class="text-gray-300 text-sm mb-4">
+            <span class="lang-pl">Umów bezpłatną sesję diagnostyczną. 90 minut, które mogą zmienić kierunek projektu.</span>
+            <span class="lang-en">Schedule a free diagnostic session. 90 minutes that can change your project's direction.</span>
+          </p>
+          <a href="https://calendly.com/patryk-markowski-consultchange" target="_blank"
+            class="block w-full py-3 bg-honey text-deep-blue rounded-xl text-center text-sm font-bold hover:bg-white transition">
+            Discovery Session (Free)
+          </a>
+        </div>
+
+        <!-- Tags -->
+        <div class="bg-white rounded-2xl p-5 border border-gray-100">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Tags</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#marketingops</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#outsourcing</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#agentAI</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#compliance</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-lg">#lokalizacja</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ RELATED ARTICLES ══════════ -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <h2 class="font-display text-2xl font-bold text-deep-blue mb-8">
+      <span class="lang-pl">Przeczytaj też</span><span class="lang-en">You might also like</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="artykul-przyszlosc-zespolow-gbs.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-transformation px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start"><span class="lang-pl">Transformacja</span><span class="lang-en">Transformation</span></span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Jaka przyszłość czeka zespoły GBS, gdy kończy się era taniej pracy?</span>
+          <span class="lang-en">What Future Awaits GBS Teams When the Cheap-Labor Era Ends?</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 7 min
+        </div>
+      </a>
+
+      <a href="artykul-umiejetnosci-jutra.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-leadership px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start"><span class="lang-pl">Przywództwo</span><span class="lang-en">Leadership</span></span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Nasza przyszłość jako specjalistów: prawdziwe umiejętności jutra</span>
+          <span class="lang-en">Our Future as Specialists: The Real Skills of Tomorrow</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 6 min
+        </div>
+      </a>
+
+      <a href="artykul-adopcja-clm.html" class="related-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col group">
+        <span class="tag-change px-2.5 py-1 rounded-full text-xs font-bold mb-4 self-start">Change Management</span>
+        <h3 class="font-display text-lg font-bold text-deep-blue group-hover:text-cc-purple transition mb-2 leading-snug">
+          <span class="lang-pl">Wdrożenia CLM nie umierają na technologii. Umierają na adopcji</span>
+          <span class="lang-en">CLM Implementations Die of Adoption</span>
+        </h3>
+        <div class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-100">
+          Patryk Markowski <span class="dot"></span> 5 min
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-10">
+      <a href="blog.html" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-deep-blue text-deep-blue rounded-xl font-bold text-sm hover:bg-deep-blue hover:text-white transition">
+        <span class="lang-pl">Wszystkie artykuły</span><span class="lang-en">All articles</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="blog.html" class="text-gray-500 hover:text-white text-sm transition">Blog</a>
+        <a href="coaching.html" class="text-gray-500 hover:text-white text-sm transition">Coaching</a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Reading progress bar ──
+  window.addEventListener('scroll', () => {
+    const article = document.getElementById('article-content');
+    const bar = document.getElementById('progress-bar');
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const total = article.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, (scrolled / (total - window.innerHeight + 200)) * 100);
+    bar.style.width = pct + '%';
+  });
+
+  // ── Language ──
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+
+  // ── Copy link ──
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-btn');
+    btn.innerHTML = '<i class="fa-solid fa-check text-sm"></i>';
+    btn.classList.add('bg-green-500', 'text-white');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-link text-sm"></i>';
+      btn.classList.remove('bg-green-500', 'text-white');
+    }, 2000);
+  }
+
+  // ── Nav scroll shadow ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+</body>
+</html>
