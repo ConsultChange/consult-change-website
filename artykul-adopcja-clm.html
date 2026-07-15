@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wdrożenia CLM nie umierają na technologii. Umierają na adopcji — Consult Change Blog</title>
+  <title>Wdrożenia CLM nie upadają przez technologię. Upadają przez brak adopcji — Consult Change Blog</title>
   <meta name="description" content="System kontraktowy, w którym ląduje 30% umów, to podwójny koszt. Cztery powody, dla których CLM zostaje pusty — i plan, który działa.">
   <link rel="canonical" href="https://www.consultchange.pl/artykul-adopcja-clm.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Wdrożenia CLM nie umierają na technologii. Umierają na adopcji">
+  <meta property="og:title" content="Wdrożenia CLM nie upadają przez technologię. Upadają przez brak adopcji">
   <meta property="og:description" content="System kontraktowy, w którym ląduje 30% umów, to podwójny koszt. Cztery powody, dla których CLM zostaje pusty — i plan, który działa.">
   <meta property="og:url" content="https://www.consultchange.pl/artykul-adopcja-clm.html">
   <meta property="og:image" content="https://www.consultchange.pl/og-image.png">
@@ -200,7 +200,7 @@
       <span class="tag-change px-3 py-1 rounded-full text-xs font-bold">CLM & Legal Ops</span>
       <span class="text-gray-400 text-sm">
         <span class="dot"></span>
-        <span class="lang-pl">5 min czytania</span><span class="lang-en">5 min read</span>
+        <span class="lang-pl">10 min czytania</span><span class="lang-en">10 min read</span>
         <span class="dot"></span>
         <span class="lang-pl">13 lipca 2026</span><span class="lang-en">July 13, 2026</span>
       </span>
@@ -208,8 +208,8 @@
 
     <!-- Title -->
     <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight">
-      <span class="lang-pl">Wdrożenia CLM nie umierają na technologii. Umierają na adopcji</span>
-      <span class="lang-en">CLM Implementations Don't Die of Technology. They Die of Adoption</span>
+      <span class="lang-pl">Wdrożenia CLM nie upadają przez technologię. Upadają przez brak adopcji</span>
+      <span class="lang-en">CLM Implementations Don't Fail on Technology. They Fail on Lack of Adoption</span>
     </h1>
 
     <!-- Intro / lead -->
@@ -279,64 +279,143 @@
 
         <div class="lang-pl">
 
-          <p>System kontraktowy, w którym ląduje 30% umów, nie jest „częściowym sukcesem". Jest podwójnym kosztem: płacisz za licencje i jednocześnie utrzymujesz stary, równoległy obieg — maile, dyski sieciowe, wersje „final_final_v3".</p>
+          <p>Zacznijmy od zdania, które trzeba powiedzieć wprost, bo bywa mylone: <strong>problemem nie jest technologia CLM.</strong> Nowoczesne platformy do zarządzania cyklem życia umów są dziś dojrzałe, skonfigurowane w kilka miesięcy i robią dokładnie to, co obiecuje karta produktu. Problemem jest to, co dzieje się — albo raczej nie dzieje — po ich uruchomieniu: <strong>ludzie nie zaczynają w nich pracować.</strong> To jest różnica między „system nie działa" a „system stoi pusty". Pierwsze naprawia się ticketem. Drugie nie naprawia się wcale, jeśli nikt nie zajmie się adopcją.</p>
 
-          <h2 id="s1">Cztery powody, dla których CLM zostaje pusty</h2>
-          <h3>1. CLM jest traktowany jak projekt IT</h3>
-          <p>Harmonogram kończy się na go-live, budżet na hypercare wynosi zero, a zespół projektowy rozchodzi się tydzień po starcie. Tymczasem z perspektywy użytkownika wdrożenie dopiero wtedy się zaczyna: pierwsze prawdziwe umowy, pierwsze wyjątki, pierwsza frustracja.</p>
-          <h3>2. Prawnicy nie są early adopters — i mają rację</h3>
-          <p>Dział prawny zawodowo zarządza ryzykiem. Nowe narzędzie to nowe ryzyko: „czy klauzula z szablonu na pewno jest aktualna?", „kto odpowiada, jeśli workflow przepuści umowę bez akceptacji?". Komunikacja, która sprzedaje „wygodę", trafia w próżnię. Działa co innego: pokazanie, jak system <strong>zdejmuje</strong> ryzyko, którym prawnik i tak dziś zarządza ręcznie.</p>
-          <h3>3. Nikt nie jest właścicielem procesu po starcie</h3>
-          <p>Vendor odpowiada za platformę, IT za integracje, kancelaria za szablony — a za to, żeby proces kontraktowy <em>żył</em>, nie odpowiada nikt. Bez właściciela każda pierwsza przeszkoda staje się pretekstem do powrotu do maila.</p>
+          <h2 id="s1">Dwie definicje sukcesu, które nigdy się nie spotykają</h2>
+          <p>W każdym większym wdrożeniu CLM funkcjonują równolegle dwie definicje sukcesu i zwykle nikt ich nie konfrontuje.</p>
+          <p><strong>Definicja projektowa:</strong> system uruchomiony w terminie, w budżecie, testy odbiorcze zaliczone, integracje działają, dokumentacja przekazana. Ta definicja ma właściciela, harmonogram i raport statusu.</p>
+          <p><strong>Definicja biznesowa:</strong> umowy rzeczywiście powstają, są negocjowane i podpisywane w systemie; dział prawny widzi swoje obciążenie; biznes wie, gdzie jest jego umowa; ryzyko klauzul jest zarządzane, bo dane w ogóle istnieją. Ta definicja bardzo często <em>nie ma właściciela</em> — i to jest sedno sprawy.</p>
+          <p>Projekt można zamknąć zielonym statusem przy zerowej adopcji. Widziałem to i to nie jest złośliwość wobec zespołów projektowych — to konsekwencja tego, jak definiujemy zakres. Jeśli w karcie projektu nie ma metryki adopcji, to adopcja nie jest przedmiotem projektu. Jest życzeniem.</p>
+
+          <h2 id="s2">Anatomia pustego CLM: cztery mechanizmy</h2>
+          <h3>1. CLM jest prowadzony jak projekt IT, a jest zmianą operacyjną</h3>
+          <p>Objaw: harmonogram kończy się na go-live, budżet na hypercare wynosi zero, a zespół projektowy rozchodzi się w ciągu dwóch tygodni po starcie. Mechanizm jest prosty: z perspektywy IT wdrożenie się skończyło, bo system stoi. Z perspektywy prawnika wdrożenie dopiero się zaczęło — właśnie dostał pierwszą prawdziwą umowę do przepchnięcia przez nieznane sobie narzędzie, w piątek, dla zniecierpliwionego klienta wewnętrznego.</p>
+          <p>Sygnał ostrzegawczy: w planie projektu nie ma ani jednej pozycji po dacie go-live. Co robić: zaplanować 8–12 tygodni hypercare jako etap projektu z własnym budżetem i obsadą, zanim ktokolwiek podpisze harmonogram.</p>
+
+          <h3>2. Prawnicy nie są early adopters — i mają zawodową rację</h3>
+          <p>To nie jest opór dla oporu. Dział prawny zawodowo zarządza ryzykiem i ocenia narzędzie tak, jak ocenia kontrahenta: przez pryzmat tego, co może pójść źle i kto za to odpowie. Pytania, które padają naprawdę, brzmią: czy klauzula w szablonie jest aktualna po ostatniej zmianie przepisów? Kto odpowiada, jeśli workflow przepuści umowę bez wymaganej akceptacji? Co się stanie, gdy system podpowie złą wersję i klient to podpisze?</p>
+          <p>Komunikacja, która na te pytania odpowiada hasłem o „wygodzie" i „oszczędności czasu", trafia w próżnię — bo mówi o korzyści, która dla tej grupy jest trzeciorzędna. Działa odwrotna narracja: pokazanie, jak system <strong>zdejmuje</strong> z prawnika ryzyko, którym on i tak dziś zarządza ręcznie, po godzinach, pamięcią i excelem. Automatyczna kontrola wersji to nie wygoda — to dowód w sporze. Rejestr odstępstw od standardu to nie raport — to ochrona przed zarzutem niedochowania staranności.</p>
+
+          <h3>3. Po starcie nikt nie jest właścicielem procesu</h3>
+          <p>Po go-live struktura odpowiedzialności wygląda tak: vendor odpowiada za platformę, IT za integracje i dostępy, kancelaria lub zespół szablonów za treść klauzul, zakupy za kontrakt z dostawcą. Za to, żeby proces kontraktowy <em>żył i był używany</em>, nie odpowiada nikt. To nie jest zaniedbanie pojedynczej osoby — to systemowa luka w projektowaniu ról.</p>
+          <p>Konsekwencja jest przewidywalna: pierwszy wyjątek, którego system nie obsługuje, nie ma adresata. Użytkownik czeka dzień, nie dostaje odpowiedzi, wysyła umowę mailem — i właśnie w tym momencie, nie w dniu startu, przegrywacie wdrożenie. Bo obejście, które zadziałało raz, staje się nawykiem, a nawyk staje się procesem.</p>
+
           <h3>4. Szkolenie mylone jest z enablementem</h3>
-          <p>Dwugodzinny webinar na dwa tygodnie przed startem to nie przygotowanie ludzi do pracy — to odhaczenie punktu w planie. Enablement to co innego: materiały samoobsługowe dostępne w momencie potrzeby, podpowiedzi w samej aplikacji (digital adoption, np. WalkMe), krótkie drop-iny po starcie i FAQ odpowiadające na pytania zadane naprawdę, a nie przewidziane na slajdzie.</p>
+          <p>Dwugodzinny webinar dwa tygodnie przed startem nie przygotowuje ludzi do pracy. Odhacza punkt w planie. Wiedza z takiego szkolenia ma trwałość produktu nabiałowego: w momencie, gdy jest potrzebna — czyli przy pierwszej prawdziwej umowie trzy tygodnie później — już jej nie ma.</p>
+          <p>Enablement to inna kategoria: materiały samoobsługowe dostępne w momencie potrzeby, a nie w kalendarzu; podpowiedzi kontekstowe w samej aplikacji (digital adoption, np. WalkMe), które prowadzą przez krok, gdy użytkownik przy nim stoi; krótkie drop-iny w pierwszych tygodniach; FAQ budowane z pytań, które ludzie naprawdę zadali, a nie z tych, które ktoś przewidział na slajdzie.</p>
 
-          <h2 id="s2">Zacznij od mapy interesariuszy, nie od konfiguracji</h2>
-          <p>Radca negocjujący umowy ramowe, zakupowiec, sprzedawca podpinający NDA i asystentka zarządu mają cztery różne definicje „sukcesu". Każda z tych grup potrzebuje własnej ścieżki: innego komunikatu, innego szkolenia, innego wsparcia.</p>
+          <h2 id="s3">Ekonomia pustego systemu: dlaczego to podwójny koszt</h2>
+          <p>System kontraktowy, w którym ląduje 30% umów, nie jest „częściowym sukcesem". Jest podwójnym kosztem — i warto to pokazać zarządowi liczbami, nie przymiotnikami.</p>
+          <p>Po pierwsze: płacicie pełną licencję za funkcjonalność używaną w ułamku. Po drugie: utrzymujecie równolegle stary obieg — maile, dyski, wersje „final_final_v3" — z całym jego kosztem czasu i ryzyka. Po trzecie, i to jest koszt najbardziej podstępny: <strong>dane są niekompletne, więc bezużyteczne.</strong> Repozytorium umów, w którym jest 30% umów, nie odpowie na pytanie „ile mamy kontraktów z klauzulą X przed zmianą przepisów", bo odpowiedź będzie nieprawdziwa. Cała obietnica analityki kontraktowej — a to zwykle ona uzasadniała inwestycję w business case — przepada nie przy 0% adopcji, tylko właśnie przy 30%. Częściowa adopcja jest gorsza niż jej brak, bo tworzy iluzję kontroli.</p>
 
-          <h2 id="s3">Pilotuj na prawdziwych rynkach</h2>
-          <p>Pilot to nie demo dla przychylnych. Wybierz 2–3 rynki lub zespoły o różnej dojrzałości, przepuść przez system prawdziwe umowy i zbierz opór, zanim skaluje się na całą organizację. Każdy problem znaleziony w pilocie jest dziesięć razy tańszy niż ten sam problem po globalnym starcie.</p>
-
-          <h2 id="s4">Mierz adopcję, nie wdrożenie</h2>
-          <p>„System uruchomiony w terminie" to metryka projektu. Metryki zmiany są inne:</p>
+          <h2 id="s4">Zacznij od mapy interesariuszy, nie od konfiguracji</h2>
+          <p>„Użytkownik CLM" nie istnieje. Istnieje pięć różnych osób o sprzecznych definicjach sukcesu i każda potrzebuje innej ścieżki:</p>
           <ul>
-            <li>odsetek umów procesowanych w systemie,</li>
-            <li>czas cyklu od draftu do podpisu,</li>
-            <li>liczba obejść procesu,</li>
-            <li>wyniki pulse checków użytkowników.</li>
+            <li><strong>Radca negocjujący umowy ramowe</strong> — chce elastyczności i boi się, że system go usztywni. Jego adopcja zależy od tego, czy da się w narzędziu obsłużyć wyjątek.</li>
+            <li><strong>Prawnik obsługujący wolumen</strong> — chce mieć spokój z powtarzalnymi NDA. Dla niego automatyzacja to ulga, nie zagrożenie. To Wasz naturalny sojusznik i pierwszy pilot.</li>
+            <li><strong>Zakupowiec / sprzedawca</strong> — nie obchodzi go CLM, obchodzi go zamknięcie transakcji. Jeżeli system dokłada mu klik, wróci do maila. Jeżeli skraca czas do podpisu — zostanie.</li>
+            <li><strong>Asystentka zarządu podpinająca NDA</strong> — używa systemu rzadko, więc zawsze będzie zaczynać od zera. Potrzebuje prowadzenia w aplikacji, nie szkolenia sprzed pół roku.</li>
+            <li><strong>CFO / General Counsel</strong> — nie używa systemu, ale to on decyduje o jego przyszłości na podstawie dashboardu. Jeżeli dashboard nie istnieje albo pokazuje 30%, nie obroni kolejnego budżetu.</li>
           </ul>
-          <p>Jeśli tych liczb nikt nie ogląda co tydzień przez pierwsze miesiące — nikt nie zarządza adopcją. Do tego hypercare zaplanowany jako etap projektu, nie gest dobrej woli: pierwsze 6–8 tygodni po starcie decyduje o nawykach na lata. Nic nie buduje zaufania do zmiany tak, jak naprawiony w trzy dni problem zgłoszony przez użytkownika.</p>
+          <p>Mapa tych grup, z osobnym komunikatem, osobnym szkoleniem i osobnym wsparciem dla każdej, zwraca się szybciej niż jakikolwiek inny element programu. Jedna komunikacja do wszystkich to gwarancja, że nie trafi do nikogo.</p>
 
-          <h2 id="s5">Sedno</h2>
-          <p>Technologię CLM można dziś kupić w kilka miesięcy. Nawyków organizacji nie da się kupić wcale — trzeba je zbudować. Dlatego przy planowaniu wdrożenia warto zadać jedno pytanie wcześniej niż „który system?": <strong>kto i jak przeprowadzi przez tę zmianę ludzi?</strong></p>
+          <h2 id="s5">Pilotuj na prawdziwych umowach, nie na przychylnych</h2>
+          <p>Pilot to nie demo dla entuzjastów. Zasady, które się sprawdzają: wybierz 2–3 zespoły albo rynki o <em>różnej</em> dojrzałości — w tym jeden sceptyczny, bo to on pokaże realne blokery. Przepuść przez system prawdziwe umowy, z prawdziwym terminem i prawdziwym klientem po drugiej stronie, a nie przykład z sandboxa. Zbieraj opór systematycznie: nie „czy podoba się Państwu narzędzie", tylko „w którym momencie chcieliście wyjść do maila i dlaczego".</p>
+          <p>Każdy problem znaleziony w pilocie jest wielokrotnie tańszy niż ten sam problem po starcie globalnym — bo naprawiacie go raz, w warunkach, gdzie nikt nie traci twarzy, zamiast trzydzieści razy w trybie awaryjnym.</p>
+
+          <h2 id="s6">Mierz adopcję, nie wdrożenie</h2>
+          <p>„System uruchomiony w terminie" to metryka projektu. Metryki zmiany wyglądają inaczej i warto je ustalić <em>przed</em> startem, bo po starcie nikt nie ma na to czasu:</p>
+          <ul>
+            <li><strong>Pokrycie:</strong> odsetek umów danego typu procesowanych w systemie (nie: liczba kont).</li>
+            <li><strong>Czas cyklu:</strong> od zgłoszenia potrzeby do podpisu — mierzony przed i po, bo to jedyna metryka, którą biznes naprawdę czuje.</li>
+            <li><strong>Obejścia:</strong> liczba umów, które trafiły do podpisu poza systemem. To najważniejsza liczba w całym zestawie i najczęściej nikt jej nie zbiera.</li>
+            <li><strong>Głębokość użycia:</strong> ile procent użytkowników korzysta z funkcji innych niż wgranie pliku.</li>
+            <li><strong>Sygnały wyprzedzające:</strong> spadek logowań, rosnąca liczba pytań o „stary sposób", cisza w kanale wsparcia — widać je wcześniej niż spadek pokrycia.</li>
+          </ul>
+          <p>Jeżeli tych liczb nikt nie ogląda co tydzień przez pierwsze trzy miesiące, nikt nie zarządza adopcją — niezależnie od tego, co mówi struktura projektu.</p>
+
+          <h2 id="s7">Hypercare: pierwsze osiem tygodni decyduje o nawykach na lata</h2>
+          <p>Hypercare to nie gest dobrej woli zespołu, tylko etap projektu z budżetem. W praktyce oznacza: dyżury z realnym czasem odpowiedzi w pierwszych tygodniach, szybką ścieżkę poprawek w workflow (dni, nie kwartały), widoczną komunikację zwrotną — „zgłosiliście, naprawiliśmy" — oraz obecność kogoś, kto ma mandat do podjęcia decyzji o wyjątku.</p>
+          <p>Nic nie buduje zaufania do zmiany tak jak bloker zgłoszony przez użytkownika i naprawiony w trzy dni. I nic nie zabija adopcji tak jak zgłoszenie, które przepadło.</p>
+
+          <h2 id="s8">Plan na pierwsze 90 dni</h2>
+          <p><strong>Dni 1–30:</strong> mapa interesariuszy z osobną ścieżką dla każdej grupy; ustalone metryki adopcji i sposób ich zbierania; wskazany właściciel procesu na okres po starcie — imiennie, nie „zespół".</p>
+          <p><strong>Dni 31–60:</strong> piloty na prawdziwych umowach; rejestr blokerów z terminami; materiały samoobsługowe i podpowiedzi w aplikacji zamiast jednego webinaru; sponsor komunikuje decyzję o wygaszeniu starej ścieżki.</p>
+          <p><strong>Dni 61–90:</strong> hypercare z dyżurami; cotygodniowy przegląd metryk z reakcją, nie tylko raportem; pierwsza korekta procesu na podstawie danych; wygaszenie obejść.</p>
+
+          <h2 id="s9">Sedno</h2>
+          <p>Technologię CLM można kupić w kilka miesięcy. Nawyków organizacji nie da się kupić wcale — trzeba je zbudować, a to jest praca innego rodzaju: powolna, konkretna i wykonywana po dniu startu. Dlatego przy planowaniu wdrożenia warto zadać jedno pytanie wcześniej niż „który system wybieramy?": <strong>kto i jak przeprowadzi przez tę zmianę ludzi — i po czym poznamy, że się udało?</strong></p>
 
         </div><!-- end lang-pl -->
 
         <div class="lang-en">
 
-          <p>A contract system holding 30% of your agreements is not a "partial success". It is a double cost: you pay for licences while maintaining the old, parallel workflow — emails, network drives, "final_final_v3" versions.</p>
+          <p>Let us start with a sentence that needs saying plainly, because it often gets confused: <strong>the technology is not the problem.</strong> Modern contract lifecycle management platforms are mature, can be configured in months, and do exactly what the product sheet promises. The problem is what happens — or rather does not happen — after go-live: <strong>people do not start working in them.</strong> That is the difference between "the system is broken" and "the system sits empty". The first is fixed with a ticket. The second is never fixed at all unless someone owns adoption.</p>
 
-          <h2 id="s1e">Four reasons why a CLM stays empty</h2>
-          <h3>1. CLM is treated as an IT project</h3>
-          <p>The schedule ends at go-live, the hypercare budget is zero, and the project team disbands a week after launch. From the user's perspective, that is when the implementation actually begins: first real contracts, first exceptions, first frustration.</p>
-          <h3>2. Lawyers are not early adopters — and they are right</h3>
-          <p>Legal manages risk for a living. A new tool is a new risk. Communication that sells "convenience" lands in a void. What works is showing how the system <strong>removes</strong> risk the lawyer already manages manually today.</p>
-          <h3>3. Nobody owns the process after go-live</h3>
-          <p>The vendor owns the platform, IT owns integrations, the law firm owns templates — and nobody owns keeping the contracting process <em>alive</em>. Without an owner, every first obstacle becomes an excuse to go back to email.</p>
+          <h2 id="s1e">Two definitions of success that never meet</h2>
+          <p>Every large CLM implementation runs on two parallel definitions of success, and usually nobody confronts them.</p>
+          <p><strong>The project definition:</strong> launched on time and budget, acceptance tests passed, integrations working, documentation handed over. This definition has an owner, a schedule and a status report.</p>
+          <p><strong>The business definition:</strong> contracts are actually drafted, negotiated and signed in the system; legal can see its own workload; the business knows where its contract is; clause risk is managed because the data exists at all. This definition very often <em>has no owner</em> — and that is the heart of the matter.</p>
+          <p>A project can close green with zero adoption. That is not a jab at project teams — it follows from how we scope work. If the project charter contains no adoption metric, adoption is not part of the project. It is a wish.</p>
+
+          <h2 id="s2e">Anatomy of an empty CLM: four mechanisms</h2>
+          <h3>1. CLM is run as an IT project when it is an operational change</h3>
+          <p>Symptom: the schedule ends at go-live, the hypercare budget is zero, the team disbands two weeks after launch. From IT's perspective the work is done — the system stands. From the lawyer's perspective it has just begun: they have received their first real contract to push through an unfamiliar tool, on a Friday, for an impatient internal client.</p>
+          <p>Warning sign: not a single line item in the plan sits after the go-live date. Fix: budget and staff 8–12 weeks of hypercare as a project phase before anyone signs the schedule.</p>
+
+          <h3>2. Lawyers are not early adopters — and they are professionally right</h3>
+          <p>This is not resistance for its own sake. Legal manages risk for a living and assesses a tool the way it assesses a counterparty: through what can go wrong and who will answer for it. The real questions are: is this template clause current after the latest regulatory change? Who is liable if the workflow lets a contract through without required approval? What happens when the system suggests the wrong version and the client signs it?</p>
+          <p>Communication that answers those questions with "convenience" and "time savings" lands in a void — it offers a benefit that ranks third for this audience. The inverse narrative works: show how the system <strong>removes</strong> risk the lawyer already manages manually, after hours, from memory and a spreadsheet. Automatic version control is not convenience — it is evidence in a dispute. A register of deviations from standard is not a report — it is protection against a claim of negligence.</p>
+
+          <h3>3. After launch, nobody owns the process</h3>
+          <p>Post go-live, accountability looks like this: the vendor owns the platform, IT owns integrations and access, the law firm or template team owns clause content, procurement owns the vendor contract. Nobody owns keeping the contracting process <em>alive and used</em>. This is not one person's negligence — it is a systemic gap in role design.</p>
+          <p>The consequence is predictable: the first exception the system does not handle has no addressee. The user waits a day, gets no answer, sends the contract by email — and that moment, not launch day, is when you lose the implementation. A workaround that works once becomes a habit, and a habit becomes the process.</p>
+
           <h3>4. Training is confused with enablement</h3>
-          <p>A two-hour webinar two weeks before launch is a box ticked, not people prepared. Enablement means self-service assets available at the moment of need, in-app guidance (digital adoption, e.g. WalkMe), post-launch drop-ins and an FAQ answering questions people actually ask.</p>
+          <p>A two-hour webinar two weeks before launch does not prepare people to work. It ticks a box. Knowledge from such training has the shelf life of dairy: by the time it is needed — the first real contract, three weeks later — it is gone.</p>
+          <p>Enablement is a different category: self-service assets available at the moment of need rather than in a calendar; in-app contextual guidance (digital adoption, e.g. WalkMe) that walks the user through the step while they are standing on it; short drop-ins in the first weeks; an FAQ built from questions people actually asked, not from questions someone anticipated on a slide.</p>
 
-          <h2 id="s2e">Start with a stakeholder map, not configuration</h2>
-          <p>Counsel negotiating framework agreements, procurement, a salesperson attaching NDAs and an executive assistant have four different definitions of "success". Each group needs its own path: different message, different training, different support.</p>
+          <h2 id="s3e">The economics of an empty system: why it is a double cost</h2>
+          <p>A contract system holding 30% of agreements is not a "partial success". It is a double cost — and it is worth showing the board in numbers, not adjectives.</p>
+          <p>First: you pay a full licence for functionality used in a fraction. Second: you maintain the old workflow in parallel — emails, drives, "final_final_v3" — with all of its time cost and risk. Third, and this is the most insidious: <strong>the data is incomplete, therefore useless.</strong> A repository holding 30% of contracts cannot answer "how many contracts contain clause X ahead of the regulatory change", because the answer will be false. The entire promise of contract analytics — usually the very thing that justified the business case — dies not at 0% adoption but precisely at 30%. Partial adoption is worse than none, because it manufactures an illusion of control.</p>
 
-          <h2 id="s3e">Pilot on real markets</h2>
-          <p>A pilot is not a demo for the friendly. Pick 2–3 markets or teams of varying maturity, push real contracts through the system and collect resistance before scaling. Every problem found in a pilot is ten times cheaper than the same problem after a global launch.</p>
+          <h2 id="s4e">Start with a stakeholder map, not configuration</h2>
+          <p>The "CLM user" does not exist. Five different people exist, with conflicting definitions of success, each needing a different path:</p>
+          <ul>
+            <li><strong>Counsel negotiating framework agreements</strong> — wants flexibility and fears the system will constrain it. Their adoption depends on whether exceptions can be handled in the tool.</li>
+            <li><strong>The volume lawyer</strong> — wants relief from repetitive NDAs. For them automation is a gift, not a threat. Your natural ally and first pilot.</li>
+            <li><strong>Procurement / sales</strong> — does not care about CLM, cares about closing. Add one click and they return to email. Shorten time-to-signature and they stay.</li>
+            <li><strong>The executive assistant attaching an NDA</strong> — uses the system rarely, so always starts from zero. Needs in-app guidance, not training from six months ago.</li>
+            <li><strong>CFO / General Counsel</strong> — does not use the system but decides its future from a dashboard. If the dashboard does not exist, or shows 30%, they will not defend the next budget.</li>
+          </ul>
+          <p>A map of these groups, each with its own message, training and support, pays back faster than any other element of the programme. One communication for everyone guarantees it reaches no one.</p>
 
-          <h2 id="s4e">Measure adoption, not deployment</h2>
-          <p>"System launched on time" is a project metric. Change metrics are different: share of contracts processed in the system, cycle time from draft to signature, number of process workarounds, user pulse-check results. If nobody reviews these weekly for the first months — nobody is managing adoption. And plan hypercare as a project phase, not a goodwill gesture: the first 6–8 weeks decide habits for years.</p>
+          <h2 id="s5e">Pilot on real contracts, not on the willing</h2>
+          <p>A pilot is not a demo for enthusiasts. What works: pick 2–3 teams or markets of <em>differing</em> maturity — including a sceptical one, because that is where the real blockers surface. Push real contracts through, with a real deadline and a real counterparty, not a sandbox example. Collect resistance systematically: not "do you like the tool" but "at which point did you want to escape to email, and why".</p>
+          <p>Every problem found in a pilot is many times cheaper than the same problem after global launch — you fix it once, in conditions where nobody loses face, instead of thirty times in emergency mode.</p>
 
-          <h2 id="s5e">The point</h2>
-          <p>CLM technology can be bought in months. Organizational habits cannot be bought at all — they must be built. So before asking "which system?", ask: <strong>who will lead people through this change, and how?</strong></p>
+          <h2 id="s6e">Measure adoption, not deployment</h2>
+          <p>"Launched on time" is a project metric. Change metrics look different, and they must be agreed <em>before</em> launch, because afterwards nobody has time:</p>
+          <ul>
+            <li><strong>Coverage:</strong> share of contracts of a given type processed in the system (not: number of accounts).</li>
+            <li><strong>Cycle time:</strong> from request to signature, measured before and after — the only metric the business actually feels.</li>
+            <li><strong>Workarounds:</strong> contracts signed outside the system. The single most important number in the set, and the one nobody collects.</li>
+            <li><strong>Depth of use:</strong> share of users doing anything beyond uploading a file.</li>
+            <li><strong>Leading signals:</strong> declining logins, rising questions about "the old way", silence in the support channel — visible before coverage drops.</li>
+          </ul>
+          <p>If nobody reviews these weekly for the first three months, nobody manages adoption — regardless of what the project structure claims.</p>
+
+          <h2 id="s7e">Hypercare: the first eight weeks decide habits for years</h2>
+          <p>Hypercare is not a team's goodwill gesture; it is a funded project phase. In practice: staffed support with a real response time in the early weeks, a fast lane for workflow fixes (days, not quarters), visible feedback — "you reported, we fixed" — and someone present with a mandate to decide on exceptions.</p>
+          <p>Nothing builds trust like a user-reported blocker fixed in three days. And nothing kills adoption like a report that vanished.</p>
+
+          <h2 id="s8e">A 90-day plan</h2>
+          <p><strong>Days 1–30:</strong> stakeholder map with a path per group; adoption metrics agreed and instrumented; a named process owner for the post-launch period — a person, not "the team".</p>
+          <p><strong>Days 31–60:</strong> pilots on real contracts; a blocker register with deadlines; self-service assets and in-app guidance instead of one webinar; the sponsor communicates the decision to retire the old path.</p>
+          <p><strong>Days 61–90:</strong> staffed hypercare; weekly metric review with action, not just reporting; first data-driven process correction; workarounds closed off.</p>
+
+          <h2 id="s9e">The point</h2>
+          <p>CLM technology can be bought in months. Organizational habits cannot be bought at all — they must be built, and that is a different kind of work: slow, specific, and performed after launch day. So before asking "which system?", ask: <strong>who will lead people through this change, how — and how will we know it worked?</strong></p>
 
         </div><!-- end lang-en -->
 
@@ -377,16 +456,24 @@
             <span class="lang-pl">Spis treści</span><span class="lang-en">Contents</span>
           </h4>
           <nav class="space-y-1 text-sm text-gray-500" id="toc">
-            <a href="#s1" class="toc-item block lang-pl">1. Cztery powody porażek</a>
-            <a href="#s1e" class="toc-item block lang-en">1. Four causes of failure</a>
-            <a href="#s2" class="toc-item block lang-pl">2. Mapa interesariuszy</a>
-            <a href="#s2e" class="toc-item block lang-en">2. Stakeholder map</a>
-            <a href="#s3" class="toc-item block lang-pl">3. Piloty rynkowe</a>
-            <a href="#s3e" class="toc-item block lang-en">3. Market pilots</a>
-            <a href="#s4" class="toc-item block lang-pl">4. Mierzenie adopcji</a>
-            <a href="#s4e" class="toc-item block lang-en">4. Measuring adoption</a>
-            <a href="#s5" class="toc-item block lang-pl">5. Sedno</a>
-            <a href="#s5e" class="toc-item block lang-en">5. The point</a>
+            <a href="#s1" class="toc-item block lang-pl">1. Dwie definicje sukcesu</a>
+            <a href="#s1e" class="toc-item block lang-en">1. Two definitions of success</a>
+            <a href="#s2" class="toc-item block lang-pl">2. Anatomia pustego CLM</a>
+            <a href="#s2e" class="toc-item block lang-en">2. Anatomy of an empty CLM</a>
+            <a href="#s3" class="toc-item block lang-pl">3. Ekonomia pustego systemu</a>
+            <a href="#s3e" class="toc-item block lang-en">3. Economics of an empty system</a>
+            <a href="#s4" class="toc-item block lang-pl">4. Mapa interesariuszy</a>
+            <a href="#s4e" class="toc-item block lang-en">4. Stakeholder map</a>
+            <a href="#s5" class="toc-item block lang-pl">5. Piloty na prawdziwych umowach</a>
+            <a href="#s5e" class="toc-item block lang-en">5. Pilot on real contracts</a>
+            <a href="#s6" class="toc-item block lang-pl">6. Mierz adopcję</a>
+            <a href="#s6e" class="toc-item block lang-en">6. Measure adoption</a>
+            <a href="#s7" class="toc-item block lang-pl">7. Hypercare</a>
+            <a href="#s7e" class="toc-item block lang-en">7. Hypercare</a>
+            <a href="#s8" class="toc-item block lang-pl">8. Plan na 90 dni</a>
+            <a href="#s8e" class="toc-item block lang-en">8. A 90-day plan</a>
+            <a href="#s9" class="toc-item block lang-pl">9. Sedno</a>
+            <a href="#s9e" class="toc-item block lang-en">9. The point</a>
           </nav>
         </div>
 

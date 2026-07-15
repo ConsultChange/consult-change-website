@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <!-- Consult Change — logo poziome. Font: Plus Jakarta Sans ExtraBold (w pakiecie /fonts) -->
+  <image href="consultchange-icon-color.png" x="0" y="10" width="180" height="180"/>
+  <text x="210" y="88" font-family="Plus Jakarta Sans" font-weight="800" font-size="72" fill="#FFFFFF">consult</text>
+  <text x="210" y="162" font-family="Plus Jakarta Sans" font-weight="800" font-size="72" fill="#FFFFFF">change</text>
+</svg>
