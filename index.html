@@ -80,8 +80,10 @@
   <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
 
     <a href="index.html" class="flex items-center gap-2 group shrink-0">
-      <img src="apple-touch-icon.png" alt="CC" class="h-9 w-9 transition-transform group-hover:scale-105">
-      <img src="Consult_change_White_2x_sharp_clean.png" alt="Consult Change" class="h-7 w-auto hidden sm:block">
+      <img src="logo-icon.png" alt="Consult Change" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <span class="hidden sm:flex flex-col leading-none font-display font-extrabold tracking-tight text-lg">
+        <span class="text-deep-blue">consult</span><span class="text-cc-purple">change</span>
+      </span>
     </a>
 
     <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
@@ -109,9 +111,33 @@
       <a href="#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
         <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
       </a>
+      <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center text-deep-blue rounded-xl border border-gray-200 bg-white" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
+
+<div id="mobile-menu" class="hidden md:hidden fixed top-[61px] inset-x-0 z-40 bg-white border-b border-gray-100 shadow-xl">
+  <div class="px-6 py-5 flex flex-col gap-4 font-semibold text-gray-700">
+
+      <a href="#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="#case-studies" class="hover:text-cc-purple transition">Case studies</a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="hover:text-cc-purple transition">Coaching</a>
+      <a href="blog.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-pen-nib text-cc-purple text-xs"></i> Blog
+      </a>
+    <a href="#contact" class="mt-1 px-5 py-3 bg-deep-blue text-white rounded-xl text-sm font-bold text-center">
+      <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+    </a>
+  </div>
+</div>
 
 <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
 <header class="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden bg-deep-blue text-white">
@@ -122,7 +148,7 @@
 
   <div class="container mx-auto px-5 text-center relative z-10">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-honey text-xs font-bold mb-8 uppercase tracking-widest a1">
-      Legal Ops · Industrial Sales · Change Mgmt
+      <span class="text-white">Consult Change</span><span class="text-white/40 mx-1">·</span> Legal Ops · Industrial Sales · Change Mgmt
     </div>
 
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight a2">
@@ -707,6 +733,12 @@
   document.addEventListener('DOMContentLoaded', () => {
     setLang(localStorage.getItem('cc-lang') || 'pl');
   });
+</script>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');if(m)m.classList.toggle('hidden');}
+document.addEventListener('click',function(e){var m=document.getElementById('mobile-menu');if(!m||m.classList.contains('hidden'))return;
+if(e.target.closest('#mobile-menu a')){m.classList.add('hidden');return;}
+if(!m.contains(e.target)&&!e.target.closest('[onclick*="toggleMobileMenu"]'))m.classList.add('hidden');});
 </script>
 </body>
 </html>
