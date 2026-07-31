@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polityka prywatności — Consult Change</title>
+  <meta name="description" content="Polityka prywatności Consult Change: jakie dane zbieramy, w jakim celu i jak wycofać zgodę na analitykę.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { honey:'#F4C362', 'cc-blue':'#BFE6F2', 'cc-purple':'#C985F0', 'deep-blue':'#0F172A' },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html[lang='en'] .lang-pl { display: none !important; }
+    html[lang='pl'] .lang-en { display: none !important; }
+    .text-gradient { background: linear-gradient(135deg, #C985F0 0%, #F4C362 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .12; pointer-events: none; }
+    .nav-scrolled { box-shadow: 0 4px 24px -4px rgba(15,23,42,.08); }
+    .card { transition: transform .3s ease, box-shadow .3s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(15,23,42,.12); }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    .a1 { animation: fadeUp .7s .05s ease both; }
+    .a2 { animation: fadeUp .7s .2s ease both; }
+    .a3 { animation: fadeUp .7s .35s ease both; }
+  </style>
+  <!-- Consent Mode v2 — domyślnie brak zgody; musi wykonać się PRZED gtag.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('cc-consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCDZMH1RFK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RCDZMH1RFK');
+  </script>
+  <script src="analytics.js" defer></script>
+  <script src="consent.js" defer></script>
+</head>
+<body class="text-gray-900 bg-white antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-5 md:px-10 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <img src="logo-icon.png" alt="Consult Change" class="h-9 w-9 transition-transform group-hover:scale-105">
+      <span class="hidden sm:flex flex-col leading-none font-display font-extrabold tracking-tight text-lg">
+        <span class="text-deep-blue">consult</span><span class="text-cc-purple">change</span>
+      </span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-7 font-semibold text-sm text-gray-600">
+      <a href="index.html#services" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Oferta</span><span class="lang-en">Services</span>
+      </a>
+      <a href="index.html#case-studies" class="hover:text-cc-purple transition">Case studies</a>
+      <a href="ai_change.html" class="hover:text-cc-purple transition flex items-center gap-1">
+        <i class="fa-solid fa-sparkles text-honey text-xs"></i> AI
+      </a>
+      <a href="meet_us.html" class="hover:text-cc-purple transition">
+        <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+      </a>
+      <a href="coaching.html" class="text-deep-blue font-extrabold border-b-2 border-honey">Coaching</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex bg-gray-100 rounded-full p-1 border border-gray-200">
+        <button onclick="setLang('pl')" id="btn-pl" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">PL</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all">EN</button>
+      </div>
+      <a href="index.html#contact" class="hidden md:inline-block px-5 py-2.5 bg-deep-blue text-white rounded-xl text-sm font-bold hover:bg-honey hover:text-deep-blue transition shadow-sm">
+        <span class="lang-pl">Kontakt</span><span class="lang-en">Contact</span>
+      </a>
+      <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center text-deep-blue rounded-xl border border-gray-200 bg-white" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+<!-- ══════════ POLITYKA PRYWATNOŚCI ══════════ -->
+<section class="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
+  <div class="container mx-auto px-5 max-w-3xl">
+    <div class="inline-flex items-center gap-2 bg-honey/15 border border-honey/30 rounded-full px-4 py-1.5 mb-6">
+      <i class="fa-solid fa-shield-halved text-honey text-xs"></i>
+      <span class="text-xs font-bold text-deep-blue tracking-wide">Consult Change</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-display font-bold text-deep-blue leading-tight mb-4">
+      <span class="lang-pl">Polityka prywatności</span><span class="lang-en">Privacy policy</span>
+    </h1>
+    <p class="text-lg text-gray-600 leading-relaxed">
+      <span class="lang-pl">Ta strona zbiera możliwie najmniej danych. Nie tworzymy profili użytkowników, nie prowadzimy reklamy i nie sprzedajemy nikomu informacji o Tobie. Interesuje nas jedno: które teksty są przydatne.</span>
+      <span class="lang-en">This site collects as little data as possible. We build no user profiles, run no advertising and sell information about you to no one. We care about one thing: which texts are useful.</span>
+    </p>
+    <p class="text-sm text-gray-400 mt-5">
+      <span class="lang-pl">Ostatnia aktualizacja: 30 lipca 2026</span><span class="lang-en">Last updated: 30 July 2026</span>
+    </p>
+  </div>
+</section>
+
+<section class="py-14 bg-white">
+  <div class="container mx-auto px-5 max-w-3xl prose-cc">
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-2 mb-4">
+      <span class="lang-pl">1. Kto jest administratorem danych</span><span class="lang-en">1. Who is the data controller</span>
+    </h2>
+    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-8">
+      <p class="text-gray-700 leading-relaxed mb-2"><strong>Consult Change Patryk Markowski</strong></p>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        ul. Grzeni 15a, 80-209 Tuchom<br>
+        NIP 6692479908 &nbsp;·&nbsp; REGON 364590212<br>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-cc-purple hover:underline">patryk.markowski@consultchange.pl</a>
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">2. Jakie dane zbieramy</span><span class="lang-en">2. What data we collect</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      <span class="lang-pl"><strong>Statystyki odwiedzin (tylko po Twojej zgodzie).</strong> Korzystamy z Google Analytics 4, aby wiedzieć, ile razy wyświetlono poszczególne podstrony, jak głęboko czytane są artykuły i z jakich źródeł trafiają na nie odwiedzający. Mierzymy zachowanie wobec treści, nie osobę: nie zapisujemy Twojego imienia, adresu e-mail ani numeru IP w formie pozwalającej Cię zidentyfikować, nie łączymy tych danych z żadną inną bazą i nie używamy ich do reklamy.</span>
+      <span class="lang-en"><strong>Visit statistics (only with your consent).</strong> We use Google Analytics 4 to know how many times each page was viewed, how deeply articles are read, and which sources visitors arrive from. We measure behaviour towards content, not the person: we do not store your name, e-mail address or IP in a form that identifies you, we do not combine this data with any other database, and we do not use it for advertising.</span>
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      <span class="lang-pl"><strong>Korespondencja.</strong> Jeśli napiszesz do nas e-mailem, przetwarzamy dane, które sam podasz w wiadomości — po to, żeby na nią odpowiedzieć.</span>
+      <span class="lang-en"><strong>Correspondence.</strong> If you e-mail us, we process the data you provide in your message — in order to reply to it.</span>
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl"><strong>Czego nie robimy.</strong> Nie prowadzimy remarketingu, nie stosujemy pikseli reklamowych, nie profilujemy odwiedzających, nie podejmujemy zautomatyzowanych decyzji dotyczących osób i nie przekazujemy danych brokerom danych.</span>
+      <span class="lang-en"><strong>What we do not do.</strong> No remarketing, no advertising pixels, no visitor profiling, no automated decision-making about individuals, and no sharing with data brokers.</span>
+    </p>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">3. Podstawa prawna i cel</span><span class="lang-en">3. Legal basis and purpose</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl">Statystyki odwiedzin przetwarzamy na podstawie <strong>Twojej zgody</strong> (art. 6 ust. 1 lit. a RODO), wyrażonej przez kliknięcie „Akceptuję" w banerze. Celem jest ocena, które treści są wartościowe, i rozwijanie tych, które faktycznie odpowiadają na pytania czytelników. Korespondencję przetwarzamy w celu udzielenia odpowiedzi — na podstawie naszego prawnie uzasadnionego interesu (art. 6 ust. 1 lit. f RODO), a jeśli rozmowa dotyczy współpracy, w celu jej zawarcia lub wykonania (art. 6 ust. 1 lit. b RODO).</span>
+      <span class="lang-en">Visit statistics are processed on the basis of <strong>your consent</strong> (Art. 6(1)(a) GDPR), given by clicking "Accept" in the banner. The purpose is to assess which content is valuable and develop what genuinely answers readers' questions. Correspondence is processed to provide a reply — on the basis of our legitimate interest (Art. 6(1)(f) GDPR) — and, where the conversation concerns cooperation, to conclude or perform it (Art. 6(1)(b) GDPR).</span>
+    </p>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">4. Cookies i jak wycofać zgodę</span><span class="lang-en">4. Cookies and withdrawing consent</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      <span class="lang-pl">Do momentu wyrażenia zgody <strong>nie zapisujemy żadnych plików cookie służących analityce</strong>. Po zgodzie Google Analytics zapisuje pliki <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">_ga</code> oraz <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">_ga_*</code>, które pozwalają rozpoznać, że kolejna odsłona pochodzi z tej samej przeglądarki. Niezależnie od zgody przechowujemy w pamięci przeglądarki dwie techniczne informacje: wybrany język strony oraz Twoją decyzję dotyczącą analityki — żeby nie pytać o nią przy każdej wizycie.</span>
+      <span class="lang-en">Until consent is given, <strong>no analytics cookies are stored</strong>. After consent, Google Analytics stores <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">_ga</code> and <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">_ga_*</code> files, which allow recognising that a subsequent view comes from the same browser. Regardless of consent, we keep two technical items in your browser storage: the selected site language and your analytics decision — so that we do not ask again on every visit.</span>
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl"><strong>Wycofanie zgody:</strong> wyczyść dane tej witryny w ustawieniach przeglądarki (sekcja z cookies i danymi stron). Baner pojawi się ponownie i będziesz mógł wybrać „Tylko niezbędne". Możesz też zablokować cookies analityczne w samej przeglądarce — strona działa wtedy normalnie.</span>
+      <span class="lang-en"><strong>To withdraw consent:</strong> clear this site's data in your browser settings (the cookies and site data section). The banner will reappear and you can choose "Essential only". You may also block analytics cookies in the browser itself — the site works normally either way.</span>
+    </p>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">5. Komu przekazujemy dane</span><span class="lang-en">5. Who receives the data</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl">Dostawcą narzędzia analitycznego jest Google (Google Ireland Limited, a dla części operacji Google LLC w USA). Oznacza to, że dane statystyczne mogą być przetwarzane poza Europejskim Obszarem Gospodarczym; Google deklaruje uczestnictwo w unijno-amerykańskich ramach ochrony danych (Data Privacy Framework) oraz stosowanie standardowych klauzul umownych. Hosting strony realizuje nasz dostawca infrastruktury. Poza tym nie udostępniamy danych nikomu — z wyjątkiem sytuacji, w których wymagają tego przepisy prawa.</span>
+      <span class="lang-en">The analytics provider is Google (Google Ireland Limited and, for some operations, Google LLC in the USA). This means statistical data may be processed outside the European Economic Area; Google declares participation in the EU–US Data Privacy Framework and the use of standard contractual clauses. Website hosting is provided by our infrastructure supplier. Beyond that we share data with no one — except where required by law.</span>
+    </p>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">6. Jak długo przechowujemy dane</span><span class="lang-en">6. How long we keep data</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl">Dane statystyczne w Google Analytics przechowujemy przez <strong>2 miesiące</strong> — najkrótszy okres, jaki narzędzie dopuszcza. Zbiorcze podsumowania (liczba odsłon w miesiącu) mogą pozostać dłużej, ale nie zawierają żadnych informacji o pojedynczych osobach. Korespondencję e-mailową przechowujemy tak długo, jak jest potrzebna do obsługi sprawy, a następnie przez okres wymagany przepisami rachunkowymi i podatkowymi, jeśli dotyczyła współpracy.</span>
+      <span class="lang-en">Statistical data in Google Analytics is retained for <strong>2 months</strong> — the shortest period the tool allows. Aggregate summaries (monthly view counts) may remain longer but contain no information about individuals. E-mail correspondence is kept as long as needed to handle the matter, and thereafter for the period required by accounting and tax rules where it concerned cooperation.</span>
+    </p>
+
+    <h2 class="text-2xl font-display font-bold text-deep-blue mt-10 mb-4">
+      <span class="lang-pl">7. Twoje prawa</span><span class="lang-en">7. Your rights</span>
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      <span class="lang-pl">Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, do przenoszenia danych, do sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie oraz do wycofania zgody w każdej chwili — bez wpływu na zgodność z prawem przetwarzania dokonanego wcześniej.</span>
+      <span class="lang-en">You have the right to access your data, to rectify, erase or restrict its processing, to data portability, to object to processing based on legitimate interest, and to withdraw consent at any time — without affecting the lawfulness of processing carried out beforehand.</span>
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+      <span class="lang-pl">W sprawach dotyczących danych napisz na <a href="mailto:patryk.markowski@consultchange.pl" class="text-cc-purple hover:underline">patryk.markowski@consultchange.pl</a>. Masz również prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</span>
+      <span class="lang-en">For data-related matters write to <a href="mailto:patryk.markowski@consultchange.pl" class="text-cc-purple hover:underline">patryk.markowski@consultchange.pl</a>. You also have the right to lodge a complaint with the President of the Polish Personal Data Protection Office (ul. Stawki 2, 00-193 Warsaw).</span>
+    </p>
+
+    <div class="mt-12 bg-deep-blue rounded-3xl p-8 text-center">
+      <p class="text-gray-300 text-sm leading-relaxed mb-5">
+        <span class="lang-pl">Masz pytanie o to, jak działa ta strona albo o współpracę? Napisz wprost.</span>
+        <span class="lang-en">A question about how this site works, or about working together? Just write.</span>
+      </p>
+      <a href="mailto:patryk.markowski@consultchange.pl" class="inline-block bg-honey text-deep-blue font-bold px-7 py-3 rounded-full hover:opacity-90 transition text-sm">
+        <span class="lang-pl">Napisz do nas</span><span class="lang-en">Get in touch</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="bg-[#080e1a] text-white py-10 border-t border-white/5">
+  <div class="container mx-auto px-5 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="apple-touch-icon.png" alt="CC" class="h-8 w-8">
+        <span class="text-gray-400 text-sm">&copy; 2026 Consult Change.</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Strona główna</span><span class="lang-en">Home</span>
+        </a>
+        <a href="meet_us.html" class="text-gray-500 hover:text-white text-sm transition">
+          <span class="lang-pl">Zespół</span><span class="lang-en">Team</span>
+        </a>
+        <a href="ai_change.html" class="text-gray-500 hover:text-white text-sm transition">AI</a>
+      </div>
+      <div class="flex gap-4 text-xl">
+        <a href="https://www.linkedin.com/in/patrykmarkowski/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:patryk.markowski@consultchange.pl" class="text-gray-500 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-5 max-w-5xl mt-6 pt-5 border-t border-white/5 text-center">
+    <a href="polityka-prywatnosci.html" class="text-gray-600 hover:text-gray-400 text-xs transition">
+      <span class="lang-pl">Polityka prywatności</span><span class="lang-en">Privacy policy</span>
+    </a>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('cc-lang', lang);
+    const btnPl = document.getElementById('btn-pl');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'pl') {
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    } else {
+      btnEn.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-deep-blue';
+      btnPl.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold transition-all text-gray-500';
+    }
+  }
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 10);
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang(localStorage.getItem('cc-lang') || 'pl');
+  });
+</script>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');if(m)m.classList.toggle('hidden');}
+document.addEventListener('click',function(e){var m=document.getElementById('mobile-menu');if(!m||m.classList.contains('hidden'))return;
+if(e.target.closest('#mobile-menu a')){m.classList.add('hidden');return;}
+if(!m.contains(e.target)&&!e.target.closest('[onclick*="toggleMobileMenu"]'))m.classList.add('hidden');});
+</script>
+</body>
+</html>
