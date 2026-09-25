@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b2948">
+<title>The Change Minefield — Consult Change</title>
+<link rel="icon" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b2948;--navy2:#123a63;--line:#2d5680;--sky:#62bfff;--accent:#1f6fd1;--ink:#10243a;--muted:#5b6f83;--paper:#f4f7fa;--bd:#d6dfe8;--mine:#c63c32}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 "DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:"Plus Jakarta Sans","DM Sans",system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--accent)}
+[data-lang-en]{display:none}
+html[lang=en] [data-lang-pl]{display:none}
+html[lang=en] [data-lang-en]{display:revert}
+.top{background:var(--navy);color:#fff}
+.bar{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px}
+.bar a.home{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700}
+.bar img{width:32px;height:32px;border-radius:8px}
+.lang{margin-left:auto;display:inline-flex;border:1px solid #ffffff44;border-radius:8px;overflow:hidden}
+.lang button{border:0;background:transparent;color:#fff;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+.lang button.on{background:var(--accent)}
+.hero{max-width:1080px;margin:0 auto;padding:44px 20px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);font-weight:700;margin:0 0 10px}
+.hero h1{font-size:clamp(34px,5vw,54px);font-weight:800}
+.hero p.lead{font-size:19px;color:#d6e4f0;margin:16px 0 0;max-width:36em}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.facts span{border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:14px;color:#cfe1f0}
+.mine{width:100%;max-width:280px;justify-self:center;filter:drop-shadow(0 0 34px #ff5a2c88)}
+.mine .b{fill:#141414;stroke:#141414;stroke-width:5}.mine .s{fill:#fff6}
+main{max-width:1080px;margin:-28px auto 0;padding:0 20px 40px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px #0b294812}
+.card .n{width:34px;height:34px;border-radius:10px;background:#eaf3ff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:"Plus Jakarta Sans",sans-serif}
+.card h2{font-size:20px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;margin-top:auto;padding:12px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{background:#185cae}
+.btn.ghost{background:#fff;color:var(--accent);border:1.5px solid var(--accent)}
+.join{display:flex;gap:8px;margin-top:auto}
+.join input{flex:1;min-width:0;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;font:inherit;text-transform:uppercase;letter-spacing:.12em}
+.join select{padding:11px 8px;border:1px solid var(--bd);border-radius:10px;font:inherit}
+section.more{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.box{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:22px}
+.box h3{font-size:17px;margin-bottom:10px}
+.box ol,.box ul{margin:0;padding-left:20px}.box li{margin:6px 0}
+.box code{background:#eef3f8;border-radius:5px;padding:1px 6px;font-size:14px;word-break:break-all}
+footer{max-width:1080px;margin:0 auto;padding:10px 20px 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.mine{display:none}.cards,section.more{grid-template-columns:1fr}main{margin-top:0;padding-top:20px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="home" href="../index.html"><img src="../apple-touch-icon.png" alt="" onerror="this.remove()">Consult Change</a>
+    <div class="lang" role="group" aria-label="Language"><button data-set="pl" class="on">PL</button><button data-set="en">EN</button></div>
+  </div>
+  <div class="hero">
+    <div>
+      <p class="eyebrow">From manager to change leader</p>
+      <h1>The Change Minefield</h1>
+      <p class="lead" data-lang-pl>Gra warsztatowa dla liderów: stoły prowadzą wdrożenie NOVA, podejmują trzy decyzje, ćwiczą trudną rozmowę i mierzą się z minami, które wybuchają w trakcie gry. Wyniki widać na żywo na wspólnym ekranie.</p>
+      <p class="lead" data-lang-en>A workshop game for leaders: each table leads the NOVA rollout, makes three decisions, practises a difficult conversation and faces mines that go off during play. Results appear live on the shared screen.</p>
+      <div class="facts"><span data-lang-pl>90 minut</span><span data-lang-en>90 minutes</span><span data-lang-pl>6–10 stołów</span><span data-lang-en>6–10 tables</span><span data-lang-pl>3 rundy · 3 miny</span><span data-lang-en>3 rounds · 3 mines</span><span data-lang-pl>Telefon kapitana, bez logowania</span><span data-lang-en>Captain’s phone, no login</span></div>
+    </div>
+    <svg class="mine" viewBox="0 0 100 100" aria-hidden="true"><g class="b"><line x1="76" y1="50" x2="94" y2="50"/><line x1="68.4" y1="68.4" x2="81.1" y2="81.1"/><line x1="50" y1="76" x2="50" y2="94"/><line x1="31.6" y1="68.4" x2="18.9" y2="81.1"/><line x1="24" y1="50" x2="6" y2="50"/><line x1="31.6" y1="31.6" x2="18.9" y2="18.9"/><line x1="50" y1="24" x2="50" y2="6"/><line x1="68.4" y1="31.6" x2="81.1" y2="18.9"/><circle cx="94" cy="50" r="4"/><circle cx="81.1" cy="81.1" r="4"/><circle cx="50" cy="94" r="4"/><circle cx="18.9" cy="81.1" r="4"/><circle cx="6" cy="50" r="4"/><circle cx="18.9" cy="18.9" r="4"/><circle cx="50" cy="6" r="4"/><circle cx="81.1" cy="18.9" r="4"/><circle cx="50" cy="50" r="28"/></g><circle class="s" cx="40" cy="40" r="6"/></svg>
+  </div>
+</header>
+
+<main>
+  <div class="cards">
+    <div class="card">
+      <span class="n">1</span>
+      <h2 data-lang-pl>Poprowadź warsztat</h2><h2 data-lang-en>Run the workshop</h2>
+      <p data-lang-pl>Konsola prowadzącego na laptopie. Z niej otworzysz ekran wspólny na projektor, kody QR dla stołów i poprowadzisz grę krok po kroku.</p>
+      <p data-lang-en>The facilitator console on your laptop. From there you open the shared screen for the projector, the QR codes for tables, and run the game step by step.</p>
+      <a class="btn" href="app.html?host"><span data-lang-pl>Otwórz konsolę prowadzącego</span><span data-lang-en>Open facilitator console</span> →</a>
+    </div>
+    <div class="card">
+      <span class="n">2</span>
+      <h2 data-lang-pl>Przetestuj na jednym ekranie</h2><h2 data-lang-en>Try it on one screen</h2>
+      <p data-lang-pl>Konsola, ekran wspólny i trzy telefony na jednej stronie. Działa w tej karcie przeglądarki, niczego nie wysyła do sieci. Idealne do próby.</p>
+      <p data-lang-en>Console, shared screen and three phones on one page. It runs inside this browser tab and sends nothing to the network. Ideal for rehearsal.</p>
+      <a class="btn ghost" href="test.html"><span data-lang-pl>Otwórz tryb testowy</span><span data-lang-en>Open test mode</span> →</a>
+    </div>
+    <div class="card">
+      <span class="n">3</span>
+      <h2 data-lang-pl>Dołącz jako stół</h2><h2 data-lang-en>Join as a table</h2>
+      <p data-lang-pl>Najprościej: zeskanuj kod QR z ekranu. Jeśli się nie da, wpisz kod pokoju podany przez prowadzących.</p>
+      <p data-lang-en>Easiest: scan the QR code on the screen. If you can’t, enter the room code the facilitators give you.</p>
+      <form class="join" id="join" autocomplete="off">
+        <input id="room" maxlength="8" placeholder="KOD / CODE" aria-label="Room code" required>
+        <select id="table" aria-label="Table"><option value="">#</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+        <button class="btn" type="submit">OK</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="more">
+    <div class="box">
+      <h3 data-lang-pl>Przed wydarzeniem</h3><h3 data-lang-en>Before the event</h3>
+      <ol data-lang-pl>
+        <li>Przejdź całą grę w <a href="test.html">trybie testowym</a> (przycisk „Rehearsal: fill demo decisions” uzupełnia decyzje stołów).</li>
+        <li>Na miejscu, w sieci Wi-Fi sali, otwórz konsolę i zeskanuj kod QR 2–3 telefonami (Wi-Fi i dane komórkowe). Kropka musi być zielona: „Live”.</li>
+        <li>Jeśli sieć blokuje połączenie: konsola → Settings → inny relay (EMQX lub Mosquitto) i ponownie pokaż QR.</li>
+        <li>Tuż przed startem: <b>New game</b>. Wydrukuj karty stołów: <b>Join / QR → Print table cards</b>.</li>
+      </ol>
+      <ol data-lang-en>
+        <li>Play the whole game in <a href="test.html">test mode</a> (the “Rehearsal: fill demo decisions” button fills in the tables).</li>
+        <li>At the venue, on its Wi-Fi, open the console and scan the QR code with 2–3 phones (Wi-Fi and mobile data). The dot must be green: “Live”.</li>
+        <li>If the network blocks it: console → Settings → another relay (EMQX or Mosquitto), then show the QR code again.</li>
+        <li>Just before you start: <b>New game</b>. Print table cards: <b>Join / QR → Print table cards</b>.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h3 data-lang-pl>Jak to działa</h3><h3 data-lang-en>How it works</h3>
+      <ul data-lang-pl>
+        <li>Konsola: <code>consultchange.pl/minefield/app.html?host</code></li>
+        <li>Uczestnicy dołączają przez QR, bez kont i instalacji. Decyzję wysyła telefon kapitana stołu.</li>
+        <li>Urządzenia łączą się przez publiczny serwer pośredniczący. Przesyłane są tylko fikcyjne litery gry i krótkie uzasadnienia — prosimy nie wpisywać danych firm ani osób.</li>
+        <li>Awaryjnie: papierowe paski i wpis ręczny w konsoli („Edit”). Ekran wspólny działa dalej z laptopa.</li>
+      </ul>
+      <ul data-lang-en>
+        <li>Console: <code>consultchange.pl/minefield/app.html?host</code></li>
+        <li>Participants join via QR, no accounts or installs. The table captain’s phone submits the decision.</li>
+        <li>Devices connect through a public relay server. Only fictional game letters and short reasoning pass through it — please don’t enter company or personal data.</li>
+        <li>Fallback: paper strips and manual entry in the console (“Edit”). The shared screen keeps working from the laptop.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer><span>© Consult Change · <a href="../index.html">consultchange.pl</a></span><span data-lang-pl>NOVA, liczby i punkty w grze są fikcyjne.</span><span data-lang-en>NOVA, its figures and the game points are fictional.</span></footer>
+
+<script>
+(function () {
+  var KEY = 'cm_lang';
+  function get() { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } }
+  function set(l) { document.documentElement.lang = l; document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.set === l); }); try { localStorage.setItem(KEY, JSON.stringify(l)); } catch (e) {} }
+  set(get() === 'en' ? 'en' : 'pl');
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+  document.getElementById('join').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var room = document.getElementById('room').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    var t = document.getElementById('table').value;
+    if (!room) return;
+    location.href = 'app.html?room=' + encodeURIComponent(room) + (t ? '&t=' + t : '') + '&lang=' + document.documentElement.lang;
+  });
+})();
+</script>
+</body>
+</html>

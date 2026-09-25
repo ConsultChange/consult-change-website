@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tryb testowy · The Change Minefield</title>
+<link rel="icon" href="../apple-touch-icon.png">
+<style>
+:root{--navy:#0b2948;--line:#2d5680;--sky:#62bfff;--accent:#1f6fd1}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#061a2f;color:#fff;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.bar{height:48px;display:flex;align-items:center;gap:14px;padding:0 14px;background:var(--navy);border-bottom:1px solid var(--line)}
+.bar b{font-size:15px}.bar .tag{background:#ffd76a;color:#3a2a00;border-radius:99px;padding:2px 10px;font-weight:700;font-size:12px}
+.bar .hint{color:#b8cde0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar a,.bar button{color:#fff;background:#ffffff14;border:1px solid #ffffff33;border-radius:8px;padding:5px 10px;text-decoration:none;font:inherit;cursor:pointer}
+.grid{height:calc(100vh - 48px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:10px;padding:10px}
+.pane{position:relative;background:#0b2948;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.pane>.lab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);padding:6px 10px;border-bottom:1px solid var(--line);flex:none}
+.pane iframe{border:0;width:100%;flex:1;background:#fff}
+.right{display:grid;grid-template-rows:minmax(0,1fr) minmax(0,1.15fr);gap:10px;min-height:0}
+.fit{flex:1;position:relative;overflow:hidden}
+.fit iframe{position:absolute;top:0;left:0;transform-origin:0 0;border:0;background:#0b2948}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;min-height:0}
+@media (max-width:1000px){.grid{grid-template-columns:1fr;height:auto}.pane.console{height:80vh}.right{grid-template-rows:auto auto}.fit{height:50vh}.phones{grid-template-columns:1fr}.phones .fit{height:80vh}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>The Change Minefield</b><span class="tag" id="tag">TRYB TESTOWY</span>
+  <span class="hint" id="hint"></span>
+  <button id="again"></button><a href="./" id="back"></a>
+</div>
+<div class="grid">
+  <div class="pane console"><div class="lab" id="l1"></div><iframe id="host" title="Console"></iframe></div>
+  <div class="right">
+    <div class="pane"><div class="lab" id="l2"></div><div class="fit" data-w="1280" data-h="720"><iframe id="screen" title="Shared screen"></iframe></div></div>
+    <div class="phones">
+      <div class="pane"><div class="lab" id="l3"></div><div class="fit" data-w="390" data-h="780"><iframe id="p1" title="Table 1"></iframe></div></div>
+      <div class="pane"><div class="lab" id="l4"></div><div class="fit" data-w="390" data-h="780"><iframe id="p2" title="Table 2"></iframe></div></div>
+      <div class="pane"><div class="lab" id="l5"></div><div class="fit" data-w="390" data-h="780"><iframe id="p3" title="Table 3"></iframe></div></div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var lang = 'pl';
+  try { lang = JSON.parse(localStorage.getItem('cm_lang')) === 'en' ? 'en' : 'pl'; } catch (e) {}
+  var T = {
+    pl: { tag: 'TRYB TESTOWY', hint: 'Wszystko działa w tej karcie, bez wysyłania danych do sieci. Stoły 1–3 to telefony obok; pozostałe uzupełnisz przyciskiem „Rehearsal: fill demo decisions” w konsoli.', again: 'Nowa sesja testowa', back: '← Strona gry', l1: 'Konsola prowadzącego (laptop)', l2: 'Ekran wspólny (projektor)', ph: 'Telefon · stół ' },
+    en: { tag: 'TEST MODE', hint: 'Everything runs in this tab and nothing is sent to the network. Tables 1–3 are the phones on the right; fill the others with “Rehearsal: fill demo decisions” in the console.', again: 'New test session', back: '← Game page', l1: 'Facilitator console (laptop)', l2: 'Shared screen (projector)', ph: 'Phone · table ' }
+  }[lang];
+  document.documentElement.lang = lang;
+  ['tag', 'hint', 'again', 'back', 'l1', 'l2'].forEach(function (k) { document.getElementById(k).textContent = T[k]; });
+  ['l3', 'l4', 'l5'].forEach(function (k, i) { document.getElementById(k).textContent = T.ph + (i + 1); });
+  var a = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', room = 'TEST';
+  for (var i = 0; i < 3; i++) room += a[Math.floor(Math.random() * a.length)];
+  var q = 'demo&relay=local&room=' + room + '&lang=' + lang;
+  document.getElementById('host').src = 'app.html?host&' + q;
+  // give the console a moment to create the game before the other views join
+  setTimeout(function () {
+    document.getElementById('screen').src = 'app.html?screen&' + q;
+    ['p1', 'p2', 'p3'].forEach(function (id, i) { document.getElementById(id).src = 'app.html?' + q + '&t=' + (i + 1); });
+  }, 600);
+  document.getElementById('again').onclick = function () { location.reload(); };
+  function fit() {
+    document.querySelectorAll('.fit').forEach(function (box) {
+      var w = +box.dataset.w, h = +box.dataset.h, f = box.querySelector('iframe');
+      var s = Math.min(box.clientWidth / w, box.clientHeight / h);
+      f.style.width = w + 'px'; f.style.height = h + 'px'; f.style.transform = 'scale(' + s + ')';
+      f.style.left = Math.max(0, (box.clientWidth - w * s) / 2) + 'px';
+    });
+  }
+  window.addEventListener('resize', fit); fit(); setTimeout(fit, 50);
+})();
+</script>
+</body>
+</html>
